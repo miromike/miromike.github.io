@@ -71,6 +71,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java/2022-04-06-spring-vs-spring-boot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/13/java/2022-04-06-spring-vs-spring-boot/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T04:22:33.475Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>layout: single<br>title: Spring vs Spring boot</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=1wqmc1EqHOY">https://www.youtube.com/watch?v=1wqmc1EqHOY</a></p>
+<h1 id="Spring-amp-Spring-Boot"><a href="#Spring-amp-Spring-Boot" class="headerlink" title="Spring &amp; Spring Boot"></a>Spring &amp; Spring Boot</h1><p>Spring은 자바의 긴 역사 만큼이나 방대한 개발 Framework 이다.</p>
+<p>Spring Boot은 쉽게 Spring 기반 어플리케이션을 만들수 구성 해 놓은 것이다.</p>
+<p>Spring Boot makes it easy  &#x2F;&#x2F; 쉽고<br>to create stand-alone      &#x2F;&#x2F; 단독 구성 되고<br>production-grade           &#x2F;&#x2F; 정식 서비스 가능의 고수준이며<br>Spring based Applications  &#x2F;&#x2F; Spring를 기반을 사용 하며<br>that you can “just run”    &#x2F;&#x2F; 그냥 돌아간다</p>
+<p>너무 좋은 개발 프레임워크가 나오고 있는 상황에서 자바 진영의 대응 이라고 보고 특히 마이크로 서비스용으로 많이 사용 된다고 합니다. </p>
+<p><a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a> 에서 쉽게 Boot 을 설정 해서 받아 사용 할수 있다.</p>
+<h1 id="Spring-vs-Spring-Boot"><a href="#Spring-vs-Spring-Boot" class="headerlink" title="Spring vs Spring Boot"></a>Spring vs Spring Boot</h1><ol>
+<li><p>간편한 설정<br>설정 파일: applications.properties 혹은 application.yml 에서</p>
+</li>
+<li><p>편리한 의존성 &amp; 자동 권장 버전 관리<br>Framework, 라이브러리, 모듈을 사용 하기 위한 설정을 보면<br>Spring 시절에는 20여줄 Boot는 1줄</p>
+</li>
+<li><p>내장 서버로 인한 간단한 배포 서버 구축<br>embedded server 웹서버가 내장 되어 있고 내장 서블렛 컨테이너로 간단히 배포</p>
+</li>
+<li><p>Security, Data JPA 등의 다른 Spring 요소를 쉽게 사용</p>
+</li>
+</ol>
+<h1 id="Spring-Boot-설명"><a href="#Spring-Boot-설명" class="headerlink" title="Spring Boot 설명"></a>Spring Boot 설명</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=YSsl5-q2BR4">https://www.youtube.com/watch?v=YSsl5-q2BR4</a></p>
+<hr>
+<p>이해 하기 위해 아래 내용을 찾아봄</p>
+<h1 id="자바-공부-로드맵"><a href="#자바-공부-로드맵" class="headerlink" title="자바 공부 로드맵"></a>자바 공부 로드맵</h1><p><a target="_blank" rel="noopener" href="https://miromike.github.io/assets/images/master%20java%20roadmap%20from%20amigoscode.jpg">https://miromike.github.io/assets/images/master%20java%20roadmap%20from%20amigoscode.jpg</a></p>
+<h1 id="Spring-Boot-Roadmap-마이크로서비스"><a href="#Spring-Boot-Roadmap-마이크로서비스" class="headerlink" title="Spring Boot Roadmap - 마이크로서비스"></a>Spring Boot Roadmap - 마이크로서비스</h1><p>최근 마이크로서비스 구성 &gt; Spring Boot, Maven, Docker and Kubernetes</p>
+<h1 id="Web-프로그래밍"><a href="#Web-프로그래밍" class="headerlink" title="Web 프로그래밍"></a>Web 프로그래밍</h1><p>Client 와 서버 (request 와 response)</p>
+<p>정적 웹페이지 와 동적 웹페이지</p>
+<p>동적 웹페이지 경우 웹서버와 C 나 PHP 등의 서버 프로그램과 통신</p>
+<p>통신 규약으로 Common Gateway Interface (CGI)</p>
+<p>동작되는 애플리케이션을 자바에선 Servlet이라고 부름</p>
+<p>이후 전체적으로 돌아가는 부분을 디자인 패턴으로 개선 하는데 그때 MVC이 쓰였다.</p>
+<h1 id="사용자-증가-등으로-퍼포먼스-개선-필요"><a href="#사용자-증가-등으로-퍼포먼스-개선-필요" class="headerlink" title="사용자 증가 등으로 퍼포먼스 개선 필요"></a>사용자 증가 등으로 퍼포먼스 개선 필요</h1><p>Web Server가 Process 띠어서 CGI 구현체 실행 하며 Process 임으로 퍼포먼스가 나빴음.</p>
+<p>개선점 1. Process 에서 Thread로</p>
+<p>개선점 2. 여러 Instance 들을 Singleton로</p>
+<p>출처1. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=YSsl5-q2BR4">https://www.youtube.com/watch?v=YSsl5-q2BR4</a></p>
+<p>출처2. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6h9qmKWK6Io">https://www.youtube.com/watch?v=6h9qmKWK6Io</a></p>
+<p>출처3. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2pBsXI01J6M">https://www.youtube.com/watch?v=2pBsXI01J6M</a></p>
+<p>출처4. <a target="_blank" rel="noopener" href="https://youtu.be/cehTm_oSrqA">https://youtu.be/cehTm_oSrqA</a></p>
+<p>출처5: <a target="_blank" rel="noopener" href="https://coggle.it/diagram/X-dDo1Qdf7DCP2zg/t/how-to-master-java/a3c8bede6822097b7f3c6340b82eabd7986c57af4d42f11c122d5065479d5928">https://coggle.it/diagram/X-dDo1Qdf7DCP2zg/t/how-to-master-java/a3c8bede6822097b7f3c6340b82eabd7986c57af4d42f11c122d5065479d5928</a></p>
+<p>참고1. 웹서버와 WAS <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mcnJcjbfjrs">https://www.youtube.com/watch?v=mcnJcjbfjrs</a></p>
+<p>참고2. 다른분 설명 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NyhbNtOq0Bc">https://www.youtube.com/watch?v=NyhbNtOq0Bc</a></p>
+<p>참고3. Framework에 대한 설명 <a target="_blank" rel="noopener" href="https://youtu.be/We8JKbNQeLo">https://youtu.be/We8JKbNQeLo</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/13/java/2022-04-06-spring-vs-spring-boot/" data-id="cl1x2hc3x000c4o38dypyedeb" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="single-java/2022-04-01-java-build-tool" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/13/java/2022-04-01-java-build-tool/" class="article-date">
@@ -296,10 +365,10 @@
 
 
   
-    <article id="single-github/2022-3-17-why-error" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="single-blog/2022-3-18-배움" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/17/github/2022-3-17-why-error/" class="article-date">
-  <time class="dt-published" datetime="2022-03-17T04:21:04.000Z" itemprop="datePublished">2022-03-17</time>
+    <a href="/2022/03/18/blog/2022-3-18-%EB%B0%B0%EC%9B%80/" class="article-date">
+  <time class="dt-published" datetime="2022-03-18T04:21:04.000Z" itemprop="datePublished">2022-03-18</time>
 </a>
     
   </div>
@@ -310,7 +379,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/17/github/2022-3-17-why-error/">Git Hub 에서의 Blog, Image 파일 하나 추가 했을뿐인데..</a>
+      <a class="p-name article-title" href="/2022/03/18/blog/2022-3-18-%EB%B0%B0%EC%9B%80/">GitHub Page/Jekyll 조합 - 5. 배움과 결론, 다른 조합을 찾아보자..</a>
     </h1>
   
 
@@ -318,13 +387,19 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>root 에 img을 추가 했는데 deployment에서 에러가 난다.<br>왜? </p>
-<p>deploy<br>Environment URL ‘’ is not a valid http(s) URL, so it will not be shown as a link in the workflow graph.</p>
+        <p>학습이 된것들..</p>
+<ol>
+<li>깃헙 사이트와 work flow, deployment 돌아가는 것..</li>
+<li>Jekyll 보면서 yaml 설정 등에 대해..</li>
+<li>MD 파일에 대해서..</li>
+</ol>
+<p>결론, Jekyll 말고 다른 걸 찾아보자.</p>
+<p>이유, 간단한 변경에도 설정 찾는데 한 세월이고 안되면 디버깅이 너무 힘들고<br>theme들도 그닥 마음에 드는게 없다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/github/2022-3-17-why-error/" data-id="cl1x2hc3r00034o38hi49fgar" data-title="Git Hub 에서의 Blog, Image 파일 하나 추가 했을뿐인데.." class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/18/blog/2022-3-18-%EB%B0%B0%EC%9B%80/" data-id="cl1x5t5y40007n4387m2066xm" data-title="GitHub Page/Jekyll 조합 - 5. 배움과 결론, 다른 조합을 찾아보자.." class="article-share-link">Share</a>
       
       
       
@@ -338,9 +413,9 @@
 
 
   
-    <article id="single-github/2022-3-17-sleep-fix" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="single-blog/2022-3-17-why-error2" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/17/github/2022-3-17-sleep-fix/" class="article-date">
+    <a href="/2022/03/17/blog/2022-3-17-why-error2/" class="article-date">
   <time class="dt-published" datetime="2022-03-17T04:21:04.000Z" itemprop="datePublished">2022-03-17</time>
 </a>
     
@@ -352,7 +427,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/17/github/2022-3-17-sleep-fix/">Github deployment 이슈, 자고나니 해결 되어 있다</a>
+      <a class="p-name article-title" href="/2022/03/17/blog/2022-3-17-why-error2/">Github deployment 이슈, 자고나니 해결 되어 있다</a>
     </h1>
   
 
@@ -373,11 +448,103 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/github/2022-3-17-sleep-fix/" data-id="cl1x2hc3r00044o38912552gd" data-title="Github deployment 이슈, 자고나니 해결 되어 있다" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/17/blog/2022-3-17-why-error2/" data-id="cl1x5t5y30005n4382ukpa000" data-title="Github deployment 이슈, 자고나니 해결 되어 있다" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="single-blog/2022-3-17-why-error" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/17/blog/2022-3-17-why-error/" class="article-date">
+  <time class="dt-published" datetime="2022-03-17T03:21:04.000Z" itemprop="datePublished">2022-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/17/blog/2022-3-17-why-error/">GitHub Page/Jekyll 조합 - 3. 간단한 추가에 에러가..</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>root 에 img을 추가 했는데 deployment에서 에러가 난다.<br>왜? </p>
+<p>deploy<br>Environment URL ‘’ is not a valid http(s) URL, so it will not be shown as a link in the workflow graph.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/17/blog/2022-3-17-why-error/" data-id="cl1x5t5y20003n438hgla84fj" data-title="GitHub Page/Jekyll 조합 - 3. 간단한 추가에 에러가.." class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="single-blog/2022-3-15-start" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/15/blog/2022-3-15-start/" class="article-date">
+  <time class="dt-published" datetime="2022-03-15T04:21:04.000Z" itemprop="datePublished">2022-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/15/blog/2022-3-15-start/">GitHub Page/Jekyll 조합 - 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>다시 개발을 해보기로 맘 먹고 국비 학원을 등록하고 찾아보니 취업엔 개발 블로그와 포토폴리오가 필수라고 한다.</p>
+<p>요즘 어떻게들 하는지 찾아보고 GitHub, Jekyll 조합을 해보기로 한다.<br>시작점은 “테디노트에 깃헙(GitHub) 블로그 10분안에 완성하기”<br><a target="_blank" rel="noopener" href="https://youtu.be/ACzFIAOsfpM">https://youtu.be/ACzFIAOsfpM</a></p>
+<p>처음으로 웹사이트를 만들어 올렸던 것이 고3이었다. 20년이 더 되었네.. 그때 집에 컴퓨터와 인터넷이 있었고 친구도 없고 심심한 지라 혼자 검색해서 HTML, 아파치 배우고 설치 그때 팬이었던 수지 누나 Natalie Imbruglia 팬 사이트 만들어 덕질을 했었다. </p>
+<p>대학교 들어가서 컴퓨터실 조교로 있으면서 자바스크립 책 보며 클라이언트 사이드 프로그래밍 해보고 마침 막 생겼던 웹프로그램 수업 수강해서 CGI, Perl의 서버 사이드 프로그래밍 알게 되어 나중에 게시판 등 만들어 사이트들에 추가 했던 기억이다.</p>
+<p>나중엔 학교 동호회 홈페이지, 개인 홈페이지 (O4D - open4design) 다니던 교회 홈페이지 만들어 드리고 한동안 웹마스터로 운영 했었지..</p>
+<p>remote에서 변경점을 등록 하고자 자바스크립으로 FTP 클라이언트를 만들고 잘 돌아갔을때의 그 짜릿함과 성취감은 이루 말할 수 없는 재미 이었다.</p>
+<p>그때는 로컬에서 작업해 디버깅 완료된 파일들을 정적으로 올렸는데 이번건 깃헙에서 Fork받아 repository에서 설정과 template 파일들을 건드리고 그걸 깃헙안에서 동적으로 빌드, 정적 파일이 올라가는 방식이라서 무지성 따라가기 영상만 보고 하는데 영상에서 조금만 틀린게 나오고 에러가 생겼을때 디버깅 방법을 몰라서 좀 헤맸다.</p>
+<p>특히 중간에 미국의 정전사태로 깃허브 측 workflow 상 문제 이었는데 이게 내 문제인지 그쪽 문제인지 확인하는데 까지만 몇시간 까먹게 되었다.</p>
+<p>GitHub와 Jekyll 조합에 대해서 상당히 번거롭고 난잡하다 라는 느낌을 받았는데 실제 Jekyll이 나온지 좀 되었고 해서 분명 더 좋은 툴이 있을듯 하다.</p>
+<p>내가 좋아 할 조합을 찾을때 까지 blog 만들기에 대한 기록은 이어질듯 하다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/15/blog/2022-3-15-start/" data-id="cl1x5t5xt0000n438el7598vm" data-title="GitHub Page/Jekyll 조합 - 1" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li></ul>
 
     </footer>
   </div>
@@ -405,7 +572,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">Blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li></ul>
     </div>
   </div>
 
@@ -415,7 +582,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/blog-Jekyll/" style="font-size: 10px;">blog Jekyll</a>
+      <a href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 10px;">Blog만들기</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/blog-Jekyll/" style="font-size: 20px;">blog Jekyll</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 10px;">blog만들기</a>
     </div>
   </div>
 
@@ -437,7 +604,11 @@
       <ul>
         
           <li>
-            <a href="/2022/04/13/github/2022-3-16-first/">Git Hub 에서의 Blog, 왜 반영이 안되는거야?</a>
+            <a href="/2022/04/13/github/2022-3-15-start/">Git Hub 에서 Blog 만들기 시작 - Github, Jekyll</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/13/blog/2022-3-16-why/">GitHub Page/Jekyll 조합 - 2. 왜 반영이 안되는거야?</a>
           </li>
         
           <li>
@@ -450,10 +621,6 @@
         
           <li>
             <a href="/2022/04/13/java/test-md/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/13/java/2022-4-1-gradle-run-longway/">gradle run 을 위한 고난의 길</a>
           </li>
         
       </ul>
