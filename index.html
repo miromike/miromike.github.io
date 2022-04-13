@@ -103,74 +103,6 @@
 
 
   
-    <article id="post-java/2022-4-6-spring-vs-spring-boot" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/13/java/2022-4-6-spring-vs-spring-boot/" class="article-date">
-  <time class="dt-published" datetime="2022-04-13T04:22:33.475Z" itemprop="datePublished">2022-04-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>layout: single<br>title: Spring vs Spring boot<br>date: 2022-4-6 13:21:04<br>tag: java</p>
-<hr>
-<h1 id="Spring-amp-Spring-Boot"><a href="#Spring-amp-Spring-Boot" class="headerlink" title="Spring &amp; Spring Boot"></a>Spring &amp; Spring Boot</h1><p>Spring은 자바의 긴 역사 만큼이나 방대한 개발 Framework 이다.<br>Spring Boot은 쉽게 Spring 기반 어플리케이션을 만들수 구성 해 놓은 것이다.</p>
-<p>Spring Boot makes it easy  &#x2F;&#x2F; 쉽고<br>to create stand-alone      &#x2F;&#x2F; 단독 구성 되고<br>production-grade           &#x2F;&#x2F; 정식 서비스 가능의 고수준이며<br>Spring based Applications  &#x2F;&#x2F; Spring를 기반을 사용 하며<br>that you can “just run”    &#x2F;&#x2F; 그냥 돌아간다</p>
-<p>마이크로 서비스들로 구성하는 것이 트렌드로 자리잡았고<br>타 진영의 좋은 개발 프레임워크들이 많이 나오는 상황에서<br>자바 진영의 대응책이라고 본다.</p>
-<p>자바로 한다면 대세가 스프링, 스프링 부트라고 보면 될듯 하다.</p>
-<p><a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a> 에서 기본 프로젝트를 만들어 준다. (공식 사이트)</p>
-<h1 id="Spring-vs-Spring-Boot"><a href="#Spring-vs-Spring-Boot" class="headerlink" title="Spring vs Spring Boot"></a>Spring vs Spring Boot</h1><p>스피링 부트의 특징이 아래가 있다. </p>
-<ol>
-<li><p>간편한 설정<br>설정 파일: applications.properties 혹은 application.yml 에서</p>
-</li>
-<li><p>편리한 의존성 &amp; 자동 권장 버전 관리<br>Framework, 라이브러리, 모듈을 사용 하기 위한 설정을 보면<br>Spring 시절에는 20여줄 Boot는 1줄</p>
-</li>
-<li><p>내장 서버로 인한 간단한 배포 서버 구축<br>embedded server 웹서버가 내장 되어 있고 내장 서블렛 컨테이너로 간단히 배포</p>
-</li>
-<li><p>Security, Data JPA 등의 다른 Spring 요소를 쉽게 사용</p>
-</li>
-</ol>
-<h1 id="Spring-Boot-설명"><a href="#Spring-Boot-설명" class="headerlink" title="Spring Boot 설명"></a>Spring Boot 설명</h1><p>설명 하는 영상이 많은데 자기 전에 틀어 놓고 들어보자.<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=YSsl5-q2BR4">https://www.youtube.com/watch?v=YSsl5-q2BR4</a></p>
-<p>이해 하기 위해 아래 내용을 찾아봄</p>
-<h1 id="자바-공부-로드맵"><a href="#자바-공부-로드맵" class="headerlink" title="자바 공부 로드맵"></a>자바 공부 로드맵</h1><p><a href="https://miromike.github.io/assets/images/master%20java%20roadmap%20from%20amigoscode.jpg">https://miromike.github.io/assets/images/master%20java%20roadmap%20from%20amigoscode.jpg</a></p>
-<h1 id="Spring-Boot-Roadmap-마이크로서비스"><a href="#Spring-Boot-Roadmap-마이크로서비스" class="headerlink" title="Spring Boot Roadmap - 마이크로서비스"></a>Spring Boot Roadmap - 마이크로서비스</h1><p>최근 마이크로서비스 구성 &gt; Spring Boot, Maven, Docker and Kubernetes</p>
-<h1 id="Web-프로그래밍"><a href="#Web-프로그래밍" class="headerlink" title="Web 프로그래밍"></a>Web 프로그래밍</h1><p>Client 와 서버 (request 와 response)</p>
-<p>정적 웹페이지 와 동적 웹페이지</p>
-<p>동적 웹페이지 경우 웹서버와 C 나 PHP 등의 서버 프로그램과 통신</p>
-<p>통신 규약으로 Common Gateway Interface (CGI)</p>
-<p>동작되는 애플리케이션을 자바에선 Servlet이라고 부름</p>
-<p>이후 전체적으로 돌아가는 부분을 디자인 패턴으로 개선 하는데 그때 MVC이 쓰였다.</p>
-<h1 id="사용자-증가-등으로-퍼포먼스-개선-필요"><a href="#사용자-증가-등으로-퍼포먼스-개선-필요" class="headerlink" title="사용자 증가 등으로 퍼포먼스 개선 필요"></a>사용자 증가 등으로 퍼포먼스 개선 필요</h1><p>Web Server가 Process 띠어서 CGI 구현체 실행 하며 Process 임으로 퍼포먼스가 나빴음.</p>
-<p>개선점 1. Process 에서 Thread로</p>
-<p>개선점 2. 여러 Instance 들을 Singleton로</p>
-<p>출처1. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=YSsl5-q2BR4">https://www.youtube.com/watch?v=YSsl5-q2BR4</a></p>
-<p>출처2. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6h9qmKWK6Io">https://www.youtube.com/watch?v=6h9qmKWK6Io</a></p>
-<p>출처3. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2pBsXI01J6M">https://www.youtube.com/watch?v=2pBsXI01J6M</a></p>
-<p>출처4. <a target="_blank" rel="noopener" href="https://youtu.be/cehTm_oSrqA">https://youtu.be/cehTm_oSrqA</a></p>
-<p>출처5: <a target="_blank" rel="noopener" href="https://coggle.it/diagram/X-dDo1Qdf7DCP2zg/t/how-to-master-java/a3c8bede6822097b7f3c6340b82eabd7986c57af4d42f11c122d5065479d5928">https://coggle.it/diagram/X-dDo1Qdf7DCP2zg/t/how-to-master-java/a3c8bede6822097b7f3c6340b82eabd7986c57af4d42f11c122d5065479d5928</a></p>
-<p>참고1. 웹서버와 WAS <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mcnJcjbfjrs">https://www.youtube.com/watch?v=mcnJcjbfjrs</a></p>
-<p>참고2. 다른분 설명 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NyhbNtOq0Bc">https://www.youtube.com/watch?v=NyhbNtOq0Bc</a></p>
-<p>참고3. Framework에 대한 설명 <a target="_blank" rel="noopener" href="https://youtu.be/We8JKbNQeLo">https://youtu.be/We8JKbNQeLo</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-6-spring-vs-spring-boot/" data-id="cl1x9fcoa000r6w38h88v15k7" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/10/hello-world/" class="article-date">
@@ -214,6 +146,83 @@
       
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="single-java/2022-4-6-spring-vs-spring-boot" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/06/java/2022-4-6-spring-vs-spring-boot/" class="article-date">
+  <time class="dt-published" datetime="2022-04-06T04:21:04.000Z" itemprop="datePublished">2022-04-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/06/java/2022-4-6-spring-vs-spring-boot/">Spring vs Spring boot</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-amp-Spring-Boot"><a href="#Spring-amp-Spring-Boot" class="headerlink" title="Spring &amp; Spring Boot"></a>Spring &amp; Spring Boot</h1><p>Spring은 자바의 긴 역사 만큼이나 방대한 개발 Framework 이다.<br>Spring Boot은 쉽게 Spring 기반 어플리케이션을 만들수 구성 해 놓은 것이다.</p>
+<p>Spring Boot makes it easy  &#x2F;&#x2F; 쉽고<br>to create stand-alone      &#x2F;&#x2F; 단독 구성 되고<br>production-grade           &#x2F;&#x2F; 정식 서비스 가능의 고수준이며<br>Spring based Applications  &#x2F;&#x2F; Spring를 기반을 사용 하며<br>that you can “just run”    &#x2F;&#x2F; 그냥 돌아간다</p>
+<p>마이크로 서비스들로 구성하는 것이 트렌드로 자리잡았고<br>타 진영의 좋은 개발 프레임워크들이 많이 나오는 상황에서<br>자바 진영의 대응책이라고 본다.</p>
+<p>자바로 한다면 대세가 스프링, 스프링 부트라고 보면 될듯 하다.</p>
+<p><a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a> 에서 기본 프로젝트를 만들어 준다. (공식 사이트)</p>
+<h1 id="Spring-vs-Spring-Boot"><a href="#Spring-vs-Spring-Boot" class="headerlink" title="Spring vs Spring Boot"></a>Spring vs Spring Boot</h1><p>스피링 부트의 특징이 아래가 있다. </p>
+<ol>
+<li><p>간편한 설정<br>설정 파일: applications.properties 혹은 application.yml 에서</p>
+</li>
+<li><p>편리한 의존성 &amp; 자동 권장 버전 관리<br>Framework, 라이브러리, 모듈을 사용 하기 위한 설정을 보면<br>Spring 시절에는 20여줄 Boot는 1줄</p>
+</li>
+<li><p>내장 서버로 인한 간단한 배포 서버 구축<br>embedded server 웹서버가 내장 되어 있고 내장 서블렛 컨테이너로 간단히 배포</p>
+</li>
+<li><p>Security, Data JPA 등의 다른 Spring 요소를 쉽게 사용</p>
+</li>
+</ol>
+<h1 id="Spring-Boot-설명"><a href="#Spring-Boot-설명" class="headerlink" title="Spring Boot 설명"></a>Spring Boot 설명</h1><p>설명 하는 영상이 많은데 자기 전에 틀어 놓고 들어보자.<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=YSsl5-q2BR4">https://www.youtube.com/watch?v=YSsl5-q2BR4</a></p>
+<p>이해 하기 위해 아래 내용을 찾아봄</p>
+<h1 id="자바-공부-로드맵"><a href="#자바-공부-로드맵" class="headerlink" title="자바 공부 로드맵"></a>자바 공부 로드맵</h1><p><a href="https://miromike.github.io/assets/images/master%20java%20roadmap%20from%20amigoscode.jpg">https://miromike.github.io/assets/images/master%20java%20roadmap%20from%20amigoscode.jpg</a></p>
+<h1 id="Spring-Boot-Roadmap-마이크로서비스"><a href="#Spring-Boot-Roadmap-마이크로서비스" class="headerlink" title="Spring Boot Roadmap - 마이크로서비스"></a>Spring Boot Roadmap - 마이크로서비스</h1><p>최근 마이크로서비스 구성 &gt; Spring Boot, Maven, Docker and Kubernetes</p>
+<h1 id="Web-프로그래밍"><a href="#Web-프로그래밍" class="headerlink" title="Web 프로그래밍"></a>Web 프로그래밍</h1><p>Client 와 서버 (request 와 response)</p>
+<p>정적 웹페이지 와 동적 웹페이지</p>
+<p>동적 웹페이지 경우 웹서버와 C 나 PHP 등의 서버 프로그램과 통신</p>
+<p>통신 규약으로 Common Gateway Interface (CGI)</p>
+<p>동작되는 애플리케이션을 자바에선 Servlet이라고 부름</p>
+<p>이후 전체적으로 돌아가는 부분을 디자인 패턴으로 개선 하는데 그때 MVC이 쓰였다.</p>
+<h1 id="사용자-증가-등으로-퍼포먼스-개선-필요"><a href="#사용자-증가-등으로-퍼포먼스-개선-필요" class="headerlink" title="사용자 증가 등으로 퍼포먼스 개선 필요"></a>사용자 증가 등으로 퍼포먼스 개선 필요</h1><p>Web Server가 Process 띠어서 CGI 구현체 실행 하며 Process 임으로 퍼포먼스가 나빴음.</p>
+<p>개선점 1. Process 에서 Thread로</p>
+<p>개선점 2. 여러 Instance 들을 Singleton로</p>
+<p>출처1. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=YSsl5-q2BR4">https://www.youtube.com/watch?v=YSsl5-q2BR4</a></p>
+<p>출처2. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6h9qmKWK6Io">https://www.youtube.com/watch?v=6h9qmKWK6Io</a></p>
+<p>출처3. <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2pBsXI01J6M">https://www.youtube.com/watch?v=2pBsXI01J6M</a></p>
+<p>출처4. <a target="_blank" rel="noopener" href="https://youtu.be/cehTm_oSrqA">https://youtu.be/cehTm_oSrqA</a></p>
+<p>출처5: <a target="_blank" rel="noopener" href="https://coggle.it/diagram/X-dDo1Qdf7DCP2zg/t/how-to-master-java/a3c8bede6822097b7f3c6340b82eabd7986c57af4d42f11c122d5065479d5928">https://coggle.it/diagram/X-dDo1Qdf7DCP2zg/t/how-to-master-java/a3c8bede6822097b7f3c6340b82eabd7986c57af4d42f11c122d5065479d5928</a></p>
+<p>참고1. 웹서버와 WAS <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=mcnJcjbfjrs">https://www.youtube.com/watch?v=mcnJcjbfjrs</a></p>
+<p>참고2. 다른분 설명 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NyhbNtOq0Bc">https://www.youtube.com/watch?v=NyhbNtOq0Bc</a></p>
+<p>참고3. Framework에 대한 설명 <a target="_blank" rel="noopener" href="https://youtu.be/We8JKbNQeLo">https://youtu.be/We8JKbNQeLo</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/06/java/2022-4-6-spring-vs-spring-boot/" data-id="cl1x9fcoa000r6w38h88v15k7" data-title="Spring vs Spring boot" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
     </footer>
   </div>
   
@@ -669,11 +678,11 @@
           </li>
         
           <li>
-            <a href="/2022/04/13/java/2022-4-6-spring-vs-spring-boot/">(no title)</a>
+            <a href="/2022/04/10/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2022/04/10/hello-world/">Hello World</a>
+            <a href="/2022/04/06/java/2022-4-6-spring-vs-spring-boot/">Spring vs Spring boot</a>
           </li>
         
           <li>
