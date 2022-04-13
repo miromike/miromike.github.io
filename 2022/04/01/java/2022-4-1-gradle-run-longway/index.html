@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>패스트컴패스 - 모두드림챌린지! | Hexo</title>
+  <title>gradle run 을 위한 고난의 길 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="등록한 IT 교육에서 이벤트가 있다. https:&#x2F;&#x2F;quickest-asterisk-75d.notion.site&#x2F;03-23-990626f1815044fb85bb35216fec7869">
+  <meta name="description" content="Youtube 검색 등 찾았을때 linux나 Mac 에서의 gradle 설치 예제 들이 주로 나왔다.현재 Windows를 쓰고 있어 고민 끝에 가상 PC 프로그램&#x2F;VM을 설치 하고 그위에 linux을 깔아보기로 한다. 아래 유튜브를 보고 설치 했다.https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;PqgWp7rbqws 가상 PC프로그램&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="패스트컴패스 - 모두드림챌린지!">
-<meta property="og:url" content="http://example.com/2022/04/13/java/2022-3-24-fastcampus/index.html">
+<meta property="og:title" content="gradle run 을 위한 고난의 길">
+<meta property="og:url" content="http://example.com/2022/04/01/java/2022-4-1-gradle-run-longway/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="등록한 IT 교육에서 이벤트가 있다. https:&#x2F;&#x2F;quickest-asterisk-75d.notion.site&#x2F;03-23-990626f1815044fb85bb35216fec7869">
+<meta property="og:description" content="Youtube 검색 등 찾았을때 linux나 Mac 에서의 gradle 설치 예제 들이 주로 나왔다.현재 Windows를 쓰고 있어 고민 끝에 가상 PC 프로그램&#x2F;VM을 설치 하고 그위에 linux을 깔아보기로 한다. 아래 유튜브를 보고 설치 했다.https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;PqgWp7rbqws 가상 PC프로그램&amp;#x">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-13T04:22:33.478Z">
-<meta property="article:modified_time" content="2022-04-01T07:43:14.000Z">
+<meta property="article:published_time" content="2022-04-01T04:21:04.000Z">
+<meta property="article:modified_time" content="2022-04-13T06:00:30.309Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -73,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="single-java/2022-3-24-fastcampus" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="single-java/2022-4-1-gradle-run-longway" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/13/java/2022-3-24-fastcampus/" class="article-date">
-  <time class="dt-published" datetime="2022-04-13T04:22:33.478Z" itemprop="datePublished">2022-04-13</time>
+    <a href="/2022/04/01/java/2022-4-1-gradle-run-longway/" class="article-date">
+  <time class="dt-published" datetime="2022-04-01T04:21:04.000Z" itemprop="datePublished">2022-04-01</time>
 </a>
     
   </div>
@@ -87,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      패스트컴패스 - 모두드림챌린지!
+      gradle run 을 위한 고난의 길
     </h1>
   
 
@@ -95,33 +96,38 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>등록한 IT 교육에서 이벤트가 있다.</p>
-<p><a target="_blank" rel="noopener" href="https://quickest-asterisk-75d.notion.site/03-23-990626f1815044fb85bb35216fec7869">https://quickest-asterisk-75d.notion.site/03-23-990626f1815044fb85bb35216fec7869</a></p>
+        <p>Youtube 검색 등 찾았을때 linux나 Mac 에서의 gradle 설치 예제 들이 주로 나왔다.<br>현재 Windows를 쓰고 있어 고민 끝에 가상 PC 프로그램&#x2F;VM을 설치 하고 그위에 linux을 깔아보기로 한다.</p>
+<p>아래 유튜브를 보고 설치 했다.<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PqgWp7rbqws">https://www.youtube.com/watch?v=PqgWp7rbqws</a></p>
+<p>가상 PC프로그램&#x2F;VM은 Virtual box 를 찾아 다운로드 받았고<br>linux은 ubuntu 사이트에 들어가 다운로드 받았다.</p>
+<p>여기가 실습 해 볼수 있는 가이드 내용이다.<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/samples/sample_building_java_applications.html">https://docs.gradle.org/current/samples/sample_building_java_applications.html</a></p>
+<p>윈도우 설치 법이 있는 것을 나중에 찾았다.<br><a target="_blank" rel="noopener" href="https://gradle.org/install/">https://gradle.org/install/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/13/java/2022-3-24-fastcampus/" data-id="cl1x2hc3w000b4o3894dneuz9" data-title="패스트컴패스 - 모두드림챌린지!" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/01/java/2022-4-1-gradle-run-longway/" data-id="cl1x2hc3y000d4o382je5gi19" data-title="gradle run 을 위한 고난의 길" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2022/04/13/java/2022-4-1-gradle-run-longway/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/02/java/2022-4-1-java-build-tool/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          gradle run 을 위한 고난의 길
+          자바의 대표적인 빌드 관리 툴, 메이븐(Maven)과 그레이들(Gradle)
         
       </div>
     </a>
   
   
-    <a href="/2022/04/13/java/2022-3-31-scan-class/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/03/31/java/2022-3-31-scan-class/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">scan class, nextInteger() 사용 후 nextLine() 호출 해야 된다.</div>
     </a>
@@ -143,7 +149,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">Blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">Blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
     </div>
   </div>
 
@@ -153,7 +159,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 10px;">Blog만들기</a> <a href="/tags/blog-Jekyll/" style="font-size: 10px;">blog Jekyll</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 20px;">blog만들기</a>
+      <a href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 10px;">Blog만들기</a> <a href="/tags/blog-Jekyll/" style="font-size: 10px;">blog Jekyll</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 15px;">blog만들기</a> <a href="/tags/java/" style="font-size: 20px;">java</a>
     </div>
   </div>
 
@@ -191,7 +197,7 @@
           </li>
         
           <li>
-            <a href="/2022/04/13/java/2022-4-1-gradle-run-longway/">gradle run 을 위한 고난의 길</a>
+            <a href="/2022/04/13/java/2022-3-23-study/">(no title)</a>
           </li>
         
       </ul>
