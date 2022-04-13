@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Scan class, 줄입력이 안될때.. | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>Jar file | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="scan class 을 사용 해서 숫자, 문자열을 여러번 입력 받는 코드 짤때 주의 할 부분이 있다. nextInteger() 호출 하고 nextLine() 호출 해줘야 된다. nextInteger는 입력 버퍼에서 carriage return 바로 전까지만 입력 받아서 그렇단다. 버퍼에 carriage return 이 남아서 다음 입력 함수에 이게 영향을">
+  <meta name="description" content="#if 1 이런 것을 쓰고 싶어 찾아 보았다. Manifold 가 있는데 사용 법을 모르겠다.jar 파일을 받아서 classpath 넣어서 돌리는데import 에서 계속 에러가 발생. 기본적인 jar 파일 공부가 필요하다가 느껴졌다. main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고이 Jar 파일을 import 해서 써보기 javac Use">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scan class, 줄입력이 안될때..">
-<meta property="og:url" content="https://miromike.github.io/2022/03/31/java/2022-3-31-scan-class/index.html">
+<meta property="og:title" content="Jar file">
+<meta property="og:url" content="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="scan class 을 사용 해서 숫자, 문자열을 여러번 입력 받는 코드 짤때 주의 할 부분이 있다. nextInteger() 호출 하고 nextLine() 호출 해줘야 된다. nextInteger는 입력 버퍼에서 carriage return 바로 전까지만 입력 받아서 그렇단다. 버퍼에 carriage return 이 남아서 다음 입력 함수에 이게 영향을">
+<meta property="og:description" content="#if 1 이런 것을 쓰고 싶어 찾아 보았다. Manifold 가 있는데 사용 법을 모르겠다.jar 파일을 받아서 classpath 넣어서 돌리는데import 에서 계속 에러가 발생. 기본적인 jar 파일 공부가 필요하다가 느껴졌다. main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고이 Jar 파일을 import 해서 써보기 javac Use">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-31T04:21:04.000Z">
-<meta property="article:modified_time" content="2022-04-13T10:38:54.852Z">
+<meta property="article:published_time" content="2022-04-12T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-13T15:57:13.477Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="single-java/2022-3-31-scan-class" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="single-java/2022-4-13-jar" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/31/java/2022-3-31-scan-class/" class="article-date">
-  <time class="dt-published" datetime="2022-03-31T04:21:04.000Z" itemprop="datePublished">2022-03-31</time>
+    <a href="/2022/04/13/java/2022-4-13-jar/" class="article-date">
+  <time class="dt-published" datetime="2022-04-12T15:00:00.000Z" itemprop="datePublished">2022-04-13</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Scan class, 줄입력이 안될때..
+      Jar file
     </h1>
   
 
@@ -96,15 +96,32 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>scan class 을 사용 해서 숫자, 문자열을 여러번 입력 받는 코드 짤때 주의 할 부분이 있다.</p>
-<p>nextInteger() 호출 하고 nextLine() 호출 해줘야 된다.</p>
-<p>nextInteger는 입력 버퍼에서 carriage return 바로 전까지만 입력 받아서 그렇단다.</p>
-<p>버퍼에 carriage return 이 남아서 다음 입력 함수에 이게 영향을 준다. (바로 스킵 된다.)</p>
+        <p>#if 1 이런 것을 쓰고 싶어 찾아 보았다.</p>
+<p>Manifold 가 있는데 사용 법을 모르겠다.<br>jar 파일을 받아서 classpath 넣어서 돌리는데<br>import 에서 계속 에러가 발생.</p>
+<p>기본적인 jar 파일 공부가 필요하다가 느껴졌다.</p>
+<h2 id="main-함수가-없는-소스-파일-하나를-컴파일-해서-Jar-만들고"><a href="#main-함수가-없는-소스-파일-하나를-컴파일-해서-Jar-만들고" class="headerlink" title="main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고"></a>main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고</h2><h2 id="이-Jar-파일을-import-해서-써보기"><a href="#이-Jar-파일을-import-해서-써보기" class="headerlink" title="이 Jar 파일을 import 해서 써보기"></a>이 Jar 파일을 import 해서 써보기</h2><ol>
+<li><p>javac User.java</p>
+<blockquote>
+<p>안에 package 선언 X</p>
+</blockquote>
+</li>
+<li><p>jar cf User.jar User.class</p>
+<blockquote>
+<p>jar 파일 생성</p>
+</blockquote>
+</li>
+<li><p>javac -cp User.jar Main.java</p>
+<blockquote>
+<p>-cp 은 class path 준다는 옵션 선언<br>Main.java 안에 import 선언 X 없이 그냥 User 사용</p>
+</blockquote>
+</li>
+<li></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/31/java/2022-3-31-scan-class/" data-id="cl1xhe5gh000mn0385gbr2py5" data-title="Scan class, 줄입력이 안될때.." class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/" data-id="cl1xrmpdm0000wo38h2qp4iy3" data-title="Jar file" class="article-share-link">Share</a>
       
       
       
@@ -116,19 +133,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/01/java/2022-4-1-gradle-run-longway/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/13/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-Hexo-%EC%A0%81%EC%9A%A9/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          gradle run 위한 고난의 길
+          블로그 Hexo 적용~
         
       </div>
     </a>
   
   
-    <a href="/2022/03/24/java/2022-3-24-fastcampus/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/04/13/java/2022-4-13-jar%202/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">패스트컴패스 - 모두드림챌린지!</div>
+      <div class="article-nav-title">Jar file</div>
     </a>
   
 </nav>
