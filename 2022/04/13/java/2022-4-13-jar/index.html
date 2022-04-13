@@ -6,15 +6,15 @@
   
   <title>Jar file | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="#if 1 이런 것을 쓰고 싶어 찾아 보았다. Manifold 가 있는데 사용 법을 모르겠다.jar 파일을 받아서 classpath 넣어서 돌리는데import 에서 계속 에러가 발생. 기본적인 jar 파일 공부가 필요하다가 느껴졌다. main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고이 Jar 파일을 import 해서 써보기 javac Use">
+  <meta name="description" content="외부 모듈을 쓰는데Maven, Gradle 사용 안 쓰고 해보려고 한다. 계속 에러 발생 해서기본적인 jar 파일 공부가 필요하다가 느껴졌다. User.java 를 Jar 파일로 만들고Main.java 에서 User.jar 사용 하는 예제를 돌려보고 싶다. User.java‘’’public class User {    private String name;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jar file">
 <meta property="og:url" content="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="#if 1 이런 것을 쓰고 싶어 찾아 보았다. Manifold 가 있는데 사용 법을 모르겠다.jar 파일을 받아서 classpath 넣어서 돌리는데import 에서 계속 에러가 발생. 기본적인 jar 파일 공부가 필요하다가 느껴졌다. main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고이 Jar 파일을 import 해서 써보기 javac Use">
+<meta property="og:description" content="외부 모듈을 쓰는데Maven, Gradle 사용 안 쓰고 해보려고 한다. 계속 에러 발생 해서기본적인 jar 파일 공부가 필요하다가 느껴졌다. User.java 를 Jar 파일로 만들고Main.java 에서 User.jar 사용 하는 예제를 돌려보고 싶다. User.java‘’’public class User {    private String name;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-12T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-13T15:57:13.477Z">
+<meta property="article:modified_time" content="2022-04-13T16:14:17.852Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -96,27 +96,36 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>#if 1 이런 것을 쓰고 싶어 찾아 보았다.</p>
-<p>Manifold 가 있는데 사용 법을 모르겠다.<br>jar 파일을 받아서 classpath 넣어서 돌리는데<br>import 에서 계속 에러가 발생.</p>
-<p>기본적인 jar 파일 공부가 필요하다가 느껴졌다.</p>
-<h2 id="main-함수가-없는-소스-파일-하나를-컴파일-해서-Jar-만들고"><a href="#main-함수가-없는-소스-파일-하나를-컴파일-해서-Jar-만들고" class="headerlink" title="main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고"></a>main 함수가 없는 소스 파일 하나를 컴파일 해서 Jar 만들고</h2><h2 id="이-Jar-파일을-import-해서-써보기"><a href="#이-Jar-파일을-import-해서-써보기" class="headerlink" title="이 Jar 파일을 import 해서 써보기"></a>이 Jar 파일을 import 해서 써보기</h2><ol>
-<li><p>javac User.java</p>
-<blockquote>
-<p>안에 package 선언 X</p>
+        <p>외부 모듈을 쓰는데<br>Maven, Gradle 사용 안 쓰고 해보려고 한다.</p>
+<p>계속 에러 발생 해서<br>기본적인 jar 파일 공부가 필요하다가 느껴졌다.</p>
+<p>User.java 를 Jar 파일로 만들고<br>Main.java 에서 User.jar 사용 하는 예제를 돌려보고 싶다.</p>
+<h2 id="User-java"><a href="#User-java" class="headerlink" title="User.java"></a>User.java</h2><p>‘’’<br>public class User {<br>    private String name;<br>    int idx;<br>}</p>
+<p>‘’’</p>
+<h2 id="Main-java"><a href="#Main-java" class="headerlink" title="Main.java"></a>Main.java</h2><p>‘’’<br>public class Main {</p>
+<pre><code>public static void main(String[] args) &#123;
+
+    User user = new User();
+    System.out.println(user);
+&#125;
+</code></pre>
+<p>}<br>‘’’</p>
+<p>2개 파일은 각자 다른 폴더, User와 Main에 두었다.<br>~&#x2F;User&#x2F;User.java<br>~&#x2F;Main&#x2F;Main.java</p>
+<h1 id="User-컴파일-및-Jar-파일-생성"><a href="#User-컴파일-및-Jar-파일-생성" class="headerlink" title="User 컴파일 및 Jar 파일 생성"></a>User 컴파일 및 Jar 파일 생성</h1><blockquote>
+<p>javac User.java<br>jar cf User.jar User.class</p>
 </blockquote>
-</li>
-<li><p>jar cf User.jar User.class</p>
-<blockquote>
-<p>jar 파일 생성</p>
+<h1 id="Jar파일을-Main-폴더로-복사-하고-Main-컴파일"><a href="#Jar파일을-Main-폴더로-복사-하고-Main-컴파일" class="headerlink" title="Jar파일을 Main 폴더로 복사 하고 Main 컴파일"></a>Jar파일을 Main 폴더로 복사 하고 Main 컴파일</h1><blockquote>
+<p>javac Main.java<br>User symbol 을 못 찾겠다고 컴파일 에러</p>
 </blockquote>
-</li>
-<li><p>javac -cp User.jar Main.java</p>
 <blockquote>
-<p>-cp 은 class path 준다는 옵션 선언<br>Main.java 안에 import 선언 X 없이 그냥 User 사용</p>
+<p>javac -cp User.jar Main.java<br>컴파일 성공</p>
 </blockquote>
-</li>
-<li></li>
-</ol>
+<h1 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h1><blockquote>
+<p>java Main<br>Exception in thread “main” java.lang.NoClassDefFoundError: User<br>at Main.main (Main.java:5)<br>User class 못 찾는 런타임 에러로 보인다.</p>
+</blockquote>
+<blockquote>
+<p>java -cp User.jar Main<br>Error: Could not find or load main class Main </p>
+</blockquote>
+<p>여기서 막혔다..</p>
 
       
     </div>
