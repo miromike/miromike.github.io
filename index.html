@@ -71,6 +71,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="single-java/2022-4-14-jar 2" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/14/java/2022-4-14-jar%202/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T15:00:00.000Z" itemprop="datePublished">2022-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/14/java/2022-4-14-jar%202/">main 들어 있는 Jar 파일 실행 (Mainfest에 main)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="main-함수가-있는-소스-파일-하나를-컴파일해서-Jar-로-만들어-실행-해-보기"><a href="#main-함수가-있는-소스-파일-하나를-컴파일해서-Jar-로-만들어-실행-해-보기" class="headerlink" title="main 함수가 있는 소스 파일 하나를 컴파일해서 Jar 로 만들어 실행 해 보기"></a>main 함수가 있는 소스 파일 하나를 컴파일해서 Jar 로 만들어 실행 해 보기</h2><ol>
+<li><p>java 파일 컴파일<br>javac Main.java</p>
+<blockquote>
+<p>Main.class 가 생성 된다</p>
+</blockquote>
+</li>
+<li><p>mainfest.mf 생성<br>Manifest-version: 1.0<br>Main-Class: Main</p>
+<blockquote>
+<p>마지막 라인 후에 newline 있어야 한다</p>
+</blockquote>
+</li>
+<li><p>jar 파일 생성<br>jar cfm test.jar manifest.mf Main.class</p>
+<blockquote>
+<p>test.jar 파일 가 생성 된다 </p>
+</blockquote>
+</li>
+<li><p>jar 파일 실행<br>java -jar test.jar</p>
+<blockquote>
+<p>실행 </p>
+</blockquote>
+</li>
+<li><p>jar의 내용물 확인<br>jar tf test.jar</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/14/java/2022-4-14-jar%202/" data-id="cl1xrzlqk0000zo382skyf0r6" data-title="main 들어 있는 Jar 파일 실행 (Mainfest에 main)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/13/hello-world/" class="article-date">
@@ -182,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/13/java/2022-4-13-jar/">Jar file</a>
+      <a class="p-name article-title" href="/2022/04/13/java/2022-4-13-jar/">Jar 가져와서 쓰는 거 어떻게?</a>
     </h1>
   
 
@@ -224,71 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/" data-id="cl1xrmpdm0000wo38h2qp4iy3" data-title="Jar file" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-java/2022-4-13-jar 2" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/13/java/2022-4-13-jar%202/" class="article-date">
-  <time class="dt-published" datetime="2022-04-12T15:00:00.000Z" itemprop="datePublished">2022-04-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/13/java/2022-4-13-jar%202/">Jar file</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="main-함수가-있는-소스-파일-하나를-컴파일해서-Jar-로-만들어-실행-해-보기"><a href="#main-함수가-있는-소스-파일-하나를-컴파일해서-Jar-로-만들어-실행-해-보기" class="headerlink" title="main 함수가 있는 소스 파일 하나를 컴파일해서 Jar 로 만들어 실행 해 보기"></a>main 함수가 있는 소스 파일 하나를 컴파일해서 Jar 로 만들어 실행 해 보기</h2><ol>
-<li><p>java 파일 컴파일<br>javac Main.java</p>
-<blockquote>
-<p>Main.class 가 생성 된다</p>
-</blockquote>
-</li>
-<li><p>mainfest.mf 생성<br>Manifest-version: 1.0<br>Main-Class: Main</p>
-<blockquote>
-<p>마지막 라인 후에 newline 있어야 한다</p>
-</blockquote>
-</li>
-<li><p>jar 파일 생성<br>jar cfm test.jar manifest.mf Main.class</p>
-<blockquote>
-<p>test.jar 파일 가 생성 된다 </p>
-</blockquote>
-</li>
-<li><p>jar 파일 실행<br>java -jar test.jar</p>
-<blockquote>
-<p>실행 </p>
-</blockquote>
-</li>
-<li><p>jar의 내용물 확인<br>jar tf test.jar</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-13-jar%202/" data-id="cl1xrmpdq0001wo38ddsm0wvx" data-title="Jar file" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/" data-id="cl1xrmpdm0000wo38h2qp4iy3" data-title="Jar 가져와서 쓰는 거 어떻게?" class="article-share-link">Share</a>
       
       
       
@@ -718,6 +718,10 @@
       <ul>
         
           <li>
+            <a href="/2022/04/14/java/2022-4-14-jar%202/">main 들어 있는 Jar 파일 실행 (Mainfest에 main)</a>
+          </li>
+        
+          <li>
             <a href="/2022/04/13/hello-world/">Hexo 자주 쓰는 명령어 노트</a>
           </li>
         
@@ -726,11 +730,7 @@
           </li>
         
           <li>
-            <a href="/2022/04/13/java/2022-4-13-jar/">Jar file</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/13/java/2022-4-13-jar%202/">Jar file</a>
+            <a href="/2022/04/13/java/2022-4-13-jar/">Jar 가져와서 쓰는 거 어떻게?</a>
           </li>
         
           <li>
