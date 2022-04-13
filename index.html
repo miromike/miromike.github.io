@@ -71,56 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="single-github/2022-3-15-start" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/13/github/2022-3-15-start/" class="article-date">
-  <time class="dt-published" datetime="2022-04-13T05:13:38.633Z" itemprop="datePublished">2022-04-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/13/github/2022-3-15-start/">Git Hub 에서 Blog 만들기 시작 - Github, Jekyll</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>IT 국비를 하면서 개발 블로그와 포토폴리오 올리는게 필요 하다고 생각되었다.<br>이리저리 검색을 해보고 깃헙에서 해보기로 했다.</p>
-<p>테티노트의 깃헙 블로그 10분안에 완성하기 를 참조 했는데 나는 10분 더 걸렸다.<br><a target="_blank" rel="noopener" href="https://youtu.be/ACzFIAOsfpM">https://youtu.be/ACzFIAOsfpM</a></p>
-<p>깃헙이 첨인지라 상당히 오래 걸렸고 Jekyll 설정 찾는것도 보기 힘들고 난잡하다.<br>억지로 억지로 페이지를 올렸다.</p>
-<p>완성도 있게 하려면 아래 영상들을 봐야 하는데 일단 내용도 많고 오픈소스, 클라우드 툴이기에 조금만 시간이 지나도 영상의 내용대로 따라하기가 안되는 문제가 있다.<br><a target="_blank" rel="noopener" href="https://youtu.be/--MMmHbSH9k">https://youtu.be/--MMmHbSH9k</a></p>
-<p>요약: </p>
-<ol>
-<li>개발 블로그, 포토폴리오 만들기로 결정</li>
-<li>Github pages 호스팅용, Jekyll 설치</li>
-<li>생산성 극악 인 상태에서 좀 해보기로..</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/13/github/2022-3-15-start/" data-id="cl1x8v8950009m038a3rickjl" data-title="Git Hub 에서 Blog 만들기 시작 - Github, Jekyll" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">Blog만들기</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-python/2022-3-20-python-basic-done" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/13/python/2022-3-20-python-basic-done/" class="article-date">
@@ -595,6 +545,80 @@
 
 
   
+    <article id="single-java/2022-3-19-java" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/19/java/2022-3-19-java/" class="article-date">
+  <time class="dt-published" datetime="2022-03-19T04:21:04.000Z" itemprop="datePublished">2022-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/19/java/2022-3-19-java/">3/19 토 &gt; 자바 공부</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>빵형 책을 ch5까지 보고 진도 나간것을 활용해서 “1~3까지의 랜덤 숫자를 여러번 돌려보고 분포 확인” 코드를 짜보았다.</p>
+<pre><code>Scanner sc = new Scanner(System.in);
+    System.out.println(&quot;How many trial?&quot;);
+    System.out.print(&quot;&gt;&quot;);
+    int trial = sc.nextInt();
+    
+    for(int z = 0 ; z &lt; 10; z++)
+    &#123;
+        int num = 0;
+        Random random = new Random();
+        int[] cnt = &#123; 0, 0, 0, 0 &#125;;
+        
+        for(int x = 0 ; x &lt; trial ; x++ )
+        &#123;
+            num = random.nextInt(3)+1;
+        //    System.out.printf(&quot;%dth 난수: %d\n&quot;, x+1, num);
+            cnt[num]++;
+        &#125;
+        
+        System.out.println(&quot;=======================================&quot;);        
+        System.out.println(trial + &quot; many trial &gt; randome gen&quot;);
+        System.out.println(&quot;=======================================&quot;);
+        for(int x = 1; x &lt; 4; x++)
+        &#123;
+            System.out.println(&quot;[&quot; + x +&quot;]&quot; + &quot; -&gt;&quot; + ((float)cnt[x]/trial) *100+&quot; % many&quot;);
+        &#125;
+    &#125;
+    System.out.println(&quot;================END====================&quot;);
+&#125;
+</code></pre>
+<h1 id="100-many-trial-gt-randome-gen"><a href="#100-many-trial-gt-randome-gen" class="headerlink" title="  100 many trial &gt; randome gen"></a>  100 many trial &gt; randome gen</h1><p>[1] -&gt;39.0 % many<br>[2] -&gt;33.0 % many<br>[3] -&gt;28.0 % many</p>
+<h1 id="1000-many-trial-gt-randome-gen"><a href="#1000-many-trial-gt-randome-gen" class="headerlink" title="  1000 many trial &gt; randome gen"></a>  1000 many trial &gt; randome gen</h1><p>[1] -&gt;34.2 % many<br>[2] -&gt;32.7 % many<br>[3] -&gt;33.1 % many</p>
+<h1 id="100000-many-trial-gt-randome-gen"><a href="#100000-many-trial-gt-randome-gen" class="headerlink" title="  100000 many trial &gt; randome gen"></a>  100000 many trial &gt; randome gen</h1><p>[1] -&gt;33.293 % many<br>[2] -&gt;33.335 % many<br>[3] -&gt;33.372 % many</p>
+<p>100번, 1,000번, 100,000번 돌려보니 많이 돌리면 돌릴수록 33.33% 으로 수렴되는 것을 볼수 있다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/19/java/2022-3-19-java/" data-id="cl1x8v899000im0389c6bgrsz" data-title="3/19 토 &gt; 자바 공부" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
 
 
   <nav id="page-nav">
@@ -613,7 +637,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">Blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog-Jekyll/" rel="tag">blog Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
     </div>
   </div>
 
@@ -623,7 +647,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 10px;">Blog만들기</a> <a href="/tags/blog-Jekyll/" style="font-size: 10px;">blog Jekyll</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 15px;">blog만들기</a> <a href="/tags/java/" style="font-size: 20px;">java</a>
+      <a href="/tags/blog-Jekyll/" style="font-size: 10px;">blog Jekyll</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 15px;">blog만들기</a> <a href="/tags/java/" style="font-size: 20px;">java</a>
     </div>
   </div>
 
@@ -645,10 +669,6 @@
       <ul>
         
           <li>
-            <a href="/2022/04/13/github/2022-3-15-start/">Git Hub 에서 Blog 만들기 시작 - Github, Jekyll</a>
-          </li>
-        
-          <li>
             <a href="/2022/04/13/python/2022-3-20-python-basic-done/">Python 공부 - 기본 문법 완료~</a>
           </li>
         
@@ -662,6 +682,10 @@
         
           <li>
             <a href="/2022/04/13/java/2022-4-6-spring-vs-spring-boot/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/10/hello-world/">Hello World</a>
           </li>
         
       </ul>
