@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Jar 가져와서 쓰는 거 어떻게? | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>Jar 파일 include 해서 컴파일 하는 법 (console에서) | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Maven, Gradle 사용 안 하고외부 모듈을 간단히 써보고 싶은데 생각 처럼 안되어기본적인 jar 파일 공부가 필요하다가 느껴졌다. Jar파일을 하나 만들고 그걸 사용하는 예제를 해보는데 막혔다. User.java1234public class User &amp;#123;    private String name;    int idx;&amp;#125;  Main.j">
+  <meta name="description" content="결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자.. User.java1234public class User &amp;#123;    private String name;    int idx;&amp;#125;  Main.java12345678public class Main &amp;#123;    public static void">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jar 가져와서 쓰는 거 어떻게?">
-<meta property="og:url" content="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/index.html">
+<meta property="og:title" content="Jar 파일 include 해서 컴파일 하는 법 (console에서)">
+<meta property="og:url" content="https://miromike.github.io/2022/04/13/java/2022-4-13-compile-with-Jar/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="Maven, Gradle 사용 안 하고외부 모듈을 간단히 써보고 싶은데 생각 처럼 안되어기본적인 jar 파일 공부가 필요하다가 느껴졌다. Jar파일을 하나 만들고 그걸 사용하는 예제를 해보는데 막혔다. User.java1234public class User &amp;#123;    private String name;    int idx;&amp;#125;  Main.j">
+<meta property="og:description" content="결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자.. User.java1234public class User &amp;#123;    private String name;    int idx;&amp;#125;  Main.java12345678public class Main &amp;#123;    public static void">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-12T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-13T16:26:25.716Z">
+<meta property="article:modified_time" content="2022-04-14T11:46:28.181Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -74,9 +74,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="single-java/2022-4-13-jar" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="single-java/2022-4-13-compile-with-Jar" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/13/java/2022-4-13-jar/" class="article-date">
+    <a href="/2022/04/13/java/2022-4-13-compile-with-Jar/" class="article-date">
   <time class="dt-published" datetime="2022-04-12T15:00:00.000Z" itemprop="datePublished">2022-04-13</time>
 </a>
     
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Jar 가져와서 쓰는 거 어떻게?
+      Jar 파일 include 해서 컴파일 하는 법 (console에서)
     </h1>
   
 
@@ -96,13 +96,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Maven, Gradle 사용 안 하고<br>외부 모듈을 간단히 써보고 싶은데 생각 처럼 안되어<br>기본적인 jar 파일 공부가 필요하다가 느껴졌다.</p>
-<p>Jar파일을 하나 만들고 그걸 사용하는 예제를 해보는데 막혔다.</p>
+        <p>결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자..</p>
 <h2 id="User-java"><a href="#User-java" class="headerlink" title="User.java"></a>User.java</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    int idx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Main-java"><a href="#Main-java" class="headerlink" title="Main.java"></a>Main.java</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        User user = new User();</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>2개 파일은 각자 다른 폴더, User와 Main에 두었다.<br>~&#x2F;User&#x2F;User.java<br>~&#x2F;Main&#x2F;Main.java</p>
+<p>~&#x2F;User&#x2F;User.java<br>~&#x2F;Main&#x2F;Main.java</p>
 <h2 id="User-컴파일-및-Jar-파일-생성"><a href="#User-컴파일-및-Jar-파일-생성" class="headerlink" title="User 컴파일 및 Jar 파일 생성"></a>User 컴파일 및 Jar 파일 생성</h2><p>javac User.java<br>jar cf User.jar User.class</p>
 <p>User.jar 파일이 만들어졌다 Main 폴더로 복사</p>
 <h2 id="Main-컴파일"><a href="#Main-컴파일" class="headerlink" title="Main 컴파일"></a>Main 컴파일</h2><p>javac Main.java</p>
@@ -113,11 +112,14 @@
 <p>User class 못 찾는 다는 내용으로 보여서 컴파일 때 처럼<br>classpath 을 넣어 주면 될것으로 생각 해서</p>
 <p>java -cp User.jar Main<br>Error: Could not find or load main class Main </p>
 <p>여기서 막혔다..</p>
+<h2 id="Stackoverflow-에…"><a href="#Stackoverflow-에…" class="headerlink" title="Stackoverflow 에…"></a>Stackoverflow 에…</h2><p>(올린 질문 글)[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/71861212/import-jar-file-into-my-hello-world-console-application]">https://stackoverflow.com/questions/71861212/import-jar-file-into-my-hello-world-console-application]</a></p>
+<p>(Jar 파일 include 방법)[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt#comment11870389_9395207]">https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt#comment11870389_9395207]</a></p>
+<p>나의 윈도우 개발 환경에서 -cp 에 멀 넣어도 안된다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-13-jar/" data-id="cl1xrmpdm0000wo38h2qp4iy3" data-title="Jar 가져와서 쓰는 거 어떻게?" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/04/13/java/2022-4-13-compile-with-Jar/" data-id="cl1yymfth0000fo38c8k2gowr" data-title="Jar 파일 include 해서 컴파일 하는 법 (console에서)" class="article-share-link">Share</a>
       
       
       
@@ -193,7 +195,11 @@
       <ul>
         
           <li>
-            <a href="/2022/04/14/java/2022-4-14-jar%202/">main 들어 있는 Jar 파일 실행 (Mainfest에 main)</a>
+            <a href="/2022/04/14/java/2022-4-14-Jarfile-make%202/">main 함수 있을때 Jar 파일 (console에서)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/14/java/2022-4-14-package-main/">package 키워드 넣어 실행하기 (console에서)</a>
           </li>
         
           <li>
@@ -205,11 +211,7 @@
           </li>
         
           <li>
-            <a href="/2022/04/13/java/2022-4-13-jar/">Jar 가져와서 쓰는 거 어떻게?</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/06/java/2022-4-6-spring-vs-spring-boot/">대세 프레임워크, Spring 와 Spring boot ?</a>
+            <a href="/2022/04/13/java/2022-4-13-compile-with-Jar/">Jar 파일 include 해서 컴파일 하는 법 (console에서)</a>
           </li>
         
       </ul>

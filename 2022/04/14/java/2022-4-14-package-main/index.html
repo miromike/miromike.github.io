@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>패스트컴패스 - 모두드림챌린지! | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>package 키워드 넣어 실행하기 (console에서) | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="등록한 IT 교육에서 이벤트가 있다. https:&#x2F;&#x2F;quickest-asterisk-75d.notion.site&#x2F;03-23-990626f1815044fb85bb35216fec7869">
+  <meta name="description" content="package 키워드1package 패키지명;  아래 예제를 보면com.company.console 이 패키지 명이고 folder path 가 된다. 1234567package com.company.console;public class Main&amp;#123;    public static class main(String[] args) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="패스트컴패스 - 모두드림챌린지!">
-<meta property="og:url" content="https://miromike.github.io/2022/03/24/java/2022-3-24-fastcampus/index.html">
+<meta property="og:title" content="package 키워드 넣어 실행하기 (console에서)">
+<meta property="og:url" content="https://miromike.github.io/2022/04/14/java/2022-4-14-package-main/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="등록한 IT 교육에서 이벤트가 있다. https:&#x2F;&#x2F;quickest-asterisk-75d.notion.site&#x2F;03-23-990626f1815044fb85bb35216fec7869">
+<meta property="og:description" content="package 키워드1package 패키지명;  아래 예제를 보면com.company.console 이 패키지 명이고 folder path 가 된다. 1234567package com.company.console;public class Main&amp;#123;    public static class main(String[] args) &amp;#123;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-24T04:21:04.000Z">
-<meta property="article:modified_time" content="2022-04-13T06:00:16.103Z">
+<meta property="article:published_time" content="2022-04-13T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-14T11:47:58.034Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="single-java/2022-3-24-fastcampus" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="single-java/2022-4-14-package-main" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/24/java/2022-3-24-fastcampus/" class="article-date">
-  <time class="dt-published" datetime="2022-03-24T04:21:04.000Z" itemprop="datePublished">2022-03-24</time>
+    <a href="/2022/04/14/java/2022-4-14-package-main/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T15:00:00.000Z" itemprop="datePublished">2022-04-14</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      패스트컴패스 - 모두드림챌린지!
+      package 키워드 넣어 실행하기 (console에서)
     </h1>
   
 
@@ -96,13 +96,24 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>등록한 IT 교육에서 이벤트가 있다.</p>
-<p><a target="_blank" rel="noopener" href="https://quickest-asterisk-75d.notion.site/03-23-990626f1815044fb85bb35216fec7869">https://quickest-asterisk-75d.notion.site/03-23-990626f1815044fb85bb35216fec7869</a></p>
+        <h2 id="package-키워드"><a href="#package-키워드" class="headerlink" title="package 키워드"></a>package 키워드</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package 패키지명;</span><br></pre></td></tr></table></figure>
+
+<p>아래 예제를 보면<br>com.company.console 이 패키지 명이고 folder path 가 된다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.company.console;</span><br><span class="line"></span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static class main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;Hello World&quot;);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="어떤-일을-하는가"><a href="#어떤-일을-하는가" class="headerlink" title="어떤 일을 하는가?"></a>어떤 일을 하는가?</h2><p>클래스 이름을 full name으로 변환 해 준다.<br>Main class 을 com.company.console.Main 로 변환 한다.<br>(javap 역 어셈블러 하면 변환 직접 확인 할수 있다.</p>
+<h1 id="package-선언-안하면"><a href="#package-선언-안하면" class="headerlink" title="package 선언 안하면"></a>package 선언 안하면</h1><p>자바에서 기본적으로 제공 하는 곳에 한다.<br>‘이름 없는 패키지’ (unnamed package)라고 부른다.</p>
+<h1 id="컴파일"><a href="#컴파일" class="headerlink" title="컴파일"></a>컴파일</h1><p>javac 파일 이름</p>
+<p>‘-d .’ path에 폴더들을 만든다.</p>
+<p>소스 파일 안에 import 있으면 경로 찾아 들어가 그 파일도 컴파일 하는 듯 하다.</p>
+<h1 id="콘솔에서-실행"><a href="#콘솔에서-실행" class="headerlink" title="콘솔에서 실행"></a>콘솔에서 실행</h1><p>이 부분에서 제일 헤맸는데..</p>
+<p>full name을 넣어줘야 하고 실행 위치도 중요 하다.</p>
+<p>파일 경로: c:\project\com\company\console\Main.java<br>컴파일을 &gt; c:\project&gt;java com.company.console.Main</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/24/java/2022-3-24-fastcampus/" data-id="cl1xhe5gf000hn038bqdz1gpx" data-title="패스트컴패스 - 모두드림챌린지!" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/04/14/java/2022-4-14-package-main/" data-id="cl1yymftj0003fo38daw77fkr" data-title="package 키워드 넣어 실행하기 (console에서)" class="article-share-link">Share</a>
       
       
       
@@ -114,19 +125,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/03/31/java/2022-3-31-scan-class/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/14/java/2022-4-14-Jarfile-make%202/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Scan class, 줄입력이 안될때..
+          main 함수 있을때 Jar 파일 (console에서)
         
       </div>
     </a>
   
   
-    <a href="/2022/03/20/python/2022-3-20-python-basic-done/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/04/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">파이썬 공부 - 기본 문법 완료~</div>
+      <div class="article-nav-title">Hexo 자주 쓰는 명령어 노트</div>
     </a>
   
 </nav>
