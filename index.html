@@ -71,6 +71,97 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-portofolio/2022-4-26-portofolio" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/26/portofolio/2022-4-26-portofolio/" class="article-date">
+  <time class="dt-published" datetime="2022-04-25T18:47:07.147Z" itemprop="datePublished">2022-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/26/portofolio/2022-4-26-portofolio/" data-id="cl2h1h76q0002gg3888hbdgha" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="single-java/2022-4-21-NaverOpenAPI" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/21/java/2022-4-21-NaverOpenAPI/" class="article-date">
+  <time class="dt-published" datetime="2022-04-20T15:00:00.000Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/21/java/2022-4-21-NaverOpenAPI/">Naver Open API 검색 활용, 맛집 서비스</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>네이버 Open API 를 활용해서 맛집 검색을 해 보는 예제</p>
+<h2 id="사용할-API"><a href="#사용할-API" class="headerlink" title="사용할 API"></a>사용할 API</h2><p>[네이버 오픈 API 목록]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/products/intro/plan/plan.md">https://developers.naver.com/products/intro/plan/plan.md</a>)</p>
+<p>이중에 검색 API 을 사용 하면 네이버 블로그, 이미지, 웹, 뉴스, 백과사전, 책, 카페, 지식iN 등 검색 할수 있음</p>
+<p>[비로그인 방식 API 이고 호출 예제]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/docs/common/openapiguide/apicall.md#%EB%B9%84%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api-%ED%98%B8%EC%B6%9C-%EC%98%88">https://developers.naver.com/docs/common/openapiguide/apicall.md#%EB%B9%84%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api-%ED%98%B8%EC%B6%9C-%EC%98%88</a>)</p>
+<p>[검색 &gt; 지역]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD">https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD</a>)</p>
+<h3 id="1-Talend-API-사용-해서-API-호출-해보기"><a href="#1-Talend-API-사용-해서-API-호출-해보기" class="headerlink" title="1. Talend API 사용 해서 API 호출 해보기"></a>1. Talend API 사용 해서 API 호출 해보기</h3><p>검색 값을 UTF8 해야 한다. [변환 해주는 사이트] (<a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/dencoder/">https://meyerweb.com/eric/tools/dencoder/</a>)</p>
+<p>해보니 잘된다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;rss version=&quot;2.0&quot;&gt;</span><br><span class="line">    &lt;channel&gt;</span><br><span class="line">        &lt;title&gt;Naver Open API - local ::&#x27;갈비집&#x27;&lt;/title&gt;</span><br><span class="line">        &lt;link&gt;http://search.naver.com&lt;/link&gt;</span><br><span class="line">        &lt;description&gt;Naver Search Result&lt;/description&gt;</span><br><span class="line">        &lt;lastBuildDate&gt;Tue, 04 Oct 2016 13:10:58 +0900&lt;/lastBuildDate&gt;</span><br><span class="line">        &lt;total&gt;407&lt;/total&gt;</span><br><span class="line">        &lt;start&gt;1&lt;/start&gt;</span><br><span class="line">        &lt;display&gt;10&lt;/display&gt;</span><br><span class="line">        &lt;item&gt;</span><br><span class="line">            &lt;title&gt;조선옥&lt;/title&gt;</span><br><span class="line">            &lt;link /&gt;</span><br><span class="line">            &lt;category&gt;한식&amp;gt;육류,고기요리&lt;/category&gt;</span><br><span class="line">            &lt;description&gt;연탄불 한우갈비 전문점.&lt;/description&gt;</span><br><span class="line">            &lt;telephone&gt;&lt;/telephone&gt;</span><br><span class="line">            &lt;address&gt;서울특별시 중구 을지로3가 229-1 &lt;/address&gt;</span><br><span class="line">            &lt;roadAddress&gt;서울특별시 중구 을지로15길 6-5 &lt;/roadAddress&gt;</span><br><span class="line">            &lt;mapx&gt;311277&lt;/mapx&gt;</span><br><span class="line">            &lt;mapy&gt;552097&lt;/mapy&gt;</span><br><span class="line">        &lt;/item&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/channel&gt;</span><br><span class="line">&lt;/rss&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Java-에서-해보기"><a href="#2-Java-에서-해보기" class="headerlink" title="2. Java 에서 해보기"></a>2. Java 에서 해보기</h3><p>스프링 framework 활용 해서 자바에서 해보기<br>[예제] (<a target="_blank" rel="noopener" href="https://spring.io/guides/gs/consuming-rest/">https://spring.io/guides/gs/consuming-rest/</a>)</p>
+<p>package com.example.consumingrest;</p>
+<p>import org.springframework.boot.SpringApplication;<br>import org.springframework.boot.autoconfigure.SpringBootApplication;</p>
+<p>@SpringBootApplication<br>public class ConsumingRestApplication {</p>
+<pre><code>public static void main(String[] args) &#123;
+    SpringApplication.run(ConsumingRestApplication.class, args);
+&#125;
+</code></pre>
+<p>}</p>
+<p>예제는 잘 되는데 내가 생성한 프로젝트에서는<br>item &#x3D; 0 으로 응답이 왔다.</p>
+<p>검색어를 영어로 하니 답이 와서 일단 진행.</p>
+<p>또 문제가 json 에서 object 로 변환을 하는 Paramized에<br>Object 일부만 되었다. 정확히는 앞에 멤버는 채워지는데<br>뒤에 list, items 부분은 null </p>
+<p>Gson으로 변경 하니 되었다.<br><a target="_blank" rel="noopener" href="https://howtodoinjava.com/gson/gson-parse-json-array/">https://howtodoinjava.com/gson/gson-parse-json-array/</a></p>
+<p>오늘은 여기까지..</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/21/java/2022-4-21-NaverOpenAPI/" data-id="cl2h1h76k0000gg38gt4500gb" data-title="Naver Open API 검색 활용, 맛집 서비스" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="single-IDE/2022-4-16-Intellj" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/16/IDE/2022-4-16-Intellj/" class="article-date">
@@ -518,118 +609,6 @@
 
 
   
-    <article id="single-java/2022-4-2-java-build-tool" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/02/java/2022-4-2-java-build-tool/" class="article-date">
-  <time class="dt-published" datetime="2022-04-02T04:21:04.000Z" itemprop="datePublished">2022-04-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/02/java/2022-4-2-java-build-tool/">빌드 툴, 메이븐(Maven)와 그레이들(Gradle)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="빌드-관리-도구란"><a href="#빌드-관리-도구란" class="headerlink" title="빌드 관리 도구란"></a>빌드 관리 도구란</h2><p>프로젝트에 필요한 xml, properties, jar 파일들을 자동으로 인식하여 빌드 해주는 도구<br>소스 코드를 컴파일, 테스트, 정적분석 등을 하여 실행 가능한 앱으로 빌드 해줌<br>프로젝트 정보 관리, 테스트 빌드, 배포 등의 작업을 진행해줌<br>외부 라이브러리를 참조하여 자동으로 다운로드 및 업데이트의 관리해줌</p>
-<p>자바의 대표적인 빌드 도구: Ant, Maven, Gradle</p>
-<h2 id="메이븐-Maven-이란"><a href="#메이븐-Maven-이란" class="headerlink" title="메이븐 (Maven) 이란?"></a>메이븐 (Maven) 이란?</h2><p>자바의 대표적인 관리 도구였던 Ant를 대체 하기 위해 개발됨<br>프로젝트의 외부 라이브러리를 쉽게 참조 할수 있게 pom.xml 파일로 명시하여 관리 (폼파일)<br>참조한 외부 라이브러리에 연관된 다른 라이브러리도 자동으로 관리됨</p>
-<h2 id="메이븐-Maven-을-사용하는-이유"><a href="#메이븐-Maven-을-사용하는-이유" class="headerlink" title="메이븐 (Maven)을 사용하는 이유"></a>메이븐 (Maven)을 사용하는 이유</h2><p>기존의 사용하던 Ant는 빌드의 기능만 가지고 있음<br>자동으로 라이브러리를 관리해주는 기능이 추가된 Maven을 사용<br>다운받아 사용하던 라이브러리에 변동 사항이 있으면 자동으로 업데이트 하여 적용됨</p>
-<h2 id="Ant"><a href="#Ant" class="headerlink" title="Ant"></a>Ant</h2><ul>
-<li>XML 기반의 빌드 스크립트</li>
-<li>자유로운 빌드 단위 지정</li>
-<li>간단하고 사용하기 쉬움</li>
-<li>대규모 프로젝트에서 복잡해지는 경향이 있음</li>
-<li>라이프 사이클이 없음</li>
-</ul>
-<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><ul>
-<li>XML 기반의 빌드 스크립트</li>
-<li>라이프 사이클 도입</li>
-<li>pom.xml로 편하게 Dependency 관리</li>
-</ul>
-<h2 id="메이븐-Maven-간단-사용법"><a href="#메이븐-Maven-간단-사용법" class="headerlink" title="메이븐(Maven) 간단 사용법"></a>메이븐(Maven) 간단 사용법</h2><p>pom.xml 파일을 활용하여 빌드 및 관리<br>pom.xml 의 역할<br>modelVersion, groupId, artificatId, version, name, description, properties, dependendies, build<br>groupId : 통상 개발 사이트 도메인<br>properties : 빈번하게 사용하는 중복 상수를 정의<br>dependendies: 가장 중요, 해당 프로젝트의 의존성, 즉 어떤 라이브러리가 필요 한지 리스팅</p>
-<h2 id="메이븐-Maven-실습-예제"><a href="#메이븐-Maven-실습-예제" class="headerlink" title="메이븐(Maven) 실습, 예제"></a>메이븐(Maven) 실습, 예제</h2><p>eclipse -&gt; Lombok<br><a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com/</a></p>
-<h2 id="그래들-Gradle-이란"><a href="#그래들-Gradle-이란" class="headerlink" title="그래들 (Gradle) 이란?"></a>그래들 (Gradle) 이란?</h2><p>Groovy 스크립트를 활용한 빌드 관리 도구<br>안드로이드 프로젝트의 표준 빌드 시스템으로 채택<br>멀티 프로젝트(Multi-Project)의 빌드에 최적화 하여 설계됨<br>Maven에 비해 더 빠른 처리 숙도<br>Maven에 비해 더 간결한 구성</p>
-<h2 id="그래들-Gradle-과-메이븐-Maven-비교"><a href="#그래들-Gradle-과-메이븐-Maven-비교" class="headerlink" title="그래들 (Gradle)과 메이븐(Maven) 비교"></a>그래들 (Gradle)과 메이븐(Maven) 비교</h2><p>Maven이 점유율이 더 높고 점차 Gradle이 올라가는 중<br>Gradle 성능이 더 좋고 특히 대규모 프로젝트<br>Maven: pom.xml  Gradle: build.gradle</p>
-<h2 id="그래들-대표-용어"><a href="#그래들-대표-용어" class="headerlink" title="그래들 대표 용어"></a>그래들 대표 용어</h2><p>repositories: 라이브러리가 저장된 위치등 설정<br>mavenCentral: 기본 Maven Repository<br>dependencies: 라이브러리 사용을 위한 의존성 설정</p>
-<h2 id="대표-Repository-Site"><a href="#대표-Repository-Site" class="headerlink" title="대표 Repository Site"></a>대표 Repository Site</h2><p>Maven Repository: <a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com</a></p>
-<hr/>
-출처1: <https://www.youtube.com/watch?v=3Jp9kGDb01g>
-출처2: <https://www.youtube.com/channel/UCLxPNvxa9D-3UIdocAJUxfQ>
-레퍼런스: <https://kwonnam.pe.kr/wiki/gradle>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/02/java/2022-4-2-java-build-tool/" data-id="cl1xhe5gj000sn038hsavbfmy" data-title="빌드 툴, 메이븐(Maven)와 그레이들(Gradle)" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-java/2022-4-1-gradle-run-longway" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/01/java/2022-4-1-gradle-run-longway/" class="article-date">
-  <time class="dt-published" datetime="2022-04-01T04:21:04.000Z" itemprop="datePublished">2022-04-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/01/java/2022-4-1-gradle-run-longway/">gradle run 위한 고난의 길</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Youtube 검색 등 찾았을때 linux나 Mac 에서의 gradle 설치 예제 들이 주로 나왔다.</p>
-<p>현재 Windows를 쓰고 있어 고민 끝에 가상 PC 프로그램&#x2F;VM을 설치 하고 그위에 linux을 깔아보기로 한다.</p>
-<p>아래 유튜브를 보고 설치 했다.<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PqgWp7rbqws">https://www.youtube.com/watch?v=PqgWp7rbqws</a></p>
-<p>가상 PC프로그램&#x2F;VM은 Virtual box 를 찾아 다운로드 받았고<br>linux은 ubuntu 사이트에 들어가 다운로드 받았다.</p>
-<p>여기가 실습 해 볼수 있는 가이드 내용이다.<br><a target="_blank" rel="noopener" href="https://docs.gradle.org/current/samples/sample_building_java_applications.html">https://docs.gradle.org/current/samples/sample_building_java_applications.html</a></p>
-<p>윈도우 설치 법이 있는 것을 나중에 찾았다.<br><a target="_blank" rel="noopener" href="https://gradle.org/install/">https://gradle.org/install/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/01/java/2022-4-1-gradle-run-longway/" data-id="cl1xhe5gh000on038cnga25hc" data-title="gradle run 위한 고난의 길" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -680,6 +659,14 @@
       <ul>
         
           <li>
+            <a href="/2022/04/26/portofolio/2022-4-26-portofolio/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/21/java/2022-4-21-NaverOpenAPI/">Naver Open API 검색 활용, 맛집 서비스</a>
+          </li>
+        
+          <li>
             <a href="/2022/04/16/IDE/2022-4-16-Intellj/">인텔리제이 자주 쓰는 쇼트컷 - 자바</a>
           </li>
         
@@ -689,14 +676,6 @@
         
           <li>
             <a href="/2022/04/14/java/2022-4-14-Jarfile-make%202/">main 함수 있을때 Jar 파일 (console에서)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/14/java/2022-4-14-package-main/">package 키워드 넣어 실행하기 (console에서)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/13/hello-world/">Hexo 자주 쓰는 명령어 노트</a>
           </li>
         
       </ul>
