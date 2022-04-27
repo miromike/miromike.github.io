@@ -139,9 +139,25 @@
 </code></pre>
 <p>}</p>
 <p>예제는 잘 되는데 내가 생성한 프로젝트에서는 응답은 오는데 맛집 정보는<br>item &#x3D; 0 으로 온다. 검색어를 영어로 하니 정보가 담아 져서 옴.</p>
-<p>또 문제가 json 에서 object 로 변환을 하는 Paramized에<br>Object 일부만 되었다. 정확히는 앞에 멤버는 채워지는데<br>뒤에 list, items 부분은 null </p>
-<p>Gson으로 변경 하니 되었다.<br><a target="_blank" rel="noopener" href="https://howtodoinjava.com/gson/gson-parse-json-array/">https://howtodoinjava.com/gson/gson-parse-json-array/</a></p>
-<p>해당 부분을 디버깅 중이다.</p>
+<p>아래는 강사님 예제 코드 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">        var uri = UriComponentsBuilder.fromUriString(naverLocalSearchUrl)</span><br><span class="line">                .queryParams(searchLocalReq.toMultiValueMap())</span><br><span class="line">                .build()</span><br><span class="line">                .encode()</span><br><span class="line">                .toUri();</span><br><span class="line"></span><br><span class="line">        System.out.println(uri);</span><br><span class="line">//https://openapi.naver.com/v1/search/local.json?</span><br><span class="line">// query=%EA%B0%88%EB%B9%84&amp;display=1&amp;start=1&amp;sort=random</span><br><span class="line"></span><br><span class="line">        var headers = new HttpHeaders();</span><br><span class="line">        headers.set(&quot;X-Naver-Client-Id&quot;, naverClientId);</span><br><span class="line">        headers.set(&quot;X-Naver-Client-Secret&quot;, naverClientSecret);</span><br><span class="line">        headers.setContentType(MediaType.APPLICATION_JSON);</span><br><span class="line"></span><br><span class="line">        var httpEntity = new HttpEntity&lt;&gt;(headers);</span><br><span class="line">        var responseType = new ParameterizedTypeReference&lt;SearchLocalRes&gt;()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">        var responseEntity = new RestTemplate().exchange(</span><br><span class="line">                uri,</span><br><span class="line">                HttpMethod.GET,</span><br><span class="line">                httpEntity,</span><br><span class="line">                responseType</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+<p>아래는 나의 예제 코드</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String uri = local + &quot;?query=food&amp;display=1&amp;start=1&amp;sort=random&quot;;</span><br><span class="line"></span><br><span class="line">var headers = new HttpHeaders();</span><br><span class="line"></span><br><span class="line">headers.set(&quot;X-Naver-Client-Id&quot;, id);</span><br><span class="line">headers.set(&quot;X-Naver-Client-Secret&quot;, secret);</span><br><span class="line">headers.setContentType(MediaType.APPLICATION_JSON);</span><br><span class="line"></span><br><span class="line">var request = new HttpEntity&lt;&gt;(headers);</span><br><span class="line"></span><br><span class="line">var responseEntity = restTemplate.exchange(</span><br><span class="line">        uri,</span><br><span class="line">        HttpMethod.GET,</span><br><span class="line">        request,</span><br><span class="line">        String.class</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">Local local = convertData(responseEntity.getBody());</span><br><span class="line">System.out.println(local);</span><br></pre></td></tr></table></figure>
+
+<h3 id="또-다른-문제"><a href="#또-다른-문제" class="headerlink" title="또 다른 문제"></a>또 다른 문제</h3><p>json 에서 object 로 변환을 하는 Paramized에<br>Object 일부만 된다. 정확히는 앞에 멤버는 채워지는데<br>뒤에 list, items 부분은 null 이 들어 온다.</p>
+<p>이것 저것 찾아보다 (Gson)[<a target="_blank" rel="noopener" href="https://howtodoinjava.com/gson/gson-parse-json-array/]%EC%9D%B4%EB%9D%BC%EB%8A%94">https://howtodoinjava.com/gson/gson-parse-json-array/]이라는</a><br>라이브러리가 있어 적용 해 보았고 일단 변환되어 잘 들어 온다.</p>
+<pre><code>private static Gson gson;
+
+static Local convertData(String json) &#123;
+    if (gson == null)
+        gson = new Gson();
+
+    Local local = gson.fromJson(json, Local.class);
+
+    return local;
+&#125;
+</code></pre>
 
       
     </div>
