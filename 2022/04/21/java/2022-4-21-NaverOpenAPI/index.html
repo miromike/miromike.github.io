@@ -14,7 +14,7 @@
 <meta property="og:description" content="네이버 Open API 를 활용해서 맛집 검색을 해 보는 예제 사용할 API[네이버 오픈 API 목록](https:&#x2F;&#x2F;developers.naver.com&#x2F;products&#x2F;intro&#x2F;plan&#x2F;plan.md) 이중에 검색 API 을 사용 하면 네이버 블로그, 이미지, 웹, 뉴스, 백과사전, 책, 카페, 지식iN 등 검색 할수 있음 [비로그인 방식 API 이고">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-20T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-27T02:29:52.277Z">
+<meta property="article:modified_time" content="2022-04-27T03:59:55.926Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -101,11 +101,10 @@
 <p>이중에 검색 API 을 사용 하면 네이버 블로그, 이미지, 웹, 뉴스, 백과사전, 책, 카페, 지식iN 등 검색 할수 있음</p>
 <p>[비로그인 방식 API 이고 호출 예제]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/docs/common/openapiguide/apicall.md#%EB%B9%84%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api-%ED%98%B8%EC%B6%9C-%EC%98%88">https://developers.naver.com/docs/common/openapiguide/apicall.md#%EB%B9%84%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api-%ED%98%B8%EC%B6%9C-%EC%98%88</a>)</p>
 <p>[검색 &gt; 지역]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD">https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD</a>)</p>
-<h3 id="1-Talend-API-사용-해서-API-호출-해보기"><a href="#1-Talend-API-사용-해서-API-호출-해보기" class="headerlink" title="1. Talend API 사용 해서 API 호출 해보기"></a>1. Talend API 사용 해서 API 호출 해보기</h3><p>검색 값을 UTF8 해야 한다. [변환 해주는 사이트] (<a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/dencoder/">https://meyerweb.com/eric/tools/dencoder/</a>)</p>
-<p>해보니 잘된다.</p>
+<h3 id="Talend-사용-해서-API-호출-해보기"><a href="#Talend-사용-해서-API-호출-해보기" class="headerlink" title="Talend 사용 해서 API 호출 해보기"></a>Talend 사용 해서 API 호출 해보기</h3><p>검색 값을 UTF8 해야 한다. [변환 해주는 사이트] (<a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/dencoder/">https://meyerweb.com/eric/tools/dencoder/</a>)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;rss version=&quot;2.0&quot;&gt;</span><br><span class="line">    &lt;channel&gt;</span><br><span class="line">        &lt;title&gt;Naver Open API - local ::&#x27;갈비집&#x27;&lt;/title&gt;</span><br><span class="line">        &lt;link&gt;http://search.naver.com&lt;/link&gt;</span><br><span class="line">        &lt;description&gt;Naver Search Result&lt;/description&gt;</span><br><span class="line">        &lt;lastBuildDate&gt;Tue, 04 Oct 2016 13:10:58 +0900&lt;/lastBuildDate&gt;</span><br><span class="line">        &lt;total&gt;407&lt;/total&gt;</span><br><span class="line">        &lt;start&gt;1&lt;/start&gt;</span><br><span class="line">        &lt;display&gt;10&lt;/display&gt;</span><br><span class="line">        &lt;item&gt;</span><br><span class="line">            &lt;title&gt;조선옥&lt;/title&gt;</span><br><span class="line">            &lt;link /&gt;</span><br><span class="line">            &lt;category&gt;한식&amp;gt;육류,고기요리&lt;/category&gt;</span><br><span class="line">            &lt;description&gt;연탄불 한우갈비 전문점.&lt;/description&gt;</span><br><span class="line">            &lt;telephone&gt;&lt;/telephone&gt;</span><br><span class="line">            &lt;address&gt;서울특별시 중구 을지로3가 229-1 &lt;/address&gt;</span><br><span class="line">            &lt;roadAddress&gt;서울특별시 중구 을지로15길 6-5 &lt;/roadAddress&gt;</span><br><span class="line">            &lt;mapx&gt;311277&lt;/mapx&gt;</span><br><span class="line">            &lt;mapy&gt;552097&lt;/mapy&gt;</span><br><span class="line">        &lt;/item&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/channel&gt;</span><br><span class="line">&lt;/rss&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-Java-에서-해보기"><a href="#2-Java-에서-해보기" class="headerlink" title="2. Java 에서 해보기"></a>2. Java 에서 해보기</h3><p>스프링 framework 활용 해서 자바에서 해보기<br>[예제] (<a target="_blank" rel="noopener" href="https://spring.io/guides/gs/consuming-rest/">https://spring.io/guides/gs/consuming-rest/</a>)</p>
+<h3 id="Java-에서-해보기"><a href="#Java-에서-해보기" class="headerlink" title="Java 에서 해보기"></a>Java 에서 해보기</h3><p>스프링 framework 활용 해서 자바에서 해보기<br>[예제] (<a target="_blank" rel="noopener" href="https://spring.io/guides/gs/consuming-rest/">https://spring.io/guides/gs/consuming-rest/</a>)</p>
 <p>package com.example.consumingrest;</p>
 <p>import org.springframework.boot.SpringApplication;<br>import org.springframework.boot.autoconfigure.SpringBootApplication;</p>
 <p>@SpringBootApplication<br>public class ConsumingRestApplication {</p>
@@ -114,11 +113,10 @@
 &#125;
 </code></pre>
 <p>}</p>
-<p>예제는 잘 되는데 내가 생성한 프로젝트에서는<br>item &#x3D; 0 으로 응답이 왔다.</p>
-<p>검색어를 영어로 하니 답이 와서 일단 진행.</p>
+<p>예제는 잘 되는데 내가 생성한 프로젝트에서는 응답은 오는데 맛집 정보는<br>item &#x3D; 0 으로 온다. 검색어를 영어로 하니 정보가 담아 져서 옴.</p>
 <p>또 문제가 json 에서 object 로 변환을 하는 Paramized에<br>Object 일부만 되었다. 정확히는 앞에 멤버는 채워지는데<br>뒤에 list, items 부분은 null </p>
 <p>Gson으로 변경 하니 되었다.<br><a target="_blank" rel="noopener" href="https://howtodoinjava.com/gson/gson-parse-json-array/">https://howtodoinjava.com/gson/gson-parse-json-array/</a></p>
-<p>오늘은 여기까지..</p>
+<p>해당 부분을 디버깅 중이다.</p>
 
       
     </div>
