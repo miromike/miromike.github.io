@@ -239,6 +239,12 @@
 <p>각 변수 종류별 생성 시기가 틀리다. (클래스 메모리 로딩 시점, 인스턴스 생성시, 변수 선언문 수행시)</p>
 <h3 id="12-클래스-변수와-인스턴스-변수"><a href="#12-클래스-변수와-인스턴스-변수" class="headerlink" title="12 클래스 변수와 인스턴스 변수"></a>12 클래스 변수와 인스턴스 변수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Card &#123;</span><br><span class="line">    String kind; // iv</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    static int width = 300; // cv</span><br><span class="line">    static int height = 250; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Card.width;</span><br><span class="line">Card.height;</span><br><span class="line"></span><br><span class="line">Card c = new Card();</span><br><span class="line">c.kind;</span><br><span class="line">c.number;</span><br></pre></td></tr></table></figure>
 
+<h3 id="14-메서드-란"><a href="#14-메서드-란" class="headerlink" title="14 메서드 란?"></a>14 메서드 란?</h3><p>문장들 (statements)을 묶어 놓은것<br>한개의 메서드에 한개의 작업을 하도록..</p>
+<h3 id="15-호출-스택-call-stack"><a href="#15-호출-스택-call-stack" class="headerlink" title="15 호출 스택 (call stack)"></a>15 호출 스택 (call stack)</h3><p>메서드 수행에 필요한 메모리가 제공 되는 공간<br>메서드가 호출 되면 호출스택에 메모리 할당, 종료 되면 해제</p>
+<p>예:<br>main(){<br>    print()<br>}</p>
+<p>x -&gt; main -&gt; main,print -&gt; main -&gt; x</p>
+<h3 id="23-기본형-매개변수"><a href="#23-기본형-매개변수" class="headerlink" title="23 기본형 매개변수"></a>23 기본형 매개변수</h3><p>기본형 매개변수 (primitive), 8개<br>참조형 매개변수 </p>
+<p>함수로 passing 시키면 기본형은 read only<br>참조형은 read &amp; write 된다.</p>
 
       
     </div>
