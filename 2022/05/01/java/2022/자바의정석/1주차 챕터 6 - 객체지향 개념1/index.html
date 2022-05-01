@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>1주차 챕터 6 - 객체지향 개념1 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 개념프로그램밍 언어 패러다임으로 절차형, 선언형이 있었고자바가 나올 때 객체지향 이 트렌드로 나오면서  자바가 객체지향을 기본으로 해서 만들어진 언어이다. 최근에는 함수형 프로그래밍 언어가 많이 쓰이기도 한단다. (스칼라 등) 중요 객체지향 개념  다형성 추상화 인터페이스  객체지향 언어 &#x3D; 프로그래밍 언어 + 객체지향 개념 (규칙) 2. 클">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1주차 챕터 6 - 객체지향 개념1">
+<meta property="og:url" content="https://miromike.github.io/2022/05/01/java/2022/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%206%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%901/index.html">
+<meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
+<meta property="og:description" content="1. 개념프로그램밍 언어 패러다임으로 절차형, 선언형이 있었고자바가 나올 때 객체지향 이 트렌드로 나오면서  자바가 객체지향을 기본으로 해서 만들어진 언어이다. 최근에는 함수형 프로그래밍 언어가 많이 쓰이기도 한단다. (스칼라 등) 중요 객체지향 개념  다형성 추상화 인터페이스  객체지향 언어 &#x3D; 프로그래밍 언어 + 객체지향 개념 (규칙) 2. 클">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-01T13:11:29.000Z">
+<meta property="article:modified_time" content="2022-05-01T13:56:44.936Z">
+<meta property="article:author" content="Miro Mike">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">하소연 개발 노트 (Miro&#39;s IT Blog)</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://miromike.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-java/2022/자바의정석/1주차 챕터 6 - 객체지향 개념1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/01/java/2022/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%206%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%901/" class="article-date">
+  <time class="dt-published" datetime="2022-05-01T13:11:29.000Z" itemprop="datePublished">2022-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      1주차 챕터 6 - 객체지향 개념1
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="1-개념"><a href="#1-개념" class="headerlink" title="1. 개념"></a>1. 개념</h3><p>프로그램밍 언어 패러다임으로 절차형, 선언형이 있었고<br>자바가 나올 때 객체지향 이 트렌드로 나오면서 </p>
+<p>자바가 객체지향을 기본으로 해서 만들어진 언어이다.</p>
+<p>최근에는 함수형 프로그래밍 언어가 많이 쓰이기도 한단다. (스칼라 등)</p>
+<p>중요 객체지향 개념</p>
+<ol>
+<li>다형성</li>
+<li>추상화</li>
+<li>인터페이스</li>
+</ol>
+<p>객체지향 언어 &#x3D; 프로그래밍 언어 + 객체지향 개념 (규칙)</p>
+<h3 id="2-클래스와-객체"><a href="#2-클래스와-객체" class="headerlink" title="2. 클래스와 객체"></a>2. 클래스와 객체</h3><p>클래스의 정의 : 객체를 정의함, 설계도<br>객체의 정의: 실제로 존재, 인스턴스 화, aka 오브젝트</p>
+<p>클래스의 구성</p>
+<ol>
+<li>속성 &gt; 변수</li>
+<li>기능 &gt; 메서스</li>
+</ol>
+<p>객체: 모든 인스턴스를 대표 하는 일반 용어<br>인스턴스: 특정 크래스로부터 생성된 객체</p>
+<h3 id="5-하나의-소스파일에-여러-클래스-작성"><a href="#5-하나의-소스파일에-여러-클래스-작성" class="headerlink" title="5. 하나의 소스파일에 여러 클래스 작성"></a>5. 하나의 소스파일에 여러 클래스 작성</h3><p>파일안에 여러 클래스 선언 가능 하지만 public class 는 단 하나만 가능하고 파일이름과 public class 명은 반드시 일치 해야 한다. 대소문자 또한 맞추어야 한다</p>
+<h3 id="6-객체의-생성-및-사용"><a href="#6-객체의-생성-및-사용" class="headerlink" title="6. 객체의 생성 및 사용"></a>6. 객체의 생성 및 사용</h3><p>클래스명 변수명 &#x3D; new 클래스명();<br>new 를 사용해서 인스턴스화 (객체 생성)한다.</p>
+<p>변수명.멤버변수 &#x3D; XXX;<br>. 를 사용해서 멤버 변수에 접근한다.</p>
+<p>인스턴스시 객체 주소가 잡히고 거기에 멤버 변수와 메서드가 잡힌다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Class TV &#123;</span><br><span class="line">    String color;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line"></span><br><span class="line">    void power() &#123; power = !power; &#125;</span><br><span class="line">    void channelUp() &#123; channel++; &#125;</span><br><span class="line">    void channelDown() &#123; channel--; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>객체주소에 6개 멤버 (3개 변수, 3개 메서드)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class t1 = new TV();</span><br><span class="line">Class t2 = new TV();</span><br><span class="line"></span><br><span class="line">t1 = t2;</span><br></pre></td></tr></table></figure>
+
+<p>객체마다 메모리가 따로 잡히고 참조가 없어지면 GC가 메모리를 정리 한다.</p>
+<h3 id="8-객체-배열"><a href="#8-객체-배열" class="headerlink" title="8 객체 배열"></a>8 객체 배열</h3><p>TV tv1, tv2, tv3;<br>TV[] tvArr &#x3D; new TV[3];</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/01/java/2022/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%206%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%901/" data-id="cl2ncwnbt0001ak388klq4drz" data-title="1주차 챕터 6 - 객체지향 개념1" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/01/java/2022/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/%EC%8A%A4%ED%84%B0%EB%94%94%EC%8B%9C%EC%9E%91/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          My New Post
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/01/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/Spring%20boot%20basic/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Spring boot basic</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 16.67px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/01/java/2022/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/%EC%8A%A4%ED%84%B0%EB%94%94%EC%8B%9C%EC%9E%91/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/01/java/2022/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%206%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%901/">1주차 챕터 6 - 객체지향 개념1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/01/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/Spring%20boot%20basic/">Spring boot basic</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/01/projects/self/kimspringbasic/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/01/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/Java-Coding-Style-Google/">Java Coding Style - Google</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Miro Mike<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
