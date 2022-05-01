@@ -14,7 +14,7 @@
 <meta property="og:description" content="1. 개념프로그램밍 언어 패러다임으로 절차형, 선언형이 있었고자바가 나올 때 객체지향 이 트렌드로 나오면서  자바가 객체지향을 기본으로 해서 만들어진 언어이다. 최근에는 함수형 프로그래밍 언어가 많이 쓰이기도 한단다. (스칼라 등) 중요 객체지향 개념  다형성 추상화 인터페이스  객체지향 언어 &#x3D; 프로그래밍 언어 + 객체지향 개념 (규칙) 2. 클">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-01T13:11:29.000Z">
-<meta property="article:modified_time" content="2022-05-01T13:56:44.936Z">
+<meta property="article:modified_time" content="2022-05-01T14:10:31.896Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -124,6 +124,18 @@
 
 <p>객체마다 메모리가 따로 잡히고 참조가 없어지면 GC가 메모리를 정리 한다.</p>
 <h3 id="8-객체-배열"><a href="#8-객체-배열" class="headerlink" title="8 객체 배열"></a>8 객체 배열</h3><p>TV tv1, tv2, tv3;<br>TV[] tvArr &#x3D; new TV[3];</p>
+<h3 id="9-클래스의-정의"><a href="#9-클래스의-정의" class="headerlink" title="9 클래스의 정의"></a>9 클래스의 정의</h3><p>클래스 &#x3D; 데이터 + 함수<br>사용자 정의 가능 하다.</p>
+<p>변수의 진화체<br>변수 -&gt; 배열 -&gt; 구조체 -&gt; 클래스 </p>
+<h3 id="11-선언-위치에-따른-변수의-종류"><a href="#11-선언-위치에-따른-변수의-종류" class="headerlink" title="11 선언 위치에 따른 변수의 종류"></a>11 선언 위치에 따른 변수의 종류</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Variables</span><br><span class="line">&#123;</span><br><span class="line">    int iv;</span><br><span class="line">    static int cv;</span><br><span class="line"></span><br><span class="line">    void method()</span><br><span class="line">    &#123;</span><br><span class="line">        int lv = 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>인스턴스 변수</li>
+<li>클래스 변수 (static변수, 공유 변수)</li>
+<li>메서드 영역 (지역 변수)</li>
+</ol>
+<p>클래스 안을 클래스 영역과 메서스 영역으로 볼수 있고<br>클래스 영역에는 선언만 가능하다.</p>
+<p>각 변수 종류별 생성 시기가 틀리다. (클래스 메모리 로딩 시점, 인스턴스 생성시, 변수 선언문 수행시)</p>
+<h3 id="12-클래스-변수와-인스턴스-변수"><a href="#12-클래스-변수와-인스턴스-변수" class="headerlink" title="12 클래스 변수와 인스턴스 변수"></a>12 클래스 변수와 인스턴스 변수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Card &#123;</span><br><span class="line">    String kind; // iv</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    static int width = 300; // cv</span><br><span class="line">    static int height = 250; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Card.width;</span><br><span class="line">Card.height;</span><br><span class="line"></span><br><span class="line">Card c = new Card();</span><br><span class="line">c.kind;</span><br><span class="line">c.number;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
