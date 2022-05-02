@@ -14,7 +14,7 @@
 <meta property="og:description" content="1. 개념프로그램밍 언어 패러다임으로 절차형, 선언형이 있었고 자바가 나올 때 객체지향 이 트렌드로 나오면서 자바가 객체지향을 기본으로 해서 만들어진 언어이다. 최근에는 함수형 프로그래밍 언어가 많이 쓰이기도 한단다. (스칼라 등) https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;H6JxxWL6bJI&amp;t&#x3D;2s 중요 객체지향 개념  다형성 추">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-01T13:11:29.000Z">
-<meta property="article:modified_time" content="2022-05-02T12:14:41.686Z">
+<meta property="article:modified_time" content="2022-05-02T12:50:22.963Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -137,7 +137,6 @@
 <h3 id="14-메서드-란"><a href="#14-메서드-란" class="headerlink" title="14 메서드 란?"></a>14 메서드 란?</h3><p>문장들 (statements)을 묶어 놓은것<br>한개의 메서드에 한개의 작업을 하도록..</p>
 <h3 id="15-호출-스택-call-stack"><a href="#15-호출-스택-call-stack" class="headerlink" title="15 호출 스택 (call stack)"></a>15 호출 스택 (call stack)</h3><p>메서드 수행에 필요한 메모리가 제공 되는 공간<br>메서드가 호출 되면 호출스택에 메모리 할당, 종료 되면 해제</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    print()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>x -&gt; main -&gt; main,print -&gt; main -&gt; x</p>
 <h3 id="23-기본형-매개변수"><a href="#23-기본형-매개변수" class="headerlink" title="23 기본형 매개변수"></a>23 기본형 매개변수</h3><p>매개변수로 기본형과 참조형이 있다.</p>
 <ol>
@@ -178,14 +177,52 @@
 <h3 id="32-생성자-constructor"><a href="#32-생성자-constructor" class="headerlink" title="32 생성자 constructor"></a>32 생성자 constructor</h3><ul>
 <li>인스턴스 생성 될때 호출 되는 인스턴스 초기화 메서드</li>
 <li>iv 초기화 등에 사용 됨</li>
-<li>규칙 이름이 같아야 한다.</li>
-<li>매개 변수 없는 생성자, default constructor, 생성자가 하나도 없을때에만 컴파일러가 자동 추가</li>
-<li>매개 변수 있는 생성자 (오버로딩 사용됨) 있다.</li>
+<li>규칙:</li>
 </ul>
+<ol>
+<li>클래스이름과 이름이 같아야 한다.</li>
+<li>매개 변수 없는 생성자를 default constructor라고 한다.</li>
+<li>생성자가 하나도 없을때에만 컴파일러가 default을 자동 추가 해준다.</li>
+<li>매개 변수 있는 생성자 (오버로딩 사용됨)를 추가 할수 있다.</li>
+</ol>
 <h3 id="36-생성자-this"><a href="#36-생성자-this" class="headerlink" title="36 생성자 this()"></a>36 생성자 this()</h3><ul>
 <li>생성자에서 다른 생성자 호출 할때 사용</li>
-<li>다른 생성자 호출 시 첫줄에서만 사용 가능</li>
+<li>다른 생성자 호출 시 첫줄에서만 사용 가능<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line"></span><br><span class="line">    Car() &#123;</span><br><span class="line">        color = &quot;red&quot;;</span><br><span class="line">        gear Type = &quot;auto&quot;;</span><br><span class="line">        door = 4;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Car(String color, String gearType, int door) &#123;</span><br><span class="line">        this.color = color;</span><br><span class="line">        this.gearType = gearType;</span><br><span class="line">        this.door = door;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+this()의 좋은 사용처 예시<br>중복된 코드 삭제 가능 하다.</li>
 </ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Car() &#123;</span><br><span class="line">    this(&quot;red&quot;, &quot;auto&quot;, 4); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="37-this-참조-변수"><a href="#37-this-참조-변수" class="headerlink" title="37 this 참조 변수"></a>37 this 참조 변수</h3><ul>
+<li>인스턴스 자신을 가리키는 참조 변수, 인스턴스의 주소가 저장</li>
+<li>인스턴스 메서드 (생성자 포함)에서 사용 가능</li>
+<li>지역 변수와 인스턴스 변수를 구별 할때 사용</li>
+</ul>
+<p>this는 자기 자신 참조 변수, this()는 생성자</p>
+<h3 id="38-변수의-초기화"><a href="#38-변수의-초기화" class="headerlink" title="38 변수의 초기화"></a>38 변수의 초기화</h3><ul>
+<li>지역변수(lv)는 수동 초기화 해야 함 (사용전에 꼭)</li>
+<li>멤버변수(iv,cv)는 자동 초기화 된다. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class InitTest &#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y = x;</span><br><span class="line"></span><br><span class="line">    void method1() &#123;</span><br><span class="line">        int i;</span><br><span class="line">        int j = i; // 에러 </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>초기화 순서 방식</p>
+<ol>
+<li>기본 초기화 (0으로)</li>
+<li>명시적 간단 초기화 </li>
+<li>복잡 초기화</li>
+</ol>
+<p>명시적으로 초기화 하는 습관 중요, 특히 참조형 변수의 경우 null 초기화 하는건 NPE 발생 위험으로 나쁜 방식이라 할수 있다. 아래 처럼 항시 명시적 초기화 하자</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">    int door = 4;            // 기본형 변수의 초기화</span><br><span class="line">    Engine e = new Engine(); // 참조형 변수의 초기화</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>cv 복잡 초기화인 static {} 구문 사용 예제</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class StaticBlockTest &#123;</span><br><span class="line">    static int[] arr = new int[10]; // 명시적 초기화</span><br><span class="line"></span><br><span class="line">    static &#123; // 클래스 초기화 블럭 </span><br><span class="line">        for (int i = 0 ; i &lt; 10; i ++)&#123;</span><br><span class="line">            arr[i] = (int) (Math.random()*10)+1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">iv는 항시 생성자로 복잡 초기화 해주는 것이 좋다 </span><br></pre></td></tr></table></figure>
+<p>class InitTest {<br>    static int cv &#x3D; 1; &#x2F;&#x2F; 명시적 초기화 (간단)<br>    int iv &#x3D; 1; </p>
+<pre><code>static &#123;
+    cv = 2;  // 클래스 초기화 블럭 (복잡)
+&#125;
+&#123; iv = 2; &#125; // 인스턴스의 초기화 블럭 (복잡)
+
+InitTest() &#123;
+    iv = 3;
+&#125;
+</code></pre>
+<p>}</p>
 
       
     </div>
