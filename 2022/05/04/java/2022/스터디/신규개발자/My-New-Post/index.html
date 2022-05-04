@@ -4,18 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>스터디.. | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>자바 복습 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="ch2-11 기본형과 범위논리형 boolean 1 byte문자형 char 2 bytes정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes실수형 float 4 bytes, double 8 bytes 범위1 byte &#x3D; 8 bit  2^8-11 sign bit + 7 bit  + and - of 2^7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스터디..">
+<meta property="og:title" content="자바 복습">
 <meta property="og:url" content="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
 <meta property="og:description" content="ch2-11 기본형과 범위논리형 boolean 1 byte문자형 char 2 bytes정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes실수형 float 4 bytes, double 8 bytes 범위1 byte &#x3D; 8 bit  2^8-11 sign bit + 7 bit  + and - of 2^7">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-04T05:56:16.000Z">
-<meta property="article:modified_time" content="2022-05-04T12:46:08.195Z">
+<meta property="article:modified_time" content="2022-05-04T12:53:06.479Z">
 <meta property="article:author" content="Miro Mike">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
@@ -87,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      스터디..
+      자바 복습
     </h1>
   
 
@@ -115,15 +116,20 @@
 <li>단항 &gt; 이항 &gt; 삼항</li>
 <li>방향 왼쪽 -&gt; 오른쪽, 단항하고 대입만 오른쪽 -&gt; 왼쪽</li>
 </ol>
-<h3 id="ch3-5-6-증감-연산자"><a href="#ch3-5-6-증감-연산자" class="headerlink" title="ch3-5,6 증감 연산자"></a>ch3-5,6 증감 연산자</h3><p>증가 연산자 ++<br>감소 연산자 –<br>전위형: 값이 참조 되기 전에 증가 j&#x3D;++i;  &gt;&gt; ++i; j&#x3D;i;<br>후위형: 값 참조 후에 증가 j &#x3D; i++; &gt;&gt; j&#x3D;i; i++;</p>
+<h3 id="ch3-5-6-증감-연산자"><a href="#ch3-5-6-증감-연산자" class="headerlink" title="ch3-5,6 증감 연산자"></a>ch3-5,6 증감 연산자</h3><p>증가 연산자 ++<br>감소 연산자 –<br>전위형: 값 참조 전에 증가 j &#x3D; ++i;  &gt;&gt; ++i; j&#x3D;i;<br>후위형: 값 참조 후에 증가 j &#x3D; i++;  &gt;&gt; j&#x3D;i; i++;</p>
+<h3 id="ch3-7-형변환-연산자"><a href="#ch3-7-형변환-연산자" class="headerlink" title="ch3-7 형변환 연산자"></a>ch3-7 형변환 연산자</h3><p>(타입) 피연산자</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double d = 85.4;</span><br><span class="line">int i = (int) d;</span><br><span class="line">i 는 85가 됨</span><br></pre></td></tr></table></figure>
+<p>작은 범위 타입에서 큰 범위 타입은 자동 변환이 안되어 명시적으로 해주지 않으면 컴파일 에러 난다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/" data-id="cl2rkw8hs0000gc38h6pbcsz8" data-title="스터디.." class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/" data-id="cl2rkw8hs0000gc38h6pbcsz8" data-title="자바 복습" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
     </footer>
   </div>
   
@@ -185,7 +191,7 @@
       <ul>
         
           <li>
-            <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/">스터디..</a>
+            <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/">자바 복습</a>
           </li>
         
           <li>
