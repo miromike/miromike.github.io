@@ -405,8 +405,16 @@ InitTest() &#123;
         <p>컨트롤러에서 리턴 값으로 문자를 반환 하면<br>뷰 리졸버가 해당 화면을 찾아 처리 한다.</p>
 <p>맵핑 되는 화면의 폴더 위치: resources&#x2F;templates </p>
 <p>예로 리턴 값이 “hello” 이라면<br>resources&#x2F;templates&#x2F;hello.html </p>
-<p>여기까지가 정적인 파일<br>동적인 파일 경우<br>컨트롤러가 Model model 를 인자로 받아오고<br>model 을 셋팅<br>View에서 model 값을 치환해서 완성 한다.</p>
-<p><a target="_blank" rel="noopener" href="https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html">https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html</a></p>
+<p>Model이라는 Spring UI 객체를 사용 해서<br>template engine 에 data을 넘겨 줄수 있고 관련 문서는 여기<br><a target="_blank" rel="noopener" href="https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html">https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html</a></p>
+<ol>
+<li>Model 활용 해서 View Engine (Tymeleaf)</li>
+<li>with Request Param (?name&#x3D;lee)</li>
+<li>View Engine 사용 X 하고 싶을때 @RequestBody</li>
+</ol>
+<p>1, 2번은 HTML로 만들어 보낸다. 즉 받는 쪽은 웹브라우져 등이다.</p>
+<p>3번은 원하는 데이타 포멧을 보낼수 있다.</p>
+<p>서버간 서버 혹은 모바일 앱에서 활용 되는 것을 생각 해 보면<br>HTML로 주고 받을 필요가 없다. </p>
+<p>요즘은 JSON 이 대세이다. 이것을 API 방식이라고도 부른다.</p>
 
       
     </div>
@@ -480,7 +488,7 @@ InitTest() &#123;
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/29/portofolio/2022-4-29-simple_projects_for_portofolio_start/">포토폴리오는 위해서 프로젝트 해보자</a>
+      <a class="p-name article-title" href="/2022/04/29/portofolio/2022-4-29-simple_projects_for_portofolio_start/">포토폴리오 Idea</a>
     </h1>
   
 
@@ -489,80 +497,24 @@ InitTest() &#123;
     <div class="e-content article-entry" itemprop="articleBody">
       
         <ol>
-<li><p>이번주 까지 게시판 CRUD 해보자~~!!</p>
-</li>
-<li><p>오키에 팀원 모아서 해보자~</p>
-</li>
-<li><p>네이버 Open API<br> 외부 API 를 활용한 </p>
-</li>
-<li><p>커피 주문.. DI 활용</p>
-</li>
-<li><p>게시판 CRUD</p>
-</li>
+<li>게시판 CRUD, 커피 주문?</li>
 </ol>
+<ul>
+<li>인프런&#x2F;김영한, IT늦공</li>
+</ul>
+<ol start="2">
+<li>네이버 Open API 를 활용한 ? 책, 맛집 ?</li>
+<li>나무소리, travel 클럽?</li>
+<li>스프링의 정석?</li>
+<li>amigoscode 예제, discord &gt; 올라오는 프로젝트</li>
+</ol>
+<p>포토폴리오 가이드 및 팁 (코딩몬스터)<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PJGsPohDuoA">https://www.youtube.com/watch?v=PJGsPohDuoA</a></p>
+<p>netty 등 webflux ? 등</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/29/portofolio/2022-4-29-simple_projects_for_portofolio_start/" data-id="cl2r9j8hi0001i038fjyd4p7q" data-title="포토폴리오는 위해서 프로젝트 해보자" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-portofolio/2022-4-26-portofolio" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/26/portofolio/2022-4-26-portofolio/" class="article-date">
-  <time class="dt-published" datetime="2022-04-25T15:00:00.000Z" itemprop="datePublished">2022-04-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/26/portofolio/2022-4-26-portofolio/">포토폴리오 투트랙으로</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>무엇을 배웠나와 함께…</p>
-<p>트랙1. 간단 예제들 올리기</p>
-<ol>
-<li>국비 들으면서 했던 예제들  </li>
-<li>인터넷 강좌 들의 예제들</li>
-</ol>
-<ul>
-<li>김영한강사님 스프링</li>
-<li>나무소리 예제, Travel Club</li>
-<li>늦공</li>
-</ul>
-<p>트랙2.<br>포토폴리오 가이드 및 팁 (코딩몬스터)<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PJGsPohDuoA">https://www.youtube.com/watch?v=PJGsPohDuoA</a></p>
-<p>트랙3.</p>
-<ul>
-<li>amigoscode 예제</li>
-<li>amigoscode &gt; discord &gt; 올라오는 프로젝트</li>
-</ul>
-<p>트랙4.<br>netty 등 webflux ? 등</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/26/portofolio/2022-4-26-portofolio/" data-id="cl2h1h76q0002gg3888hbdgha" data-title="포토폴리오 투트랙으로" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/04/29/portofolio/2022-4-29-simple_projects_for_portofolio_start/" data-id="cl2r9j8hi0001i038fjyd4p7q" data-title="포토폴리오 Idea" class="article-share-link">Share</a>
       
       
       
@@ -736,6 +688,59 @@ static Local convertData(String json) &#123;
     </div>
     <footer class="article-footer">
       <a data-url="https://miromike.github.io/2022/04/16/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-16-Enum/" data-id="cl2n3cy94000j4o3827gmhdt2" data-title="Enum type 에 대해서" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="single-java/2022/상반기/2022-4-14-package-main" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/14/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-14-package-main/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T15:00:00.000Z" itemprop="datePublished">2022-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/14/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-14-package-main/">package 키워드 넣어 실행하기 (console에서)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="package-키워드"><a href="#package-키워드" class="headerlink" title="package 키워드"></a>package 키워드</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package 패키지명;</span><br></pre></td></tr></table></figure>
+
+<p>아래 예제를 보면<br>com.company.console 이 패키지 명이고 folder path 가 된다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.company.console;</span><br><span class="line"></span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static class main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;Hello World&quot;);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="어떤-일을-하는가"><a href="#어떤-일을-하는가" class="headerlink" title="어떤 일을 하는가?"></a>어떤 일을 하는가?</h2><p>클래스 이름을 full name으로 변환 해 준다.<br>Main class 을 com.company.console.Main 로 변환 한다.<br>(javap 역 어셈블러 하면 변환 직접 확인 할수 있다.</p>
+<h1 id="package-선언-안하면"><a href="#package-선언-안하면" class="headerlink" title="package 선언 안하면"></a>package 선언 안하면</h1><p>자바에서 기본적으로 제공 하는 곳에 한다.<br>‘이름 없는 패키지’ (unnamed package)라고 부른다.</p>
+<h1 id="컴파일"><a href="#컴파일" class="headerlink" title="컴파일"></a>컴파일</h1><p>javac 파일 이름</p>
+<p>‘-d .’ path에 폴더들을 만든다.</p>
+<p>소스 파일 안에 import 있으면 경로 찾아 들어가 그 파일도 컴파일 하는 듯 하다.</p>
+<h1 id="콘솔에서-실행"><a href="#콘솔에서-실행" class="headerlink" title="콘솔에서 실행"></a>콘솔에서 실행</h1><p>이 부분에서 제일 헤맸는데..</p>
+<p>full name을 넣어줘야 하고 실행 위치도 중요 하다.</p>
+<p>파일 경로: c:\project\com\company\console\Main.java<br>컴파일을 &gt; c:\project&gt;java com.company.console.Main</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/14/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-14-package-main/" data-id="cl2n3cy92000f4o389pzddwy9" data-title="package 키워드 넣어 실행하기 (console에서)" class="article-share-link">Share</a>
       
       
       
