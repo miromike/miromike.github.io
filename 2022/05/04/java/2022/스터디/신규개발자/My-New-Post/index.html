@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>My New Post | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>스터디.. | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="https://miromike.github.io/2022/05/04/My-New-Post/index.html">
+  <meta name="description" content="ch2-11 기본형과 범위논리형 boolean 1 byte문자형 char 2 bytes정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes실수형 float 4 bytes, double 8 bytes 범위1 byte &#x3D; 8 bit  2^8-11 sign bit + 7 bit  + and - of 2^7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="스터디..">
+<meta property="og:url" content="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
+<meta property="og:description" content="ch2-11 기본형과 범위논리형 boolean 1 byte문자형 char 2 bytes정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes실수형 float 4 bytes, double 8 bytes 범위1 byte &#x3D; 8 bit  2^8-11 sign bit + 7 bit  + and - of 2^7">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-04T05:56:16.000Z">
-<meta property="article:modified_time" content="2022-05-04T05:56:16.932Z">
+<meta property="article:modified_time" content="2022-05-04T12:46:08.195Z">
 <meta property="article:author" content="Miro Mike">
 <meta name="twitter:card" content="summary">
   
@@ -71,9 +73,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-My-New-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-java/2022/스터디/신규개발자/My-New-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/04/My-New-Post/" class="article-date">
+    <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/" class="article-date">
   <time class="dt-published" datetime="2022-05-04T05:56:16.000Z" itemprop="datePublished">2022-05-04</time>
 </a>
     
@@ -85,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      My New Post
+      스터디..
     </h1>
   
 
@@ -93,11 +95,32 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h3 id="ch2-11-기본형과-범위"><a href="#ch2-11-기본형과-범위" class="headerlink" title="ch2-11 기본형과 범위"></a>ch2-11 기본형과 범위</h3><p>논리형 boolean 1 byte<br>문자형 char 2 bytes<br>정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes<br>실수형 float 4 bytes, double 8 bytes</p>
+<p>범위<br>1 byte &#x3D; 8 bit  2^8-1<br>1 sign bit + 7 bit  + and - of 2^7-1</p>
+<p>-1 붙는건 0 때문에<br>int 는 2^31 임으로 대략 20억임 즉 int는 -20억~20억</p>
+<p>실수형<br>float 4byte&#x2F;32bit : S 부호 + 지수 E(8) + 가수 M(23)  &#x3D; 32 bit ; 정밀도 7자리 ; 10^7 &lt; 2 ^24 &lt; 10^8 &gt; 그래서 정밀도 7자리<br>double 8byte&#x2F;64bit : S 부호 + 지수 E(11) + 가수 M(52) &#x3D; 64 bit ; 정밀도 15자리 </p>
+<h3 id="ch2-12-13-printf-이용한-출력"><a href="#ch2-12-13-printf-이용한-출력" class="headerlink" title="ch2-12,13 printf 이용한 출력"></a>ch2-12,13 printf 이용한 출력</h3><p>printf 지시자<br>%b boolean<br>%d 10진 정수<br>%o 8진 정수<br>%x 16진 정수</p>
+<p>%f 부동 소수점<br>%e 지수 (exponent) 표현식</p>
+<p>%c 문자<br>%s 문자열</p>
+<p>2진수 찍기: System.out.print(“%s”, Integer.toBinaryString(15); &#x2F;&#x2F; 1111 로 나옴<br>8진수와 16진수 앞에 접두사 붙이기 : …”%#x”, 15) &#x2F;&#x2F; 0xf 로 나옴</p>
+<h3 id="ch2-14-화면에서-입력-받기-Scanner"><a href="#ch2-14-화면에서-입력-받기-Scanner" class="headerlink" title="ch2-14 화면에서 입력 받기 Scanner"></a>ch2-14 화면에서 입력 받기 Scanner</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = new Scanner(System.in);</span><br><span class="line">int num = scanner.nextInt();</span><br><span class="line">String input = scanner.nextLine();</span><br><span class="line">int num = Integer.parseInt(input);</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch2-17-타입간의-변환방법"><a href="#ch2-17-타입간의-변환방법" class="headerlink" title="ch2-17 타입간의 변환방법"></a>ch2-17 타입간의 변환방법</h3><ol>
+<li>문자와 숫자간의 변환</li>
+<li>문자열로의 변환<br>“3” -&gt; ‘3’ : str.charAt(0); &#x2F;&#x2F; 인자는 str의 index<br>“3” -&gt; 3 : Integer.parseInt(“3”);<br>“3.4” -&gt; 3.4 : Double.parseDouble(“3.4”);</li>
+</ol>
+<h3 id="ch3-1-2-연산자와-피연산자"><a href="#ch3-1-2-연산자와-피연산자" class="headerlink" title="ch3-1,2 연산자와 피연산자"></a>ch3-1,2 연산자와 피연산자</h3><p>산술연산자 + - * &#x2F; % &lt;&lt; &gt;&gt;<br>비교연산자 &gt; &lt; &gt;&#x3D; &lt;&#x3D; &#x3D;&#x3D; !&#x3D;<br>논리연산자 &amp;&amp; || ! &amp; | ^ ~<br>대입연산자 &#x3D;<br>기타 (type) ?: instanceof</p>
+<h3 id="ch3-3-4-연산자의-우선순위와-결합규칙"><a href="#ch3-3-4-연산자의-우선순위와-결합규칙" class="headerlink" title="ch3-3,4 연산자의 우선순위와 결합규칙"></a>ch3-3,4 연산자의 우선순위와 결합규칙</h3><ol>
+<li>산술 &gt; 비교 &gt; 논리 &gt; 대입 순서</li>
+<li>단항 &gt; 이항 &gt; 삼항</li>
+<li>방향 왼쪽 -&gt; 오른쪽, 단항하고 대입만 오른쪽 -&gt; 왼쪽</li>
+</ol>
+<h3 id="ch3-5-6-증감-연산자"><a href="#ch3-5-6-증감-연산자" class="headerlink" title="ch3-5,6 증감 연산자"></a>ch3-5,6 증감 연산자</h3><p>증가 연산자 ++<br>감소 연산자 –<br>전위형: 값이 참조 되기 전에 증가 j&#x3D;++i;  &gt;&gt; ++i; j&#x3D;i;<br>후위형: 값 참조 후에 증가 j &#x3D; i++; &gt;&gt; j&#x3D;i; i++;</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/04/My-New-Post/" data-id="cl2r9j8he0000i038e6mla60r" data-title="My New Post" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/" data-id="cl2rkw8hs0000gc38h6pbcsz8" data-title="스터디.." class="article-share-link">Share</a>
       
       
       
@@ -162,7 +185,7 @@
       <ul>
         
           <li>
-            <a href="/2022/05/04/My-New-Post/">My New Post</a>
+            <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/My-New-Post/">스터디..</a>
           </li>
         
           <li>
