@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>토요일 자바 공부 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>스프링 기초 - 1 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="빵형 책을 ch5까지 보고 진도 나간것을 활용해서 “1~3까지의 랜덤 숫자를 여러번 돌려보고 분포 확인” 코드를 짜보았다. ‘’’    Scanner sc &#x3D; new Scanner(System.in);        System.out.println(“How many trial?”);        System.out.print(“&gt;”);">
+  <meta name="description" content="View 환경 설정스프링 부트가 제공 하는 Welcome Page정적 페이지 로 resources&#x2F;static&#x2F;index.html 스프링 웹 개발 기초 정적 컨텐츠 MVC와 Template 엔진 API  MVC와 Template 엔진기본 Flow : client가 Get 으로 URL 노드에 요청  @Controller 클래스 @GetMap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="토요일 자바 공부">
-<meta property="og:url" content="https://miromike.github.io/2022/03/19/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-3-19-java/index.html">
+<meta property="og:title" content="스프링 기초 - 1">
+<meta property="og:url" content="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81/My-New-Post/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="빵형 책을 ch5까지 보고 진도 나간것을 활용해서 “1~3까지의 랜덤 숫자를 여러번 돌려보고 분포 확인” 코드를 짜보았다. ‘’’    Scanner sc &#x3D; new Scanner(System.in);        System.out.println(“How many trial?”);        System.out.print(“&gt;”);">
+<meta property="og:description" content="View 환경 설정스프링 부트가 제공 하는 Welcome Page정적 페이지 로 resources&#x2F;static&#x2F;index.html 스프링 웹 개발 기초 정적 컨텐츠 MVC와 Template 엔진 API  MVC와 Template 엔진기본 Flow : client가 Get 으로 URL 노드에 요청  @Controller 클래스 @GetMap">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-19T04:21:04.000Z">
-<meta property="article:modified_time" content="2022-04-13T10:38:27.281Z">
+<meta property="article:published_time" content="2022-05-04T14:09:50.000Z">
+<meta property="article:modified_time" content="2022-05-04T14:25:11.168Z">
 <meta property="article:author" content="Miro Mike">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="single-java/2022/상반기/2022-3-19-java" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-java/2022/스프링/My-New-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/19/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-3-19-java/" class="article-date">
-  <time class="dt-published" datetime="2022-03-19T04:21:04.000Z" itemprop="datePublished">2022-03-19</time>
+    <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81/My-New-Post/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T14:09:50.000Z" itemprop="datePublished">2022-05-04</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      토요일 자바 공부
+      스프링 기초 - 1
     </h1>
   
 
@@ -96,45 +96,31 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>빵형 책을 ch5까지 보고 진도 나간것을 활용해서 “1~3까지의 랜덤 숫자를 여러번 돌려보고 분포 확인” 코드를 짜보았다.</p>
-<p>‘’’<br>    Scanner sc &#x3D; new Scanner(System.in);<br>        System.out.println(“How many trial?”);<br>        System.out.print(“&gt;”);<br>        int trial &#x3D; sc.nextInt();</p>
-<pre><code>    for(int z = 0 ; z &lt; 10; z++)
-    &#123;
-        int num = 0;
-        Random random = new Random();
-        int[] cnt = &#123; 0, 0, 0, 0 &#125;;
-        
-        for(int x = 0 ; x &lt; trial ; x++ )
-        &#123;
-            num = random.nextInt(3)+1;
-        //    System.out.printf(&quot;%dth 난수: %d\n&quot;, x+1, num);
-            cnt[num]++;
-        &#125;
-        
-        System.out.println(&quot;=======================================&quot;);        
-        System.out.println(trial + &quot; many trial &gt; randome gen&quot;);
-        System.out.println(&quot;=======================================&quot;);
-        for(int x = 1; x &lt; 4; x++)
-        &#123;
-            System.out.println(&quot;[&quot; + x +&quot;]&quot; + &quot; -&gt;&quot; + ((float)cnt[x]/trial) *100+&quot; % many&quot;);
-        &#125;
-    &#125;
-    System.out.println(&quot;================END====================&quot;);
-&#125;
-</code></pre>
-<h1 id="100-many-trial-gt-randome-gen"><a href="#100-many-trial-gt-randome-gen" class="headerlink" title="  100 many trial &gt; randome gen"></a>  100 many trial &gt; randome gen</h1><p>[1] -&gt;39.0 % many<br>[2] -&gt;33.0 % many<br>[3] -&gt;28.0 % many</p>
-<h1 id="1000-many-trial-gt-randome-gen"><a href="#1000-many-trial-gt-randome-gen" class="headerlink" title="  1000 many trial &gt; randome gen"></a>  1000 many trial &gt; randome gen</h1><p>[1] -&gt;34.2 % many<br>[2] -&gt;32.7 % many<br>[3] -&gt;33.1 % many</p>
-<h1 id="100000-many-trial-gt-randome-gen"><a href="#100000-many-trial-gt-randome-gen" class="headerlink" title="  100000 many trial &gt; randome gen"></a>  100000 many trial &gt; randome gen</h1><p>[1] -&gt;33.293 % many<br>[2] -&gt;33.335 % many<br>[3] -&gt;33.372 % many<br>‘’’</p>
-<p>100번, 1,000번, 100,000번 돌려보니 많이 돌리면 돌릴수록 33.33% 으로 수렴되는 것을 볼수 있다.</p>
+        <h3 id="View-환경-설정"><a href="#View-환경-설정" class="headerlink" title="View 환경 설정"></a>View 환경 설정</h3><h4 id="스프링-부트가-제공-하는-Welcome-Page"><a href="#스프링-부트가-제공-하는-Welcome-Page" class="headerlink" title="스프링 부트가 제공 하는 Welcome Page"></a>스프링 부트가 제공 하는 Welcome Page</h4><p>정적 페이지 로 resources&#x2F;static&#x2F;index.html</p>
+<h3 id="스프링-웹-개발-기초"><a href="#스프링-웹-개발-기초" class="headerlink" title="스프링 웹 개발 기초"></a>스프링 웹 개발 기초</h3><ol>
+<li>정적 컨텐츠</li>
+<li>MVC와 Template 엔진</li>
+<li>API</li>
+</ol>
+<h4 id="MVC와-Template-엔진"><a href="#MVC와-Template-엔진" class="headerlink" title="MVC와 Template 엔진"></a>MVC와 Template 엔진</h4><p>기본 Flow : client가 Get 으로 URL 노드에 요청</p>
+<ol>
+<li>@Controller 클래스</li>
+<li>@GetMapping 으로 연결된 함수</li>
+<li>함수 실행, Model model 에 Data를 채움 (MVC에 그 Model임)</li>
+<li>함수가 가야 하는 View 파일 이름을 반환 함</li>
+<li>ViewResolver가 Thymeleaf 템플릿 엔진으로 가는 것임을 감지</li>
+<li>resources&#x2F;templates&#x2F;{파일이름}.html 에 model 데이타 치환, 생성</li>
+<li>client가 만들어진 html 받아 봄</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/19/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-3-19-java/" data-id="cl2n3cy8y00034o385w13g4r4" data-title="토요일 자바 공부" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81/My-New-Post/" data-id="cl2roh4na0000rs388e537gti" data-title="스프링 기초 - 1" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
 
     </footer>
   </div>
@@ -142,19 +128,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/03/19/python/2022-3-19-pythonstudy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          패스트캠퍼스 테크보이 워니 강좌 수강
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/19/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-3-19-javastudy/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B05/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Java 스터디 소스</div>
+      <div class="article-nav-title">1주차 ch5</div>
     </a>
   
 </nav>
