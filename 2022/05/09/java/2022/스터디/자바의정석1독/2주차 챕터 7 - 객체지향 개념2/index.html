@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>2주차 챕터 7 - 객체지향 개념2 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 상속 기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용) 두 클래스를 부모와 자식으로 관계를 맺어 주는 것  123class 자식클래스 extends 부모클래스 &amp;#123;    &#x2F;&#x2F; ...&amp;#125; 자식 —(extends&#x2F;확장)—&gt; 부모 12345678class Point2D &amp;#123;    int x;    int y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2주차 챕터 7 - 객체지향 개념2">
+<meta property="og:url" content="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/index.html">
+<meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
+<meta property="og:description" content="1. 상속 기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용) 두 클래스를 부모와 자식으로 관계를 맺어 주는 것  123class 자식클래스 extends 부모클래스 &amp;#123;    &#x2F;&#x2F; ...&amp;#125; 자식 —(extends&#x2F;확장)—&gt; 부모 12345678class Point2D &amp;#123;    int x;    int y">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-09T11:08:21.000Z">
+<meta property="article:modified_time" content="2022-05-09T11:28:50.060Z">
+<meta property="article:author" content="Miro Mike">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">하소연 개발 노트 (Miro&#39;s IT Blog)</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://miromike.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-java/2022/스터디/자바의정석1독/2주차 챕터 7 - 객체지향 개념2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/" class="article-date">
+  <time class="dt-published" datetime="2022-05-09T11:08:21.000Z" itemprop="datePublished">2022-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      2주차 챕터 7 - 객체지향 개념2
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h3><ul>
+<li>기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용)</li>
+<li>두 클래스를 부모와 자식으로 관계를 맺어 주는 것</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class 자식클래스 extends 부모클래스 &#123;</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>자식 —(extends&#x2F;확장)—&gt; 부모</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Point2D &#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Point3D extends Point2D &#123;</span><br><span class="line">    int z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-포함-관계-Composite"><a href="#3-포함-관계-Composite" class="headerlink" title="3. 포함 관계 (Composite)"></a>3. 포함 관계 (Composite)</h3><ul>
+<li>클래스의 멤버로 참조 변수를 선언 하는 것</li>
+<li>Cicle 안에 Point 의 참조 변수를 포함 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Circle &#123;</span><br><span class="line">    int x, y, r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle &#123;</span><br><span class="line">    Point c = new Point(); // 원점</span><br><span class="line">    int r; // 반지름</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Car &#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+차는 엔진과 4개의 도어를 포함</li>
+</ul>
+<h3 id="4-클래스-간의-관계-결정-하기"><a href="#4-클래스-간의-관계-결정-하기" class="headerlink" title="4. 클래스 간의 관계 결정 하기"></a>4. 클래스 간의 관계 결정 하기</h3><ul>
+<li>상속 관계 : A는 B이다. (is-a)</li>
+<li>포함 관계 : A는 B를 가지고 있다. (has-a)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Circle &#123;</span><br><span class="line">    point c = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle extends Point &#123;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>대부분은 포함 일 것이다.</p>
+<h3 id="5-단일-상속-Single-inheritance"><a href="#5-단일-상속-Single-inheritance" class="headerlink" title="5. 단일 상속 (Single inheritance)"></a>5. 단일 상속 (Single inheritance)</h3><ul>
+<li>자바는 단일 상속만 허용한다.</li>
+<li>조상은 하나만 허용 한다.<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class TvDVD extends TV, DVD &#123;  // 둘중에 하나만 가능</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>비중이 높은 클래스하나만 상속 관계로 하고 나머지는 포함 관계로 하면<br>다중 상속 처럼 구현 가능 하다.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class TV &#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    void power() &#123;power = !=power;&#125;</span><br><span class="line">&#125;</span><br><span class="line">class DVD &#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    void power() ..</span><br><span class="line">    void play() ..</span><br><span class="line">    void stop() ..</span><br><span class="line">&#125;</span><br><span class="line">class TvDVD extends TV &#123;</span><br><span class="line">    DVD dvd = new DVD();</span><br><span class="line"></span><br><span class="line">    void play () &#123;dvd.play();&#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Object-클래스-모든-클래스의-조상"><a href="#6-Object-클래스-모든-클래스의-조상" class="headerlink" title="6. Object 클래스 - 모든 클래스의 조상"></a>6. Object 클래스 - 모든 클래스의 조상</h3><ul>
+<li>부모가 없는 클래스는 자동적으로 Object 클래스를 상속 받게 된다.</li>
+<li>Object 클래스에 정의된 11개의 메소드를 상속 받는다.</li>
+<li>toString(), equals(Object obj), hashCode() …</li>
+</ul>
+<p>상속 계층도</p>
+<ul>
+<li>SmartTV —&gt; TV —&gt; Object</li>
+</ul>
+<h3 id="7-오버라이딩-overriding"><a href="#7-오버라이딩-overriding" class="headerlink" title="7. 오버라이딩 (overriding)"></a>7. 오버라이딩 (overriding)</h3><ul>
+<li>상속 받은 조상의 메서드를 자신에 맞게 변경 하는 것</li>
+<li>덮어 쓰기</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/" data-id="cl2yn59800009hw3849zneizi" data-title="2주차 챕터 7 - 객체지향 개념2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/06/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90%EB%B0%8F%EB%B0%B0%ED%8F%AC%EC%9A%B4%EC%98%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">회원게시판, 구글,네이버로그인, 배포운영</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 16.67px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/">2주차 챕터 7 - 객체지향 개념2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90%EB%B0%8F%EB%B0%B0%ED%8F%AC%EC%9A%B4%EC%98%81/">회원게시판, 구글,네이버로그인, 배포운영</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90/">회원게시판</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%ED%8C%A8%EC%BB%B4_%EA%B0%95%EC%A2%8C/%EB%84%A4%EC%9D%B4%EB%B2%84%EB%A7%9B%EC%A7%91/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%ED%8C%A8%EC%BB%B4_%EA%B0%95%EC%A2%8C/%EC%84%9C%EB%B2%84%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EA%B0%84_%ED%86%B5%EC%8B%A0/">서버 클라이언트간 통신</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Miro Mike<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
