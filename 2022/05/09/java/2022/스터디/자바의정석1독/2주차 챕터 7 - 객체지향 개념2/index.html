@@ -14,7 +14,7 @@
 <meta property="og:description" content="1. 상속 기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용) 두 클래스를 부모와 자식으로 관계를 맺어 주는 것  123class 자식클래스 extends 부모클래스 &amp;#123;    &#x2F;&#x2F; ...&amp;#125; 자식 —(extends&#x2F;확장)—&gt; 부모 12345678class Point2D &amp;#123;    int x;    int y">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-09T11:08:21.000Z">
-<meta property="article:modified_time" content="2022-05-09T12:23:36.243Z">
+<meta property="article:modified_time" content="2022-05-10T11:20:44.292Z">
 <meta property="article:author" content="Miro Mike">
 <meta name="twitter:card" content="summary">
   
@@ -171,6 +171,17 @@
 <li>접근 제어자 public, protected, default, private </li>
 <li>그외 static, final, abstract, native, transient, synchronized, volatile, strictfp</li>
 </ul>
+<h3 id="20-abstract-추상의-미완성의"><a href="#20-abstract-추상의-미완성의" class="headerlink" title="20. abstract - 추상의, 미완성의"></a>20. abstract - 추상의, 미완성의</h3><ul>
+<li>클래스 : 추상 메서드가 선언되어 있음을 의미한다.</li>
+<li>메서드 선언부만 작성하고 구현부는 작성 하지 않은 추상 메서드임을 알린다.<br><code>추상 클래스의 인스턴스 생성 불가</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class AbstractTest &#123;</span><br><span class="line">    abstract void move();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="21-접근-제어자"><a href="#21-접근-제어자" class="headerlink" title="21. 접근 제어자"></a>21. 접근 제어자</h3><ul>
+<li>private 같은 클래스내에서만</li>
+<li>default 같은 패키지내에서만</li>
+<li>protected 같은 패키지내, 다른 패키지의 자손</li>
+<li>public 접근 제한 없음</li>
+</ul>
+<p>7-20</p>
 
       
     </div>
