@@ -234,6 +234,21 @@
 <blockquote>
 <p>조상의 객체를 자식의 참조변수 대입 할때 명시적 형변환 하면 컴파일 에러는 안 생기시지만<br>런타임에서 형변환 실행 에러 가 발생 함. java.lang.ClassCastException</p>
 </blockquote>
+<h3 id="7-26-instanceof-연산자"><a href="#7-26-instanceof-연산자" class="headerlink" title="7-26. instanceof 연산자"></a>7-26. instanceof 연산자</h3><ul>
+<li>참조 변수의 형변환 가능여부 확인에 사용, 가능하면 true 반환</li>
+<li>형변환 전에 반드시 instanceof로 확인해야 함</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void doWork(Car c) &#123;</span><br><span class="line">    if (c instanceof FireEngine) &#123;</span><br><span class="line">        FireEngine fe = (FireEngine) c;</span><br><span class="line">        fe.water();</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="다형성-정리"><a href="#다형성-정리" class="headerlink" title="다형성 정리"></a>다형성 정리</h3><ol>
+<li>조상 &#x3D; 자손 (예: Tv t &#x3D; new SmartTV();)</li>
+<li>참조 변수의 형변환 - 리모콘 바꾸기, 사용 가능한 멤버 갯수 조절</li>
+<li>instanceof 연산자 - 형변환 가능 여부 확인</li>
+</ol>
+<h3 id="7-27-매개변수의-다형성"><a href="#7-27-매개변수의-다형성" class="headerlink" title="7-27. 매개변수의 다형성"></a>7-27. 매개변수의 다형성</h3><ul>
+<li>참조형 매개변수는 메서드 호출시, 자신과 같은 타입 또는 자손 타입의 인스턴스를 넘겨 줄수 있다.</li>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Product &#123;</span><br><span class="line">    int price;</span><br><span class="line">    int bonusPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Tv extends Product &#123;&#125;</span><br><span class="line">class Computer extends Product &#123;&#125;</span><br><span class="line">class Audio extends Product &#123;&#125;</span><br><span class="line"></span><br><span class="line">class Buyer &#123;</span><br><span class="line">    int money = 100;</span><br><span class="line">    int bonusPoint = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 각각의 Product 종류 마다 buy 메서드 작성 </span><br><span class="line">void buy(Tv t) &#123;</span><br><span class="line">    money -= t.price;</span><br><span class="line">    bonusPoint += t.bonusPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 아래 처럼 매개변수의 다형성 사용 하면 하나의 buy 메서드로 처리 가능 해짐</span><br><span class="line">void buy(Product p) &#123;</span><br><span class="line">    money -= p.price;</span><br><span class="line">    bonusPoint += p.bonusPoint;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
