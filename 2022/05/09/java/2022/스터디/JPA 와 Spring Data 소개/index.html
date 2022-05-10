@@ -9,12 +9,12 @@
   <meta name="description" content="JPA 란? ORM 이란? 객체와 관계형 Database을 연결하는 기술: ORM 자바에서의 ORM 기술: JPA 한국, 중국에서 MyBatis 벤더의 SQL mapping 기술이 많이 쓰임 (legacy되어가고 있음)  JPA 사용해야 하는 이유 생산성   JPA를 사용하면 지루하고 반복적인 CRUD용 SQL 개발자가 직접 작성 하지 않아도 됨 Sprin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JPA">
-<meta property="og:url" content="https://miromike.github.io/2022/05/09/My-New-Post/index.html">
+<meta property="og:url" content="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
 <meta property="og:description" content="JPA 란? ORM 이란? 객체와 관계형 Database을 연결하는 기술: ORM 자바에서의 ORM 기술: JPA 한국, 중국에서 MyBatis 벤더의 SQL mapping 기술이 많이 쓰임 (legacy되어가고 있음)  JPA 사용해야 하는 이유 생산성   JPA를 사용하면 지루하고 반복적인 CRUD용 SQL 개발자가 직접 작성 하지 않아도 됨 Sprin">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-09T12:24:40.000Z">
-<meta property="article:modified_time" content="2022-05-10T14:43:06.090Z">
+<meta property="article:modified_time" content="2022-05-10T14:45:38.064Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -74,9 +74,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-My-New-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-java/2022/스터디/JPA 와 Spring Data 소개" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/09/My-New-Post/" class="article-date">
+    <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/" class="article-date">
   <time class="dt-published" datetime="2022-05-09T12:24:40.000Z" itemprop="datePublished">2022-05-09</time>
 </a>
     
@@ -171,22 +171,6 @@
 <table>
 <thead>
 <tr>
-<th>Header 1</th>
-<th>Header 2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Content 1</td>
-<td>Content 3</td>
-</tr>
-<tr>
-<td>Content 2</td>
-<td>Content 4</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
 <th>Cascade Type</th>
 <th>설명</th>
 </tr>
@@ -221,15 +205,18 @@
 <li>FetchType.LAZY</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class OrderEntity &#123;</span><br><span class="line">    @OneToMany(</span><br><span class="line">        mappedBy = &quot;order&quot;,</span><br><span class="line">        cascade = &#123; CascadeType.ALL &#125; // 영속성 전이</span><br><span class="line">    )</span><br><span class="line">    List&lt;OrderItemEntity&gt; orderItems = new ArrayList&lt;&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class OrderItemEntity &#123;</span><br><span class="line">    @JoinColumn(name=&quot;order_id&quot;)</span><br><span class="line">    @ManyToOne(fetch = FetchType.LAZY)</span><br><span class="line">    private OrderEntity order; // 관계의 주인</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h3 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h3><ul>
+<h2 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h2><ul>
 <li>다양한 데이터 저장소에 대한 접근을 추상화 하기 위한 Spring 프로젝트</li>
 <li>JPA, JDBC, Redis, MongoDB, Elasticsearch 등</li>
 </ul>
-<h3 id="Spring-Data-JPA"><a href="#Spring-Data-JPA" class="headerlink" title="Spring Data JPA"></a>Spring Data JPA</h3><ul>
+<h3 id="Spring-Data-JPA"><a href="#Spring-Data-JPA" class="headerlink" title="Spring Data JPA"></a>Spring Data JPA</h3><ol>
 <li>Repository 추상화를 통해 interface 선언만으로도 구현 가능</li>
 <li>메서드 이름으로 쿼리 생성</li>
-<li>Web Support (페이징, 정렬, 도메인 클래스 컨버터 등)<h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h3></li>
+<li>Web Support (페이징, 정렬, 도메인 클래스 컨버터 등)</li>
+</ol>
+<h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h3><ul>
 <li>Spring Data Repository</li>
 <li>data access layer 구현을 위해 반복 작성, 유사 코드를 줄일수 있는 추상화 제공<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ItemEntity entity1 = new ItemEntity(); </span><br><span class="line">entity1.setItemName(&quot;peach&quot;);</span><br><span class="line">entity1.setPrice(135L);</span><br><span class="line">entityManager.persist(entity1);</span><br><span class="line"></span><br><span class="line">ItemEntity entity2 = entityManager.find(ItemEntity.class, entity1.getItemId());</span><br><span class="line">entity2.setPrice(235L);</span><br><span class="line">entityManager.merge(entity2);</span><br><span class="line"></span><br><span class="line">//JPQL, Criteria API를 이용, 쿼리 수행</span><br><span class="line">String jpql = &quot;select item from ItemEntity item where item.itemName like &#x27;%peach%&#x27;&quot;;</span><br><span class="line">List&lt;ItemEntity&gt; entities = entityManager.createQuery(jpql, ItemEntity.class).getResultList();</span><br></pre></td></tr></table></figure></li>
 <li>Repository 설정<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface ItemRepository extends JpaRepository&lt;ItemEntity, Long&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
@@ -252,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/09/My-New-Post/" data-id="cl2yp4yei0000z83818umhoxi" data-title="JPA" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/" data-id="cl309rwgx0000mk38657y5e9i" data-title="JPA" class="article-share-link">Share</a>
       
       
       
@@ -319,7 +306,7 @@
       <ul>
         
           <li>
-            <a href="/2022/05/09/My-New-Post/">JPA</a>
+            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA</a>
           </li>
         
           <li>
