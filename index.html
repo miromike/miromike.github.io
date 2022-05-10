@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/09/My-New-Post/">My New Post</a>
+      <a class="p-name article-title" href="/2022/05/09/My-New-Post/">JPA</a>
     </h1>
   
 
@@ -93,14 +93,90 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h3 id="JPA-란-ORM-이란"><a href="#JPA-란-ORM-이란" class="headerlink" title="JPA 란? ORM 이란?"></a>JPA 란? ORM 이란?</h3><ul>
+<li>객체와 관계형 Database을 연결하는 기술: ORM</li>
+<li>자바에서의 ORM 기술: JPA</li>
+<li>한국, 중국에서 MyBatis라는 기술을 레게시로 많이 쓰이는데 이는 SQL mapping 기술</li>
+</ul>
+<h3 id="Entity-매핑"><a href="#Entity-매핑" class="headerlink" title="Entity 매핑"></a>Entity 매핑</h3><ul>
+<li>Entity-JPA를 이용해서 데이타 베이스 테이블과 매핑할 클래스</li>
+<li>Entity 매핑: Entity 클래스에 데이터베이스 테이블과 컬럼, 기본 키, 외래 키등을 설정 하는 것</li>
+</ul>
+<h3 id="JPA-사용해야-하는-이유"><a href="#JPA-사용해야-하는-이유" class="headerlink" title="JPA 사용해야 하는 이유"></a>JPA 사용해야 하는 이유</h3><h4 id="생산성"><a href="#생산성" class="headerlink" title="생산성"></a>생산성</h4><p>JPA를 사용하면 지루하고 반복적인 CRUD용 SQL 개발자가 직접 작성 하지 않아도 됨<br>Spring Data JPA를 사용하면 interface 선언만으로 쿼리 구현이 가능</p>
+<h4 id="유지보수"><a href="#유지보수" class="headerlink" title="유지보수"></a>유지보수</h4><p>칼럼 추가&#x2F;삭제 시 직접 CRUD 관련 쿼리 수정 필요 없이 JPA가 관리 하는 모델 (Entity)을 수정 하면 된다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Item &#123;</span><br><span class="line">    private Long itemId;</span><br><span class="line">    private String itemName;</span><br><span class="line">    private Long price;</span><br><span class="line">    private String category;  // 이부분이 변경 혹은 추가 될때 생각 해 보면..</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="데이타-접근-추상화와-벤더-독립성"><a href="#데이타-접근-추상화와-벤더-독립성" class="headerlink" title="데이타 접근 추상화와 벤더 독립성"></a>데이타 접근 추상화와 벤더 독립성</h4><ul>
+<li>데이타베이스 벤더 마다 미묘하게 다른 데이터 타입이나 SQL을 JPA를 이용하여 손쉽게 해결</li>
+</ul>
+<p><code>예: Oracle 사용 중 -&gt; MySql</code></p>
+<h4 id="SQL-중식-적인-개발에서-객체-중신으로-개발-패러타임"><a href="#SQL-중식-적인-개발에서-객체-중신으로-개발-패러타임" class="headerlink" title="SQL 중식 적인 개발에서 객체 중신으로 개발 (패러타임)"></a>SQL 중식 적인 개발에서 객체 중신으로 개발 (패러타임)</h4><h3 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h3><ul>
+<li>다양한 데이터 저장소에 대한 접근을 추상화 하기 위한 Spring 프로젝트</li>
+<li>JPA, JDBC, Redis, MongoDB, Elasticsearch 등</li>
+</ul>
+<h3 id="Spring-Data-JPA"><a href="#Spring-Data-JPA" class="headerlink" title="Spring Data JPA"></a>Spring Data JPA</h3><ul>
+<li>Repository 추상화를 통해 interface 선언만으로도 구현 가능</li>
+<li>메서드 이름으로 쿼리 생성</li>
+<li>Web Support (페이징, 정렬, 도메인 클래스 컨버터 등)</li>
+</ul>
+<h3 id="구조"><a href="#구조" class="headerlink" title="구조"></a>구조</h3><p>EntityManagerFactory –생성–&gt; EntityManager –관리–&gt; Entity</p>
+<h4 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h4><ul>
+<li>데이터베이스 테이블과 매핑할 클래스</li>
+<li>어노테이션을 사용 해서 설정<br>@Entity: JPA가 관리 할 객체임을 명시<br>@Table: 매핑할 데이타 베이스 테이블 이름 명시<br>@Id : 기본 키 매핑<br>@GeneratedValue : 기본키 매핑 전략<br>@Column: 필드와 칼럼을 매핑</li>
+</ul>
+<h4 id="기본키-매핑-전략-자동-생성"><a href="#기본키-매핑-전략-자동-생성" class="headerlink" title="기본키 매핑 전략, 자동 생성"></a>기본키 매핑 전략, 자동 생성</h4><ul>
+<li>TABLE 전략: 채번 테이블을 사용</li>
+<li>SEQUENECE 전략: 데이터베이스 시퀀스 사용 eg. Oracle</li>
+<li>IDENTITY 전략: 기본키 생성을 데이터베이스에 위임 eg. MySQL</li>
+<li>AUTO 전략: 선택한 데이터베이스 방언 통해 셋팅</li>
+</ul>
+<h4 id="복합키"><a href="#복합키" class="headerlink" title="복합키"></a>복합키</h4><ul>
+<li>@EmbeddedId : Entity 클래스의 필드에 지정</li>
+<li>@Embeddable : 복합 키 식별자 클래스 에 지정</li>
+</ul>
+<h4 id="그외"><a href="#그외" class="headerlink" title="그외"></a>그외</h4><p>@Temporal: 날짜 타입 매핑<br>@Transient : 특정 필드를 칼럼에 매핑 하지 않을 경우에 지정</p>
+<h3 id="연관-관계"><a href="#연관-관계" class="headerlink" title="연관 관계"></a>연관 관계</h3><ul>
+<li>Entity들은 대부분의 경우 다른 Entity들과 연관관계를 가짐</li>
+<li>데이타베이스 테이블은 외래키(FK)로 JOIN을 이용해서 관계 테이블을 참조</li>
+<li>Entity는 객체 참조를 이용해서 연관된 Entity 참조</li>
+<li>연관관계 매핑 - 데이터베이스 테이블의 외래 키(FK)를 객체와 매핑 하는 것</li>
+</ul>
+<h4 id="연관-관계-association"><a href="#연관-관계-association" class="headerlink" title="연관 관계 (association)"></a>연관 관계 (association)</h4><ul>
+<li>객체에서는 참조 변수로 가져감</li>
+<li>데이타베이스에서는 외래키로 JOIN을 이용해서 관계 테이블을 참조</li>
+<li>@JoinColumn : 외래키 매핑</li>
+</ul>
+<h4 id="다중성-Multiplicity"><a href="#다중성-Multiplicity" class="headerlink" title="다중성(Multiplicity)"></a>다중성(Multiplicity)</h4><ul>
+<li>@OneToOne</li>
+<li>@OneToMany</li>
+<li>@ManyToOne</li>
+<li>@ManyToMany</li>
+</ul>
+<h4 id="방향성"><a href="#방향성" class="headerlink" title="방향성"></a>방향성</h4><ul>
+<li>단방향 (Unidirectional)</li>
+<li>양방향 (Bidirectional)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@Entity</span><br><span class="line">public class Member &#123;</span><br><span class="line">    @Id</span><br><span class="line">    @Column(name=&quot;member_id&quot;)</span><br><span class="line">    private Long memberId;</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    @Column(name=&quot;created_dt&quot;)</span><br><span class="line">    private LocalDataTime createdDate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Entity</span><br><span class="line">public class MemberDetail &#123;</span><br><span class="line">    @Id</span><br><span class="line">    @Column(name = &quot;member_detail_id&quot;)</span><br><span class="line">    private Long memberDetailId;</span><br><span class="line"> </span><br><span class="line">    @ManyToOne(cascade = CascadeType.ALL)</span><br><span class="line">    @JoinColumn(name=&quot;member_id&quot;)</span><br><span class="line">    private Member member;</span><br><span class="line"></span><br><span class="line">    private String type;</span><br><span class="line">    private String description;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>단방향의 예, </p>
+<h4 id="영속성-전이-persistence-cascade"><a href="#영속성-전이-persistence-cascade" class="headerlink" title="영속성 전이 (persistence cascade)"></a>영속성 전이 (persistence cascade)</h4><ul>
+<li>Entity의 영속성 상태 변화를 연관된 Entity에도 함께 적용되는 것</li>
+<li>연관관계의 다중성(Multiplicity) 지정 시 cascade 속성으로 설정</li>
+</ul>
+<p>Cascade Type | 설명<br>PERSIST | Entity를 영속 객체로 추가 할때 연관된 Entity도 함께 영속 객체로 추가 한다.<br>REMOVE | 함께 삭제<br>DETACH | 함께 분리<br>REFRESH | 다시 읽어 올때 함께 다시 읽어 온다<br>MERGE | 준영속 상태에서 영속 상태로 변경 할때 함께 변경<br>ALL | 모든 상태 변화에 함께 적용</p>
+<h4 id="페치-전략-Fetch-Strategy"><a href="#페치-전략-Fetch-Strategy" class="headerlink" title="페치 전략 (Fetch Strategy)"></a>페치 전략 (Fetch Strategy)</h4><ul>
+<li>FetchType.EAGER</li>
+<li>FetchType.LAZY</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class OrderEntity &#123;</span><br><span class="line">    @OneToMany(</span><br><span class="line">        mappedBy = &quot;order&quot;,</span><br><span class="line">        cascade = &#123; CascadeType.ALL &#125; // 영속성 전이</span><br><span class="line">    )</span><br><span class="line">    List&lt;OrderItemEntity&gt; orderItems = new ArrayList&lt;&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class OrderItemEntity &#123;</span><br><span class="line">    @JoinColumn(name=&quot;order_id&quot;)</span><br><span class="line">    @ManyToOne(fetch = FetchType.LAZY)</span><br><span class="line">    private OrderEntity order; // 관계의 주인</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/09/My-New-Post/" data-id="cl2yp4yei0000z83818umhoxi" data-title="My New Post" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/09/My-New-Post/" data-id="cl2yp4yei0000z83818umhoxi" data-title="JPA" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
     </footer>
   </div>
   
@@ -673,7 +749,7 @@
       <ul>
         
           <li>
-            <a href="/2022/05/09/My-New-Post/">My New Post</a>
+            <a href="/2022/05/09/My-New-Post/">JPA</a>
           </li>
         
           <li>
