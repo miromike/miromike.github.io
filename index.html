@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA</a>
+      <a class="p-name article-title" href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA 와 Spring Data 소개</a>
     </h1>
   
 
@@ -217,9 +217,32 @@
 <li>Spring Data Repository</li>
 <li>data access layer 구현을 위해 반복 작성, 유사 코드를 줄일수 있는 추상화 제공<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ItemEntity entity1 = new ItemEntity(); </span><br><span class="line">entity1.setItemName(&quot;peach&quot;);</span><br><span class="line">entity1.setPrice(135L);</span><br><span class="line">entityManager.persist(entity1);</span><br><span class="line"></span><br><span class="line">ItemEntity entity2 = entityManager.find(ItemEntity.class, entity1.getItemId());</span><br><span class="line">entity2.setPrice(235L);</span><br><span class="line">entityManager.merge(entity2);</span><br><span class="line"></span><br><span class="line">//JPQL, Criteria API를 이용, 쿼리 수행</span><br><span class="line">String jpql = &quot;select item from ItemEntity item where item.itemName like &#x27;%peach%&#x27;&quot;;</span><br><span class="line">List&lt;ItemEntity&gt; entities = entityManager.createQuery(jpql, ItemEntity.class).getResultList();</span><br></pre></td></tr></table></figure></li>
 <li>Repository 설정<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface ItemRepository extends JpaRepository&lt;ItemEntity, Long&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>왠만한 CRUD, Pagination, Sorting 관련 메서드 제공<br>Repository &lt;T,ID&gt; &lt;– CrudRepository&lt;T,ID&gt; &lt;– PagingAndSortingRepository&lt;T,ID&gt; &lt;– JpaRepository&lt;T,ID&gt;</li>
+<li>왠만한 CRUD, Pagination, Sorting 관련 메서드 제공<br>Repository &lt;T,ID&gt; &lt;–<br>CrudRepository&lt;T,ID&gt; &lt;–<br>PagingAndSortingRepository&lt;T,ID&gt; &lt;–<br>JpaRepository&lt;T,ID&gt;</li>
 </ul>
-<p>save &gt; insert&#x2F; update<br>findOne &gt; select<br>count &gt; select count(*)<br>delete &gt; delete </p>
+<table>
+<thead>
+<tr>
+<th>제공 메서드</th>
+<th>SQL 구문</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>save</td>
+<td>insert&#x2F; update</td>
+</tr>
+<tr>
+<td>findOne</td>
+<td>select</td>
+</tr>
+<tr>
+<td>count</td>
+<td>select count(*)</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>delete</td>
+</tr>
+</tbody></table>
 <p>Spring Data JPA에서 제공 하는 메서드 이름으로 쿼리 생성<br>이름 규칙에 맞춰 interface에 선언하면 자동으로 쿼리 생성 해 준다.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// select * from Items where item_name like &#x27;%&#123;itemName&#125;%&#x27;</span><br><span class="line">ItemEntity findBy`ItemName`Like(String itemName)</span><br><span class="line"></span><br><span class="line">// select item_id from Items where item_name = &#x27;&#123;itemName&#125;&#x27;</span><br><span class="line">// and price = &#123;price&#125; limit 1</span><br><span class="line">boolean existsBy`ItemName`And`Price`(String itemName, Long price);</span><br><span class="line"></span><br><span class="line">int countBy`ItemName`Like(STring itemName);</span><br><span class="line">void deleteBy`Price`Between(long price1, long price2);</span><br></pre></td></tr></table></figure>
 
@@ -236,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/" data-id="cl309rwgx0000mk38657y5e9i" data-title="JPA" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/" data-id="cl309rwgx0000mk38657y5e9i" data-title="JPA 와 Spring Data 소개" class="article-share-link">Share</a>
       
       
       
@@ -814,7 +837,7 @@
       <ul>
         
           <li>
-            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA</a>
+            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA 와 Spring Data 소개</a>
           </li>
         
           <li>
