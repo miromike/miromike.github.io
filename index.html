@@ -177,10 +177,17 @@
 </ul>
 <p>save &gt; insert&#x2F; update<br>findOne &gt; select<br>count &gt; select count(*)<br>delete &gt; delete </p>
 <p>Spring Data JPA에서 제공 하는 메서드 이름으로 쿼리 생성<br>이름 규칙에 맞춰 interface에 선언하면 자동으로 쿼리 생성 해 준다.</p>
-<p>&#x2F;&#x2F; select * from Items where item_name like ‘%{itemName}%’<br>ItemEntity findBy<code>ItemName</code>Like(String itemName)</p>
-<p>&#x2F;&#x2F; select item_id from Items where item_name &#x3D; ‘{itemName}’<br>&#x2F;&#x2F; and price &#x3D; {price} limit 1<br>boolean existsBy<code>ItemName</code>And<code>Price</code>(String itemName, Long price);</p>
-<p>int countBy<code>ItemName</code>Like(STring itemName);<br>void deleteBy<code>Price</code>Between(long price1, long price2);</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// select * from Items where item_name like &#x27;%&#123;itemName&#125;%&#x27;</span><br><span class="line">ItemEntity findBy`ItemName`Like(String itemName)</span><br><span class="line"></span><br><span class="line">// select item_id from Items where item_name = &#x27;&#123;itemName&#125;&#x27;</span><br><span class="line">// and price = &#123;price&#125; limit 1</span><br><span class="line">boolean existsBy`ItemName`And`Price`(String itemName, Long price);</span><br><span class="line"></span><br><span class="line">int countBy`ItemName`Like(STring itemName);</span><br><span class="line">void deleteBy`Price`Between(long price1, long price2);</span><br></pre></td></tr></table></figure>
+
 <p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords">https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repository-query-keywords</a></p>
+<h4 id="복잡한-쿼리-작성"><a href="#복잡한-쿼리-작성" class="headerlink" title="복잡한 쿼리 작성"></a>복잡한 쿼리 작성</h4><ul>
+<li>JPA에서 제공 하는 객체 지향 쿼리</li>
+<li>JPQL: 엔티티 객체를 ㅈ회하는 객체 지향 쿼리</li>
+<li>Criteria API: JPQL을 생성 하는 빌더 클래스</li>
+<li>3rd party: Querydsl, JOOQ, …</li>
+</ul>
+<h4 id="Pageable"><a href="#Pageable" class="headerlink" title="Pageable"></a>Pageable</h4><p>웹에서 page 관련..<br>?page&#x3D;0&amp;item</p>
+<p>출처: <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=XQZY0yN9gz0&amp;t=2057s">https://www.youtube.com/watch?v=XQZY0yN9gz0&amp;t=2057s</a></p>
 
       
     </div>
