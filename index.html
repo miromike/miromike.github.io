@@ -102,15 +102,31 @@
 <li>Entity-JPA를 이용해서 데이타 베이스 테이블과 매핑할 클래스</li>
 <li>Entity 매핑: Entity 클래스에 데이터베이스 테이블과 컬럼, 기본 키, 외래 키등을 설정 하는 것</li>
 </ul>
-<h3 id="JPA-사용해야-하는-이유"><a href="#JPA-사용해야-하는-이유" class="headerlink" title="JPA 사용해야 하는 이유"></a>JPA 사용해야 하는 이유</h3><h4 id="생산성"><a href="#생산성" class="headerlink" title="생산성"></a>생산성</h4><p>JPA를 사용하면 지루하고 반복적인 CRUD용 SQL 개발자가 직접 작성 하지 않아도 됨<br>Spring Data JPA를 사용하면 interface 선언만으로 쿼리 구현이 가능</p>
-<h4 id="유지보수"><a href="#유지보수" class="headerlink" title="유지보수"></a>유지보수</h4><p>칼럼 추가&#x2F;삭제 시 직접 CRUD 관련 쿼리 수정 필요 없이 JPA가 관리 하는 모델 (Entity)을 수정 하면 된다.</p>
+<h3 id="JPA-사용해야-하는-이유"><a href="#JPA-사용해야-하는-이유" class="headerlink" title="JPA 사용해야 하는 이유"></a>JPA 사용해야 하는 이유</h3><ol>
+<li>생산성</li>
+</ol>
+<ul>
+<li>JPA를 사용하면 지루하고 반복적인 CRUD용 SQL 개발자가 직접 작성 하지 않아도 됨</li>
+<li>Spring Data JPA를 사용하면 interface 선언만으로 쿼리 구현이 가능</li>
+</ul>
+<ol start="2">
+<li>유지보수</li>
+</ol>
+<ul>
+<li>칼럼 추가&#x2F;삭제 시 직접 CRUD 관련 쿼리 수정 필요 없이 JPA가 관리 모델 (Entity) 수정 하면 된다.</li>
+</ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Item &#123;</span><br><span class="line">    private Long itemId;</span><br><span class="line">    private String itemName;</span><br><span class="line">    private Long price;</span><br><span class="line">    private String category;  // 이부분이 변경 혹은 추가 될때 생각 해 보면..</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="데이타-접근-추상화와-벤더-독립성"><a href="#데이타-접근-추상화와-벤더-독립성" class="headerlink" title="데이타 접근 추상화와 벤더 독립성"></a>데이타 접근 추상화와 벤더 독립성</h4><ul>
-<li>데이타베이스 벤더 마다 미묘하게 다른 데이터 타입이나 SQL을 JPA를 이용하여 손쉽게 해결</li>
+<ol start="3">
+<li>데이타 접근 추상화와 벤더 독립성</li>
+</ol>
+<ul>
+<li>데이타베이스 벤더 마다 미묘하게 다른 데이터 타입이나 SQL을 JPA를 이용하여 손쉽게 해결<br><code>예: Oracle 사용 중 -&gt; MySql</code></li>
 </ul>
-<p><code>예: Oracle 사용 중 -&gt; MySql</code></p>
-<h4 id="SQL-중식-적인-개발에서-객체-중신으로-개발-패러타임"><a href="#SQL-중식-적인-개발에서-객체-중신으로-개발-패러타임" class="headerlink" title="SQL 중식 적인 개발에서 객체 중신으로 개발 (패러타임)"></a>SQL 중식 적인 개발에서 객체 중신으로 개발 (패러타임)</h4><h3 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h3><ul>
+<ol start="4">
+<li>SQL 중식 적인 개발에서 객체 중신으로 개발 (패러타임)</li>
+</ol>
+<h3 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h3><ul>
 <li>다양한 데이터 저장소에 대한 접근을 추상화 하기 위한 Spring 프로젝트</li>
 <li>JPA, JDBC, Redis, MongoDB, Elasticsearch 등</li>
 </ul>
@@ -162,13 +178,60 @@
 <li>Entity의 영속성 상태 변화를 연관된 Entity에도 함께 적용되는 것</li>
 <li>연관관계의 다중성(Multiplicity) 지정 시 cascade 속성으로 설정</li>
 </ul>
-<p>Cascade Type | 설명<br>PERSIST | Entity를 영속 객체로 추가 할때 연관된 Entity도 함께 영속 객체로 추가 한다.<br>REMOVE | 함께 삭제<br>DETACH | 함께 분리<br>REFRESH | 다시 읽어 올때 함께 다시 읽어 온다<br>MERGE | 준영속 상태에서 영속 상태로 변경 할때 함께 변경<br>ALL | 모든 상태 변화에 함께 적용</p>
+<table>
+<thead>
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content 1</td>
+<td>Content 3</td>
+</tr>
+<tr>
+<td>Content 2</td>
+<td>Content 4</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Cascade Type</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PERSIST</td>
+<td>Entity를 영속 객체로 추가 할때 연관된 Entity도 함께 영속 객체로 추가 한다.</td>
+</tr>
+<tr>
+<td>REMOVE</td>
+<td>함께 삭제</td>
+</tr>
+<tr>
+<td>DETACH</td>
+<td>함께 분리</td>
+</tr>
+<tr>
+<td>REFRESH</td>
+<td>다시 읽어 올때 함께 다시 읽어 온다</td>
+</tr>
+<tr>
+<td>MERGE</td>
+<td>준영속 상태에서 영속 상태로 변경 할때 함께 변경</td>
+</tr>
+<tr>
+<td>ALL</td>
+<td>모든 상태 변화에 함께 적용</td>
+</tr>
+</tbody></table>
 <h4 id="페치-전략-Fetch-Strategy"><a href="#페치-전략-Fetch-Strategy" class="headerlink" title="페치 전략 (Fetch Strategy)"></a>페치 전략 (Fetch Strategy)</h4><ul>
 <li>FetchType.EAGER</li>
 <li>FetchType.LAZY</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class OrderEntity &#123;</span><br><span class="line">    @OneToMany(</span><br><span class="line">        mappedBy = &quot;order&quot;,</span><br><span class="line">        cascade = &#123; CascadeType.ALL &#125; // 영속성 전이</span><br><span class="line">    )</span><br><span class="line">    List&lt;OrderItemEntity&gt; orderItems = new ArrayList&lt;&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class OrderItemEntity &#123;</span><br><span class="line">    @JoinColumn(name=&quot;order_id&quot;)</span><br><span class="line">    @ManyToOne(fetch = FetchType.LAZY)</span><br><span class="line">    private OrderEntity order; // 관계의 주인</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<hr>
 <h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h3><ul>
 <li>Spring Data Repository</li>
 <li>data access layer 구현을 위해 반복 작성, 유사 코드를 줄일수 있는 추상화 제공<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ItemEntity entity1 = new ItemEntity(); </span><br><span class="line">entity1.setItemName(&quot;peach&quot;);</span><br><span class="line">entity1.setPrice(135L);</span><br><span class="line">entityManager.persist(entity1);</span><br><span class="line"></span><br><span class="line">ItemEntity entity2 = entityManager.find(ItemEntity.class, entity1.getItemId());</span><br><span class="line">entity2.setPrice(235L);</span><br><span class="line">entityManager.merge(entity2);</span><br><span class="line"></span><br><span class="line">//JPQL, Criteria API를 이용, 쿼리 수행</span><br><span class="line">String jpql = &quot;select item from ItemEntity item where item.itemName like &#x27;%peach%&#x27;&quot;;</span><br><span class="line">List&lt;ItemEntity&gt; entities = entityManager.createQuery(jpql, ItemEntity.class).getResultList();</span><br></pre></td></tr></table></figure></li>
