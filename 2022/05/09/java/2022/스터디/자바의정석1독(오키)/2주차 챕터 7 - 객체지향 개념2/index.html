@@ -14,7 +14,7 @@
 <meta property="og:description" content="1. 상속 기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용) 두 클래스를 부모와 자식으로 관계를 맺어 주는 것  123class 자식클래스 extends 부모클래스 &amp;#123;    &#x2F;&#x2F; ...&amp;#125; 자식 —(extends&#x2F;확장)—&gt; 부모 12345678class Point2D &amp;#123;    int x;    int y">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-09T11:08:21.000Z">
-<meta property="article:modified_time" content="2022-05-11T12:18:03.368Z">
+<meta property="article:modified_time" content="2022-05-11T13:03:22.863Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="javastudy1">
 <meta name="twitter:card" content="summary">
@@ -245,8 +245,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class 클래스이름 implements 인터페이스이름 &#123;</span><br><span class="line">    // 인터페이스에 정의된 추상 메서드를 모두 구현 해야 한다.   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Fighter implements Fightable </span><br><span class="line">&#123;</span><br><span class="line">    public void move(int x, int y) &#123; /* .. */ &#125;</span><br><span class="line">    public void attack(Unit u) &#123; /* .. */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>일부만 구현하는 경우, 클래스 앞에 abstract를 붙히면 됨</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class Fighter2 implements Fightable &#123;</span><br><span class="line">    public void move(int x, int y) &#123; /* .. */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class Fighter2 implements Fightable &#123;</span><br><span class="line">    public void move(int x, int y) &#123; /* .. */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h3><ul>
 <li><p>Q 인터페이스란?</p>
 <blockquote>
 <p>(핵심) 추상 메서드의 집합<br>static 메서드, 디폴드 메서드가 JDK 1.8에 추가 </p>
@@ -272,6 +273,36 @@
 <li>인터페이스도 구현 클래스의 부모</li>
 <li>인터페이스 타입 매개변수는 인터페이스 구현한 클래스의 객체만 가능</li>
 <li>인터페이스를 메서드의 리턴타입으로 지정 할수 있다</li>
+</ul>
+<h3 id="39-인터페이스의-장점1"><a href="#39-인터페이스의-장점1" class="headerlink" title="39 인터페이스의 장점1"></a>39 인터페이스의 장점1</h3><ul>
+<li>두 대상 객체간의 연결 대화 소통을 돕는 중간 역할 을 한다</li>
+<li>선언(설계)와 구현을 분리 시킬수 있게 한다</li>
+<li>인터페이스 덕분에 B가 변경 되어도 A는 안 바꿀수 있게 된다. (느슨한 결합)</li>
+</ul>
+<h3 id="39-인터페이스의-장점2"><a href="#39-인터페이스의-장점2" class="headerlink" title="39 인터페이스의 장점2"></a>39 인터페이스의 장점2</h3><ul>
+<li>개발 시간을 단축</li>
+<li>변경에 유리한 유연한 설계 가능</li>
+<li>표준화 가능</li>
+<li>서로 관계 없는 클래스들에 대해 관계를 맺어 줄수 있다 (Collection의 상속 계층도)<br>예: <blockquote>
+<p>Unit &lt;-상속- GroundUnit, AirUnit<br>GroundUnit &lt;-상속- Marine, SCV, Tank<br>Air Unit &lt;-상속- Dropship<br>Repairable &lt;-구현- SCV, Tank, Dropship</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void repair(Repairable r) &#123;</span><br><span class="line">    if (r instanceof Unit) &#123;</span><br><span class="line">        Unit u = (Unit) r;</span><br><span class="line">        while (u.hitPoint != u.Max_UP) &#123;</span><br><span class="line">            u.hitPoint++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="40-디폴트-메서드와-static-메서드"><a href="#40-디폴트-메서드와-static-메서드" class="headerlink" title="40 디폴트 메서드와 static 메서드"></a>40 디폴트 메서드와 static 메서드</h3><ul>
+<li><p>인터페이스에 디폴트 메서드, static 메서드 추가 가능 (JDK1.8 부터)</p>
+</li>
+<li><p>인터페이스에 새로운 메서드 (추상 메서드)를 추가 하기 어려움</p>
+<blockquote>
+<p>해결책 &#x3D;&gt; 디폴트 메서드 (default method) 소개</p>
+</blockquote>
+</li>
+<li><p>디폴트 메서드는 인스턴스 메서드 (사실 인터페이스 원칙 위반)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface MyInterface &#123;</span><br><span class="line">    void method();</span><br><span class="line">    void newMethod(); // 추상 메서드</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface MyInterface &#123;</span><br><span class="line">    void method();</span><br><span class="line">    default void newMethod() &#123; /* .. */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>디폴트 메서드가 기존의 메서드와 충돌 할때</p>
+<blockquote>
+<p>오버라이딩 원칙으로 동작 (즉 구현된 클래스의 메서드가 있으면 그게 호출 됨)</p>
+</blockquote>
+</li>
 </ul>
 
       
