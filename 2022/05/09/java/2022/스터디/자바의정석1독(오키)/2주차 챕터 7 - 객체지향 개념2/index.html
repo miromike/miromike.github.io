@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>2주차 챕터 7 - 객체지향 개념2 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>(오키) 자바의정석, 2주차 챕터 7 - 객체지향 개념2 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="1. 상속 기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용) 두 클래스를 부모와 자식으로 관계를 맺어 주는 것  123class 자식클래스 extends 부모클래스 &amp;#123;    &#x2F;&#x2F; ...&amp;#125; 자식 —(extends&#x2F;확장)—&gt; 부모 12345678class Point2D &amp;#123;    int x;    int y">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2주차 챕터 7 - 객체지향 개념2">
-<meta property="og:url" content="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/index.html">
+<meta property="og:title" content="(오키) 자바의정석, 2주차 챕터 7 - 객체지향 개념2">
+<meta property="og:url" content="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
 <meta property="og:description" content="1. 상속 기존의 클래스로 새로운 클래스를 작성 하는 것 (코드의 재사용) 두 클래스를 부모와 자식으로 관계를 맺어 주는 것  123class 자식클래스 extends 부모클래스 &amp;#123;    &#x2F;&#x2F; ...&amp;#125; 자식 —(extends&#x2F;확장)—&gt; 부모 12345678class Point2D &amp;#123;    int x;    int y">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-09T11:08:21.000Z">
-<meta property="article:modified_time" content="2022-05-10T12:15:08.761Z">
+<meta property="article:modified_time" content="2022-05-11T12:07:22.266Z">
 <meta property="article:author" content="Miro Mike">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="javastudy1">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
@@ -74,9 +74,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-java/2022/스터디/자바의정석1독/2주차 챕터 7 - 객체지향 개념2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-java/2022/스터디/자바의정석1독(오키)/2주차 챕터 7 - 객체지향 개념2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/" class="article-date">
+    <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/" class="article-date">
   <time class="dt-published" datetime="2022-05-09T11:08:21.000Z" itemprop="datePublished">2022-05-09</time>
 </a>
     
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      2주차 챕터 7 - 객체지향 개념2
+      (오키) 자바의정석, 2주차 챕터 7 - 객체지향 개념2
     </h1>
   
 
@@ -212,17 +212,79 @@
 </ol>
 <h3 id="7-27-매개변수의-다형성"><a href="#7-27-매개변수의-다형성" class="headerlink" title="7-27. 매개변수의 다형성"></a>7-27. 매개변수의 다형성</h3><ul>
 <li>참조형 매개변수는 메서드 호출시, 자신과 같은 타입 또는 자손 타입의 인스턴스를 넘겨 줄수 있다.</li>
-<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Product &#123;</span><br><span class="line">    int price;</span><br><span class="line">    int bonusPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Tv extends Product &#123;&#125;</span><br><span class="line">class Computer extends Product &#123;&#125;</span><br><span class="line">class Audio extends Product &#123;&#125;</span><br><span class="line"></span><br><span class="line">class Buyer &#123;</span><br><span class="line">    int money = 100;</span><br><span class="line">    int bonusPoint = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 각각의 Product 종류 마다 buy 메서드 작성 </span><br><span class="line">void buy(Tv t) &#123;</span><br><span class="line">    money -= t.price;</span><br><span class="line">    bonusPoint += t.bonusPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 아래 처럼 매개변수의 다형성 사용 하면 하나의 buy 메서드로 처리 가능 해짐</span><br><span class="line">void buy(Product p) &#123;</span><br><span class="line">    money -= p.price;</span><br><span class="line">    bonusPoint += p.bonusPoint;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Product &#123;</span><br><span class="line">    int price;</span><br><span class="line">    int bonusPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Tv extends Product &#123;&#125;</span><br><span class="line">class Computer extends Product &#123;&#125;</span><br><span class="line">class Audio extends Product &#123;&#125;</span><br><span class="line"></span><br><span class="line">class Buyer &#123;</span><br><span class="line">    int money = 100;</span><br><span class="line">    int bonusPoint = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 각각의 Product 종류 마다 buy 메서드 작성 </span><br><span class="line">void buy(Tv t) &#123;</span><br><span class="line">    money -= t.price;</span><br><span class="line">    bonusPoint += t.bonusPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 아래 처럼 매개변수의 다형성 사용 하면 하나의 buy 메서드로 처리 가능 해짐</span><br><span class="line">void buy(Product p) &#123;</span><br><span class="line">    money -= p.price;</span><br><span class="line">    bonusPoint += p.bonusPoint;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-29-여러-종류의-객체를-배열로-다루기"><a href="#7-29-여러-종류의-객체를-배열로-다루기" class="headerlink" title="7-29. 여러 종류의 객체를 배열로 다루기"></a>7-29. 여러 종류의 객체를 배열로 다루기</h3><ul>
+<li>조상 타입의 배열에 자손들의 객체를 담을 수 있다.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Product p1 = new Tv();</span><br><span class="line">Product p2 = new Computer();</span><br><span class="line">Product p3 = new Audio();</span><br><span class="line"></span><br><span class="line">Product p[] = new Product[3];</span><br><span class="line">p[0] = new Tv();</span><br><span class="line">p[1] = new Computer();</span><br><span class="line">p[2] = new Audio();</span><br><span class="line"></span><br><span class="line">public class Vector extends AbstractList </span><br><span class="line">    implments List, Cloneable, java.io.Serializable </span><br><span class="line">&#123;</span><br><span class="line">    protected Object elementData[];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-31-추상-클래스-abstract-class"><a href="#7-31-추상-클래스-abstract-class" class="headerlink" title="7-31 추상 클래스 (abstract class)"></a>7-31 추상 클래스 (abstract class)</h3><ul>
+<li>미완성 설계도. 미완성 메서드를 갖고 있는 클래스</li>
+<li>다른 클래스 작성에 도움을 주기 위한 것. 인스턴스 생성 불가</li>
+<li>상속을 통해 추상 메서드 완성</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">abstract class Player &#123; // 추상 클래스, 미완성</span><br><span class="line">    boolean pause;</span><br><span class="line">    int currentPos;</span><br><span class="line"></span><br><span class="line">    Player() &#123;</span><br><span class="line">        pause = false;</span><br><span class="line">        currentPos = 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    abstract void play(int pos); // 추상 메서드 &#123;&#125;, 몸통 없음</span><br><span class="line">    abstract void stop();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Player p = new Player(); // 에러</span><br><span class="line"></span><br><span class="line">class AudioPlayer extends Player &#123;</span><br><span class="line">    void play(int pos) &#123; /* ... */ &#125;</span><br><span class="line">    void stop() &#123; /* ... */ &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AudioPlayer ap = new AudioPlayer(); // 인스턴스 생성</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-32-추상-메서드-abstract-method"><a href="#7-32-추상-메서드-abstract-method" class="headerlink" title="7-32 추상 메서드 (abstract method)"></a>7-32 추상 메서드 (abstract method)</h3><ul>
+<li>미완성 메서드. 구현부 몸통 {} 없는 메서드</li>
+<li>꼭 필요하지만 자손 마다 다르게 구현 될것으로 예상 되는 경우 사용<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class AbstractPlayer extends Player &#123; // Player가 2개 추상 메서드</span><br><span class="line">    void play(int pos) &#123; /* ... */ &#125; // 1개만 구현 했음. 그래서 이 클래스도 abstract </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-33-34-추상-클래스의-작성"><a href="#7-33-34-추상-클래스의-작성" class="headerlink" title="7-33,34 추상 클래스의 작성"></a>7-33,34 추상 클래스의 작성</h3><ul>
+<li>상속 받는 자식 클래스가 꼭 구현해야 하는 메서드를 명시적으로 강제</li>
+<li>기존 클래스의 공통 부분을 뽑아서 추상 클래스를 만듬</li>
+<li>추상화 &lt;-&gt; 구체화</li>
+<li>추상화된 코드는 구체화된 코드보다 유연하다. 변경에 유리<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GregorianCalendar cal = new GregorianCalendar(); // 구체적</span><br><span class="line">Calendar cal = Calendar.getInstance(); // 추상적</span><br><span class="line"></span><br><span class="line">public static Calendar getInstance(Local aLocale) &#123;</span><br><span class="line">    return createCalendar(TimeZone.getDefault(), aLocale);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static Calendar createCalendar(TimeZone zone, Local aLocale) &#123;</span><br><span class="line">// ...</span><br><span class="line">    if(caltype == &#x27;budda&#x27;) // 에 따라서  다른 caledar </span><br><span class="line"></span><br><span class="line">    else if (caltype == &#x27;japanese&#x27;)</span><br><span class="line"></span><br><span class="line">    else if (caltype == &#x27;western&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-35-인터페이스-interface"><a href="#7-35-인터페이스-interface" class="headerlink" title="7-35 인터페이스 (interface)"></a>7-35 인터페이스 (interface)</h3><ul>
+<li><p>추상 메서드의 집합</p>
+</li>
+<li><p>구현된 것이 전혀 없는 설계도. 껍데기 (모든 멤버가 public)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">interface 인터페이스이름 &#123;</span><br><span class="line">    public static final 타입 상수이름 = 값;     //변수 iv, cv 안됨 오직 상수만</span><br><span class="line">    public abstract 메서드이름(매개변수목록);   // 추상 메서드</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface PlayingCard &#123;</span><br><span class="line">    public static final int SPADE = 4;</span><br><span class="line">    final int DIAMOND = 3; </span><br><span class="line">    static int HEART = 2;   // public 이 생략됨</span><br><span class="line">    int CLOVER = 1;         // final static 이 생략 됨</span><br><span class="line"></span><br><span class="line">    public abstract String getCardNumber();</span><br><span class="line">    String getCardKind();   // public abstract 이 생략 됨</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>인터페이스의 조상은 인터페이스만 가능 (Object가 최고 조상 아님)</p>
+</li>
+<li><p>다중 상속이 가능 (추상 메서드는 충돌 해도 문제 없음)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">inteface Fightable extends Movable, Attackable &#123; &#125;</span><br><span class="line">interface Movable &#123;</span><br><span class="line">    void move(int x, int y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Attackable &#123;</span><br><span class="line">    void attack(Unit u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="7-37-인터페이스-구현"><a href="#7-37-인터페이스-구현" class="headerlink" title="7-37 인터페이스 구현"></a>7-37 인터페이스 구현</h3><ul>
+<li><p>인터페이스에 정의된 추상 메서드를 완성 하는 것</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class 클래스이름 implements 인터페이스이름 &#123;</span><br><span class="line">    // 인터페이스에 정의된 추상 메서드를 모두 구현 해야 한다.   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Fighter implements Fightable </span><br><span class="line">&#123;</span><br><span class="line">    public void move(int x, int y) &#123; /* .. */ &#125;</span><br><span class="line">    public void attack(Unit u) &#123; /* .. */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>일부만 구현하는 경우, 클래스 앞에 abstract를 붙히면 됨</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class Fighter2 implements Fightable &#123;</span><br><span class="line">    public void move(int x, int y) &#123; /* .. */ &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Q 인터페이스란?</p>
+<blockquote>
+<p>(핵심) 추상 메서드의 집합<br>static 메서드, 디폴드 메서드가 JDK 1.8에 추가 </p>
+</blockquote>
+</li>
+<li><p>Q 인터페이스 구현이라?</p>
+<blockquote>
+<p>추상 메서드 몸통{} 만들기, 미완성 설계도 완성</p>
+</blockquote>
+</li>
+<li><p>Q 추상 클래스와 인터페이스의 공통점은?</p>
+<blockquote>
+<p>추상 메서드를 가지고 있다 (미완성 설계도)</p>
+</blockquote>
+</li>
+<li><p>Q 추상 클래스와 인터페이스의 틀린점은?</p>
+<blockquote>
+<p>cv, iv 을 가질수 없다</p>
+</blockquote>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/" data-id="cl2yn59800009hw3849zneizi" data-title="2주차 챕터 7 - 객체지향 개념2" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/" data-id="cl31jelba0004qc38ggyy5ezx" data-title="(오키) 자바의정석, 2주차 챕터 7 - 객체지향 개념2" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li></ul>
 
     </footer>
   </div>
@@ -262,7 +324,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
     </div>
   </div>
 
@@ -272,7 +334,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 16.67px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a>
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 16.67px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 13.33px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 13.33px;">javastudy2</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a>
     </div>
   </div>
 
@@ -294,23 +356,23 @@
       <ul>
         
           <li>
+            <a href="/2022/05/11/My-New-Post-3/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/11/My-New-Post-2/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/11/My-New-Post-1/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/11/My-New-Post/">My New Post</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA 와 Spring Data 소개</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/">2주차 챕터 7 - 객체지향 개념2</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/06/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90%EB%B0%8F%EB%B0%B0%ED%8F%AC%EC%9A%B4%EC%98%81/">회원게시판, 구글,네이버로그인, 배포운영</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/06/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90/">회원게시판</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/06/java/2022/%ED%8C%A8%EC%BB%B4_%EA%B0%95%EC%A2%8C/%EB%84%A4%EC%9D%B4%EB%B2%84%EB%A7%9B%EC%A7%91/">My New Post</a>
           </li>
         
       </ul>
