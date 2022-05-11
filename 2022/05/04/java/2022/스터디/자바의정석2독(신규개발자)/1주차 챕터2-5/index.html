@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>(신규개발자) 자바의 정석, 1주차 ch2-5 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ch2-11 기본형과 범위논리형 boolean 1 byte문자형 char 2 bytes정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes실수형 float 4 bytes, double 8 bytes 범위1 byte &#x3D; 8 bit  2^8-11 sign bit + 7 bit  + and - of 2^7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(신규개발자) 자바의 정석, 1주차 ch2-5">
+<meta property="og:url" content="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B02-5/index.html">
+<meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
+<meta property="og:description" content="ch2-11 기본형과 범위논리형 boolean 1 byte문자형 char 2 bytes정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes실수형 float 4 bytes, double 8 bytes 범위1 byte &#x3D; 8 bit  2^8-11 sign bit + 7 bit  + and - of 2^7">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-04T05:56:16.000Z">
+<meta property="article:modified_time" content="2022-05-11T14:03:06.005Z">
+<meta property="article:author" content="Miro Mike">
+<meta property="article:tag" content="javastudy2">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">하소연 개발 노트 (Miro&#39;s IT Blog)</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://miromike.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-java/2022/스터디/자바의정석2독(신규개발자)/1주차 챕터2-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B02-5/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T05:56:16.000Z" itemprop="datePublished">2022-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      (신규개발자) 자바의 정석, 1주차 ch2-5
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="ch2-11-기본형과-범위"><a href="#ch2-11-기본형과-범위" class="headerlink" title="ch2-11 기본형과 범위"></a>ch2-11 기본형과 범위</h3><p>논리형 boolean 1 byte<br>문자형 char 2 bytes<br>정수형 byte 1 byte, short 2 byte, int 4 bytes, long 8 bytes<br>실수형 float 4 bytes, double 8 bytes</p>
+<p>범위<br>1 byte &#x3D; 8 bit  2^8-1<br>1 sign bit + 7 bit  + and - of 2^7-1</p>
+<p>-1 붙는건 0 때문에<br>int 는 2^31 임으로 대략 20억임 즉 int는 -20억~20억</p>
+<p>실수형<br>float 4byte&#x2F;32bit : S 부호 + 지수 E(8) + 가수 M(23)  &#x3D; 32 bit ; 정밀도 7자리 ; 10^7 &lt; 2 ^24 &lt; 10^8 &gt; 그래서 정밀도 7자리<br>double 8byte&#x2F;64bit : S 부호 + 지수 E(11) + 가수 M(52) &#x3D; 64 bit ; 정밀도 15자리</p>
+<h3 id="ch2-12-13-printf-이용한-출력"><a href="#ch2-12-13-printf-이용한-출력" class="headerlink" title="ch2-12,13 printf 이용한 출력"></a>ch2-12,13 printf 이용한 출력</h3><p>printf 지시자<br>%b boolean<br>%d 10진 정수<br>%o 8진 정수<br>%x 16진 정수</p>
+<p>%f 부동 소수점<br>%e 지수 (exponent) 표현식</p>
+<p>%c 문자<br>%s 문자열</p>
+<p>2진수 찍기: System.out.print(“%s”, Integer.toBinaryString(15); &#x2F;&#x2F; 1111 로 나옴<br>8진수와 16진수 앞에 접두사 붙이기 : …”%#x”, 15) &#x2F;&#x2F; 0xf 로 나옴</p>
+<h3 id="ch2-14-화면에서-입력-받기-Scanner"><a href="#ch2-14-화면에서-입력-받기-Scanner" class="headerlink" title="ch2-14 화면에서 입력 받기 Scanner"></a>ch2-14 화면에서 입력 받기 Scanner</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Scanner</span> <span class="variable">scanner</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> scanner.nextInt();</span><br><span class="line"><span class="type">String</span> <span class="variable">input</span> <span class="operator">=</span> scanner.nextLine();</span><br><span class="line"><span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> Integer.parseInt(input);</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch2-17-타입간의-변환방법"><a href="#ch2-17-타입간의-변환방법" class="headerlink" title="ch2-17 타입간의 변환방법"></a>ch2-17 타입간의 변환방법</h3><ol>
+<li>문자와 숫자간의 변환</li>
+<li>문자열로의 변환<br>“3” -&gt; ‘3’ : str.charAt(0); &#x2F;&#x2F; 인자는 str의 index<br>“3” -&gt; 3 : Integer.parseInt(“3”);<br>“3.4” -&gt; 3.4 : Double.parseDouble(“3.4”);</li>
+</ol>
+<h3 id="ch3-1-2-연산자와-피연산자"><a href="#ch3-1-2-연산자와-피연산자" class="headerlink" title="ch3-1,2 연산자와 피연산자"></a>ch3-1,2 연산자와 피연산자</h3><p>산술연산자 + - * &#x2F; % &lt;&lt; &gt;&gt;<br>비교연산자 &gt; &lt; &gt;&#x3D; &lt;&#x3D; &#x3D;&#x3D; !&#x3D;<br>논리연산자 &amp;&amp; || ! &amp; | ^ ~<br>대입연산자 &#x3D;<br>기타 (type) ?: instanceof</p>
+<h3 id="ch3-3-4-연산자의-우선순위와-결합규칙"><a href="#ch3-3-4-연산자의-우선순위와-결합규칙" class="headerlink" title="ch3-3,4 연산자의 우선순위와 결합규칙"></a>ch3-3,4 연산자의 우선순위와 결합규칙</h3><ol>
+<li>산술 &gt; 비교 &gt; 논리 &gt; 대입 순서</li>
+<li>단항 &gt; 이항 &gt; 삼항</li>
+<li>방향 왼쪽 -&gt; 오른쪽, 단항하고 대입만 오른쪽 -&gt; 왼쪽</li>
+</ol>
+<h3 id="ch3-5-6-증감-연산자"><a href="#ch3-5-6-증감-연산자" class="headerlink" title="ch3-5,6 증감 연산자"></a>ch3-5,6 증감 연산자</h3><p>증가 연산자 ++<br>감소 연산자 –<br>전위형: 값 참조 전에 증가 j &#x3D; ++i;  &gt;&gt; ++i; j&#x3D;i;<br>후위형: 값 참조 후에 증가 j &#x3D; i++;  &gt;&gt; j&#x3D;i; i++;</p>
+<h3 id="ch3-7-형변환-연산자"><a href="#ch3-7-형변환-연산자" class="headerlink" title="ch3-7 형변환 연산자"></a>ch3-7 형변환 연산자</h3><p>(타입) 피연산자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="number">85.4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> (<span class="type">int</span>) d; <span class="comment">// i 는 85가 됨</span></span><br></pre></td></tr></table></figure>
+
+<p>작은 범위 타입에서 큰 범위 타입은 자동 변환이 안되어 명시적으로 해주지 않으면 컴파일 에러 난다.</p>
+<h3 id="ch3-11-12-반올림"><a href="#ch3-11-12-반올림" class="headerlink" title="ch3-11,12 반올림"></a>ch3-11,12 반올림</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.round()</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch3-13-비교-연산자"><a href="#ch3-13-비교-연산자" class="headerlink" title="ch3-13 비교 연산자"></a>ch3-13 비교 연산자</h3><p>문자열 비교에는 &#x3D;&#x3D; 대신 equals() 를 사용</p>
+<h3 id="ch3-17-조건-연산자"><a href="#ch3-17-조건-연산자" class="headerlink" title="ch3-17 조건 연산자 ?"></a>ch3-17 조건 연산자 ?</h3><p>조건식에 결과에 따라 연산 결과를 달리 한다.</p>
+<p>조건식 ? 식1: 식2<br>조건식 참이면 식1, 거짓이면 식2</p>
+<p>result &#x3D; (x &gt; y) ? x : y;</p>
+<h3 id="ch4-조건문과-반복문"><a href="#ch4-조건문과-반복문" class="headerlink" title="ch4 조건문과 반복문"></a>ch4 조건문과 반복문</h3><p>if문, if-else문</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (조건식) &#123;</span><br><span class="line">    <span class="keyword">case</span> 값<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">case</span> 값<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 생략은 가능</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>switch문의 조건식 결과는 정수 또는 문자열</p>
+<h3 id="ch4-12-임의-정수-만들기"><a href="#ch4-12-임의-정수-만들기" class="headerlink" title="ch4-12 임의 정수 만들기"></a>ch4-12 임의 정수 만들기</h3><p>Math.random() - 0.0와 1.0 사이의 임의 double 값</p>
+<p>1에서 X 사이의 랜던 정수 얻는 법</p>
+<blockquote>
+<p>0.0 &lt; Math.randome() * X &lt; 1.0</p>
+<ol>
+<li>각변에 원하는 숫자 곱한다.</li>
+<li>각 변을 int 로 변환</li>
+<li>각변에 1 더한다.<br>1 &lt; Math.random() * X &lt; X+1</li>
+</ol>
+</blockquote>
+<h3 id="ch4-13-반복문"><a href="#ch4-13-반복문" class="headerlink" title="ch4-13 반복문"></a>ch4-13 반복문</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (초기화;조건식;증감식)</span><br><span class="line">&#123;</span><br><span class="line">    수행 될 문장들 블럭</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>중첩 for 문</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        System.out.printf(<span class="string">&quot;%d * %d = %d\n&quot;</span>, i, j, i*j);</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch4-16-while-문"><a href="#ch4-16-while-문" class="headerlink" title="ch4-16 while 문"></a>ch4-16 while 문</h3><p>while문의 loop 구문의 원조<br>이후 for loop 좀더 편하게 나옴</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">초기화;</span><br><span class="line"><span class="keyword">while</span>(조건식) &#123;</span><br><span class="line">    수행될 문장</span><br><span class="line">    증감식;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch4-19-do-while문"><a href="#ch4-19-do-while문" class="headerlink" title="ch4-19 do-while문"></a>ch4-19 do-while문</h3><p>블럭 {}을 최소한 한번 실행</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    </span><br><span class="line">    실행할 문장들..</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">while</span>(조건식);</span><br></pre></td></tr></table></figure>
+
+<p>break; &gt; 빠져 나올때는 사용<br>continue; &gt; 반복문 실행 블락의 제일 밑으로 이동 , 다음 반복으로 갈때 사용</p>
+<h3 id="ch4-23-이름-붙은-반복문"><a href="#ch4-23-이름-붙은-반복문" class="headerlink" title="ch4-23 이름 붙은 반복문"></a>ch4-23 이름 붙은 반복문</h3><p>label 을 붙여서 goto 하는 듯한 구문이<br>자바에도 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Loop1 : <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">5</span>)</span><br><span class="line">        &#123;</span><br><span class="line">           <span class="keyword">break</span> Loop1;</span><br><span class="line">           System.out.printf(<span class="string">&quot;%d * %d = %d\n&quot;</span>, i, j, i*j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch5-배열이란-선언-방법-길이"><a href="#ch5-배열이란-선언-방법-길이" class="headerlink" title="ch5 배열이란?, 선언 방법, 길이"></a>ch5 배열이란?, 선언 방법, 길이</h3><ul>
+<li>같은 타입의 여러 변수를 하나의 묶음으로 다루는 것</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> score1, score2, score3...</span><br><span class="line"><span class="type">int</span>[] score; <span class="comment">// 배열의 선언, 참조 변수 score</span></span><br><span class="line">score = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>]; <span class="comment">// 실제 저장 공간 생성</span></span><br><span class="line"></span><br><span class="line">score[<span class="number">0</span>]; <span class="comment">// index 0 부터 시작됨</span></span><br><span class="line">score[<span class="number">1</span>];</span><br><span class="line">score[<span class="number">2</span>]; </span><br><span class="line">score[<span class="number">3</span>];</span><br><span class="line">score[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="type">int</span> <span class="variable">tmp</span> <span class="operator">=</span> arr.length; <span class="comment">// 길이 5, 리턴 됨</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>자바는 2가지 선언 방식 전부 지원<br>언어 | 선언방법 | 선언 예</li>
+</ul>
+<p>——— | ———<br>Java | 타입[] 변수이름; | int[] score;<br>C    | 타입 변수이름[]; | int score[];</p>
+<h3 id="ch5-5-배열의-초기화"><a href="#ch5-5-배열의-초기화" class="headerlink" title="ch5-5 배열의 초기화"></a>ch5-5 배열의 초기화</h3><ul>
+<li>기본적으로 자동 초기화 된다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] score = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>];</span><br><span class="line">score[<span class="number">0</span>] = <span class="number">50</span>;</span><br><span class="line">...</span><br><span class="line"><span class="type">int</span>[] score = &#123;<span class="number">50</span>, <span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Arrays-의-toString-메서드"><a href="#Arrays-의-toString-메서드" class="headerlink" title="Arrays 의 toString 메서드"></a>Arrays 의 toString 메서드</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] iArr = &#123; <span class="number">100</span>, <span class="number">95</span>, <span class="number">80</span>, <span class="number">70</span>, <span class="number">65</span>&#125;;</span><br><span class="line">System.out.println(Arrays.toString(iArr));</span><br></pre></td></tr></table></figure>
+
+<h3 id="System에-Copying-Arrays-메서드-arraycopy"><a href="#System에-Copying-Arrays-메서드-arraycopy" class="headerlink" title="System에 Copying Arrays 메서드 arraycopy"></a>System에 Copying Arrays 메서드 arraycopy</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">arraycopy</span><span class="params">(Object src, <span class="type">int</span> srcPos,</span></span><br><span class="line"><span class="params">                             Object dest, <span class="type">int</span> destPos, <span class="type">int</span> length)</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayCopyDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String[] copyFrom = &#123;</span><br><span class="line">            <span class="string">&quot;Affogato&quot;</span>, <span class="string">&quot;Americano&quot;</span>, <span class="string">&quot;Cappuccino&quot;</span>, <span class="string">&quot;Corretto&quot;</span>, <span class="string">&quot;Cortado&quot;</span>,   </span><br><span class="line">            <span class="string">&quot;Doppio&quot;</span>, <span class="string">&quot;Espresso&quot;</span>, <span class="string">&quot;Frappucino&quot;</span>, <span class="string">&quot;Freddo&quot;</span>, <span class="string">&quot;Lungo&quot;</span>, <span class="string">&quot;Macchiato&quot;</span>,      </span><br><span class="line">            <span class="string">&quot;Marocchino&quot;</span>, <span class="string">&quot;Ristretto&quot;</span> &#125;;</span><br><span class="line">        </span><br><span class="line">        String[] copyTo = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// copying </span></span><br><span class="line">        System.arraycopy(copyFrom, <span class="number">2</span>, copyTo, <span class="number">0</span>, <span class="number">7</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 결과 출력</span></span><br><span class="line">        <span class="keyword">for</span> (String coffee : copyTo) &#123;</span><br><span class="line">            System.out.print(coffee + <span class="string">&quot; &quot;</span>);           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The output from this program is: Cappuccino Corretto Cortado Doppio Espresso Frappucino Freddo</p>
+<h3 id="Arrays-array-manipulations-common-tasks-copying-sorting-searching"><a href="#Arrays-array-manipulations-common-tasks-copying-sorting-searching" class="headerlink" title="Arrays, array manipulations (common tasks) : copying, sorting, searching"></a>Arrays, array manipulations (common tasks) : copying, sorting, searching</h3><p>For your convenience, Java SE provides several methods for performing array manipulations (common tasks, such as copying, sorting and searching arrays) in the java.util.Arrays class. </p>
+<p>위에 예제는 copyOfRange 를 사용 하면 더 간편하다. (dest array 생성 불 필요)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ArrayCopyOfDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String[] copyFrom = &#123;</span><br><span class="line">            <span class="string">&quot;Affogato&quot;</span>, <span class="string">&quot;Americano&quot;</span>, <span class="string">&quot;Cappuccino&quot;</span>, <span class="string">&quot;Corretto&quot;</span>, <span class="string">&quot;Cortado&quot;</span>,   </span><br><span class="line">            <span class="string">&quot;Doppio&quot;</span>, <span class="string">&quot;Espresso&quot;</span>, <span class="string">&quot;Frappucino&quot;</span>, <span class="string">&quot;Freddo&quot;</span>, <span class="string">&quot;Lungo&quot;</span>, <span class="string">&quot;Macchiato&quot;</span>,      </span><br><span class="line">            <span class="string">&quot;Marocchino&quot;</span>, <span class="string">&quot;Ristretto&quot;</span> &#125;;</span><br><span class="line">        </span><br><span class="line">        String[] copyTo = java.util.Arrays.copyOfRange(copyFrom, <span class="number">2</span>, <span class="number">9</span>);        </span><br><span class="line">        <span class="keyword">for</span> (String coffee : copyTo) &#123;</span><br><span class="line">            System.out.print(coffee + <span class="string">&quot; &quot;</span>);           </span><br><span class="line">        &#125;            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>결과: [Cappuccino, Corretto, Cortado, Doppio, Espresso, Frappucino, Freddo] </p>
+</blockquote>
+<p>initial index of the range to be copied, <code>inclusively</code>, while the third parameter is the final index of the range to be copied, <code>exclusively</code>.   예제 에서는 index 2 와 9 까지, 2는 포함, 9는 미포함</p>
+<h3 id="java-util-Arrays-class의-다른-유용한-함수들"><a href="#java-util-Arrays-class의-다른-유용한-함수들" class="headerlink" title="java.util.Arrays class의 다른 유용한 함수들"></a>java.util.Arrays class의 다른 유용한 함수들</h3><ol>
+<li><p><code>Searching</code> an array for a specific value to get the index at which it is placed (the binarySearch method).</p>
+</li>
+<li><p><code>Comparing</code> two arrays to determine if they are equal or not (the equals method).</p>
+</li>
+<li><p><code>Filling</code> an array to place a specific value at each index (the fill method).</p>
+</li>
+<li><p><code>Sorting</code> an array into ascending order. This can be done either sequentially, using the sort method, or concurrently, using the parallelSort method introduced in Java SE 8. Parallel sorting of large arrays on multiprocessor systems is faster than sequential array sorting.</p>
+</li>
+<li><p><code>Creating a stream</code> that uses an array as its source (the stream method). For example, the following statement prints the contents of the copyTo array in the same way as in the previous</p>
+</li>
+</ol>
+<blockquote>
+<p>example: java.util.Arrays.stream(copyTo).map(coffee -&gt; coffee + “ “).forEach(System.out::print);<br>See Aggregate Operations for more information about streams.</p>
+</blockquote>
+<ol start="6">
+<li><code>Converting an array to a string</code>. The toString method converts each element of the array to a string, separates them with commas, then surrounds them with brackets. For example, the following statement converts the copyTo array to a string and prints it:</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B02-5/" data-id="cl31njcs20000sk3839p04jqp" data-title="(신규개발자) 자바의 정석, 1주차 ch2-5" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/04/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%EA%B8%B0%EC%B4%881/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          스프링 기초 - 1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/03/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%ED%84%B0%EB%94%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">(신규개발자) 자바의정석 스터디 (5/4~7/13, 10주)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA 와 Spring Data 소개</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/">(오키) 자바의정석, 2주차 챕터 7 - 객체지향 개념2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90%EB%B0%8F%EB%B0%B0%ED%8F%AC%EC%9A%B4%EC%98%81/">회원게시판, 구글,네이버로그인, 배포운영</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90/">회원게시판</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/06/java/2022/%ED%8C%A8%EC%BB%B4_%EA%B0%95%EC%A2%8C/%EB%84%A4%EC%9D%B4%EB%B2%84%EB%A7%9B%EC%A7%91/">네이버 맛집</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Miro Mike<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
