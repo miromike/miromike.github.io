@@ -181,23 +181,18 @@
 </blockquote>
 <p>initial index of the range to be copied, <code>inclusively</code>, while the third parameter is the final index of the range to be copied, <code>exclusively</code>.   예제 에서는 index 2 와 9 까지, 2는 포함, 9는 미포함</p>
 <h3 id="java-util-Arrays-class의-다른-유용한-함수들"><a href="#java-util-Arrays-class의-다른-유용한-함수들" class="headerlink" title="java.util.Arrays class의 다른 유용한 함수들"></a>java.util.Arrays class의 다른 유용한 함수들</h3><ol>
-<li><p><code>Searching</code> an array for a specific value to get the index at which it is placed (the binarySearch method).</p>
-</li>
-<li><p><code>Comparing</code> two arrays to determine if they are equal or not (the equals method).</p>
-</li>
-<li><p><code>Filling</code> an array to place a specific value at each index (the fill method).</p>
-</li>
-<li><p><code>Sorting</code> an array into ascending order. This can be done either sequentially, using the sort method, or concurrently, using the parallelSort method introduced in Java SE 8. Parallel sorting of large arrays on multiprocessor systems is faster than sequential array sorting.</p>
-</li>
-<li><p><code>Creating a stream</code> that uses an array as its source (the stream method). For example, the following statement prints the contents of the copyTo array in the same way as in the previous</p>
-</li>
+<li><code>Searching</code> (binarySearch method).</li>
+<li><code>Comparing</code> two arrays to determine if they are equal or not (the equals method).</li>
+<li><code>Filling</code> an array to place a specific value at each index (the fill method).</li>
+<li><code>Sorting</code> an array into ascending order. using sort method, or parallelSort method introduced in Java SE 8.</li>
+<li><code>Converting an array to a string</code>. The toString method converts each element of the array to a string, separates them with commas, then surrounds them with brackets.</li>
+<li><code>Creating a stream</code> that uses an array as its source (the stream method).</li>
 </ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.util.Arrays.stream(copyTo).map(coffee -&gt; coffee + <span class="string">&quot; &quot;</span>).forEach(System.out::print);  </span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>example: java.util.Arrays.stream(copyTo).map(coffee -&gt; coffee + “ “).forEach(System.out::print);<br>See Aggregate Operations for more information about streams.</p>
+<p>See Aggregate Operations for more information about streams.</p>
 </blockquote>
-<ol start="6">
-<li><code>Converting an array to a string</code>. The toString method converts each element of the array to a string, separates them with commas, then surrounds them with brackets. For example, the following statement converts the copyTo array to a string and prints it:</li>
-</ol>
 
       
     </div>
