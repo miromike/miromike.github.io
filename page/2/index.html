@@ -71,6 +71,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java/2022/인프런_스프링_김영학강사님/기초1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%EA%B8%B0%EC%B4%881/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T14:09:50.000Z" itemprop="datePublished">2022-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/04/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%EA%B8%B0%EC%B4%881/">스프링 기초 - 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="View-환경-설정"><a href="#View-환경-설정" class="headerlink" title="View 환경 설정"></a>View 환경 설정</h3><h4 id="스프링-부트가-제공-하는-Welcome-Page"><a href="#스프링-부트가-제공-하는-Welcome-Page" class="headerlink" title="스프링 부트가 제공 하는 Welcome Page"></a>스프링 부트가 제공 하는 Welcome Page</h4><p>정적 페이지 로 resources&#x2F;static&#x2F;index.html</p>
+<h3 id="스프링-웹-개발-기초"><a href="#스프링-웹-개발-기초" class="headerlink" title="스프링 웹 개발 기초"></a>스프링 웹 개발 기초</h3><ol>
+<li>정적 컨텐츠</li>
+<li>MVC와 Template 엔진</li>
+<li>API</li>
+</ol>
+<h4 id="MVC와-Template-엔진"><a href="#MVC와-Template-엔진" class="headerlink" title="MVC와 Template 엔진"></a>MVC와 Template 엔진</h4><p>기본 Flow : client가 Get 으로 URL 노드에 요청</p>
+<ol>
+<li>@Controller 클래스</li>
+<li>@GetMapping 으로 연결된 함수</li>
+<li>함수 실행, Model model 에 Data를 채움 (MVC에 그 Model임)</li>
+<li>함수가 가야 하는 View 파일 이름을 반환 함</li>
+<li>ViewResolver가 Thymeleaf 템플릿 엔진으로 가는 것임을 감지</li>
+<li>resources&#x2F;templates&#x2F;{파일이름}.html 에 model 데이타 치환, 생성</li>
+<li>client가 만들어진 html 받아 봄</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/04/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%EA%B8%B0%EC%B4%881/" data-id="cl2yn597v0003hw389fk14x5d" data-title="스프링 기초 - 1" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java/2022/스터디/자바의정석2독(신규개발자)/1주차 챕터2-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/04/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B02-5/" class="article-date">
@@ -193,7 +249,9 @@
 <blockquote>
 <p>See Aggregate Operations for more information about streams.</p>
 </blockquote>
-
+<h3 id="ch5-16-커맨드-라인을-통해-입력-받기"><a href="#ch5-16-커맨드-라인을-통해-입력-받기" class="headerlink" title="ch5-16 커맨드 라인을 통해 입력 받기"></a>ch5-16 커맨드 라인을 통해 입력 받기</h3><p>main(String[] args) 는 cmd 실행시 java example abc 123 “hello world” 하면 args[0]은 abc, [1]는 123, [2] hello world가 들어간다.</p>
+<h3 id="ch5-18-20-2차원-배열"><a href="#ch5-18-20-2차원-배열" class="headerlink" title="ch5-18~20 2차원 배열"></a>ch5-18~20 2차원 배열</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[][] score = &#123;</span><br><span class="line">    &#123;<span class="number">100</span>, <span class="number">100</span>, <span class="number">100</span>&#125;,</span><br><span class="line">    &#123;<span class="number">20</span>, <span class="number">20</span>, <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="number">30</span>, <span class="number">30</span>, <span class="number">30</span>&#125;,</span><br><span class="line">    &#123;<span class="number">40</span>, <span class="number">40</span>, <span class="number">40</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="ch5-14-15-String-클래스"><a href="#ch5-14-15-String-클래스" class="headerlink" title="ch5-14,15 String 클래스"></a>ch5-14,15 String 클래스</h3><h3 id="ch5-24-Arrays-배열-다루기"><a href="#ch5-24-Arrays-배열-다루기" class="headerlink" title="ch5-24 Arrays 배열 다루기"></a>ch5-24 Arrays 배열 다루기</h3>
       
     </div>
     <footer class="article-footer">
@@ -810,68 +868,11 @@ static Local convertData(String json) &#123;
 
 
   
-    <article id="single-java/2022/상반기/2022-4-16-Enum" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/16/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-16-Enum/" class="article-date">
-  <time class="dt-published" datetime="2022-04-15T15:00:00.000Z" itemprop="datePublished">2022-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/16/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-16-Enum/">Enum type 에 대해서</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Enum-선언"><a href="#Enum-선언" class="headerlink" title="Enum 선언"></a>Enum 선언</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class 선언과 유사 하고 </span><br><span class="line">변수, 생성자, 메서드를 추가 할수 있다.</span><br><span class="line"></span><br><span class="line">생성자는 자동으로 private 잡히고 인스턴스가 전체 프로그램에 </span><br><span class="line">하나만 생성 되는 것을 자바에서 보장 해 싱글톤으로 활용 된다고 한다.</span><br><span class="line"></span><br><span class="line">public enum CarMaker &#123;</span><br><span class="line">   </span><br><span class="line">    KIA(100), HYUNDAI(200), BMW(300);</span><br><span class="line"></span><br><span class="line">    private final int value;</span><br><span class="line"></span><br><span class="line">    CarMaker(int value)</span><br><span class="line">    &#123;</span><br><span class="line">        this.value = value;</span><br><span class="line">        System.out.println(&quot;Contractor:&quot;+value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Enum-사용"><a href="#Enum-사용" class="headerlink" title="Enum 사용"></a>Enum 사용</h2><p>정의 한 Enum의 사용은 CarMaker.KIA 이다.<br>마치 static class 의 변수 참조 하듯이 한다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">values(), ordinal, name(), valueOf() 등을 호출 할수 있다.</span><br><span class="line"></span><br><span class="line">public class EnumEx &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        CarMaker maker = CarMaker.KIA;</span><br><span class="line"></span><br><span class="line">        CarMaker[] list = CarMaker.values();</span><br><span class="line"></span><br><span class="line">        for (CarMaker c : list) &#123;</span><br><span class="line">            System.out.printf(&quot;ordinal:%d name:%s \n&quot;, c.ordinal(), c.name());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        CarMaker value = CarMaker.valueOf(&quot;KIA&quot;);</span><br><span class="line">        System.out.println(value);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="실행-결과"><a href="#실행-결과" class="headerlink" title="실행 결과"></a>실행 결과</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Contractor:100</span><br><span class="line">Contractor:200</span><br><span class="line">Contractor:300</span><br><span class="line">ordinal:0 name:KIA </span><br><span class="line">ordinal:1 name:HYUNDAI </span><br><span class="line">ordinal:2 name:BMW </span><br><span class="line">KIA</span><br></pre></td></tr></table></figure>
-
-<p>프로세스에 코드가 올라가면서 Static으로 상수 숫자 만큼 생성자가 호출 된다.<br>여기선 KIA, HYUNDAI, BMW 3개임으로 3번.</p>
-<p>maker 를 디버거로 인스턴트화 된것을 보면<br>maker 는 value, name, ordinal 을 멤버로 가지고 있음</p>
-<ol>
-<li>value &#x3D; 100</li>
-<li>name &#x3D; “KIA”</li>
-<li>ordinal &#x3D; 0</li>
-</ol>
-<p>values()는 이를 가지고 있는 배열을 반환 한다.</p>
-<h2 id="싱글톤-활용에-대한-글"><a href="#싱글톤-활용에-대한-글" class="headerlink" title="싱글톤 활용에 대한 글"></a>싱글톤 활용에 대한 글</h2><p><a target="_blank" rel="noopener" href="https://scshim.tistory.com/361">https://scshim.tistory.com/361</a></p>
-<h3 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h3><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=jVlzwq41whE&amp;t=1s">https://www.youtube.com/watch?v=jVlzwq41whE&amp;t=1s</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/16/java/2022/%EC%83%81%EB%B0%98%EA%B8%B0/2022-4-16-Enum/" data-id="cl2n3cy94000j4o3827gmhdt2" data-title="Enum type 에 대해서" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -917,6 +918,10 @@ static Local convertData(String json) &#123;
       <ul>
         
           <li>
+            <a href="/2022/05/12/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/">(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/09/java/2022/%EC%8A%A4%ED%84%B0%EB%94%94/JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA 와 Spring Data 소개</a>
           </li>
         
@@ -930,10 +935,6 @@ static Local convertData(String json) &#123;
         
           <li>
             <a href="/2022/05/06/java/2022/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%8A%A4%ED%94%84%EB%A7%81_%EA%B9%80%EC%98%81%ED%95%99%EA%B0%95%EC%82%AC%EB%8B%98/%ED%9A%8C%EC%9B%90%EA%B2%8C%EC%8B%9C%ED%8C%90/">회원게시판</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/06/java/2022/%ED%8C%A8%EC%BB%B4_%EA%B0%95%EC%A2%8C/%EB%84%A4%EC%9D%B4%EB%B2%84%EB%A7%9B%EC%A7%91/">네이버 맛집</a>
           </li>
         
       </ul>
