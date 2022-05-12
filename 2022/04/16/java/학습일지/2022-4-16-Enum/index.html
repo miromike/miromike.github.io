@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Enum type 에 대해서 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enum 선언1234567891011121314151617181920class 선언과 유사 하고 변수, 생성자, 메서드를 추가 할수 있다.생성자는 자동으로 private 잡히고 인스턴스가 전체 프로그램에 하나만 생성 되는 것을 자바에서 보장 해 싱글톤으로 활용 된다고 한다.public enum CarMaker &amp;#123;       KIA(100), HYU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Enum type 에 대해서">
+<meta property="og:url" content="https://miromike.github.io/2022/04/16/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-16-Enum/index.html">
+<meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
+<meta property="og:description" content="Enum 선언1234567891011121314151617181920class 선언과 유사 하고 변수, 생성자, 메서드를 추가 할수 있다.생성자는 자동으로 private 잡히고 인스턴스가 전체 프로그램에 하나만 생성 되는 것을 자바에서 보장 해 싱글톤으로 활용 된다고 한다.public enum CarMaker &amp;#123;       KIA(100), HYU">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-15T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-01T09:30:11.505Z">
+<meta property="article:author" content="Miro Mike">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">하소연 개발 노트 (Miro&#39;s IT Blog)</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://miromike.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="single-java/학습일지/2022-4-16-Enum" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/16/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-16-Enum/" class="article-date">
+  <time class="dt-published" datetime="2022-04-15T15:00:00.000Z" itemprop="datePublished">2022-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Enum type 에 대해서
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Enum-선언"><a href="#Enum-선언" class="headerlink" title="Enum 선언"></a>Enum 선언</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class 선언과 유사 하고 </span><br><span class="line">변수, 생성자, 메서드를 추가 할수 있다.</span><br><span class="line"></span><br><span class="line">생성자는 자동으로 private 잡히고 인스턴스가 전체 프로그램에 </span><br><span class="line">하나만 생성 되는 것을 자바에서 보장 해 싱글톤으로 활용 된다고 한다.</span><br><span class="line"></span><br><span class="line">public enum CarMaker &#123;</span><br><span class="line">   </span><br><span class="line">    KIA(100), HYUNDAI(200), BMW(300);</span><br><span class="line"></span><br><span class="line">    private final int value;</span><br><span class="line"></span><br><span class="line">    CarMaker(int value)</span><br><span class="line">    &#123;</span><br><span class="line">        this.value = value;</span><br><span class="line">        System.out.println(&quot;Contractor:&quot;+value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Enum-사용"><a href="#Enum-사용" class="headerlink" title="Enum 사용"></a>Enum 사용</h2><p>정의 한 Enum의 사용은 CarMaker.KIA 이다.<br>마치 static class 의 변수 참조 하듯이 한다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">values(), ordinal, name(), valueOf() 등을 호출 할수 있다.</span><br><span class="line"></span><br><span class="line">public class EnumEx &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        CarMaker maker = CarMaker.KIA;</span><br><span class="line"></span><br><span class="line">        CarMaker[] list = CarMaker.values();</span><br><span class="line"></span><br><span class="line">        for (CarMaker c : list) &#123;</span><br><span class="line">            System.out.printf(&quot;ordinal:%d name:%s \n&quot;, c.ordinal(), c.name());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        CarMaker value = CarMaker.valueOf(&quot;KIA&quot;);</span><br><span class="line">        System.out.println(value);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="실행-결과"><a href="#실행-결과" class="headerlink" title="실행 결과"></a>실행 결과</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Contractor:100</span><br><span class="line">Contractor:200</span><br><span class="line">Contractor:300</span><br><span class="line">ordinal:0 name:KIA </span><br><span class="line">ordinal:1 name:HYUNDAI </span><br><span class="line">ordinal:2 name:BMW </span><br><span class="line">KIA</span><br></pre></td></tr></table></figure>
+
+<p>프로세스에 코드가 올라가면서 Static으로 상수 숫자 만큼 생성자가 호출 된다.<br>여기선 KIA, HYUNDAI, BMW 3개임으로 3번.</p>
+<p>maker 를 디버거로 인스턴트화 된것을 보면<br>maker 는 value, name, ordinal 을 멤버로 가지고 있음</p>
+<ol>
+<li>value &#x3D; 100</li>
+<li>name &#x3D; “KIA”</li>
+<li>ordinal &#x3D; 0</li>
+</ol>
+<p>values()는 이를 가지고 있는 배열을 반환 한다.</p>
+<h2 id="싱글톤-활용에-대한-글"><a href="#싱글톤-활용에-대한-글" class="headerlink" title="싱글톤 활용에 대한 글"></a>싱글톤 활용에 대한 글</h2><p><a target="_blank" rel="noopener" href="https://scshim.tistory.com/361">https://scshim.tistory.com/361</a></p>
+<h3 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h3><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=jVlzwq41whE&amp;t=1s">https://www.youtube.com/watch?v=jVlzwq41whE&amp;t=1s</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/16/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-16-Enum/" data-id="cl33ddwfc000n4o388edng9qv" data-title="Enum type 에 대해서" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/04/16/IDE/2022-4-16-Intellj/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          인텔리제이 자주 쓰는 쇼트컷 - 자바
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/14/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-14-Jarfile-make%202/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">main 함수 있을때 Jar 파일 (console에서)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/05/13/SQL/%EB%AC%B4%EC%97%87%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%9A%B0%EC%A7%80/">무엇을 배우지?</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/13/My-New-Post/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/">(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/09/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-5-9-JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/">JPA 와 Spring Data 소개</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/09/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/2%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%207%20-%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EA%B0%9C%EB%85%902/">(오키) 자바의정석, 2주차 챕터 7 - 객체지향 개념2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Miro Mike<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
