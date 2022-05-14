@@ -71,6 +71,214 @@
       <div class="outer">
         <section id="main">
   
+    <article id="single-java/학습일지/2022-4-14-package-main" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/14/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-14-package-main/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T15:00:00.000Z" itemprop="datePublished">2022-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/14/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-14-package-main/">package 키워드 넣어 실행하기 (console에서)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="package-키워드"><a href="#package-키워드" class="headerlink" title="package 키워드"></a>package 키워드</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package 패키지명;</span><br></pre></td></tr></table></figure>
+
+<p>아래 예제를 보면<br>com.company.console 이 패키지 명이고 folder path 가 된다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package com.company.console;</span><br><span class="line"></span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static class main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;Hello World&quot;);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="어떤-일을-하는가"><a href="#어떤-일을-하는가" class="headerlink" title="어떤 일을 하는가?"></a>어떤 일을 하는가?</h2><p>클래스 이름을 full name으로 변환 해 준다.<br>Main class 을 com.company.console.Main 로 변환 한다.<br>(javap 역 어셈블러 하면 변환 직접 확인 할수 있다.</p>
+<h1 id="package-선언-안하면"><a href="#package-선언-안하면" class="headerlink" title="package 선언 안하면"></a>package 선언 안하면</h1><p>자바에서 기본적으로 제공 하는 곳에 한다.<br>‘이름 없는 패키지’ (unnamed package)라고 부른다.</p>
+<h1 id="컴파일"><a href="#컴파일" class="headerlink" title="컴파일"></a>컴파일</h1><p>javac 파일 이름</p>
+<p>‘-d .’ path에 폴더들을 만든다.</p>
+<p>소스 파일 안에 import 있으면 경로 찾아 들어가 그 파일도 컴파일 하는 듯 하다.</p>
+<h1 id="콘솔에서-실행"><a href="#콘솔에서-실행" class="headerlink" title="콘솔에서 실행"></a>콘솔에서 실행</h1><p>이 부분에서 제일 헤맸는데..</p>
+<p>full name을 넣어줘야 하고 실행 위치도 중요 하다.</p>
+<p>파일 경로: c:\project\com\company\console\Main.java<br>컴파일을 &gt; c:\project&gt;java com.company.console.Main</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/14/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-14-package-main/" data-id="cl33ddwf8000h4o38exzjcxsk" data-title="package 키워드 넣어 실행하기 (console에서)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-blog/블로그-Hexo-적용" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/13/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-Hexo-%EC%A0%81%EC%9A%A9/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T09:16:02.000Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/13/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-Hexo-%EC%A0%81%EC%9A%A9/">블로그 Hexo 적용~</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Jekyll를 떠나기로 하고 다른 툴을 써보기로 생각하고 조사를 했고 요즘 많이 쓴다고 하는 Hexo를 찾았다.</p>
+<p>아래 <a target="_blank" rel="noopener" href="https://suhwan.dev/2018/03/22/change-blog/">개발 블로그</a>와 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=_fSxdUBulm8">유튜브 영상</a>을 참고 했다.</p>
+<p>사용 해 보니 맘이 듣다. 포스트 글을 tag 와 시간대를 분류 하는 걸 원했는데 셋팅 하는 법도 쉽게 찾았다.</p>
+<p>적었던 글들을 옮기고 올리는걸 보니 깃헛페이지에 workflow가 여전히 빌드 해서 배포를 한다. Jekyll 이 쓰이는 듯 하고. </p>
+<p>셋팅 하면서도 유사한 점들이 보였는데 Hexo는 Jekyll 기반 위에서 돌아가는 듯 하다. </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/13/blog/%EB%B8%94%EB%A1%9C%EA%B7%B8-Hexo-%EC%A0%81%EC%9A%A9/" data-id="cl1xhe5gd000en038dwxo68iy" data-title="블로그 Hexo 적용~" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Hexo명령어" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/13/Hexo%EB%AA%85%EB%A0%B9%EC%96%B4/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T09:16:02.000Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/13/Hexo%EB%AA%85%EB%A0%B9%EC%96%B4/">Hexo 자주 쓰는 명령어 노트</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>자주 쓰는 명령어를 여기 남기려고 한다~</p>
+<h2 id="Markup-글을-쓸때-이-문법으로"><a href="#Markup-글을-쓸때-이-문법으로" class="headerlink" title="Markup - 글을 쓸때 이 문법으로"></a>Markup - 글을 쓸때 이 문법으로</h2><p><a target="_blank" rel="noopener" href="https://simhyejin.github.io/2016/06/30/Markdown-syntax/">https://simhyejin.github.io/2016/06/30/Markdown-syntax/</a><br><a target="_blank" rel="noopener" href="https://velog.io/@yuuuye/velog-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4MarkDown-%EC%9E%91%EC%84%B1%EB%B2%95">간단한 MD 사용법 링크</a></p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo 사이트</a>!<br><a target="_blank" rel="noopener" href="https://hexo.io/docs/">다큐먼트</a><br><a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">트러블슈팅</a><br><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">이슈 있을땐 GitHub로</a></p>
+<h3 id="Create-a-new-post-새글-쓸때"><a href="#Create-a-new-post-새글-쓸때" class="headerlink" title="Create a new post - 새글 쓸때"></a>Create a new post - 새글 쓸때</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server-로컬에서-테스트-할때"><a href="#Run-server-로컬에서-테스트-할때" class="headerlink" title="Run server - 로컬에서 테스트 할때"></a>Run server - 로컬에서 테스트 할때</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files-다-쓰면서-이걸-돌린다"><a href="#Generate-static-files-다-쓰면서-이걸-돌린다" class="headerlink" title="Generate static files - 다 쓰면서 이걸 돌린다"></a>Generate static files - 다 쓰면서 이걸 돌린다</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites-GitHub-로-올린다"><a href="#Deploy-to-remote-sites-GitHub-로-올린다" class="headerlink" title="Deploy to remote sites - GitHub 로 올린다"></a>Deploy to remote sites - GitHub 로 올린다</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/13/Hexo%EB%AA%85%EB%A0%B9%EC%96%B4/" data-id="cl2n3cy8s00004o38cer5askt" data-title="Hexo 자주 쓰는 명령어 노트" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="single-java/학습일지/2022-4-13-compile-with-Jar" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/13/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-13-compile-with-Jar/" class="article-date">
+  <time class="dt-published" datetime="2022-04-12T15:00:00.000Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/13/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-13-compile-with-Jar/">Jar 파일 include 해서 컴파일 하는 법 (console에서)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자..</p>
+<h2 id="User-java"><a href="#User-java" class="headerlink" title="User.java"></a>User.java</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    int idx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Main-java"><a href="#Main-java" class="headerlink" title="Main.java"></a>Main.java</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        User user = new User();</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>~&#x2F;User&#x2F;User.java<br>~&#x2F;Main&#x2F;Main.java</p>
+<h2 id="User-컴파일-및-Jar-파일-생성"><a href="#User-컴파일-및-Jar-파일-생성" class="headerlink" title="User 컴파일 및 Jar 파일 생성"></a>User 컴파일 및 Jar 파일 생성</h2><p>javac User.java<br>jar cf User.jar User.class</p>
+<p>User.jar 파일이 만들어졌다 Main 폴더로 복사</p>
+<h2 id="Main-컴파일"><a href="#Main-컴파일" class="headerlink" title="Main 컴파일"></a>Main 컴파일</h2><p>javac Main.java</p>
+<p>User symbol을 못 찾겠다는 컴파일 에러 발생</p>
+<p>javac -cp User.jar Main.java<br>cp로 classpath를 넣어주니 컴파일 성공 한다.</p>
+<h2 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h2><p>java Main </p>
+<p>에러가 나온다<br>Exception in thread “main” java.lang.NoClassDefFoundError: User<br>at Main.main (Main.java:5) </p>
+<p>User class 못 찾는 다는 내용으로 보여서 컴파일 때 처럼<br>classpath 을 넣어 주면 될것으로 생각 해서</p>
+<p>java -cp User.jar Main<br>Error: Could not find or load main class Main </p>
+<p>여기서 막혔다..</p>
+<h2 id="Stackoverflow-에…"><a href="#Stackoverflow-에…" class="headerlink" title="Stackoverflow 에…"></a>Stackoverflow 에…</h2><p>(올린 질문 글)[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/71861212/import-jar-file-into-my-hello-world-console-application]">https://stackoverflow.com/questions/71861212/import-jar-file-into-my-hello-world-console-application]</a></p>
+<p>(Jar 파일 include 방법)[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt#comment11870389_9395207]">https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt#comment11870389_9395207]</a></p>
+<p>나의 윈도우 개발 환경에서 -cp 에 멀 넣어도 안된다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/04/13/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-13-compile-with-Jar/" data-id="cl33ddwf300074o383udk0fsu" data-title="Jar 파일 include 해서 컴파일 하는 법 (console에서)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="single-java/학습일지/2022-4-6-spring-vs-spring-boot" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/04/06/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-6-spring-vs-spring-boot/" class="article-date">
@@ -398,215 +606,6 @@
 
 
   
-    <article id="single-python/2022-3-19-pythonstudy" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/19/python/2022-3-19-pythonstudy/" class="article-date">
-  <time class="dt-published" datetime="2022-03-19T04:21:04.000Z" itemprop="datePublished">2022-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/19/python/2022-3-19-pythonstudy/">패스트캠퍼스 테크보이 워니 강좌 수강</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>테크보이 워니의 파이썬 코딩 클래스 수강 했다</p>
-<ol>
-<li>기본 문법</li>
-<li>자동 매매 봇</li>
-</ol>
-<p>기존 프로그래밍 언어보다 정말 편하네~</p>
-<p>온라인 개발 환경도 이번에 많다는걸 알게 되었다.<br>강좌에선 replit을 사용 하는데 갑자기 입력 오류가 생겨 고쳐질때까지 다른 서비스를 찾아보니 구글 콜라보라고 있는데 여기서도 많이 하는구나.</p>
-<p>찾아보면서 많은 무료 강좌들이 올라 와 있어 나중에 시간 될때 찬찬히 해보고 싶다.</p>
-<p><a target="_blank" rel="noopener" href="https://colab.research.google.com/?utm_source=scs-index">구글 콜라보</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/19/python/2022-3-19-pythonstudy/" data-id="cl1xhe5gl000xn038cc8sdr3u" data-title="패스트캠퍼스 테크보이 워니 강좌 수강" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-java/학습일지/2022-3-19-javastudy" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/19/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-3-19-javastudy/" class="article-date">
-  <time class="dt-published" datetime="2022-03-19T04:21:04.000Z" itemprop="datePublished">2022-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/19/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-3-19-javastudy/">Java 스터디 소스</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>입문자로 좋은 사이트라고 한다. 코뮤 커뮤니티에서 정보 get!<br><a target="_blank" rel="noopener" href="https://programmers.co.kr/learn/courses/5">https://programmers.co.kr/learn/courses/5</a></p>
-<p>빵형 책 보면서 같이 봐야겠다 :)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/19/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-3-19-javastudy/" data-id="cl33ddwf100024o38bardbw6j" data-title="Java 스터디 소스" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-java/학습일지/2022-3-19-java" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/19/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-3-19-java/" class="article-date">
-  <time class="dt-published" datetime="2022-03-19T04:21:04.000Z" itemprop="datePublished">2022-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/19/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-3-19-java/">토요일 자바 공부</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>빵형 책을 ch5까지 보고 진도 나간것을 활용해서 “1~3까지의 랜덤 숫자를 여러번 돌려보고 분포 확인” 코드를 짜보았다.</p>
-<p>‘’’<br>    Scanner sc &#x3D; new Scanner(System.in);<br>        System.out.println(“How many trial?”);<br>        System.out.print(“&gt;”);<br>        int trial &#x3D; sc.nextInt();</p>
-<pre><code>    for(int z = 0 ; z &lt; 10; z++)
-    &#123;
-        int num = 0;
-        Random random = new Random();
-        int[] cnt = &#123; 0, 0, 0, 0 &#125;;
-        
-        for(int x = 0 ; x &lt; trial ; x++ )
-        &#123;
-            num = random.nextInt(3)+1;
-        //    System.out.printf(&quot;%dth 난수: %d\n&quot;, x+1, num);
-            cnt[num]++;
-        &#125;
-        
-        System.out.println(&quot;=======================================&quot;);        
-        System.out.println(trial + &quot; many trial &gt; randome gen&quot;);
-        System.out.println(&quot;=======================================&quot;);
-        for(int x = 1; x &lt; 4; x++)
-        &#123;
-            System.out.println(&quot;[&quot; + x +&quot;]&quot; + &quot; -&gt;&quot; + ((float)cnt[x]/trial) *100+&quot; % many&quot;);
-        &#125;
-    &#125;
-    System.out.println(&quot;================END====================&quot;);
-&#125;
-</code></pre>
-<h1 id="100-many-trial-gt-randome-gen"><a href="#100-many-trial-gt-randome-gen" class="headerlink" title="  100 many trial &gt; randome gen"></a>  100 many trial &gt; randome gen</h1><p>[1] -&gt;39.0 % many<br>[2] -&gt;33.0 % many<br>[3] -&gt;28.0 % many</p>
-<h1 id="1000-many-trial-gt-randome-gen"><a href="#1000-many-trial-gt-randome-gen" class="headerlink" title="  1000 many trial &gt; randome gen"></a>  1000 many trial &gt; randome gen</h1><p>[1] -&gt;34.2 % many<br>[2] -&gt;32.7 % many<br>[3] -&gt;33.1 % many</p>
-<h1 id="100000-many-trial-gt-randome-gen"><a href="#100000-many-trial-gt-randome-gen" class="headerlink" title="  100000 many trial &gt; randome gen"></a>  100000 many trial &gt; randome gen</h1><p>[1] -&gt;33.293 % many<br>[2] -&gt;33.335 % many<br>[3] -&gt;33.372 % many<br>‘’’</p>
-<p>100번, 1,000번, 100,000번 돌려보니 많이 돌리면 돌릴수록 33.33% 으로 수렴되는 것을 볼수 있다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/19/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-3-19-java/" data-id="cl33ddwf200034o382u3d9ow8" data-title="토요일 자바 공부" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-blog/2022-3-18-learn" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/18/blog/2022-3-18-learn/" class="article-date">
-  <time class="dt-published" datetime="2022-03-18T04:21:04.000Z" itemprop="datePublished">2022-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/18/blog/2022-3-18-learn/">GitHub Page/Jekyll 조합 - 5. 배움과 결론, 다른 조합을 찾아보자..</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>학습이 된것들..</p>
-<ol>
-<li>깃헙 사이트와 work flow, deployment 돌아가는 것..</li>
-<li>Jekyll 보면서 yaml 설정 등에 대해..</li>
-<li>MD 파일에 대해서..</li>
-</ol>
-<p>결론, Jekyll 말고 다른 걸 찾아보자.</p>
-<p>이유, 간단한 변경에도 설정 찾는데 한 세월이고 안되면 디버깅이 너무 힘들고<br>theme들도 그닥 마음에 드는게 없다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/03/18/blog/2022-3-18-learn/" data-id="cl1xhe5gb0009n0389cqyc6c0" data-title="GitHub Page/Jekyll 조합 - 5. 배움과 결론, 다른 조합을 찾아보자.." class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -635,7 +634,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 12.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -657,23 +656,23 @@
       <ul>
         
           <li>
-            <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/My-New-Post-1/">My New Post</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/6/">학습노트6 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/2.%EC%98%88%EC%A0%9C%20%EB%B0%8F%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C/">학습노트2 - 첫 예제, 테스트 코드</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/">학습노트5 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/SQL/%EB%AC%B4%EC%97%87%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%9A%B0%EC%A7%80/">무엇을 배우지?</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">4</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/GIT%EB%B0%B0%EC%9A%B0%EA%B8%B0/">GIT</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/">(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스</a>
+            <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/3.JPA/">학습노트3 - JPA</a>
           </li>
         
       </ul>

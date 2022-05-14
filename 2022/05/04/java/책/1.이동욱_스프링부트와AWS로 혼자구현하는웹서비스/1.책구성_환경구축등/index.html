@@ -14,7 +14,7 @@
 <meta property="og:description" content="언어와 프레임워크로 웹개발책이 2019년 하반기에 출판, 집필은 2018년으로 생각 되는데 서문에 대학생들에 물어보았을때많이 쓰이는 조합이 4가지라고 들었다고 한다.  PHP NodeJS 와 Express 프레임워크 Python 과 Django 프레임워크 Ruby와 Rails 프레임워크  자바와 스프링 프레임워크은 없었고 이유가 어렵고, 복잡하고 거추장 스">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-04T14:33:12.000Z">
-<meta property="article:modified_time" content="2022-05-14T16:10:36.460Z">
+<meta property="article:modified_time" content="2022-05-14T17:06:21.916Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="스프링부트와 AWS로 혼자 구현하는 웹서비스">
 <meta name="twitter:card" content="summary">
@@ -111,6 +111,19 @@
 <li>8~10장: 스프링 부트 프로젝트를 AWS 인프라에 배포, 무중단 배포 환경</li>
 </ol>
 <p><code>http://bit.ly/fr-springboot</code></p>
+<h3 id="만들게-되는-웹-애플리케이션"><a href="#만들게-되는-웹-애플리케이션" class="headerlink" title="만들게 되는 웹 애플리케이션"></a>만들게 되는 웹 애플리케이션</h3><p>게시판 기능</p>
+<ol>
+<li>게시글 조회</li>
+<li>게시글 등록</li>
+<li>게시글 수정</li>
+<li>게시글 삭제</li>
+</ol>
+<p>회원 기능</p>
+<ol>
+<li>구글&#x2F;네이버 로그인</li>
+<li>로그인한 사용자 글 작성 권한</li>
+<li>본인 작성 글에 대한 권한 관리</li>
+</ol>
 <h3 id="개발-환경"><a href="#개발-환경" class="headerlink" title="개발 환경"></a>개발 환경</h3><p>인텔리J 추천 하며 다만 HTML, CSS은 VS Code</p>
 <h3 id="Github-연결"><a href="#Github-연결" class="headerlink" title="Github 연결"></a>Github 연결</h3><p>인텔리J Ctrl+Shift+A 하면 Actions 검색창 열리고 share project on github을 검색<br>깃허브 연결</p>
 <h3 id="플러그인-설치-ignore"><a href="#플러그인-설치-ignore" class="headerlink" title="플러그인 설치 .ignore"></a>플러그인 설치 .ignore</h3><p>Actions 검색창 &gt; plugins &gt; .ignore 찾아 설치<br>Alt+Insert &gt; .ignore 파일 생성 &gt; .idea 와 .gradle 체크</p>
@@ -174,7 +187,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 12.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -196,23 +209,23 @@
       <ul>
         
           <li>
-            <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/My-New-Post-1/">My New Post</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/6/">학습노트6 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/2.%EC%98%88%EC%A0%9C%20%EB%B0%8F%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C/">학습노트2 - 첫 예제, 테스트 코드</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/">학습노트5 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/SQL/%EB%AC%B4%EC%97%87%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%9A%B0%EC%A7%80/">무엇을 배우지?</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">4</a>
           </li>
         
           <li>
-            <a href="/2022/05/13/GIT%EB%B0%B0%EC%9A%B0%EA%B8%B0/">GIT</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/">(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스</a>
+            <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/3.JPA/">학습노트3 - JPA</a>
           </li>
         
       </ul>
