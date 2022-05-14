@@ -131,7 +131,29 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h3 id="TDD"><a href="#TDD" class="headerlink" title="TDD"></a>TDD</h3><ul>
+<li>테스트가 주도 하는 개발</li>
+<li>레드 그린 사이클</li>
+</ul>
+<blockquote>
+<p>항상 실패하는 테스트를 먼저 작성 RED<br>테스트 통과하는 프로덕션 코드 작성 GREEN<br>테스트 통과 하면 프로덕션 코드를 리팩토링 REFACTOR</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://repo.yona.io/doortts/blog/issue/1">https://repo.yona.io/doortts/blog/issue/1</a></p>
+<h4 id="단위-테스트-Unit-Test"><a href="#단위-테스트-Unit-Test" class="headerlink" title="단위 테스트 (Unit Test)"></a>단위 테스트 (Unit Test)</h4><ul>
+<li><p>TDD 가 이야기 하는 첫번째 단계인 <code>기능 단위의 테스트 코드 작성</code></p>
+</li>
+<li><p>단위 테스트 없이 할때의 개발&#x2F;테스트&#x2F;디버깅 Flow</p>
+</li>
+</ul>
+<ol>
+<li>코드 작성</li>
+<li>프로그램 (Tomcat) 실행</li>
+<li>Postman 으로 API 테스트, HTTP 요청 보내기</li>
+<li>요청결과를 System.out.println 으로 찍은 메세지로 눈으로 검증</li>
+<li>결과가 다르면 프로그램(Tomcat) 주지 하고 코드를 수정</li>
+</ol>
+<h4 id="xUnit"><a href="#xUnit" class="headerlink" title="xUnit"></a>xUnit</h4><p>가장 대중적인 테스트 프레임워크<br>자바는 JUnit, 2000년도에 JUnit4 -&gt; JUnit5 로 넘어간 것으로 보임</p>
+
       
     </div>
     <footer class="article-footer">
