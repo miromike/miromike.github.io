@@ -14,7 +14,7 @@
 <meta property="og:description" content="JPA 란?Database 접근을 자바에서 객체 지향으로 할수 있도록 하는 기술이를 ORM 기술이라고 하고 JPA는 자바 진영의 ORM 표준 이름Spring 에서는 Hiberate -&gt; Spring Data JPA -&gt; 으로 사용 하게 된다 MyBatisSQL Mapping 기술DAO 작성 해서 사용 Gradle에 library 추가impleme">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-12T20:15:43.000Z">
-<meta property="article:modified_time" content="2022-05-14T21:04:38.158Z">
+<meta property="article:modified_time" content="2022-05-15T14:44:07.934Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="스프링부트와 AWS로 혼자 구현하는 웹서비스">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,13 @@
 <blockquote>
 <p>Getter 가 없는데 406 Not Acceptable 가 나오다니, 디버깅하기 어려움</p>
 </blockquote>
-<h3 id="JPA-Audit-으로-생성-시간-x2F-수정-시간-자동화-하기"><a href="#JPA-Audit-으로-생성-시간-x2F-수정-시간-자동화-하기" class="headerlink" title="JPA Audit 으로 생성 시간&#x2F; 수정 시간 자동화 하기"></a>JPA Audit 으로 생성 시간&#x2F; 수정 시간 자동화 하기</h3><p>여기 할차례!!</p>
+<h3 id="JPA-Audit-으로-생성-시간-x2F-수정-시간-자동화-하기"><a href="#JPA-Audit-으로-생성-시간-x2F-수정-시간-자동화-하기" class="headerlink" title="JPA Audit 으로 생성 시간&#x2F; 수정 시간 자동화 하기"></a>JPA Audit 으로 생성 시간&#x2F; 수정 시간 자동화 하기</h3><p>생성 및 수정 시간을 자동으로 넣어 주는 기능 으로 abstract class를 아래 처럼 구현</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@MappedSuperclass</span></span><br><span class="line"><span class="meta">@EntityListeners(AuditingEntityListener.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">BaseTimeEntity</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@CreatedDate</span></span><br><span class="line">  <span class="keyword">private</span> LocalDateTime createdDate;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@LastModifiedDate</span></span><br><span class="line">  <span class="keyword">private</span> LocalDateTime modifiedDate;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>그리고 최 상위 Application 에 @EnableJpaAuditing 추가<br><code>@EnableJpaAuditing</code><br>@SpringBootApplication<br>public class Application {</p>
+<p>그리고 적용 할 Entity에 상속<br>public class Posts extends <code>BaseTimeEntity</code></p>
+<p>테스트 코드</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> BaseTimeEntity_테스트() &#123;</span><br><span class="line">  <span class="comment">//given</span></span><br><span class="line">  <span class="type">LocalDateTime</span> <span class="variable">now</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2022</span>, <span class="number">5</span>, <span class="number">15</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  postsRepository.save(Posts.builder()</span><br><span class="line">      .title(<span class="string">&quot;title&quot;</span>)</span><br><span class="line">      .content(<span class="string">&quot;content&quot;</span>)</span><br><span class="line">      .author(<span class="string">&quot;author&quot;</span>)</span><br><span class="line">      .build());</span><br><span class="line">  <span class="comment">//when</span></span><br><span class="line">  List&lt;Posts&gt; postsList = postsRepository.findAll();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//then</span></span><br><span class="line">  <span class="type">Posts</span> <span class="variable">posts</span> <span class="operator">=</span> postsList.get(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  System.out.println(<span class="string">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; createDate=&quot;</span> + posts.getCreatedDate() + <span class="string">&quot;, modifiedDate=&quot;</span> + posts.getModifiedDate());</span><br><span class="line"></span><br><span class="line">  assertThat(posts.getCreatedDate()).isAfter(now);</span><br><span class="line">  assertThat(posts.getModifiedDate()).isAfter(now);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -181,11 +187,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/05/14/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          학습노트7 -
+          학습노트4 - 머스테치로 화면 구성 하기
         
       </div>
     </a>
@@ -257,11 +263,11 @@
           </li>
         
           <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">학습노트4 -</a>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
           </li>
         
           <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
+            <a href="/2022/05/14/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">학습노트4 - 머스테치로 화면 구성 하기</a>
           </li>
         
       </ul>
