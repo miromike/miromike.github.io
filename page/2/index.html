@@ -71,6 +71,190 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java/스터디/자바의정석1독(오키)/3주차 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/" class="article-date">
+  <time class="dt-published" datetime="2022-05-12T11:48:38.000Z" itemprop="datePublished">2022-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/">(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="8-1-프로그램-오류-예외-클래스의-계층-구조"><a href="#8-1-프로그램-오류-예외-클래스의-계층-구조" class="headerlink" title="8-1 프로그램 오류, 예외 클래스의 계층 구조"></a>8-1 프로그램 오류, 예외 클래스의 계층 구조</h3><ol>
+<li>컴파일 에러</li>
+<li>런타임 에러</li>
+<li>로직 에러</li>
+</ol>
+<p>자바의 런타임 에러</p>
+<ul>
+<li>에러 (error) : 프로그램 코드에 의해서 수습될수 없는 심각한 오류</li>
+<li>예외 (exception) : 프로그램 코드에 의해서 수습 될수 있는 다소 미약한 오류</li>
+</ul>
+<h3 id="8-2-예외처리의-정의와-목적-exception-handling"><a href="#8-2-예외처리의-정의와-목적-exception-handling" class="headerlink" title="8-2 예외처리의 정의와 목적 (exception handling)"></a>8-2 예외처리의 정의와 목적 (exception handling)</h3><p>프로그램의 비정상 종료를 막기 위함<br>Object &lt;–상속– Throwable (클래스 모든 오류의 조상)<br>&lt;– Exception 의 자손들 RuntimeException, IOException 등등<br>&lt;– Error 의 자손들 OutOfMemoryError</p>
+<h3 id="8-3-Exception-와-RuntimeException"><a href="#8-3-Exception-와-RuntimeException" class="headerlink" title="8-3 Exception 와 RuntimeException"></a>8-3 Exception 와 RuntimeException</h3><p>Exception 클래스들 : 사용자의 실수와 같은 외적인 요인에 의해 발생 하는 예외<br>RuntimeException 클래스들: 프로그래머의 실수로 발생 하는 예외</p>
+<h3 id="8-4-Exception-처리-Try-catch-문"><a href="#8-4-Exception-처리-Try-catch-문" class="headerlink" title="8-4 Exception 처리, Try-catch 문"></a>8-4 Exception 처리, Try-catch 문</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (ArithmeticException e1) &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e2) &#123; <span class="comment">// 모든예외의 조상</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-7-printStackTrace-와-getMessage"><a href="#8-7-printStackTrace-와-getMessage" class="headerlink" title="8-7 printStackTrace() 와 getMessage()"></a>8-7 printStackTrace() 와 getMessage()</h3><p>printStackTrace(): 예외 발생 당시의 호출스택(Call Stack)에 있었던 메서드의 정보와 예외 메시지를 화면에 출력 한다.</p>
+<p>getMessage(): 발생한 예외클래스의 인스턴스에 저장된 메시지를 얻을 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(<span class="number">0</span>/<span class="number">0</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ArithmeticException ae) &#123;</span><br><span class="line">    ae.printStackTrace();</span><br><span class="line">    System.out.println(ae.getMessage());</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-8-멀티-catch-블럭-JDK-1-7-부터"><a href="#8-8-멀티-catch-블럭-JDK-1-7-부터" class="headerlink" title="8-8 멀티 catch 블럭 (JDK 1.7 부터)"></a>8-8 멀티 catch 블럭 (JDK 1.7 부터)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span> (ExceptionA | ExceptionB e) &#123; <span class="comment">// 이런 식으로 멀티 구성 가능</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Exception 의 메서드 함수 호출시 instanceof 사용 하면 된다.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( e <span class="keyword">instanceof</span> ExceptionA ) &#123;</span><br><span class="line">        <span class="type">ExceptionA</span> <span class="variable">e1</span> <span class="operator">=</span> (ExceptionA) e;</span><br><span class="line">        e1.methodA();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-9-예외-발생-시키기"><a href="#8-9-예외-발생-시키기" class="headerlink" title="8-9 예외 발생 시키기"></a>8-9 예외 발생 시키기</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Exception</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;고의 발생&quot;</span>);</span><br><span class="line"><span class="keyword">throw</span> e;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-10-checked예외-unchcked-예외"><a href="#8-10-checked예외-unchcked-예외" class="headerlink" title="8-10 checked예외, unchcked 예외"></a>8-10 checked예외, unchcked 예외</h3><ul>
+<li>checked예외 : 컴파일러가 예외 처리 여부를 체크 (예외 처리 필수)</li>
+<li>unchecked예외 : 컴파일러가 예외 처리 여부를 체크 안함 (예외 처리 선택)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 컴파일시 에러 &gt; java.lang.Exception; must be caught or declared to be thrown 이라고 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(); <span class="comment">// 런타임 에러 발생, 컴파일 에러는 안나옴</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch8-11-메서드에-예외-선언하기"><a href="#ch8-11-메서드에-예외-선언하기" class="headerlink" title="ch8-11 메서드에 예외 선언하기"></a>ch8-11 메서드에 예외 선언하기</h3><ul>
+<li>예외를 처리하는 방법</li>
+</ul>
+<ol>
+<li>try-catch는 직접 처리</li>
+<li>예외 선언은 에외 떠넘기기 (알리기)</li>
+<li>은폐, 덥기 (그냥 넘어가고 진행)</li>
+</ol>
+<p>이중에 예외 선언 방법 알아보자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span> <span class="keyword">throws</span> Exception1, Exception2, ... ExceptionN &#123;</span><br><span class="line">    <span class="comment">// 메서드의 내용</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// method()에서 Exception과 그 자손 예외 발생 가능</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123; <span class="comment">// 모든 예외의 최고 조상, 모든 예외가 발생 가능</span></span><br><span class="line">    <span class="comment">// 메서드의 내용</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">startInstall</span><span class="params">()</span> <span class="keyword">throws</span> SpaceException, MemoryException &#123;</span><br><span class="line">    <span class="keyword">if</span>(!enoughSpace())</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">SpaceException</span>(<span class="string">&quot;공간 부족&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(!enoughMemory())</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">MemoryException</span>(<span class="string">&quot;메모리 부족&quot;</span>);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>예로 Java API 중에 wait 메서드 를 보자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">waits</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123; </span><br><span class="line">    <span class="comment">//... </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">Throws : </span></span><br><span class="line"><span class="comment">1. IllegalMonitorStateException</span></span><br><span class="line"><span class="comment">2. InterruptedException</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">함수 보면 Interrupted Exception 만 예외 선언 중이다.</span></span><br><span class="line"><span class="comment">IllegalMonitorStateException은 RuntimeException의 자손임이다 (즉 예외처리가 선택적)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ch8-14-finally-블럭"><a href="#ch8-14-finally-블럭" class="headerlink" title="ch8-14 finally 블럭"></a>ch8-14 finally 블럭</h3><ul>
+<li>예외 발생 여부와 관계 없이 수행되어야 하는 코드를 넣는다</li>
+</ul>
+<h3 id="ch8-15-사용자-정의-예외-만들기"><a href="#ch8-15-사용자-정의-예외-만들기" class="headerlink" title="ch8-15 사용자 정의 예외 만들기"></a>ch8-15 사용자 정의 예외 만들기</h3><ul>
+<li>우리가 직접 정의 가능</li>
+<li>조상은 Exception 과 RuntimeException 중 선택</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span> &#123;</span><br><span class="line">    MyException (String msg) &#123; <span class="comment">// 문자열을 매개변수로 받는 생성자</span></span><br><span class="line">        <span class="built_in">super</span>(msg);<span class="comment">// 조상인 Exception 클래스의 생성자를 호출 한다.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch8-17-예외-되던지기-exception-re-throwing"><a href="#ch8-17-예외-되던지기-exception-re-throwing" class="headerlink" title="ch8-17 예외 되던지기 (exception re-throwing)"></a>ch8-17 예외 되던지기 (exception re-throwing)</h3><ul>
+<li>예외를 처리한 후에 다시 예외를 발생 시키는 것</li>
+<li>호출한 메서드와 호출된 메서드 양쪽 모두에서 예외 처리 하는 것</li>
+<li>catch 문 안에서 다시 throw e; 하면 된다.</li>
+</ul>
+<h3 id="ch8-18-연결된-예외-chained-exception"><a href="#ch8-18-연결된-예외-chained-exception" class="headerlink" title="ch8-18 연결된 예외 (chained exception)"></a>ch8-18 연결된 예외 (chained exception)</h3><ul>
+<li>한 예외가 다른 예외를 발생 시킬수 있다</li>
+<li>예외 A가 예외 B를 발생 시키면, A는 B의 원인 예외 (cause exception)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Throwable <span class="title function_">initCause</span><span class="params">(Throwable cause)</span> : 지정한 예외를 원인 예외로 등록</span><br><span class="line">Throwable <span class="title function_">getCAuse</span><span class="params">()</span> : 원인 예외를 반환</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Throwable</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123; <span class="comment">// Exception과 Error 의 조상 클래스</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Throwable</span> <span class="variable">cause</span> <span class="operator">=</span> <span class="built_in">this</span>; <span class="comment">// 원인 예외를 저장 하기위한 iv</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> Throwable <span class="title function_">initCause</span><span class="params">(Throwable cause)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cause = cause;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>사용 예제 코드</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">install</span><span class="params">()</span> <span class="keyword">throws</span> InstallException &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        startInstall();</span><br><span class="line">        copyFiles();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SpaceException e) &#123;</span><br><span class="line">        <span class="type">InstallException</span> <span class="variable">ie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InstallException</span>(<span class="string">&quot;설치 중 예외발생&quot;</span>); </span><br><span class="line">        ie.initCause(e); <span class="comment">// 원인을 새로 만든 예외에 넣고</span></span><br><span class="line">        <span class="keyword">throw</span> ie; <span class="comment">// 새로 만든 예외로 던짐</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (MemoryException me) &#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>사용 이유</p>
+<ol>
+<li>여러 예외를 하나로 묶어서 다루기 위해서<br>(받는 쪽에서 너무 많은 Exception 종류 처리로 try catch 가 많은데 그걸 묶을수 있다.)</li>
+<li>checked 예외를 unchecked예외로 변경 하려 할때</li>
+</ol>
+<h3 id="ch9-java-lang-패키지와-유용한-클래스"><a href="#ch9-java-lang-패키지와-유용한-클래스" class="headerlink" title="ch9 java.lang 패키지와 유용한 클래스"></a>ch9 java.lang 패키지와 유용한 클래스</h3><h3 id="ch9-4-hashCode"><a href="#ch9-4-hashCode" class="headerlink" title="ch9-4 hashCode()"></a>ch9-4 hashCode()</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/" data-id="cl33ddwfm001d4o380ba776jd" data-title="(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/2.예제 및 테스트코드" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/12/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/2.%EC%98%88%EC%A0%9C%20%EB%B0%8F%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C/" class="article-date">
+  <time class="dt-published" datetime="2022-05-11T20:15:41.000Z" itemprop="datePublished">2022-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/12/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/2.%EC%98%88%EC%A0%9C%20%EB%B0%8F%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C/">학습노트2 - 첫 예제, 테스트 코드</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="TDD"><a href="#TDD" class="headerlink" title="TDD"></a>TDD</h3><ul>
+<li>테스트가 주도 하는 개발</li>
+<li>레드 그린 사이클</li>
+</ul>
+<blockquote>
+<p>항상 실패하는 테스트를 먼저 작성 RED<br>테스트 통과하는 프로덕션 코드 작성 GREEN<br>테스트 통과 하면 프로덕션 코드를 리팩토링 REFACTOR</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://repo.yona.io/doortts/blog/issue/1">https://repo.yona.io/doortts/blog/issue/1</a></p>
+<h4 id="단위-테스트-Unit-Test"><a href="#단위-테스트-Unit-Test" class="headerlink" title="단위 테스트 (Unit Test)"></a>단위 테스트 (Unit Test)</h4><ul>
+<li><p>TDD 가 이야기 하는 첫번째 단계인 <code>기능 단위의 테스트 코드 작성</code></p>
+</li>
+<li><p>단위 테스트 없이 할때의 개발&#x2F;테스트&#x2F;디버깅 Flow</p>
+</li>
+</ul>
+<ol>
+<li>코드 작성</li>
+<li>프로그램 (Tomcat) 실행</li>
+<li>Postman 으로 API 테스트, HTTP 요청 보내기</li>
+<li>요청결과를 System.out.println 으로 찍은 메세지로 눈으로 검증</li>
+<li>결과가 다르면 프로그램(Tomcat) 주지 하고 코드를 수정</li>
+</ol>
+<h4 id="xUnit"><a href="#xUnit" class="headerlink" title="xUnit"></a>xUnit</h4><p>가장 대중적인 테스트 프레임워크<br>자바는 JUnit, 2000년도에 JUnit4 -&gt; JUnit5 로 넘어간 것으로 보임</p>
+<h3 id="Controller-예제-amp-Test-Code"><a href="#Controller-예제-amp-Test-Code" class="headerlink" title="Controller 예제 &amp; Test Code"></a>Controller 예제 &amp; Test Code</h3><ol>
+<li>@GetRestController</li>
+<li>@GetMapping</li>
+<li>@RequestParam</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloController</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@GetMapping(&quot;/hello&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">()</span> </span><br><span class="line">  &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@GetMapping(&quot;/hello/dto&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> HelloResponseDto <span class="title function_">helloDto</span><span class="params">(</span></span><br><span class="line"><span class="params">      <span class="meta">@RequestParam(&quot;name&quot;)</span> String name,</span></span><br><span class="line"><span class="params">      <span class="meta">@RequestParam(&quot;amount&quot;)</span> <span class="type">int</span> amount)</span> </span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">HelloResponseDto</span>(name, amount);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Test-Code"><a href="#Test-Code" class="headerlink" title="Test Code"></a>Test Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@WebMvcTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloControllerTest</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> MockMvc mvc;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> hello가_리턴된다() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">hello</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line"></span><br><span class="line">    mvc.perform(get(<span class="string">&quot;/hello&quot;</span>))</span><br><span class="line">        .andExpect(status().isOk())</span><br><span class="line">        .andExpect(content().string(hello));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> hellodto가_리턴된다() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;name&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">amount</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    mvc.perform(get(<span class="string">&quot;/hello/dto&quot;</span>)</span><br><span class="line">                  .param(<span class="string">&quot;name&quot;</span>, name)</span><br><span class="line">                  .param(<span class="string">&quot;amount&quot;</span>, String.valueOf(amount)))</span><br><span class="line">        .andExpect(status().isOk())</span><br><span class="line">        .andExpect(jsonPath(<span class="string">&quot;$.name&quot;</span>, is(name)))</span><br><span class="line">        .andExpect(jsonPath(<span class="string">&quot;$.amount&quot;</span>, is(amount)));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Lombok-예제-amp-Test-Code"><a href="#Lombok-예제-amp-Test-Code" class="headerlink" title="Lombok 예제 &amp; Test Code"></a>Lombok 예제 &amp; Test Code</h3><ol>
+<li>DTO 작성, @Getter, @RequiredArgsConstructor, 변수는 private final</li>
+<li>Assertj 사용</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloResponseDto</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> amount;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloResponseDtoTest</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> 롬복_기능_테스트() &#123;</span><br><span class="line">    <span class="comment">//given</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;test;&quot;</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">amount</span> <span class="operator">=</span> <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//when</span></span><br><span class="line">    <span class="type">HelloResponseDto</span> <span class="variable">dto</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HelloResponseDto</span>(name, amount);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//then</span></span><br><span class="line">    assertThat(dto.getName()).isEqualTo(name);</span><br><span class="line">    assertThat(dto.getAmount()).isEqualTo(amount);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/12/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/2.%EC%98%88%EC%A0%9C%20%EB%B0%8F%20%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C/" data-id="cl36302lt000040386j6r81ug" data-title="학습노트2 - 첫 예제, 테스트 코드" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java/학습일지/2022-5-9-JPA 와 Spring Data 소개" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/09/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-5-9-JPA%20%EC%99%80%20Spring%20Data%20%EC%86%8C%EA%B0%9C/" class="article-date">
@@ -867,141 +1051,11 @@
 
 
   
-    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/1.책구성_환경구축등" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" class="article-date">
-  <time class="dt-published" datetime="2022-05-04T14:33:12.000Z" itemprop="datePublished">2022-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/">학습노트1 - 개발환경 셋팅</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="언어와-프레임워크로-웹개발"><a href="#언어와-프레임워크로-웹개발" class="headerlink" title="언어와 프레임워크로 웹개발"></a>언어와 프레임워크로 웹개발</h3><p>책이 2019년 하반기에 출판, 집필은 2018년으로 생각 되는데 서문에 대학생들에 물어보았을때<br>많이 쓰이는 조합이 4가지라고 들었다고 한다.</p>
-<ol>
-<li>PHP</li>
-<li>NodeJS 와 Express 프레임워크</li>
-<li>Python 과 Django 프레임워크</li>
-<li>Ruby와 Rails 프레임워크</li>
-</ol>
-<p>자바와 스프링 프레임워크은 없었고 이유가 어렵고, 복잡하고 거추장 스럽다는 것이었다. 이는 최근에는 스프링 부트가 나와서 해소 되었으리라 보인다.</p>
-<p>국내 선망의 IT 회사 (네이버, 카카오, 라인 등), 티몬, 쿠팡, 우아한 형제들등 스타트업, 서비스가 커지자 자바와 스프링 기반으로 전환을 많이 한다고 한다.</p>
-<h3 id="책-구성"><a href="#책-구성" class="headerlink" title="책 구성"></a>책 구성</h3><ol>
-<li>1~5장: 스프링 부트, JPA, 스프링 시큐리티, JUnit, 객체지향 프로그래밍</li>
-<li>6~7장: AWS 인프라, 기본 사용법 및 설정 (EC2, RDS)</li>
-<li>8~10장: 스프링 부트 프로젝트를 AWS 인프라에 배포, 무중단 배포 환경</li>
-</ol>
-<p>GitHub: <code>http://bit.ly/fr-springboot</code></p>
-<p>Spring Boot가 2.1 -&gt; 2.4로, IntelliJ IDEA가 2019 -&gt; 2020 의 변경 내역 정리글<br><a target="_blank" rel="noopener" href="https://jojoldu.tistory.com/539">https://jojoldu.tistory.com/539</a><br>Issues: <a target="_blank" rel="noopener" href="https://github.com/jojoldu/freelec-springboot2-webservice/issues">https://github.com/jojoldu/freelec-springboot2-webservice/issues</a></p>
-<h3 id="만들게-되는-웹-애플리케이션"><a href="#만들게-되는-웹-애플리케이션" class="headerlink" title="만들게 되는 웹 애플리케이션"></a>만들게 되는 웹 애플리케이션</h3><p>게시판 기능</p>
-<ol>
-<li>게시글 조회</li>
-<li>게시글 등록</li>
-<li>게시글 수정</li>
-<li>게시글 삭제</li>
-</ol>
-<p>회원 기능</p>
-<ol>
-<li>구글&#x2F;네이버 로그인</li>
-<li>로그인한 사용자 글 작성 권한</li>
-<li>본인 작성 글에 대한 권한 관리</li>
-</ol>
-<h3 id="개발-환경"><a href="#개발-환경" class="headerlink" title="개발 환경"></a>개발 환경</h3><p>인텔리J 추천 하며 다만 HTML, CSS은 VS Code</p>
-<h3 id="Github-연결"><a href="#Github-연결" class="headerlink" title="Github 연결"></a>Github 연결</h3><p>인텔리J Ctrl+Shift+A 하면 Actions 검색창 열리고 share project on github을 검색<br>깃허브 연결</p>
-<h3 id="플러그인-설치-ignore"><a href="#플러그인-설치-ignore" class="headerlink" title="플러그인 설치 .ignore"></a>플러그인 설치 .ignore</h3><p>Actions 검색창 &gt; plugins &gt; .ignore 찾아 설치<br>Alt+Insert &gt; .ignore 파일 생성 &gt; .idea 와 .gradle 체크</p>
-<h3 id="프로젝트-빌드를-Intellj-로-설정"><a href="#프로젝트-빌드를-Intellj-로-설정" class="headerlink" title="프로젝트 빌드를 Intellj 로 설정"></a>프로젝트 빌드를 Intellj 로 설정</h3><p>Gradle 로 되어 있는데 바꾸어 주면 더 빨리짐</p>
-<h3 id="Github-에-커밋-하기"><a href="#Github-에-커밋-하기" class="headerlink" title="Github 에 커밋 하기"></a>Github 에 커밋 하기</h3><p>Ctrl+k</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" data-id="cl33gdgw10002b8386i5p4fm9" data-title="학습노트1 - 개발환경 셋팅" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-java/인강/2. 인프런_김영학님_스프링입문/기초1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" class="article-date">
-  <time class="dt-published" datetime="2022-05-04T14:09:50.000Z" itemprop="datePublished">2022-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/">스프링 기초 - 1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="View-환경-설정"><a href="#View-환경-설정" class="headerlink" title="View 환경 설정"></a>View 환경 설정</h3><h4 id="스프링-부트가-제공-하는-Welcome-Page"><a href="#스프링-부트가-제공-하는-Welcome-Page" class="headerlink" title="스프링 부트가 제공 하는 Welcome Page"></a>스프링 부트가 제공 하는 Welcome Page</h4><p>정적 페이지 로 resources&#x2F;static&#x2F;index.html</p>
-<h3 id="스프링-웹-개발-기초"><a href="#스프링-웹-개발-기초" class="headerlink" title="스프링 웹 개발 기초"></a>스프링 웹 개발 기초</h3><ol>
-<li>정적 컨텐츠</li>
-<li>MVC와 Template 엔진</li>
-<li>API</li>
-</ol>
-<h4 id="MVC와-Template-엔진"><a href="#MVC와-Template-엔진" class="headerlink" title="MVC와 Template 엔진"></a>MVC와 Template 엔진</h4><p>기본 Flow : client가 Get 으로 URL 노드에 요청</p>
-<ol>
-<li>@Controller 클래스</li>
-<li>@GetMapping 으로 연결된 함수</li>
-<li>함수 실행, Model model 에 Data를 채움 (MVC에 그 Model임)</li>
-<li>함수가 가야 하는 View 파일 이름을 반환 함</li>
-<li>ViewResolver가 Thymeleaf 템플릿 엔진으로 가는 것임을 감지</li>
-<li>resources&#x2F;templates&#x2F;{파일이름}.html 에 model 데이타 치환, 생성</li>
-<li>client가 만들어진 html 받아 봄</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" data-id="cl33ddwff000y4o38hnkw47r5" data-title="스프링 기초 - 1" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -1015,7 +1069,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding-Test/" rel="tag">Coding Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
     </div>
   </div>
 
@@ -1025,7 +1079,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/Coding-Test/" style="font-size: 10px;">Coding Test</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -1047,6 +1101,14 @@
       <ul>
         
           <li>
+            <a href="/2022/05/16/%EC%BD%94%ED%85%8C/%EC%9D%BC%EC%A7%80/">코테 일지</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/16/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/">타임라인</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/15/MD%20%EC%9E%91%EC%84%B1%EB%B2%95/">MD 작성법</a>
           </li>
         
@@ -1056,14 +1118,6 @@
         
           <li>
             <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/">학습노트5 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/14/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">학습노트4 - 머스테치로 화면 구성 하기</a>
           </li>
         
       </ul>

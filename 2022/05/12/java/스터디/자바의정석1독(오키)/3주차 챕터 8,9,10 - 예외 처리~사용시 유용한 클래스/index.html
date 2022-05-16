@@ -6,15 +6,15 @@
   
   <title>(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="8-1 프로그램 오류, 예외 클래스의 계층 구조">
+  <meta name="description" content="8-1 프로그램 오류, 예외 클래스의 계층 구조 컴파일 에러 런타임 에러 로직 에러  자바의 런타임 에러  에러 (error) : 프로그램 코드에 의해서 수습될수 없는 심각한 오류 예외 (exception) : 프로그램 코드에 의해서 수습 될수 있는 다소 미약한 오류  8-2 예외처리의 정의와 목적 (exception handling)프로그램의 비정상 종료">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(오키) 자바의정석, 챕터 8,9,10 - 예외 처리~사용시 유용한 클래스">
 <meta property="og:url" content="https://miromike.github.io/2022/05/12/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/3%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%208,9,10%20-%20%EC%98%88%EC%99%B8%20%EC%B2%98%EB%A6%AC~%EC%82%AC%EC%9A%A9%EC%8B%9C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%20%ED%81%B4%EB%9E%98%EC%8A%A4/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="8-1 프로그램 오류, 예외 클래스의 계층 구조">
+<meta property="og:description" content="8-1 프로그램 오류, 예외 클래스의 계층 구조 컴파일 에러 런타임 에러 로직 에러  자바의 런타임 에러  에러 (error) : 프로그램 코드에 의해서 수습될수 없는 심각한 오류 예외 (exception) : 프로그램 코드에 의해서 수습 될수 있는 다소 미약한 오류  8-2 예외처리의 정의와 목적 (exception handling)프로그램의 비정상 종료">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-12T11:48:38.000Z">
-<meta property="article:modified_time" content="2022-05-12T11:50:00.432Z">
+<meta property="article:modified_time" content="2022-05-16T12:23:18.533Z">
 <meta property="article:author" content="Miro Mike">
 <meta name="twitter:card" content="summary">
   
@@ -95,7 +95,77 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="8-1-프로그램-오류-예외-클래스의-계층-구조"><a href="#8-1-프로그램-오류-예외-클래스의-계층-구조" class="headerlink" title="8-1 프로그램 오류, 예외 클래스의 계층 구조"></a>8-1 프로그램 오류, 예외 클래스의 계층 구조</h3>
+        <h3 id="8-1-프로그램-오류-예외-클래스의-계층-구조"><a href="#8-1-프로그램-오류-예외-클래스의-계층-구조" class="headerlink" title="8-1 프로그램 오류, 예외 클래스의 계층 구조"></a>8-1 프로그램 오류, 예외 클래스의 계층 구조</h3><ol>
+<li>컴파일 에러</li>
+<li>런타임 에러</li>
+<li>로직 에러</li>
+</ol>
+<p>자바의 런타임 에러</p>
+<ul>
+<li>에러 (error) : 프로그램 코드에 의해서 수습될수 없는 심각한 오류</li>
+<li>예외 (exception) : 프로그램 코드에 의해서 수습 될수 있는 다소 미약한 오류</li>
+</ul>
+<h3 id="8-2-예외처리의-정의와-목적-exception-handling"><a href="#8-2-예외처리의-정의와-목적-exception-handling" class="headerlink" title="8-2 예외처리의 정의와 목적 (exception handling)"></a>8-2 예외처리의 정의와 목적 (exception handling)</h3><p>프로그램의 비정상 종료를 막기 위함<br>Object &lt;–상속– Throwable (클래스 모든 오류의 조상)<br>&lt;– Exception 의 자손들 RuntimeException, IOException 등등<br>&lt;– Error 의 자손들 OutOfMemoryError</p>
+<h3 id="8-3-Exception-와-RuntimeException"><a href="#8-3-Exception-와-RuntimeException" class="headerlink" title="8-3 Exception 와 RuntimeException"></a>8-3 Exception 와 RuntimeException</h3><p>Exception 클래스들 : 사용자의 실수와 같은 외적인 요인에 의해 발생 하는 예외<br>RuntimeException 클래스들: 프로그래머의 실수로 발생 하는 예외</p>
+<h3 id="8-4-Exception-처리-Try-catch-문"><a href="#8-4-Exception-처리-Try-catch-문" class="headerlink" title="8-4 Exception 처리, Try-catch 문"></a>8-4 Exception 처리, Try-catch 문</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (ArithmeticException e1) &#123;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e2) &#123; <span class="comment">// 모든예외의 조상</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-7-printStackTrace-와-getMessage"><a href="#8-7-printStackTrace-와-getMessage" class="headerlink" title="8-7 printStackTrace() 와 getMessage()"></a>8-7 printStackTrace() 와 getMessage()</h3><p>printStackTrace(): 예외 발생 당시의 호출스택(Call Stack)에 있었던 메서드의 정보와 예외 메시지를 화면에 출력 한다.</p>
+<p>getMessage(): 발생한 예외클래스의 인스턴스에 저장된 메시지를 얻을 수 있다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    System.out.println(<span class="number">0</span>/<span class="number">0</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ArithmeticException ae) &#123;</span><br><span class="line">    ae.printStackTrace();</span><br><span class="line">    System.out.println(ae.getMessage());</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-8-멀티-catch-블럭-JDK-1-7-부터"><a href="#8-8-멀티-catch-블럭-JDK-1-7-부터" class="headerlink" title="8-8 멀티 catch 블럭 (JDK 1.7 부터)"></a>8-8 멀티 catch 블럭 (JDK 1.7 부터)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span> (ExceptionA | ExceptionB e) &#123; <span class="comment">// 이런 식으로 멀티 구성 가능</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// Exception 의 메서드 함수 호출시 instanceof 사용 하면 된다.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( e <span class="keyword">instanceof</span> ExceptionA ) &#123;</span><br><span class="line">        <span class="type">ExceptionA</span> <span class="variable">e1</span> <span class="operator">=</span> (ExceptionA) e;</span><br><span class="line">        e1.methodA();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-9-예외-발생-시키기"><a href="#8-9-예외-발생-시키기" class="headerlink" title="8-9 예외 발생 시키기"></a>8-9 예외 발생 시키기</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Exception</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;고의 발생&quot;</span>);</span><br><span class="line"><span class="keyword">throw</span> e;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-10-checked예외-unchcked-예외"><a href="#8-10-checked예외-unchcked-예외" class="headerlink" title="8-10 checked예외, unchcked 예외"></a>8-10 checked예외, unchcked 예외</h3><ul>
+<li>checked예외 : 컴파일러가 예외 처리 여부를 체크 (예외 처리 필수)</li>
+<li>unchecked예외 : 컴파일러가 예외 처리 여부를 체크 안함 (예외 처리 선택)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 컴파일시 에러 &gt; java.lang.Exception; must be caught or declared to be thrown 이라고 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(); <span class="comment">// 런타임 에러 발생, 컴파일 에러는 안나옴</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch8-11-메서드에-예외-선언하기"><a href="#ch8-11-메서드에-예외-선언하기" class="headerlink" title="ch8-11 메서드에 예외 선언하기"></a>ch8-11 메서드에 예외 선언하기</h3><ul>
+<li>예외를 처리하는 방법</li>
+</ul>
+<ol>
+<li>try-catch는 직접 처리</li>
+<li>예외 선언은 에외 떠넘기기 (알리기)</li>
+<li>은폐, 덥기 (그냥 넘어가고 진행)</li>
+</ol>
+<p>이중에 예외 선언 방법 알아보자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span> <span class="keyword">throws</span> Exception1, Exception2, ... ExceptionN &#123;</span><br><span class="line">    <span class="comment">// 메서드의 내용</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// method()에서 Exception과 그 자손 예외 발생 가능</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123; <span class="comment">// 모든 예외의 최고 조상, 모든 예외가 발생 가능</span></span><br><span class="line">    <span class="comment">// 메서드의 내용</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">startInstall</span><span class="params">()</span> <span class="keyword">throws</span> SpaceException, MemoryException &#123;</span><br><span class="line">    <span class="keyword">if</span>(!enoughSpace())</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">SpaceException</span>(<span class="string">&quot;공간 부족&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(!enoughMemory())</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">MemoryException</span>(<span class="string">&quot;메모리 부족&quot;</span>);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>예로 Java API 중에 wait 메서드 를 보자</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">waits</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException &#123; </span><br><span class="line">    <span class="comment">//... </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">Throws : </span></span><br><span class="line"><span class="comment">1. IllegalMonitorStateException</span></span><br><span class="line"><span class="comment">2. InterruptedException</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">함수 보면 Interrupted Exception 만 예외 선언 중이다.</span></span><br><span class="line"><span class="comment">IllegalMonitorStateException은 RuntimeException의 자손임이다 (즉 예외처리가 선택적)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ch8-14-finally-블럭"><a href="#ch8-14-finally-블럭" class="headerlink" title="ch8-14 finally 블럭"></a>ch8-14 finally 블럭</h3><ul>
+<li>예외 발생 여부와 관계 없이 수행되어야 하는 코드를 넣는다</li>
+</ul>
+<h3 id="ch8-15-사용자-정의-예외-만들기"><a href="#ch8-15-사용자-정의-예외-만들기" class="headerlink" title="ch8-15 사용자 정의 예외 만들기"></a>ch8-15 사용자 정의 예외 만들기</h3><ul>
+<li>우리가 직접 정의 가능</li>
+<li>조상은 Exception 과 RuntimeException 중 선택</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyException</span> <span class="keyword">extends</span> <span class="title class_">Exception</span> &#123;</span><br><span class="line">    MyException (String msg) &#123; <span class="comment">// 문자열을 매개변수로 받는 생성자</span></span><br><span class="line">        <span class="built_in">super</span>(msg);<span class="comment">// 조상인 Exception 클래스의 생성자를 호출 한다.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch8-17-예외-되던지기-exception-re-throwing"><a href="#ch8-17-예외-되던지기-exception-re-throwing" class="headerlink" title="ch8-17 예외 되던지기 (exception re-throwing)"></a>ch8-17 예외 되던지기 (exception re-throwing)</h3><ul>
+<li>예외를 처리한 후에 다시 예외를 발생 시키는 것</li>
+<li>호출한 메서드와 호출된 메서드 양쪽 모두에서 예외 처리 하는 것</li>
+<li>catch 문 안에서 다시 throw e; 하면 된다.</li>
+</ul>
+<h3 id="ch8-18-연결된-예외-chained-exception"><a href="#ch8-18-연결된-예외-chained-exception" class="headerlink" title="ch8-18 연결된 예외 (chained exception)"></a>ch8-18 연결된 예외 (chained exception)</h3><ul>
+<li>한 예외가 다른 예외를 발생 시킬수 있다</li>
+<li>예외 A가 예외 B를 발생 시키면, A는 B의 원인 예외 (cause exception)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Throwable <span class="title function_">initCause</span><span class="params">(Throwable cause)</span> : 지정한 예외를 원인 예외로 등록</span><br><span class="line">Throwable <span class="title function_">getCAuse</span><span class="params">()</span> : 원인 예외를 반환</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Throwable</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123; <span class="comment">// Exception과 Error 의 조상 클래스</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Throwable</span> <span class="variable">cause</span> <span class="operator">=</span> <span class="built_in">this</span>; <span class="comment">// 원인 예외를 저장 하기위한 iv</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">synchronized</span> Throwable <span class="title function_">initCause</span><span class="params">(Throwable cause)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cause = cause;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>사용 예제 코드</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">install</span><span class="params">()</span> <span class="keyword">throws</span> InstallException &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        startInstall();</span><br><span class="line">        copyFiles();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (SpaceException e) &#123;</span><br><span class="line">        <span class="type">InstallException</span> <span class="variable">ie</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">InstallException</span>(<span class="string">&quot;설치 중 예외발생&quot;</span>); </span><br><span class="line">        ie.initCause(e); <span class="comment">// 원인을 새로 만든 예외에 넣고</span></span><br><span class="line">        <span class="keyword">throw</span> ie; <span class="comment">// 새로 만든 예외로 던짐</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (MemoryException me) &#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>사용 이유</p>
+<ol>
+<li>여러 예외를 하나로 묶어서 다루기 위해서<br>(받는 쪽에서 너무 많은 Exception 종류 처리로 try catch 가 많은데 그걸 묶을수 있다.)</li>
+<li>checked 예외를 unchecked예외로 변경 하려 할때</li>
+</ol>
+<h3 id="ch9-java-lang-패키지와-유용한-클래스"><a href="#ch9-java-lang-패키지와-유용한-클래스" class="headerlink" title="ch9 java.lang 패키지와 유용한 클래스"></a>ch9 java.lang 패키지와 유용한 클래스</h3><h3 id="ch9-4-hashCode"><a href="#ch9-4-hashCode" class="headerlink" title="ch9-4 hashCode()"></a>ch9-4 hashCode()</h3>
       
     </div>
     <footer class="article-footer">
@@ -141,7 +211,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding-Test/" rel="tag">Coding Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
     </div>
   </div>
 
@@ -151,7 +221,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/Coding-Test/" style="font-size: 10px;">Coding Test</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -173,6 +243,14 @@
       <ul>
         
           <li>
+            <a href="/2022/05/16/%EC%BD%94%ED%85%8C/%EC%9D%BC%EC%A7%80/">코테 일지</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/16/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/">타임라인</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/15/MD%20%EC%9E%91%EC%84%B1%EB%B2%95/">MD 작성법</a>
           </li>
         
@@ -182,14 +260,6 @@
         
           <li>
             <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/">학습노트5 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/14/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">학습노트4 - 머스테치로 화면 구성 하기</a>
           </li>
         
       </ul>

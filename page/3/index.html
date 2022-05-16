@@ -71,6 +71,136 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/1.책구성_환경구축등" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T14:33:12.000Z" itemprop="datePublished">2022-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/">학습노트1 - 개발환경 셋팅</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="언어와-프레임워크로-웹개발"><a href="#언어와-프레임워크로-웹개발" class="headerlink" title="언어와 프레임워크로 웹개발"></a>언어와 프레임워크로 웹개발</h3><p>책이 2019년 하반기에 출판, 집필은 2018년으로 생각 되는데 서문에 대학생들에 물어보았을때<br>많이 쓰이는 조합이 4가지라고 들었다고 한다.</p>
+<ol>
+<li>PHP</li>
+<li>NodeJS 와 Express 프레임워크</li>
+<li>Python 과 Django 프레임워크</li>
+<li>Ruby와 Rails 프레임워크</li>
+</ol>
+<p>자바와 스프링 프레임워크은 없었고 이유가 어렵고, 복잡하고 거추장 스럽다는 것이었다. 이는 최근에는 스프링 부트가 나와서 해소 되었으리라 보인다.</p>
+<p>국내 선망의 IT 회사 (네이버, 카카오, 라인 등), 티몬, 쿠팡, 우아한 형제들등 스타트업, 서비스가 커지자 자바와 스프링 기반으로 전환을 많이 한다고 한다.</p>
+<h3 id="책-구성"><a href="#책-구성" class="headerlink" title="책 구성"></a>책 구성</h3><ol>
+<li>1~5장: 스프링 부트, JPA, 스프링 시큐리티, JUnit, 객체지향 프로그래밍</li>
+<li>6~7장: AWS 인프라, 기본 사용법 및 설정 (EC2, RDS)</li>
+<li>8~10장: 스프링 부트 프로젝트를 AWS 인프라에 배포, 무중단 배포 환경</li>
+</ol>
+<p>GitHub: <code>http://bit.ly/fr-springboot</code></p>
+<p>Spring Boot가 2.1 -&gt; 2.4로, IntelliJ IDEA가 2019 -&gt; 2020 의 변경 내역 정리글<br><a target="_blank" rel="noopener" href="https://jojoldu.tistory.com/539">https://jojoldu.tistory.com/539</a><br>Issues: <a target="_blank" rel="noopener" href="https://github.com/jojoldu/freelec-springboot2-webservice/issues">https://github.com/jojoldu/freelec-springboot2-webservice/issues</a></p>
+<h3 id="만들게-되는-웹-애플리케이션"><a href="#만들게-되는-웹-애플리케이션" class="headerlink" title="만들게 되는 웹 애플리케이션"></a>만들게 되는 웹 애플리케이션</h3><p>게시판 기능</p>
+<ol>
+<li>게시글 조회</li>
+<li>게시글 등록</li>
+<li>게시글 수정</li>
+<li>게시글 삭제</li>
+</ol>
+<p>회원 기능</p>
+<ol>
+<li>구글&#x2F;네이버 로그인</li>
+<li>로그인한 사용자 글 작성 권한</li>
+<li>본인 작성 글에 대한 권한 관리</li>
+</ol>
+<h3 id="개발-환경"><a href="#개발-환경" class="headerlink" title="개발 환경"></a>개발 환경</h3><p>인텔리J 추천 하며 다만 HTML, CSS은 VS Code</p>
+<h3 id="Github-연결"><a href="#Github-연결" class="headerlink" title="Github 연결"></a>Github 연결</h3><p>인텔리J Ctrl+Shift+A 하면 Actions 검색창 열리고 share project on github을 검색<br>깃허브 연결</p>
+<h3 id="플러그인-설치-ignore"><a href="#플러그인-설치-ignore" class="headerlink" title="플러그인 설치 .ignore"></a>플러그인 설치 .ignore</h3><p>Actions 검색창 &gt; plugins &gt; .ignore 찾아 설치<br>Alt+Insert &gt; .ignore 파일 생성 &gt; .idea 와 .gradle 체크</p>
+<h3 id="프로젝트-빌드를-Intellj-로-설정"><a href="#프로젝트-빌드를-Intellj-로-설정" class="headerlink" title="프로젝트 빌드를 Intellj 로 설정"></a>프로젝트 빌드를 Intellj 로 설정</h3><p>Gradle 로 되어 있는데 바꾸어 주면 더 빨리짐</p>
+<h3 id="Github-에-커밋-하기"><a href="#Github-에-커밋-하기" class="headerlink" title="Github 에 커밋 하기"></a>Github 에 커밋 하기</h3><p>Ctrl+k</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" data-id="cl33gdgw10002b8386i5p4fm9" data-title="학습노트1 - 개발환경 셋팅" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-java/인강/2. 인프런_김영학님_스프링입문/기초1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T14:09:50.000Z" itemprop="datePublished">2022-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/">스프링 기초 - 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="View-환경-설정"><a href="#View-환경-설정" class="headerlink" title="View 환경 설정"></a>View 환경 설정</h3><h4 id="스프링-부트가-제공-하는-Welcome-Page"><a href="#스프링-부트가-제공-하는-Welcome-Page" class="headerlink" title="스프링 부트가 제공 하는 Welcome Page"></a>스프링 부트가 제공 하는 Welcome Page</h4><p>정적 페이지 로 resources&#x2F;static&#x2F;index.html</p>
+<h3 id="스프링-웹-개발-기초"><a href="#스프링-웹-개발-기초" class="headerlink" title="스프링 웹 개발 기초"></a>스프링 웹 개발 기초</h3><ol>
+<li>정적 컨텐츠</li>
+<li>MVC와 Template 엔진</li>
+<li>API</li>
+</ol>
+<h4 id="MVC와-Template-엔진"><a href="#MVC와-Template-엔진" class="headerlink" title="MVC와 Template 엔진"></a>MVC와 Template 엔진</h4><p>기본 Flow : client가 Get 으로 URL 노드에 요청</p>
+<ol>
+<li>@Controller 클래스</li>
+<li>@GetMapping 으로 연결된 함수</li>
+<li>함수 실행, Model model 에 Data를 채움 (MVC에 그 Model임)</li>
+<li>함수가 가야 하는 View 파일 이름을 반환 함</li>
+<li>ViewResolver가 Thymeleaf 템플릿 엔진으로 가는 것임을 감지</li>
+<li>resources&#x2F;templates&#x2F;{파일이름}.html 에 model 데이타 치환, 생성</li>
+<li>client가 만들어진 html 받아 봄</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" data-id="cl33ddwff000y4o38hnkw47r5" data-title="스프링 기초 - 1" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java/스터디/자바의정석2독(신규개발자)/1주차 챕터2-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/04/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B02-5/" class="article-date">
@@ -389,16 +519,17 @@
 <h3 id="6-객체의-생성-및-사용"><a href="#6-객체의-생성-및-사용" class="headerlink" title="6. 객체의 생성 및 사용"></a>6. 객체의 생성 및 사용</h3><p>클래스명 변수명 &#x3D; new 클래스명();<br>new 를 사용해서 인스턴스화 (객체 생성)한다.</p>
 <p>변수명.멤버변수 &#x3D; XXX;<br>. 를 사용해서 멤버 변수에 접근한다.</p>
 <p>인스턴스시 객체 주소가 잡히고 거기에 멤버 변수와 메서드가 잡힌다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Class TV &#123;</span><br><span class="line">    String color;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line"></span><br><span class="line">    void power() &#123; power = !power; &#125;</span><br><span class="line">    void channelUp() &#123; channel++; &#125;</span><br><span class="line">    void channelDown() &#123; channel--; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Class TV &#123;</span><br><span class="line">    String color;</span><br><span class="line">    <span class="type">boolean</span> power;</span><br><span class="line">    <span class="type">int</span> channel;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">power</span><span class="params">()</span> &#123; power = !power; &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">channelUp</span><span class="params">()</span> &#123; channel++; &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">channelDown</span><span class="params">()</span> &#123; channel--; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>객체주소에 6개 멤버 (3개 변수, 3개 메서드)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class t1 = new TV();</span><br><span class="line">Class t2 = new TV();</span><br><span class="line"></span><br><span class="line">t1 = t2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Class</span> <span class="variable">t1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TV</span>();</span><br><span class="line"><span class="type">Class</span> <span class="variable">t2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TV</span>();</span><br><span class="line"></span><br><span class="line">t1 = t2;</span><br></pre></td></tr></table></figure>
 
 <p>객체마다 메모리가 따로 잡히고 참조가 없어지면 GC가 메모리를 정리 한다.</p>
 <h3 id="8-객체-배열"><a href="#8-객체-배열" class="headerlink" title="8 객체 배열"></a>8 객체 배열</h3><p>TV tv1, tv2, tv3;<br>TV[] tvArr &#x3D; new TV[3];</p>
 <h3 id="9-클래스의-정의"><a href="#9-클래스의-정의" class="headerlink" title="9 클래스의 정의"></a>9 클래스의 정의</h3><p>클래스 &#x3D; 데이터 + 함수<br>사용자 정의 가능 하다.</p>
-<p>변수의 진화체<br>변수 -&gt; 배열 -&gt; 구조체 -&gt; 클래스 </p>
-<h3 id="11-선언-위치에-따른-변수의-종류"><a href="#11-선언-위치에-따른-변수의-종류" class="headerlink" title="11 선언 위치에 따른 변수의 종류"></a>11 선언 위치에 따른 변수의 종류</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Variables</span><br><span class="line">&#123;</span><br><span class="line">    int iv;</span><br><span class="line">    static int cv;</span><br><span class="line"></span><br><span class="line">    void method()</span><br><span class="line">    &#123;</span><br><span class="line">        int lv = 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>변수의 진화체<br>변수 -&gt; 배열 -&gt; 구조체 -&gt; 클래스</p>
+<h3 id="11-선언-위치에-따른-변수의-종류"><a href="#11-선언-위치에-따른-변수의-종류" class="headerlink" title="11 선언 위치에 따른 변수의 종류"></a>11 선언 위치에 따른 변수의 종류</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Variables</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> iv;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> cv;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">lv</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>인스턴스 변수</li>
 <li>클래스 변수 (static변수, 공유 변수)</li>
@@ -406,23 +537,25 @@
 </ol>
 <p>클래스 안을 클래스 영역과 메서스 영역으로 볼수 있고<br>클래스 영역에는 선언만 가능하다.</p>
 <p>각 변수 종류별 생성 시기가 틀리다. (클래스 메모리 로딩 시점, 인스턴스 생성시, 변수 선언문 수행시)</p>
-<h3 id="12-클래스-변수와-인스턴스-변수"><a href="#12-클래스-변수와-인스턴스-변수" class="headerlink" title="12 클래스 변수와 인스턴스 변수"></a>12 클래스 변수와 인스턴스 변수</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Card &#123;</span><br><span class="line">    String kind; // iv</span><br><span class="line">    int number;</span><br><span class="line"></span><br><span class="line">    static int width = 300; // cv</span><br><span class="line">    static int height = 250; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Card.width;</span><br><span class="line">Card.height;</span><br><span class="line"></span><br><span class="line">Card c = new Card();</span><br><span class="line">c.kind;</span><br><span class="line">c.number;</span><br></pre></td></tr></table></figure>
+<h3 id="12-클래스-변수와-인스턴스-변수"><a href="#12-클래스-변수와-인스턴스-변수" class="headerlink" title="12 클래스 변수와 인스턴스 변수"></a>12 클래스 변수와 인스턴스 변수</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Card</span> &#123;</span><br><span class="line">    String kind; <span class="comment">// iv</span></span><br><span class="line">    <span class="type">int</span> number;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="variable">width</span> <span class="operator">=</span> <span class="number">300</span>; <span class="comment">// cv</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="variable">height</span> <span class="operator">=</span> <span class="number">250</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Card.width;</span><br><span class="line">Card.height;</span><br><span class="line"></span><br><span class="line"><span class="type">Card</span> <span class="variable">c</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Card</span>();</span><br><span class="line">c.kind;</span><br><span class="line">c.number;</span><br></pre></td></tr></table></figure>
 
 <h3 id="14-메서드-란"><a href="#14-메서드-란" class="headerlink" title="14 메서드 란?"></a>14 메서드 란?</h3><p>문장들 (statements)을 묶어 놓은것<br>한개의 메서드에 한개의 작업을 하도록..</p>
 <h3 id="15-호출-스택-call-stack"><a href="#15-호출-스택-call-stack" class="headerlink" title="15 호출 스택 (call stack)"></a>15 호출 스택 (call stack)</h3><p>메서드 수행에 필요한 메모리가 제공 되는 공간<br>메서드가 호출 되면 호출스택에 메모리 할당, 종료 되면 해제</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    print()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    print()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>x -&gt; main -&gt; main,print -&gt; main -&gt; x</p>
 <h3 id="23-기본형-매개변수"><a href="#23-기본형-매개변수" class="headerlink" title="23 기본형 매개변수"></a>23 기본형 매개변수</h3><p>매개변수로 기본형과 참조형이 있다.</p>
 <ol>
-<li><p>기본형 매개변수 (primitive 로 8개 이다)<br>함수로 passing 시키면 기본형은 read only</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Data &#123; </span><br><span class="line">    int x;</span><br><span class="line">&#125;</span><br><span class="line">class Ex6_7 &#123;</span><br><span class="line">    public static void main(String[] Args) &#123;</span><br><span class="line">        Data d = new Data();</span><br><span class="line">        d.x = 10;</span><br><span class="line">        change(d.x);</span><br><span class="line">    &#125;</span><br><span class="line">    static void change(int x)</span><br><span class="line">    &#123;</span><br><span class="line">        x =1000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>참조형 매개변수, read &amp; write 된다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Data &#123; </span><br><span class="line">    int x;</span><br><span class="line">&#125;</span><br><span class="line">class Ex6_7 &#123;</span><br><span class="line">    public static void main(String[] Args) &#123;</span><br><span class="line">        Data d = new Data();</span><br><span class="line">        d.x = 10;</span><br><span class="line">        change(d);</span><br><span class="line">    &#125;</span><br><span class="line">    static void change(Data d)</span><br><span class="line">    &#123;</span><br><span class="line">        d.x =1000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>call by value 와 call by reference 으로 이해된다.</p>
-</li>
+<li>기본형 매개변수 (primitive 로 8개 이다)<br>함수로 passing 시키면 기본형은 read only</li>
 </ol>
-<h3 id="25-참조형-반환-타입"><a href="#25-참조형-반환-타입" class="headerlink" title="25 참조형 반환 타입"></a>25 참조형 반환 타입</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Data3 &#123; int x; &#125;</span><br><span class="line">class Ex6_8 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Data3 d = new Data3();</span><br><span class="line">        d.x = 10;</span><br><span class="line"></span><br><span class="line">        Data d2 = copy(d);</span><br><span class="line">    &#125;</span><br><span class="line">    static Data3 copy(Data3 d) &#123;    // 참조형 반환 타입</span><br><span class="line">        Data3 tmp = new Data3();</span><br><span class="line">        tmp.x = d.x;</span><br><span class="line">        return tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Data</span> &#123; </span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ex6_7</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] Args)</span> &#123;</span><br><span class="line">        <span class="type">Data</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Data</span>();</span><br><span class="line">        d.x = <span class="number">10</span>;</span><br><span class="line">        change(d.x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(<span class="type">int</span> x)</span></span><br><span class="line">    &#123;</span><br><span class="line">        x =<span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.참조형 매개변수, read &amp; write 된다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Data</span> &#123; </span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ex6_7</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] Args)</span> &#123;</span><br><span class="line">        <span class="type">Data</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Data</span>();</span><br><span class="line">        d.x = <span class="number">10</span>;</span><br><span class="line">        change(d);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(Data d)</span></span><br><span class="line">    &#123;</span><br><span class="line">        d.x =<span class="number">1000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>call by value 와 call by reference 으로 이해된다.</p>
+<h3 id="25-참조형-반환-타입"><a href="#25-참조형-반환-타입" class="headerlink" title="25 참조형 반환 타입"></a>25 참조형 반환 타입</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Data3</span> &#123; <span class="type">int</span> x; &#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ex6_8</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Data3</span> <span class="variable">d</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Data3</span>();</span><br><span class="line">        d.x = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">Data</span> <span class="variable">d2</span> <span class="operator">=</span> copy(d);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> Data3 <span class="title function_">copy</span><span class="params">(Data3 d)</span> &#123;    <span class="comment">// 참조형 반환 타입</span></span><br><span class="line">        <span class="type">Data3</span> <span class="variable">tmp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Data3</span>();</span><br><span class="line">        tmp.x = d.x;</span><br><span class="line">        <span class="keyword">return</span> tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="26-인스턴스-메서드-와-클래스-static-메서드"><a href="#26-인스턴스-메서드-와-클래스-static-메서드" class="headerlink" title="26 인스턴스 메서드 와 클래스(static) 메서드"></a>26 인스턴스 메서드 와 클래스(static) 메서드</h3><ol>
 <li><p>클래스는 인스턴스, 객체 생성 없이 쓸수 있다. 구문은 ClassName.MethodName();<br>같은 class 안에 있는 static 메서스는 앞에 ClassName없이 부를수도 있다.</p>
 </li>
@@ -432,15 +565,14 @@
 </li>
 </ol>
 <p>속성 (멤버 변수) 중에서 공통 속성에 static 을 붙인다.<br>인스턴스 멤버(iv, im)을 사용하지 않는 메서드에 static을 붙인다.</p>
-<ol start="4">
-<li><p>메서드에서의 변수 사용 가능 여부 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class TestClass2 &#123;</span><br><span class="line">    int iv;         // 인스턴스 변수</span><br><span class="line">    static int cv; // 클래스 변수</span><br><span class="line"></span><br><span class="line">    void instanceMethod() &#123;</span><br><span class="line">        iv; // 사용 가능</span><br><span class="line">        cv; // 사용 가능</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void static staticMethod() &#123;</span><br><span class="line">        iv; // 호출 X</span><br><span class="line">        cv; // 사용 가능</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>메서드 간의 호출과 참조</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class TestClass &#123;</span><br><span class="line">    void instanceMethod()&#123;&#125;</span><br><span class="line">    static void staticMethod() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    void instanceMethod2() &#123;</span><br><span class="line">        instanceMethod(); // 가능</span><br><span class="line">        staticMethod(); // 가능</span><br><span class="line">    &#125;</span><br><span class="line">    void staticMethod() &#123;</span><br><span class="line">        instanceMethod(); // 에러 (클래스 메서드 에서 인스턴스 메서드 호출 X)</span><br><span class="line">        staticMehtod2(); // 가능</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+<p>4.메서드에서의 변수 사용 가능 여부</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TestClass2</span> &#123;</span><br><span class="line">    <span class="type">int</span> iv;         <span class="comment">// 인스턴스 변수</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> cv; <span class="comment">// 클래스 변수</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">instanceMethod</span><span class="params">()</span> &#123;</span><br><span class="line">        iv; <span class="comment">// 사용 가능</span></span><br><span class="line">        cv; <span class="comment">// 사용 가능</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="keyword">static</span> <span class="title function_">staticMethod</span><span class="params">()</span> &#123;</span><br><span class="line">        iv; <span class="comment">// 호출 X</span></span><br><span class="line">        cv; <span class="comment">// 사용 가능</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5.메서드 간의 호출과 참조</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TestClass</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">instanceMethod</span><span class="params">()</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">staticMethod</span><span class="params">()</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">instanceMethod2</span><span class="params">()</span> &#123;</span><br><span class="line">        instanceMethod(); <span class="comment">// 가능</span></span><br><span class="line">        staticMethod(); <span class="comment">// 가능</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">staticMethod</span><span class="params">()</span> &#123;</span><br><span class="line">        instanceMethod(); <span class="comment">// 에러 (클래스 메서드 에서 인스턴스 메서드 호출 X)</span></span><br><span class="line">        staticMehtod2(); <span class="comment">// 가능</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="30-오버로딩-overloading"><a href="#30-오버로딩-overloading" class="headerlink" title="30 오버로딩 (overloading)"></a>30 오버로딩 (overloading)</h3><p>한 클래스 안에 같은 이름의 메서드 여러 개 정의 하는 것</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">printf(int x);</span><br><span class="line">printf(char c);</span><br><span class="line">printf(double d);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">printf(<span class="type">int</span> x);</span><br><span class="line">printf(<span class="type">char</span> c);</span><br><span class="line">printf(<span class="type">double</span> d);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>오버로딩이 성립하기 위한 조건</p>
 <ol>
@@ -461,10 +593,13 @@
 </ol>
 <h3 id="36-생성자-this"><a href="#36-생성자-this" class="headerlink" title="36 생성자 this()"></a>36 생성자 this()</h3><ul>
 <li>생성자에서 다른 생성자 호출 할때 사용</li>
-<li>다른 생성자 호출 시 첫줄에서만 사용 가능<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line"></span><br><span class="line">    Car() &#123;</span><br><span class="line">        color = &quot;red&quot;;</span><br><span class="line">        gear Type = &quot;auto&quot;;</span><br><span class="line">        door = 4;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Car(String color, String gearType, int door) &#123;</span><br><span class="line">        this.color = color;</span><br><span class="line">        this.gearType = gearType;</span><br><span class="line">        this.door = door;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-this()의 좋은 사용처 예시<br>중복된 코드 삭제 가능 하다.</li>
+<li>다른 생성자 호출 시 첫줄에서만 사용 가능</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Car() &#123;</span><br><span class="line">    this(&quot;red&quot;, &quot;auto&quot;, 4); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    <span class="type">int</span> door;</span><br><span class="line"></span><br><span class="line">    Car() &#123;</span><br><span class="line">        color = <span class="string">&quot;red&quot;</span>;</span><br><span class="line">        <span class="type">gear</span> <span class="variable">Type</span> <span class="operator">=</span> <span class="string">&quot;auto&quot;</span>;</span><br><span class="line">        door = <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Car(String color, String gearType, <span class="type">int</span> door) &#123;</span><br><span class="line">        <span class="built_in">this</span>.color = color;</span><br><span class="line">        <span class="built_in">this</span>.gearType = gearType;</span><br><span class="line">        <span class="built_in">this</span>.door = door;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>this()의 좋은 사용처 예시<br>중복된 코드 삭제 가능 하다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Car() &#123;</span><br><span class="line">    <span class="built_in">this</span>(<span class="string">&quot;red&quot;</span>, <span class="string">&quot;auto&quot;</span>, <span class="number">4</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="37-this-참조-변수"><a href="#37-this-참조-변수" class="headerlink" title="37 this 참조 변수"></a>37 this 참조 변수</h3><ul>
 <li>인스턴스 자신을 가리키는 참조 변수, 인스턴스의 주소가 저장</li>
 <li>인스턴스 메서드 (생성자 포함)에서 사용 가능</li>
@@ -473,30 +608,24 @@ this()의 좋은 사용처 예시<br>중복된 코드 삭제 가능 하다.</li>
 <p>this는 자기 자신 참조 변수, this()는 생성자</p>
 <h3 id="38-변수의-초기화"><a href="#38-변수의-초기화" class="headerlink" title="38 변수의 초기화"></a>38 변수의 초기화</h3><ul>
 <li>지역변수(lv)는 수동 초기화 해야 함 (사용전에 꼭)</li>
-<li>멤버변수(iv,cv)는 자동 초기화 된다. <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class InitTest &#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y = x;</span><br><span class="line"></span><br><span class="line">    void method1() &#123;</span><br><span class="line">        int i;</span><br><span class="line">        int j = i; // 에러 </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>멤버변수(iv,cv)는 자동 초기화 된다.</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InitTest</span> &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> x;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">method1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> i;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; <span class="comment">// 에러 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>초기화 순서 방식</p>
 <ol>
 <li>기본 초기화 (0으로)</li>
-<li>명시적 간단 초기화 </li>
+<li>명시적 간단 초기화</li>
 <li>복잡 초기화</li>
 </ol>
 <p>명시적으로 초기화 하는 습관 중요, 특히 참조형 변수의 경우 null 초기화 하는건 NPE 발생 위험으로 나쁜 방식이라 할수 있다. 아래 처럼 항시 명시적 초기화 하자</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">    int door = 4;            // 기본형 변수의 초기화</span><br><span class="line">    Engine e = new Engine(); // 참조형 변수의 초기화</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">door</span> <span class="operator">=</span> <span class="number">4</span>;            <span class="comment">// 기본형 변수의 초기화</span></span><br><span class="line">    <span class="type">Engine</span> <span class="variable">e</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Engine</span>(); <span class="comment">// 참조형 변수의 초기화</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>cv 복잡 초기화인 static {} 구문 사용 예제</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class StaticBlockTest &#123;</span><br><span class="line">    static int[] arr = new int[10]; // 명시적 초기화</span><br><span class="line"></span><br><span class="line">    static &#123; // 클래스 초기화 블럭 </span><br><span class="line">        for (int i = 0 ; i &lt; 10; i ++)&#123;</span><br><span class="line">            arr[i] = (int) (Math.random()*10)+1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">iv는 항시 생성자로 복잡 초기화 해주는 것이 좋다 </span><br></pre></td></tr></table></figure>
-<p>class InitTest {<br>    static int cv &#x3D; 1; &#x2F;&#x2F; 명시적 초기화 (간단)<br>    int iv &#x3D; 1; </p>
-<pre><code>static &#123;
-    cv = 2;  // 클래스 초기화 블럭 (복잡)
-&#125;
-&#123; iv = 2; &#125; // 인스턴스의 초기화 블럭 (복잡)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticBlockTest</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>]; <span class="comment">// 명시적 초기화</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123; <span class="comment">// 클래스 초기화 블럭 </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span> ; i &lt; <span class="number">10</span>; i ++)&#123;</span><br><span class="line">            arr[i] = (<span class="type">int</span>) (Math.random()*<span class="number">10</span>)+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-InitTest() &#123;
-    iv = 3;
-&#125;
-</code></pre>
-<p>}</p>
+<p>iv는 항시 생성자로 복잡 초기화 해주는 것이 좋다</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InitTest</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="variable">cv</span> <span class="operator">=</span> <span class="number">1</span>; <span class="comment">// 명시적 초기화 (간단)</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">iv</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        cv = <span class="number">2</span>;  <span class="comment">// 클래스 초기화 블럭 (복잡)</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#123; iv = <span class="number">2</span>; &#125; <span class="comment">// 인스턴스의 초기화 블럭 (복잡)</span></span><br><span class="line"></span><br><span class="line">    InitTest() &#123;</span><br><span class="line">        iv = <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -767,114 +896,11 @@ static Local convertData(String json) &#123;
 
 
   
-    <article id="single-IDE/2022-4-16-Intellj" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/16/IDE/2022-4-16-Intellj/" class="article-date">
-  <time class="dt-published" datetime="2022-04-15T15:00:00.000Z" itemprop="datePublished">2022-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/16/IDE/2022-4-16-Intellj/">인텔리제이 자주 쓰는 쇼트컷 - 자바</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="새로운-파일-열기"><a href="#새로운-파일-열기" class="headerlink" title="새로운 파일 열기"></a>새로운 파일 열기</h2><p>Alt+1 하고 Alt+Insert</p>
-<h2 id="다음-라인으로-이동"><a href="#다음-라인으로-이동" class="headerlink" title="다음 라인으로 이동"></a>다음 라인으로 이동</h2><p>Shift + Enter</p>
-<h2 id="Go-to-class"><a href="#Go-to-class" class="headerlink" title="Go to class"></a>Go to class</h2><p>Ctrl + N</p>
-<h2 id="디버깅-실행"><a href="#디버깅-실행" class="headerlink" title="디버깅 실행"></a>디버깅 실행</h2><p>F9</p>
-<h2 id="refactor-rename-등"><a href="#refactor-rename-등" class="headerlink" title="refactor (rename 등)"></a>refactor (rename 등)</h2><p>Shift + F6</p>
-<h2 id="Comment-out-하기"><a href="#Comment-out-하기" class="headerlink" title="Comment out 하기"></a>Comment out 하기</h2><p>Ctrl + &#x2F;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/16/IDE/2022-4-16-Intellj/" data-id="cl21p869700001438gavdetjb" data-title="인텔리제이 자주 쓰는 쇼트컷 - 자바" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ide/" rel="tag">ide</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-java/학습일지/2022-4-16-Enum" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/16/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-16-Enum/" class="article-date">
-  <time class="dt-published" datetime="2022-04-15T15:00:00.000Z" itemprop="datePublished">2022-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/16/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-16-Enum/">Enum type 에 대해서</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="Enum-선언"><a href="#Enum-선언" class="headerlink" title="Enum 선언"></a>Enum 선언</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class 선언과 유사 하고 </span><br><span class="line">변수, 생성자, 메서드를 추가 할수 있다.</span><br><span class="line"></span><br><span class="line">생성자는 자동으로 private 잡히고 인스턴스가 전체 프로그램에 </span><br><span class="line">하나만 생성 되는 것을 자바에서 보장 해 싱글톤으로 활용 된다고 한다.</span><br><span class="line"></span><br><span class="line">public enum CarMaker &#123;</span><br><span class="line">   </span><br><span class="line">    KIA(100), HYUNDAI(200), BMW(300);</span><br><span class="line"></span><br><span class="line">    private final int value;</span><br><span class="line"></span><br><span class="line">    CarMaker(int value)</span><br><span class="line">    &#123;</span><br><span class="line">        this.value = value;</span><br><span class="line">        System.out.println(&quot;Contractor:&quot;+value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Enum-사용"><a href="#Enum-사용" class="headerlink" title="Enum 사용"></a>Enum 사용</h2><p>정의 한 Enum의 사용은 CarMaker.KIA 이다.<br>마치 static class 의 변수 참조 하듯이 한다.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">values(), ordinal, name(), valueOf() 등을 호출 할수 있다.</span><br><span class="line"></span><br><span class="line">public class EnumEx &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        CarMaker maker = CarMaker.KIA;</span><br><span class="line"></span><br><span class="line">        CarMaker[] list = CarMaker.values();</span><br><span class="line"></span><br><span class="line">        for (CarMaker c : list) &#123;</span><br><span class="line">            System.out.printf(&quot;ordinal:%d name:%s \n&quot;, c.ordinal(), c.name());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        CarMaker value = CarMaker.valueOf(&quot;KIA&quot;);</span><br><span class="line">        System.out.println(value);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="실행-결과"><a href="#실행-결과" class="headerlink" title="실행 결과"></a>실행 결과</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Contractor:100</span><br><span class="line">Contractor:200</span><br><span class="line">Contractor:300</span><br><span class="line">ordinal:0 name:KIA </span><br><span class="line">ordinal:1 name:HYUNDAI </span><br><span class="line">ordinal:2 name:BMW </span><br><span class="line">KIA</span><br></pre></td></tr></table></figure>
-
-<p>프로세스에 코드가 올라가면서 Static으로 상수 숫자 만큼 생성자가 호출 된다.<br>여기선 KIA, HYUNDAI, BMW 3개임으로 3번.</p>
-<p>maker 를 디버거로 인스턴트화 된것을 보면<br>maker 는 value, name, ordinal 을 멤버로 가지고 있음</p>
-<ol>
-<li>value &#x3D; 100</li>
-<li>name &#x3D; “KIA”</li>
-<li>ordinal &#x3D; 0</li>
-</ol>
-<p>values()는 이를 가지고 있는 배열을 반환 한다.</p>
-<h2 id="싱글톤-활용에-대한-글"><a href="#싱글톤-활용에-대한-글" class="headerlink" title="싱글톤 활용에 대한 글"></a>싱글톤 활용에 대한 글</h2><p><a target="_blank" rel="noopener" href="https://scshim.tistory.com/361">https://scshim.tistory.com/361</a></p>
-<h3 id="출처"><a href="#출처" class="headerlink" title="출처"></a>출처</h3><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=jVlzwq41whE&amp;t=1s">https://www.youtube.com/watch?v=jVlzwq41whE&amp;t=1s</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/16/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-16-Enum/" data-id="cl33ddwfc000n4o388edng9qv" data-title="Enum type 에 대해서" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -888,7 +914,7 @@ static Local convertData(String json) &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding-Test/" rel="tag">Coding Test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
     </div>
   </div>
 
@@ -898,7 +924,7 @@ static Local convertData(String json) &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/Coding-Test/" style="font-size: 10px;">Coding Test</a> <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 17.5px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -920,6 +946,14 @@ static Local convertData(String json) &#123;
       <ul>
         
           <li>
+            <a href="/2022/05/16/%EC%BD%94%ED%85%8C/%EC%9D%BC%EC%A7%80/">코테 일지</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/16/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/">타임라인</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/15/MD%20%EC%9E%91%EC%84%B1%EB%B2%95/">MD 작성법</a>
           </li>
         
@@ -929,14 +963,6 @@ static Local convertData(String json) &#123;
         
           <li>
             <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/">학습노트5 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/14/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/4/">학습노트4 - 머스테치로 화면 구성 하기</a>
           </li>
         
       </ul>
