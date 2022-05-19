@@ -379,10 +379,27 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td><code>#</code></td>
+<td>10진수</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>E</td>
+<td>지수 기호</td>
+<td></td>
+<td></td>
+</tr>
 </tbody></table>
-<h1 id="10진수"><a href="#10진수" class="headerlink" title="| 10진수"></a>| 10진수</h1><p>E | 지수 기호 </p>
-<p>의미 패턴 결과</p>
-<h3 id="ch10-13-16-SimpleDataFormat"><a href="#ch10-13-16-SimpleDataFormat" class="headerlink" title="ch10-13~16 SimpleDataFormat"></a>ch10-13~16 SimpleDataFormat</h3>
+<p>예제 10-6 보면 여러 패턴으로 쭈욱 찍는것이 나온다</p>
+<h3 id="ch10-13-16-SimpleDataFormat"><a href="#ch10-13-16-SimpleDataFormat" class="headerlink" title="ch10-13~16 SimpleDataFormat"></a>ch10-13~16 SimpleDataFormat</h3><ul>
+<li>날짜와 시간을 다양한 형식으로 출력 할 수 있게 해준다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Date</span> <span class="variable">today</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"><span class="type">SimpleDateFormat</span> <span class="variable">df</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line"><span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> df.format(today);</span><br><span class="line"></span><br><span class="line"><span class="type">SimpleDataFormat</span> <span class="variable">df2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDataFormat</span>(<span class="string">&quot;yyyy년 MM월 dd일&quot;</span>);</span><br><span class="line"><span class="type">Date</span> <span class="variable">d</span> <span class="operator">=</span> df2.parse(<span class="string">&quot;2015년 11월 23일&quot;</span>);  <span class="comment">// 문자열을 Date 객체로</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> df2.format(d); <span class="comment">// 객체를 문자열로</span></span><br></pre></td></tr></table></figure>
+
+<p>필요할때 찾아서 보자~<br>형식 으로 쓸수 있는 여러 기호 들 있음</p>
+
       
     </div>
     <footer class="article-footer">
