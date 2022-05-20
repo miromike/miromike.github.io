@@ -71,80 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/1.책구성_환경구축등" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" class="article-date">
-  <time class="dt-published" datetime="2022-05-04T14:33:12.000Z" itemprop="datePublished">2022-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/">학습노트1 - 개발환경 셋팅</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="언어와-프레임워크로-웹개발"><a href="#언어와-프레임워크로-웹개발" class="headerlink" title="언어와 프레임워크로 웹개발"></a>언어와 프레임워크로 웹개발</h3><p>책이 2019년 하반기에 출판, 집필은 2018년으로 생각 되는데 서문에 대학생들에 물어보았을때<br>많이 쓰이는 조합이 4가지라고 들었다고 한다.</p>
-<ol>
-<li>PHP</li>
-<li>NodeJS 와 Express 프레임워크</li>
-<li>Python 과 Django 프레임워크</li>
-<li>Ruby와 Rails 프레임워크</li>
-</ol>
-<p>자바와 스프링 프레임워크은 없었고 이유가 어렵고, 복잡하고 거추장 스럽다는 것이었다. 이는 최근에는 스프링 부트가 나와서 해소 되었으리라 보인다.</p>
-<p>국내 선망의 IT 회사 (네이버, 카카오, 라인 등), 티몬, 쿠팡, 우아한 형제들등 스타트업, 서비스가 커지자 자바와 스프링 기반으로 전환을 많이 한다고 한다.</p>
-<h3 id="책-구성"><a href="#책-구성" class="headerlink" title="책 구성"></a>책 구성</h3><ol>
-<li>1~5장: 스프링 부트, JPA, 스프링 시큐리티, JUnit, 객체지향 프로그래밍</li>
-<li>6~7장: AWS 인프라, 기본 사용법 및 설정 (EC2, RDS)</li>
-<li>8~10장: 스프링 부트 프로젝트를 AWS 인프라에 배포, 무중단 배포 환경</li>
-</ol>
-<p>GitHub: <code>http://bit.ly/fr-springboot</code></p>
-<p>Spring Boot가 2.1 -&gt; 2.4로, IntelliJ IDEA가 2019 -&gt; 2020 의 변경 내역 정리글<br><a target="_blank" rel="noopener" href="https://jojoldu.tistory.com/539">https://jojoldu.tistory.com/539</a><br>Issues: <a target="_blank" rel="noopener" href="https://github.com/jojoldu/freelec-springboot2-webservice/issues">https://github.com/jojoldu/freelec-springboot2-webservice/issues</a></p>
-<h3 id="만들게-되는-웹-애플리케이션"><a href="#만들게-되는-웹-애플리케이션" class="headerlink" title="만들게 되는 웹 애플리케이션"></a>만들게 되는 웹 애플리케이션</h3><p>게시판 기능</p>
-<ol>
-<li>게시글 조회</li>
-<li>게시글 등록</li>
-<li>게시글 수정</li>
-<li>게시글 삭제</li>
-</ol>
-<p>회원 기능</p>
-<ol>
-<li>구글&#x2F;네이버 로그인</li>
-<li>로그인한 사용자 글 작성 권한</li>
-<li>본인 작성 글에 대한 권한 관리</li>
-</ol>
-<h3 id="개발-환경"><a href="#개발-환경" class="headerlink" title="개발 환경"></a>개발 환경</h3><p>인텔리J 추천 하며 다만 HTML, CSS은 VS Code</p>
-<h3 id="Github-연결"><a href="#Github-연결" class="headerlink" title="Github 연결"></a>Github 연결</h3><p>인텔리J Ctrl+Shift+A 하면 Actions 검색창 열리고 share project on github을 검색<br>깃허브 연결</p>
-<h3 id="플러그인-설치-ignore"><a href="#플러그인-설치-ignore" class="headerlink" title="플러그인 설치 .ignore"></a>플러그인 설치 .ignore</h3><p>Actions 검색창 &gt; plugins &gt; .ignore 찾아 설치<br>Alt+Insert &gt; .ignore 파일 생성 &gt; .idea 와 .gradle 체크</p>
-<h3 id="프로젝트-빌드를-Intellj-로-설정"><a href="#프로젝트-빌드를-Intellj-로-설정" class="headerlink" title="프로젝트 빌드를 Intellj 로 설정"></a>프로젝트 빌드를 Intellj 로 설정</h3><p>Gradle 로 되어 있는데 바꾸어 주면 더 빨리짐</p>
-<h3 id="Github-에-커밋-하기"><a href="#Github-에-커밋-하기" class="headerlink" title="Github 에 커밋 하기"></a>Github 에 커밋 하기</h3><p>Ctrl+k</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" data-id="cl33gdgw10002b8386i5p4fm9" data-title="학습노트1 - 개발환경 셋팅" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-java/인강/2. 인프런_김영학님_스프링입문/기초1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" class="article-date">
@@ -731,6 +657,81 @@
 
 
   
+    <article id="post-타임라인" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/01/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/" class="article-date">
+  <time class="dt-published" datetime="2022-05-01T12:06:44.000Z" itemprop="datePublished">2022-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/01/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/">타임라인</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="계획"><a href="#계획" class="headerlink" title="계획"></a>계획</h4><p>5월3주차 스프링부트와AWS혼자배우는 예제 프로젝트 완성<br>5월4주차 SQL 공부<br>6월1주차 MyBatis 공부, 사용 예제 프로젝트 완성<br>6월2주차 …</p>
+<h4 id="코테-사이트-leetcode"><a href="#코테-사이트-leetcode" class="headerlink" title="코테 사이트: leetcode"></a>코테 사이트: leetcode</h4><table>
+<thead>
+<tr>
+<th align="left">Explore &gt; Learn</th>
+<th align="left">진도</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Arrays</td>
+<td align="left">5&#x2F;16~ 진행중</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Explore &gt; Interviews</th>
+<th align="left">진도</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">머 시작할 예정</td>
+<td align="left">5&#x2F;17~ 진행중</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Problems &gt; Study Plan</th>
+<th align="left">진도</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Programming Skills II</td>
+<td align="left">20일 과정 1일차 5&#x2F;16 시작~</td>
+</tr>
+</tbody></table>
+<h4 id="코테-책-유튜브-무료-강좌"><a href="#코테-책-유튜브-무료-강좌" class="headerlink" title="코테 책? 유튜브 ? 무료 강좌?"></a>코테 책? 유튜브 ? 무료 강좌?</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/01/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/" data-id="cl38se7q10003iw382l9qe82g" data-title="타임라인" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java/학습일지/2022-5-1-Java-Coding-Style-Google" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/01/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-5-1-Java-Coding-Style-Google/" class="article-date">
@@ -950,10 +951,6 @@ static Local convertData(String json) &#123;
           </li>
         
           <li>
-            <a href="/2022/05/16/%ED%83%80%EC%9E%84%EB%9D%BC%EC%9D%B8/">타임라인</a>
-          </li>
-        
-          <li>
             <a href="/2022/05/15/MD%20%EC%9E%91%EC%84%B1%EB%B2%95/">MD 작성법</a>
           </li>
         
@@ -963,6 +960,10 @@ static Local convertData(String json) &#123;
         
           <li>
             <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/5/">학습노트5 -</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
           </li>
         
       </ul>
