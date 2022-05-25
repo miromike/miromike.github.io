@@ -71,6 +71,136 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/1.책구성_환경구축등" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T14:33:12.000Z" itemprop="datePublished">2022-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/">학습노트1 - 개발환경 셋팅</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="언어와-프레임워크로-웹개발"><a href="#언어와-프레임워크로-웹개발" class="headerlink" title="언어와 프레임워크로 웹개발"></a>언어와 프레임워크로 웹개발</h3><p>책이 2019년 하반기에 출판, 집필은 2018년으로 생각 되는데 서문에 대학생들에 물어보았을때<br>많이 쓰이는 조합이 4가지라고 들었다고 한다.</p>
+<ol>
+<li>PHP</li>
+<li>NodeJS 와 Express 프레임워크</li>
+<li>Python 과 Django 프레임워크</li>
+<li>Ruby와 Rails 프레임워크</li>
+</ol>
+<p>자바와 스프링 프레임워크은 없었고 이유가 어렵고, 복잡하고 거추장 스럽다는 것이었다. 이는 최근에는 스프링 부트가 나와서 해소 되었으리라 보인다.</p>
+<p>국내 선망의 IT 회사 (네이버, 카카오, 라인 등), 티몬, 쿠팡, 우아한 형제들등 스타트업, 서비스가 커지자 자바와 스프링 기반으로 전환을 많이 한다고 한다.</p>
+<h3 id="책-구성"><a href="#책-구성" class="headerlink" title="책 구성"></a>책 구성</h3><ol>
+<li>1~5장: 스프링 부트, JPA, 스프링 시큐리티, JUnit, 객체지향 프로그래밍</li>
+<li>6~7장: AWS 인프라, 기본 사용법 및 설정 (EC2, RDS)</li>
+<li>8~10장: 스프링 부트 프로젝트를 AWS 인프라에 배포, 무중단 배포 환경</li>
+</ol>
+<p>GitHub: <code>http://bit.ly/fr-springboot</code></p>
+<p>Spring Boot가 2.1 -&gt; 2.4로, IntelliJ IDEA가 2019 -&gt; 2020 의 변경 내역 정리글<br><a target="_blank" rel="noopener" href="https://jojoldu.tistory.com/539">https://jojoldu.tistory.com/539</a><br>Issues: <a target="_blank" rel="noopener" href="https://github.com/jojoldu/freelec-springboot2-webservice/issues">https://github.com/jojoldu/freelec-springboot2-webservice/issues</a></p>
+<h3 id="만들게-되는-웹-애플리케이션"><a href="#만들게-되는-웹-애플리케이션" class="headerlink" title="만들게 되는 웹 애플리케이션"></a>만들게 되는 웹 애플리케이션</h3><p>게시판 기능</p>
+<ol>
+<li>게시글 조회</li>
+<li>게시글 등록</li>
+<li>게시글 수정</li>
+<li>게시글 삭제</li>
+</ol>
+<p>회원 기능</p>
+<ol>
+<li>구글&#x2F;네이버 로그인</li>
+<li>로그인한 사용자 글 작성 권한</li>
+<li>본인 작성 글에 대한 권한 관리</li>
+</ol>
+<h3 id="개발-환경"><a href="#개발-환경" class="headerlink" title="개발 환경"></a>개발 환경</h3><p>인텔리J 추천 하며 다만 HTML, CSS은 VS Code</p>
+<h3 id="Github-연결"><a href="#Github-연결" class="headerlink" title="Github 연결"></a>Github 연결</h3><p>인텔리J Ctrl+Shift+A 하면 Actions 검색창 열리고 share project on github을 검색<br>깃허브 연결</p>
+<h3 id="플러그인-설치-ignore"><a href="#플러그인-설치-ignore" class="headerlink" title="플러그인 설치 .ignore"></a>플러그인 설치 .ignore</h3><p>Actions 검색창 &gt; plugins &gt; .ignore 찾아 설치<br>Alt+Insert &gt; .ignore 파일 생성 &gt; .idea 와 .gradle 체크</p>
+<h3 id="프로젝트-빌드를-Intellj-로-설정"><a href="#프로젝트-빌드를-Intellj-로-설정" class="headerlink" title="프로젝트 빌드를 Intellj 로 설정"></a>프로젝트 빌드를 Intellj 로 설정</h3><p>Gradle 로 되어 있는데 바꾸어 주면 더 빨리짐</p>
+<h3 id="Github-에-커밋-하기"><a href="#Github-에-커밋-하기" class="headerlink" title="Github 에 커밋 하기"></a>Github 에 커밋 하기</h3><p>Ctrl+Shift+k</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/1.%EC%B1%85%EA%B5%AC%EC%84%B1_%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95%EB%93%B1/" data-id="cl33gdgw10002b8386i5p4fm9" data-title="학습노트1 - 개발환경 셋팅" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-java/인강/2. 인프런_김영학님_스프링입문/기초1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" class="article-date">
+  <time class="dt-published" datetime="2022-05-04T14:09:50.000Z" itemprop="datePublished">2022-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/">스프링 기초 - 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="View-환경-설정"><a href="#View-환경-설정" class="headerlink" title="View 환경 설정"></a>View 환경 설정</h3><h4 id="스프링-부트가-제공-하는-Welcome-Page"><a href="#스프링-부트가-제공-하는-Welcome-Page" class="headerlink" title="스프링 부트가 제공 하는 Welcome Page"></a>스프링 부트가 제공 하는 Welcome Page</h4><p>정적 페이지 로 resources&#x2F;static&#x2F;index.html</p>
+<h3 id="스프링-웹-개발-기초"><a href="#스프링-웹-개발-기초" class="headerlink" title="스프링 웹 개발 기초"></a>스프링 웹 개발 기초</h3><ol>
+<li>정적 컨텐츠</li>
+<li>MVC와 Template 엔진</li>
+<li>API</li>
+</ol>
+<h4 id="MVC와-Template-엔진"><a href="#MVC와-Template-엔진" class="headerlink" title="MVC와 Template 엔진"></a>MVC와 Template 엔진</h4><p>기본 Flow : client가 Get 으로 URL 노드에 요청</p>
+<ol>
+<li>@Controller 클래스</li>
+<li>@GetMapping 으로 연결된 함수</li>
+<li>함수 실행, Model model 에 Data를 채움 (MVC에 그 Model임)</li>
+<li>함수가 가야 하는 View 파일 이름을 반환 함</li>
+<li>ViewResolver가 Thymeleaf 템플릿 엔진으로 가는 것임을 감지</li>
+<li>resources&#x2F;templates&#x2F;{파일이름}.html 에 model 데이타 치환, 생성</li>
+<li>client가 만들어진 html 받아 봄</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/04/java/%EC%9D%B8%EA%B0%95/2.%20%EC%9D%B8%ED%94%84%EB%9F%B0_%EA%B9%80%EC%98%81%ED%95%99%EB%8B%98_%EC%8A%A4%ED%94%84%EB%A7%81%EC%9E%85%EB%AC%B8/%EA%B8%B0%EC%B4%881/" data-id="cl33ddwff000y4o38hnkw47r5" data-title="스프링 기초 - 1" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/" rel="tag">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java/스터디/자바의정석2독(신규개발자)/1주차 챕터2-5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/04/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D2%EB%8F%85(%EC%8B%A0%EA%B7%9C%EA%B0%9C%EB%B0%9C%EC%9E%90)/1%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B02-5/" class="article-date">
@@ -771,122 +901,6 @@
 
 
   
-    <article id="single-java/학습일지/2022-4-21-NaverOpenAPI" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/21/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-21-NaverOpenAPI/" class="article-date">
-  <time class="dt-published" datetime="2022-04-20T15:00:00.000Z" itemprop="datePublished">2022-04-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/21/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-21-NaverOpenAPI/">Naver Open API 검색 활용, 맛집 서비스</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>네이버 Open API 를 활용해서 맛집 검색을 해 보는 예제</p>
-<h2 id="사용할-API"><a href="#사용할-API" class="headerlink" title="사용할 API"></a>사용할 API</h2><p>[네이버 오픈 API 목록]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/products/intro/plan/plan.md">https://developers.naver.com/products/intro/plan/plan.md</a>)</p>
-<p>이중에 검색 API 을 사용 하면 네이버 블로그, 이미지, 웹, 뉴스, 백과사전, 책, 카페, 지식iN 등 검색 할수 있음</p>
-<p>[비로그인 방식 API 이고 호출 예제]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/docs/common/openapiguide/apicall.md#%EB%B9%84%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api-%ED%98%B8%EC%B6%9C-%EC%98%88">https://developers.naver.com/docs/common/openapiguide/apicall.md#%EB%B9%84%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EB%B0%A9%EC%8B%9D-%EC%98%A4%ED%94%88-api-%ED%98%B8%EC%B6%9C-%EC%98%88</a>)</p>
-<p>[검색 &gt; 지역]<br>(<a target="_blank" rel="noopener" href="https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD">https://developers.naver.com/docs/serviceapi/search/local/local.md#%EC%A7%80%EC%97%AD</a>)</p>
-<h3 id="Talend-사용-해서-API-호출-해보기"><a href="#Talend-사용-해서-API-호출-해보기" class="headerlink" title="Talend 사용 해서 API 호출 해보기"></a>Talend 사용 해서 API 호출 해보기</h3><p>검색 값을 UTF8 해야 한다. [변환 해주는 사이트] (<a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/dencoder/">https://meyerweb.com/eric/tools/dencoder/</a>)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;rss version=&quot;2.0&quot;&gt;</span><br><span class="line">    &lt;channel&gt;</span><br><span class="line">        &lt;title&gt;Naver Open API - local ::&#x27;갈비집&#x27;&lt;/title&gt;</span><br><span class="line">        &lt;link&gt;http://search.naver.com&lt;/link&gt;</span><br><span class="line">        &lt;description&gt;Naver Search Result&lt;/description&gt;</span><br><span class="line">        &lt;lastBuildDate&gt;Tue, 04 Oct 2016 13:10:58 +0900&lt;/lastBuildDate&gt;</span><br><span class="line">        &lt;total&gt;407&lt;/total&gt;</span><br><span class="line">        &lt;start&gt;1&lt;/start&gt;</span><br><span class="line">        &lt;display&gt;10&lt;/display&gt;</span><br><span class="line">        &lt;item&gt;</span><br><span class="line">            &lt;title&gt;조선옥&lt;/title&gt;</span><br><span class="line">            &lt;link /&gt;</span><br><span class="line">            &lt;category&gt;한식&amp;gt;육류,고기요리&lt;/category&gt;</span><br><span class="line">            &lt;description&gt;연탄불 한우갈비 전문점.&lt;/description&gt;</span><br><span class="line">            &lt;telephone&gt;&lt;/telephone&gt;</span><br><span class="line">            &lt;address&gt;서울특별시 중구 을지로3가 229-1 &lt;/address&gt;</span><br><span class="line">            &lt;roadAddress&gt;서울특별시 중구 을지로15길 6-5 &lt;/roadAddress&gt;</span><br><span class="line">            &lt;mapx&gt;311277&lt;/mapx&gt;</span><br><span class="line">            &lt;mapy&gt;552097&lt;/mapy&gt;</span><br><span class="line">        &lt;/item&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/channel&gt;</span><br><span class="line">&lt;/rss&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Java-에서-해보기"><a href="#Java-에서-해보기" class="headerlink" title="Java 에서 해보기"></a>Java 에서 해보기</h3><p>강사님 코드가 제공 되어 가져와서 빌드 하니 잘 동작 한다.<br>강사님 코드를 참고 해서 코딩을 해보니 API 호출 시 응답은 200으로 잘 오는데 맛집 정보는 item &#x3D; 0 으로 온다.<br>이리저리 고쳐봐고 다르게 코딩을 해 보도 동일한다. 검색어를 영어로 해보니 정보가 담아져서 온다.</p>
-<p>아래는 강사님 예제 코드 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">        var uri = UriComponentsBuilder.fromUriString(naverLocalSearchUrl)</span><br><span class="line">                .queryParams(searchLocalReq.toMultiValueMap())</span><br><span class="line">                .build()</span><br><span class="line">                .encode()</span><br><span class="line">                .toUri();</span><br><span class="line"></span><br><span class="line">        System.out.println(uri);</span><br><span class="line">//https://openapi.naver.com/v1/search/local.json?</span><br><span class="line">// query=%EA%B0%88%EB%B9%84&amp;display=1&amp;start=1&amp;sort=random</span><br><span class="line"></span><br><span class="line">        var headers = new HttpHeaders();</span><br><span class="line">        headers.set(&quot;X-Naver-Client-Id&quot;, naverClientId);</span><br><span class="line">        headers.set(&quot;X-Naver-Client-Secret&quot;, naverClientSecret);</span><br><span class="line">        headers.setContentType(MediaType.APPLICATION_JSON);</span><br><span class="line"></span><br><span class="line">        var httpEntity = new HttpEntity&lt;&gt;(headers);</span><br><span class="line">        var responseType = new ParameterizedTypeReference&lt;SearchLocalRes&gt;()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">        var responseEntity = new RestTemplate().exchange(</span><br><span class="line">                uri,</span><br><span class="line">                HttpMethod.GET,</span><br><span class="line">                httpEntity,</span><br><span class="line">                responseType</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
-
-<p>아래는 나의 예제 코드</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String uri = local + &quot;?query=food&amp;display=1&amp;start=1&amp;sort=random&quot;;</span><br><span class="line"></span><br><span class="line">var headers = new HttpHeaders();</span><br><span class="line"></span><br><span class="line">headers.set(&quot;X-Naver-Client-Id&quot;, id);</span><br><span class="line">headers.set(&quot;X-Naver-Client-Secret&quot;, secret);</span><br><span class="line">headers.setContentType(MediaType.APPLICATION_JSON);</span><br><span class="line"></span><br><span class="line">var request = new HttpEntity&lt;&gt;(headers);</span><br><span class="line"></span><br><span class="line">var responseEntity = restTemplate.exchange(</span><br><span class="line">        uri,</span><br><span class="line">        HttpMethod.GET,</span><br><span class="line">        request,</span><br><span class="line">        String.class</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">Local local = convertData(responseEntity.getBody());</span><br><span class="line">System.out.println(local);</span><br></pre></td></tr></table></figure>
-
-<p>restTemplate 이란 클래스가 MVC에서 제공 되고 여기에 exchange 함수가 사용 되어 API 호출을 한다. </p>
-<h3 id="또-다른-문제"><a href="#또-다른-문제" class="headerlink" title="또 다른 문제"></a>또 다른 문제</h3><p>응답 값이 JSON 으로 오고 이를 쓰기 위해 Java Object 로 변환을 하게 되는데 이상하게 일부만 저장 되어 돌아 온다. </p>
-<p>정확히는 Java Object의 앞의 멤버 변수들은 잘 채워졌는데 뒤에 item list 부분은 안 채워져서 온다.</p>
-<p><a target="_blank" rel="noopener" href="https://howtodoinjava.com/gson/gson-parse-json-array/">Gson</a>이라는<br>라이브러리가 있어 적용 해 보았는데 이방식은 변환이 되어 잘 들어 온다.</p>
-<pre><code>private static Gson gson;
-
-static Local convertData(String json) &#123;
-    if (gson == null)
-        gson = new Gson();
-
-    Local local = gson.fromJson(json, Local.class);
-
-    return local;
-&#125;
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/21/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-21-NaverOpenAPI/" data-id="cl33ddwfb000l4o381kv9555j" data-title="Naver Open API 검색 활용, 맛집 서비스" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="single-IDE/2022-4-16-Intellj" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/16/IDE/2022-4-16-Intellj/" class="article-date">
-  <time class="dt-published" datetime="2022-04-15T15:00:00.000Z" itemprop="datePublished">2022-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/16/IDE/2022-4-16-Intellj/">인텔리제이 자주 쓰는 쇼트컷 - 자바</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="새로운-파일-열기"><a href="#새로운-파일-열기" class="headerlink" title="새로운 파일 열기"></a>새로운 파일 열기</h2><p>Alt+1 하고 Alt+Insert</p>
-<h2 id="다음-라인으로-이동"><a href="#다음-라인으로-이동" class="headerlink" title="다음 라인으로 이동"></a>다음 라인으로 이동</h2><p>Shift + Enter</p>
-<h2 id="Go-to-class"><a href="#Go-to-class" class="headerlink" title="Go to class"></a>Go to class</h2><p>Ctrl + N</p>
-<h2 id="디버깅-실행"><a href="#디버깅-실행" class="headerlink" title="디버깅 실행"></a>디버깅 실행</h2><p>F9</p>
-<h2 id="refactor-rename-등"><a href="#refactor-rename-등" class="headerlink" title="refactor (rename 등)"></a>refactor (rename 등)</h2><p>Shift + F6</p>
-<h2 id="Comment-out-하기"><a href="#Comment-out-하기" class="headerlink" title="Comment out 하기"></a>Comment out 하기</h2><p>Ctrl + &#x2F;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/16/IDE/2022-4-16-Intellj/" data-id="cl21p869700001438gavdetjb" data-title="인텔리제이 자주 쓰는 쇼트컷 - 자바" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ide/" rel="tag">ide</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -905,7 +919,7 @@ static Local convertData(String json) &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GIT/" rel="tag">GIT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">Hexo 명령어</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" rel="tag">Markup 파일 작성</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="tag">blog만들기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/" rel="tag">ide</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javastudy2/" rel="tag">javastudy2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
     </div>
   </div>
 
@@ -915,7 +929,7 @@ static Local convertData(String json) &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 18px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 14px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 16px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 18px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 14px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 16px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -937,23 +951,23 @@ static Local convertData(String json) &#123;
       <ul>
         
           <li>
+            <a href="/2022/05/25/My-New-Post/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/25/SQL/%EC%9D%B8%ED%94%84%EB%9F%B0%EA%B0%95%EC%A2%8C%EC%88%98%EA%B0%95/">인프런 강좌 수강 ~</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/23/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/4%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2011%20-%20Collections%20Framework/">(오키) 자바의정석, 챕터 11 - Collections Framework</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/20/%ED%8F%AC%ED%86%A0%ED%8F%B4%EB%A6%AC%EC%98%A4/">포토폴리오</a>
           </li>
         
           <li>
             <a href="/2022/05/20/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-5-20-%EA%B5%AD%EB%B9%84%EC%9E%90%EB%B0%94%EA%B5%90%EC%9C%A1%EC%99%84%EB%A3%8C/">국비 자바 과정 수료</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/MD%20%EC%9E%91%EC%84%B1%EB%B2%95/">MD 작성법</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/6/">학습노트6 -</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
           </li>
         
       </ul>
