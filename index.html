@@ -71,6 +71,146 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java/스터디/자바의정석1독(오키)/5주차 챕터 12 - Generics Enum Annotation" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/30/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/5%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2012%20-%20Generics%20Enum%20Annotation/" class="article-date">
+  <time class="dt-published" datetime="2022-05-30T10:45:33.000Z" itemprop="datePublished">2022-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/30/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/5%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2012%20-%20Generics%20Enum%20Annotation/">(오키) 자바의정석, 챕터 12 - Generics, Enum, Annotation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="12-1-Generics-란"><a href="#12-1-Generics-란" class="headerlink" title="12-1 Generics 란?"></a>12-1 Generics 란?</h3><ul>
+<li>컴파일시 타입을 체크해 주는 기능 (compile-time type check) - JDK1.5</li>
+<li>객체의 타입 안정성을 높이고 형변환의 번거로움을 줄여줌</li>
+</ul>
+<h3 id="12-2-타입변수"><a href="#12-2-타입변수" class="headerlink" title="12-2 타입변수"></a>12-2 타입변수</h3><ul>
+<li>클래스를 작성 할때, Object 타입 대신 타입 변수(E)를 선언해서 사용</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayList</span> <span class="keyword">extends</span> <span class="title class_">AbstractList</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> Object[] elementData;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(Object o)</span> &#123; &#125;</span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span> &#123; &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayList</span>&lt;E&gt; <span class="keyword">extends</span> <span class="title class_">AbstractList</span>&lt;E&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">transient</span> E[] elementData;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E o)</span> &#123; &#125;</span><br><span class="line">    <span class="keyword">public</span> E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span> &#123; &#125; </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-3-타입-변수에-대입하기"><a href="#12-3-타입-변수에-대입하기" class="headerlink" title="12-3 타입 변수에 대입하기"></a>12-3 타입 변수에 대입하기</h3><ul>
+<li>객체를 생성시, 타입 변수(E) 대신 실제 타입(Tv)을 지정(대입)</li>
+<li>타입 변수 대신 실제 타입이 지정되면, 형변환 생략 가능</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Tv&gt; tvList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Tv&gt;();</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-4-Generics-용어"><a href="#12-4-Generics-용어" class="headerlink" title="12-4 Generics 용어"></a>12-4 Generics 용어</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;T&gt;    지네릭 클래스 <span class="string">&#x27;T의 Box&#x27;</span> 또는 <span class="string">&#x27;T Box&#x27;</span> 라고 읽는다.</span><br><span class="line">T         타입변수 또는 타입 매개 변수 (T는 타입 문자)</span><br><span class="line">Box       원시 타입 (Raw type)</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-7-Iterator-lt-E-gt"><a href="#12-7-Iterator-lt-E-gt" class="headerlink" title="12-7 Iterator&lt;E&gt;"></a>12-7 <code>Iterator&lt;E&gt;</code></h3><ul>
+<li>클래스를 작성할 때, Object 타입 대신 T와 같은 타입 변수를 사용</li>
+</ul>
+<h3 id="12-8-HashMap-lt-K-V-gt"><a href="#12-8-HashMap-lt-K-V-gt" class="headerlink" title="12-8 HashMap &lt;K,V&gt;"></a>12-8 HashMap &lt;K,V&gt;</h3><ul>
+<li>여러 개의 타입 변수가 필요한 경우, 콤마(,)를 구분자로 선언</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;String, Student&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, Student&gt;(); <span class="comment">// 생성</span></span><br><span class="line">map.put(<span class="string">&quot;자바왕&quot;</span>, <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;자바왕&quot;</span>, ..));</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-9-제한-된-지네릭-클래스"><a href="#12-9-제한-된-지네릭-클래스" class="headerlink" title="12-9 제한 된 지네릭 클래스"></a>12-9 제한 된 지네릭 클래스</h3><ul>
+<li>extends 로 대입할수 있는 타입을 제한</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">FruitBox</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Fruit</span>&gt; &#123; <span class="comment">// Fruit의 자손만 타입으로 지정 가능</span></span><br><span class="line">    ArrayList&lt;T&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;T&gt;();</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>인터페이스인 경우에도 extends를 사용</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Eatable</span> &#123;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FruitBox</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Eatable</span>&gt; &#123; </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-11-지네릭스의-제약"><a href="#12-11-지네릭스의-제약" class="headerlink" title="12-11 지네릭스의 제약"></a>12-11 지네릭스의 제약</h3><ul>
+<li>타입 변수에 대입은 인스턴스 별로 다르게 가능</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Apple&gt; appleBox = <span class="keyword">new</span> <span class="title class_">Box</span>&lt;Apple&gt;();</span><br><span class="line">Box&lt;Grape&gt; grapeBox = <span class="keyword">new</span> <span class="title class_">Box</span>&lt;Grape&gt;();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>static 멤버에 타입 변수 사용 불가</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">static</span> T item; <span class="comment">// 에러</span></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(T t1, T t2)</span> &#123; <span class="comment">// 에러</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>배열 생성 할때 타입 변수 사용 불가. 타입 변수로 배열 선언은 가능</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    T[] itemArr; </span><br><span class="line">    T[] toArray() &#123;</span><br><span class="line">        T[] tmpArr = <span class="keyword">new</span> <span class="title class_">T</span>[itemArr.length]; <span class="comment">// 에러 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-12-와일드-카드-lt-gt"><a href="#12-12-와일드-카드-lt-gt" class="headerlink" title="12-12 와일드 카드 &lt;?&gt;"></a>12-12 와일드 카드 &lt;?&gt;</h3><ul>
+<li>하나의 참조 변수로 대입된 타입이 다른 객체를 참조 가능</li>
+</ul>
+<? extends T> 와일드 카드의 상환 제한 T와 그 자손들만 가능
+<? super T>   와일드 카드의 하한 제한 T와 그 조상들만 가능
+<?><pre><code>       제한 없음  &lt;? extends Object&gt; 와 동일
+</code></pre>
+<h3 id="12-14-Generic-methods-지네릭-메서드"><a href="#12-14-Generic-methods-지네릭-메서드" class="headerlink" title="12-14 Generic methods, 지네릭 메서드"></a>12-14 Generic methods, 지네릭 메서드</h3><ul>
+<li>지네릭 타입이 선언된 메서드(타입 변수는 메서드 내에서만 유효)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(List&lt;T&gt; list, Comparator&lt;? <span class="built_in">super</span> T&gt; c)</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- 클래스의 타입 매개변수&lt;T&gt;와 메서드의 타입 매개변수 &lt;T&gt;는 별개</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FruitBox</span>&lt;T&gt; &#123; </span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="keyword">static</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">sort</span><span class="params">(List&lt;T&gt; list, Comparator&lt;? <span class="built_in">super</span> T&gt; c)</span> &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>메서드를 호출 할때마다 타입을 대입해야(대부분 생략 가능)</li>
+</ul>
+<h3 id="12-15-지네릭-타입의-형변환"><a href="#12-15-지네릭-타입의-형변환" class="headerlink" title="12-15 지네릭 타입의 형변환"></a>12-15 지네릭 타입의 형변환</h3><ul>
+<li>지네릭 타입과 원시 타입 간의 형변환은 바람직 하지 않다. (경고 발생)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Object&gt; objBox = <span class="literal">null</span>;</span><br><span class="line"><span class="type">Box</span> <span class="variable">box</span> <span class="operator">=</span> (Box) objBox;</span><br><span class="line">objBox = (Box&lt;Object&gt;) box;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-16-지네릭-타입의-제거"><a href="#12-16-지네릭-타입의-제거" class="headerlink" title="12-16 지네릭 타입의 제거"></a>12-16 지네릭 타입의 제거</h3><ul>
+<li>컴파일러는 지네릭 타입을 제거 하고, 필요한 곳에 형변환을 넣는다.</li>
+</ul>
+<ol>
+<li>지네릭 타입의 경계(bound)를 제거</li>
+<li>지네릭 타입 제거 후에 타입이 불일치하면, 형변환 추가</li>
+<li>와일드 카드가 포함된 경우, 적절한 타입으로 형변환 추가</li>
+</ol>
+<h3 id="12-17-열거형-Enum"><a href="#12-17-열거형-Enum" class="headerlink" title="12-17 열거형 (Enum)"></a>12-17 열거형 (Enum)</h3><ul>
+<li>관련된 상수들을 같이 묶어 놓은 것<br><code>enum 열거형이름 &#123; 상수명1, 상수명2, 상수명3, ... &#125;</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Card</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">CLOVER</span> <span class="operator">=</span><span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">HEART</span> <span class="operator">=</span><span class="number">1</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">DIAMOND</span> <span class="operator">=</span><span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">TWO</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">THREE</span> <span class="operator">=</span><span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> kind;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">int</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 여기서 if (Card.CLOVER == Card.TWO) 하면 true 되지만 의미는 false 되어야 한다. </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Card</span> &#123;</span><br><span class="line">    <span class="keyword">enum</span> <span class="title class_">Kind</span> &#123; CLOVER, HEART, DIAMOND, SPADE &#125;</span><br><span class="line">    <span class="keyword">enum</span> <span class="title class_">Value</span> &#123; TWO, THREE, FOUR &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> Kind kind;</span><br><span class="line">    <span class="keyword">final</span> Value value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// enum 경우 하면 컴파일 에러 발생, 왜 ? 값만 체크가 아닌 타입 또한 체크 한다.</span></span><br><span class="line"><span class="comment">// if(Card.Kind.CLOVER == Card.Value.TWO) // 컴파일 에러가 발생</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Unit</span> &#123;</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    Direction dir;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;</span><br><span class="line">        dir = Direction.EAST;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>열거형 상수의 비교에 &#x3D;&#x3D; 와 compareTo() 사용 가능</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(dir = DIRECTION.EAST) &#123;</span><br><span class="line">    x++;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>( dir &gt; Direction.WEST) &#123; <span class="comment">// 에러</span></span><br><span class="line">    <span class="comment">// ..</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>( dir.compareTo(Direction.WEST) &gt; <span class="number">0</span> ) &#123;</span><br><span class="line">    <span class="comment">// compareTo() 는 가능</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-19-열거형의-조상-java-lang-Enum"><a href="#12-19-열거형의-조상-java-lang-Enum" class="headerlink" title="12-19 열거형의 조상 - java.lang.Enum"></a>12-19 열거형의 조상 - java.lang.Enum</h3><ul>
+<li>모든 열거형은 Enum의 자손, 아래 메서드를 상속 받는다</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">name</span><span class="params">()</span>; <span class="comment">// 열거형 상수의 이름을 문자열로 반환</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">ordinal</span><span class="params">()</span>; <span class="comment">// 열거형 상수가 정릐된 순서를 반환 (0부터 시작)</span></span><br><span class="line">T <span class="title function_">valueOf</span><span class="params">(Class&lt;T&gt; enumType, String name)</span>; <span class="comment">// name과 일치 하는 열거형 상수 반환</span></span><br></pre></td></tr></table></figure>
+
+<p>values(), valueOf()는 컴파일러가 자동으로 추가</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> E[] values();</span><br><span class="line"><span class="keyword">static</span> E <span class="title function_">valueOf</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Direction</span> &#123; EAST, SOUTH, WEST, NORTH &#125;</span><br><span class="line"></span><br><span class="line">Direction[] dArr = Direction.values();</span><br><span class="line"><span class="keyword">for</span>(Direction d : dArr) </span><br><span class="line">    System.out.printf(<span class="string">&quot;%s %d&quot;</span>, d.name(), d.ordinal() );</span><br><span class="line"></span><br><span class="line"><span class="type">Direction</span> <span class="variable">d1</span> <span class="operator">=</span> Direction.EAST; <span class="comment">// 열거형타입.상수이름</span></span><br><span class="line"><span class="type">Direction</span> <span class="variable">d2</span> <span class="operator">=</span> Direction.valueOf(<span class="string">&quot;WEST&quot;</span>);</span><br><span class="line"><span class="type">Direction</span> <span class="variable">d3</span> <span class="operator">=</span> Enum.valueOf(Direction.class, <span class="string">&quot;EAST&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-21-22-열거형에-멤버-추가하기"><a href="#ch12-21-22-열거형에-멤버-추가하기" class="headerlink" title="ch12-21,22 열거형에 멤버 추가하기"></a>ch12-21,22 열거형에 멤버 추가하기</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/05/30/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/5%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2012%20-%20Generics%20Enum%20Annotation/" data-id="cl3teekgs000004385vly9stj" data-title="(오키) 자바의정석, 챕터 12 - Generics, Enum, Annotation" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-SQL/1주차" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/25/SQL/1%EC%A3%BC%EC%B0%A8/" class="article-date">
@@ -93,7 +233,93 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="인트로"><a href="#인트로" class="headerlink" title="인트로"></a>인트로</h3><h3 id="1-SELECT-기초-원하는-정보-가져오기"><a href="#1-SELECT-기초-원하는-정보-가져오기" class="headerlink" title="1. SELECT 기초 - 원하는 정보 가져오기"></a>1. SELECT 기초 - 원하는 정보 가져오기</h3><h3 id="2-SELECT-더-깊이-파보기"><a href="#2-SELECT-더-깊이-파보기" class="headerlink" title="2. SELECT 더 깊이 파보기"></a>2. SELECT 더 깊이 파보기</h3><h3 id="3-데이터-조작하기"><a href="#3-데이터-조작하기" class="headerlink" title="3. 데이터 조작하기"></a>3. 데이터 조작하기</h3><h3 id="4-MySQL-더-깊이-알아보기"><a href="#4-MySQL-더-깊이-알아보기" class="headerlink" title="4. MySQL 더 깊이 알아보기"></a>4. MySQL 더 깊이 알아보기</h3><h3 id="5-MySQL-활용-웹사이트-만들기"><a href="#5-MySQL-활용-웹사이트-만들기" class="headerlink" title="5. MySQL 활용 웹사이트 만들기"></a>5. MySQL 활용 웹사이트 만들기</h3>
+        <h3 id="인트로"><a href="#인트로" class="headerlink" title="인트로"></a>인트로</h3><p>실습 링크 (W3School): <a target="_blank" rel="noopener" href="https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_all">https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_all</a></p>
+<h3 id="1-SELECT-기초-원하는-정보-가져오기"><a href="#1-SELECT-기초-원하는-정보-가져오기" class="headerlink" title="1. SELECT 기초 - 원하는 정보 가져오기"></a>1. SELECT 기초 - 원하는 정보 가져오기</h3><p><a target="_blank" rel="noopener" href="https://www.yalco.kr/@sql/1-1/">https://www.yalco.kr/@sql/1-1/</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">  CustomerID AS <span class="string">&#x27;아이디&#x27;</span>,</span><br><span class="line">  CustomerName AS <span class="string">&#x27;고객명&#x27;</span>,</span><br><span class="line">  City AS <span class="string">&#x27;도시&#x27;</span>,</span><br><span class="line">  Country AS <span class="string">&#x27;국가&#x27;</span></span><br><span class="line">FROM Customers</span><br><span class="line"><span class="type">WHERE</span></span><br><span class="line">  <span class="variable">City</span> <span class="operator">=</span> <span class="string">&#x27;London&#x27;</span> <span class="type">OR</span> <span class="variable">Country</span> <span class="operator">=</span> <span class="string">&#x27;Mexico&#x27;</span></span><br><span class="line">ORDER BY CustomerName</span><br><span class="line">LIMIT <span class="number">0</span>, <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>주석 달때는 ‘– ‘ 하면 된다</li>
+<li><ul>
+<li>은 모든 의미</li>
+</ul>
+</li>
+<li>Limit은 paging 할때 사용, 인자가 2개 일때는 건널뛸 갯수, 가져올 갯수</li>
+<li>Where 은 조건</li>
+<li>Order by 는 정렬 ASC 와 DESC</li>
+</ol>
+<h3 id="2-SELECT-더-깊이-파보기"><a href="#2-SELECT-더-깊이-파보기" class="headerlink" title="2. SELECT 더 깊이 파보기"></a>2. SELECT 더 깊이 파보기</h3><table>
+<thead>
+<tr>
+<th>연산자</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+, -, *, &#x2F;</td>
+<td>더하기, 빼기, 곱하기, 나누기</td>
+</tr>
+<tr>
+<td>%, MOD</td>
+<td>나머지</td>
+</tr>
+<tr>
+<td>IS</td>
+<td>양쪽이 모두 TRUE 또는 FALSE</td>
+</tr>
+<tr>
+<td>IS NOT</td>
+<td>한쪽은 TRUE, 한쪽은 FALSE</td>
+</tr>
+<tr>
+<td>AND, &amp;&amp;</td>
+<td>양쪽이 모두 TRUE일 때만 TRUE</td>
+</tr>
+<tr>
+<td>OR,</td>
+<td>|\</td>
+</tr>
+<tr>
+<td>&#x3D;</td>
+<td>양쪽 값이 같음</td>
+</tr>
+<tr>
+<td>!&#x3D;, &lt;&gt;</td>
+<td>양쪽 값이 다름</td>
+</tr>
+<tr>
+<td>&gt;, &lt;</td>
+<td>(왼쪽, 오른쪽) 값이 더 큼</td>
+</tr>
+<tr>
+<td>&gt;&#x3D;, &lt;&#x3D;</td>
+<td>(왼쪽, 오른쪽) 값이 같거나 더 큼</td>
+</tr>
+<tr>
+<td>BETWEEN {MIN} AND {MAX}</td>
+<td>두 값 사이에 있음</td>
+</tr>
+<tr>
+<td>NOT BETWEEN {MIN} AND {MAX}</td>
+<td>두 값 사이가 아닌 곳에 있음</td>
+</tr>
+<tr>
+<td>IN (…)</td>
+<td>괄호 안의 값들 가운데 있음</td>
+</tr>
+<tr>
+<td>NOT IN (…)</td>
+<td>괄호 안의 값들 가운데 없음</td>
+</tr>
+<tr>
+<td>LIKE ‘… % …’</td>
+<td>0~N개 문자를 가진 패턴</td>
+</tr>
+<tr>
+<td>LIKE ‘… _ …’ _</td>
+<td>갯수만큼의 문자를 가진 패턴</td>
+</tr>
+</tbody></table>
+<h3 id="3-데이터-조작하기"><a href="#3-데이터-조작하기" class="headerlink" title="3. 데이터 조작하기"></a>3. 데이터 조작하기</h3><h3 id="4-MySQL-더-깊이-알아보기"><a href="#4-MySQL-더-깊이-알아보기" class="headerlink" title="4. MySQL 더 깊이 알아보기"></a>4. MySQL 더 깊이 알아보기</h3><h3 id="5-MySQL-활용-웹사이트-만들기"><a href="#5-MySQL-활용-웹사이트-만들기" class="headerlink" title="5. MySQL 활용 웹사이트 만들기"></a>5. MySQL 활용 웹사이트 만들기</h3>
       
     </div>
     <footer class="article-footer">
@@ -613,121 +839,6 @@
 
 
   
-    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/3.JPA_기본기능구현" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/3.JPA_%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/" class="article-date">
-  <time class="dt-published" datetime="2022-05-12T20:15:43.000Z" itemprop="datePublished">2022-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/3.JPA_%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/">학습노트3 - JPA</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="JPA-란"><a href="#JPA-란" class="headerlink" title="JPA 란?"></a>JPA 란?</h3><p>Database 접근을 자바에서 객체 지향으로 할수 있도록 하는 기술<br>이를 ORM 기술이라고 하고 JPA는 자바 진영의 ORM 표준 이름<br>Spring 에서는 Hiberate -&gt; Spring Data JPA -&gt; 으로 사용 하게 된다</p>
-<h3 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h3><p>SQL Mapping 기술<br>DAO 작성 해서 사용</p>
-<h3 id="Gradle에-library-추가"><a href="#Gradle에-library-추가" class="headerlink" title="Gradle에 library 추가"></a>Gradle에 library 추가</h3><p>implementation ‘org.springframework.data:spring-data-jpa’<br>implementation ‘com.h2database:h2’</p>
-<h3 id="도메인-구조"><a href="#도메인-구조" class="headerlink" title="도메인 구조"></a>도메인 구조</h3><p>Domain 패키지를 새로 만들고 안에 Entity와 Repository을 같이 작성 할 것이다.<br>(더 공부 하려면 최범균 DDD Start 책을 참고 할수 있다고 한다.)<br><code>Entity</code>는 DB 테이블 이라고 보면 되고 <code>클래스</code>로 만들어 줘야 한다.<br><code>Repository</code>는 DB에 접근해주는기 위한 셋팅 이고 <code>interface</code>로 만들어 줘야 한다.</p>
-<h4 id="1-Posts"><a href="#1-Posts" class="headerlink" title="1. Posts"></a>1. Posts</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Posts</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Id</span></span><br><span class="line">  <span class="meta">@GeneratedValue(strategy = GenerationType.IDENTITY)</span></span><br><span class="line">  <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column(length = 500, nullable = false)</span></span><br><span class="line">  <span class="keyword">private</span> String title;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Column(columnDefinition = &quot;TEXT&quot;, nullable = false)</span></span><br><span class="line">  <span class="keyword">private</span> String content;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> String author;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Builder</span></span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">Posts</span><span class="params">(String title, String content, String author)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.title = title;</span><br><span class="line">    <span class="built_in">this</span>.content = content;</span><br><span class="line">    <span class="built_in">this</span>.author = author;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">update</span><span class="params">(String title, String content)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.title = title;</span><br><span class="line">    <span class="built_in">this</span>.content = content;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">PostsRepository</span> <span class="keyword">extends</span> <span class="title class_">JpaRepository</span>&lt;Posts, Long&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="테스트-코드"><a href="#테스트-코드" class="headerlink" title="테스트 코드"></a>테스트 코드</h4><ul>
-<li>@SpringBootTest 시 별다른 설정 없으면 H2 데이터베이스 사용 된다</li>
-<li>deleteAll(), findAll()</li>
-<li>save(): insert 혹은 update SQL 호출</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsRepositoryTest</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  PostsRepository postsRepository;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@After</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">cleanup</span><span class="params">()</span> &#123;</span><br><span class="line">    postsRepository.deleteAll();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> 게시글저장_불러오기() &#123;</span><br><span class="line">    <span class="comment">//given</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">title</span> <span class="operator">=</span> <span class="string">&quot;테스트 게시글&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> <span class="string">&quot;테스트 본문&quot;</span>;</span><br><span class="line"></span><br><span class="line">    postsRepository.save(Posts.builder()</span><br><span class="line">        .title(title)</span><br><span class="line">        .content(content)</span><br><span class="line">        .author(<span class="string">&quot;miromike@gmail.com&quot;</span>)</span><br><span class="line">        .build());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//when</span></span><br><span class="line">    List&lt;Posts&gt; postsList = postsRepository.findAll();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//then</span></span><br><span class="line">    <span class="type">Posts</span> <span class="variable">posts</span> <span class="operator">=</span> postsList.get(<span class="number">0</span>);</span><br><span class="line">    assertThat(posts.getTitle()).isEqualTo(title);</span><br><span class="line">    assertThat(posts.getContent()).isEqualTo(content);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="쿼리-확인을-위해-쿼리-로그-열기"><a href="#쿼리-확인을-위해-쿼리-로그-열기" class="headerlink" title="쿼리 확인을 위해 쿼리 로그 열기"></a>쿼리 확인을 위해 쿼리 로그 열기</h4><ul>
-<li>이런 설정은 원래 자바 코드 작성 해서 설정 할수 있으니 스프링 부트 에선 application.properties 나 application.yml 으로 설정 가능</li>
-</ul>
-<p><code>spring.jpa.show_sql=true</code></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: <span class="keyword">create</span> <span class="keyword">table</span> posts (id <span class="type">bigint</span> generated <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">as</span> <span class="keyword">identity</span>, author <span class="type">varchar</span>(<span class="number">255</span>), content TEXT <span class="keyword">not</span> <span class="keyword">null</span>, title <span class="type">varchar</span>(<span class="number">500</span>) <span class="keyword">not</span> <span class="keyword">null</span>, <span class="keyword">primary</span> key (id))</span><br><span class="line"></span><br><span class="line">Hibernate: <span class="keyword">insert</span> <span class="keyword">into</span> posts (id, author, content, title) <span class="keyword">values</span> (<span class="keyword">default</span>, ?, ?, ?)</span><br><span class="line">Hibernate: <span class="keyword">select</span> posts0_.id <span class="keyword">as</span> id1_0_, posts0_.author <span class="keyword">as</span> author2_0_, posts0_.content <span class="keyword">as</span> content3_0_, posts0_.title <span class="keyword">as</span> title4_0_ <span class="keyword">from</span> posts posts0_</span><br><span class="line">Hibernate: <span class="keyword">select</span> posts0_.id <span class="keyword">as</span> id1_0_, posts0_.author <span class="keyword">as</span> author2_0_, posts0_.content <span class="keyword">as</span> content3_0_, posts0_.title <span class="keyword">as</span> title4_0_ <span class="keyword">from</span> posts posts0_</span><br><span class="line">Hibernate: <span class="keyword">delete</span> <span class="keyword">from</span> posts <span class="keyword">where</span> id<span class="operator">=</span>?</span><br></pre></td></tr></table></figure>
-
-<h4 id="H2-문법-gt-MySQL로-변경"><a href="#H2-문법-gt-MySQL로-변경" class="headerlink" title="H2 문법 -&gt; MySQL로 변경"></a>H2 문법 -&gt; MySQL로 변경</h4><p>책: spring.jpa.properties.hibernate.dialect&#x3D;org.hibernate.dialect.MySQL5InnoDBDialect</p>
-<p>최신 Spring boot 버전 사용시 옵션 아래로 변경 필요</p>
-<p>spring.jpa.properties.hibernate.dialect&#x3D;org.hibernate.dialect.MySQL57Dialect<br>spring.jpa.properties.hibernate.dialect.storage_engine&#x3D;innodb<br>spring.datasource.hikari.jdbc-url&#x3D;jdbc:h2:mem:testdb;MODE&#x3D;MYSQL<br>spring.datasource.hikari.username&#x3D;sa</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: <span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> posts</span><br><span class="line">Hibernate: <span class="keyword">create</span> <span class="keyword">table</span> posts (id <span class="type">bigint</span> <span class="keyword">not</span> <span class="keyword">null</span> auto_increment, author <span class="type">varchar</span>(<span class="number">255</span>), content TEXT <span class="keyword">not</span> <span class="keyword">null</span>, title <span class="type">varchar</span>(<span class="number">500</span>) <span class="keyword">not</span> <span class="keyword">null</span>, <span class="keyword">primary</span> key (id)) engine<span class="operator">=</span>InnoDB</span><br></pre></td></tr></table></figure>
-
-<h3 id="등록-수정-조회-API-만들기"><a href="#등록-수정-조회-API-만들기" class="headerlink" title="등록, 수정, 조회 API 만들기"></a>등록, 수정, 조회 API 만들기</h3><p>3개의 클래스 필요</p>
-<ol>
-<li>Request 데이터를 받을 DTO</li>
-<li>API 요청을 받을 Controller</li>
-<li>트랜잭션, 도메인 기능 간의 순서를 보장할 Service</li>
-</ol>
-<blockquote>
-<p>비지니스 로직은 서비스가 아닌 도메인에 넣는다.<br>서비스 @Transactional 사용 하고 트랜잭션 스크립트 화 한다.<br>서비스 메소드는 트랜잭션과 도메인간의 순서만 보장하는 방식으로 한다.</p>
-</blockquote>
-<h4 id="등록-기능-만들기-책에-오타"><a href="#등록-기능-만들기-책에-오타" class="headerlink" title="등록 기능 만들기 (책에 오타)"></a>등록 기능 만들기 (책에 오타)</h4><p>오타 부분: Controller 에 @GetMapping 이 아니고 @PostMapping 이다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsApiController</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> PostsService postsService;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@PostMapping(&quot;/api/v1/posts&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">save</span><span class="params">(<span class="meta">@RequestBody</span> PostsSaveRequestDto requestDto)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">return</span> postsService.save(requestDto);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsService</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> PostsRepository postsRepository;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Transactional</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">save</span><span class="params">(PostsSaveRequestDto requestDto)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> postsRepository.save(requestDto.toEntity()).getId();</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsSaveRequestDto</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> String title;</span><br><span class="line">  <span class="keyword">private</span> String content;</span><br><span class="line">  <span class="keyword">private</span> String author;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Builder</span></span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">PostsSaveRequestDto</span><span class="params">(String title, String content, String author)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.title = title;</span><br><span class="line">    <span class="built_in">this</span>.content = content;</span><br><span class="line">    <span class="built_in">this</span>.author = author;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> Posts <span class="title function_">toEntity</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> Posts.builder()</span><br><span class="line">        .title(title)</span><br><span class="line">        .content(content)</span><br><span class="line">        .author(author)</span><br><span class="line">        .build();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="테스트"><a href="#테스트" class="headerlink" title="테스트"></a>테스트</h4><ul>
-<li>JPA 까지 물려서 써야 함으로 mvctest 안쓰고 대신 SprintBootTest 와 TestRestTemplate을 사용 한다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RunWith(SpringRunner.class)</span></span><br><span class="line"><span class="meta">@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsApiControllerTest</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> TestRestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  <span class="keyword">private</span> PostsRepository postsRepository;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@LocalServerPort</span></span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> port;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@After</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">cleanup</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line">  &#123;</span><br><span class="line">    postsRepository.deleteAll();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> 등록_테스트() <span class="keyword">throws</span> Exception</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">//given</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;http://localhost:&quot;</span> + port + <span class="string">&quot;/api/v1/posts&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">title</span> <span class="operator">=</span> <span class="string">&quot;test title&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">content</span> <span class="operator">=</span> <span class="string">&quot;test content&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">PostsSaveRequestDto</span> <span class="variable">requestDto</span> <span class="operator">=</span> PostsSaveRequestDto.builder()</span><br><span class="line">        .title(title)</span><br><span class="line">        .content(content)</span><br><span class="line">        .author(<span class="string">&quot;test author&quot;</span>)</span><br><span class="line">        .build();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//when</span></span><br><span class="line">    ResponseEntity&lt;Long&gt; responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//then</span></span><br><span class="line">    assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);</span><br><span class="line">    assertThat(responseEntity.getBody()).isGreaterThan(<span class="number">0L</span>);</span><br><span class="line"></span><br><span class="line">    List&lt;Posts&gt; all = postsRepository.findAll();</span><br><span class="line">    assertThat(all.get(<span class="number">0</span>).getTitle()).isEqualTo(title);</span><br><span class="line">    assertThat(all.get(<span class="number">0</span>).getContent()).isEqualTo(content);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="수정-조회"><a href="#수정-조회" class="headerlink" title="수정, 조회"></a>수정, 조회</h4><p>Controller 에서 서비스 부르는 부분<br>서비스 에서 Repository 부르는 부분<br>결과나 반환 데이타를 위해 DTO 추가</p>
-<h4 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsApiController</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> PostsService postsService;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@PostMapping(&quot;/api/v1/posts&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">save</span><span class="params">(<span class="meta">@RequestBody</span> PostsSaveRequestDto requestDto)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">return</span> postsService.save(requestDto);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@PutMapping(&quot;/api/v1/posts/&#123;id&#125;&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">update</span><span class="params">(<span class="meta">@PathVariable</span> Long id, <span class="meta">@RequestBody</span> PostsUpdateRequestDto requestDto)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> postsService.update(id, requestDto);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@DeleteMapping(&quot;/api/v1/posts/&#123;id&#125;&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">delete</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> &#123;</span><br><span class="line">    postsService.delete(id);</span><br><span class="line">    <span class="keyword">return</span> id;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@GetMapping(&quot;/api/v1/posts/&#123;id&#125;&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> PostsResponseDto <span class="title function_">findById</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> postsService.findById(id);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@GetMapping(&quot;/api/v1/posts/list&quot;)</span></span><br><span class="line">  <span class="keyword">public</span> List&lt;PostsListResponseDto&gt; <span class="title function_">findAll</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> postsService.findAllDesc();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>@Transactional 이 메서드에 없으면 SQL을 호출 하지 않는다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PostsService</span> &#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> PostsRepository postsRepository;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Transactional</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">save</span><span class="params">(PostsSaveRequestDto requestDto)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> postsRepository.save(requestDto.toEntity()).getId();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Transactional</span></span><br><span class="line">  <span class="keyword">public</span> Long <span class="title function_">update</span><span class="params">(Long id, PostsUpdateRequestDto requestDto)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">Posts</span> <span class="variable">post</span> <span class="operator">=</span> postsRepository.findById(id)</span><br><span class="line">        .orElseThrow(()-&gt; <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;해당 사용자가 없습니다. id=&quot;</span> + id));</span><br><span class="line"></span><br><span class="line">    post.update(requestDto.getTitle(), requestDto.getContent());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> id;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>업데이트 하는데 exchange 을 써야 해서 좀 복잡해진다.</li>
-<li>BODY 에 업데이트 할 DATA을 넣어 보낸다.</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> 업데이트_테스트() <span class="keyword">throws</span> Exception</span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">//given</span></span><br><span class="line">  <span class="type">Posts</span> <span class="variable">post</span> <span class="operator">=</span> postsRepository.save(Posts.builder()</span><br><span class="line">      .title(<span class="string">&quot;test title&quot;</span>)</span><br><span class="line">      .content(<span class="string">&quot;test content&quot;</span>)</span><br><span class="line">      .author(<span class="string">&quot;test author&quot;</span>)</span><br><span class="line">      .build());</span><br><span class="line">  <span class="type">Long</span> <span class="variable">id</span> <span class="operator">=</span> post.getId();</span><br><span class="line">  <span class="type">String</span> <span class="variable">updatedTitle</span> <span class="operator">=</span> <span class="string">&quot;updated Title&quot;</span>;</span><br><span class="line">  <span class="type">String</span> <span class="variable">updatedContent</span> <span class="operator">=</span> <span class="string">&quot;updated Content&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="type">PostsUpdateRequestDto</span> <span class="variable">requestDto</span> <span class="operator">=</span> PostsUpdateRequestDto.builder()</span><br><span class="line">      .title(updatedTitle)</span><br><span class="line">      .content(updatedContent)</span><br><span class="line">      .build();</span><br><span class="line"></span><br><span class="line">  <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;http://localhost:&quot;</span> + port + <span class="string">&quot;/api/v1/posts/&quot;</span> + id;</span><br><span class="line"></span><br><span class="line">  HttpEntity&lt;PostsUpdateRequestDto&gt; requestEntity =</span><br><span class="line">      <span class="keyword">new</span> <span class="title class_">HttpEntity</span>&lt;&gt;(requestDto);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//when</span></span><br><span class="line">  ResponseEntity&lt;Long&gt; responseEntity =</span><br><span class="line">      restTemplate.exchange(url, HttpMethod.PUT, (HttpEntity&lt;?&gt;) requestEntity, Long.class);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//then</span></span><br><span class="line">  assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);</span><br><span class="line">  assertThat(responseEntity.getBody()).isGreaterThan(<span class="number">0L</span>);</span><br><span class="line"></span><br><span class="line">  List&lt;Posts&gt; all = postsRepository.findAll();</span><br><span class="line">  assertThat(all.get(<span class="number">0</span>).getTitle()).isEqualTo(updatedTitle);</span><br><span class="line">  assertThat(all.get(<span class="number">0</span>).getContent()).isEqualTo(updatedContent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="데이타베이스-H2-접속-해서-보기"><a href="#데이타베이스-H2-접속-해서-보기" class="headerlink" title="데이타베이스 H2 접속 해서 보기"></a>데이타베이스 H2 접속 해서 보기</h4><ol>
-<li>application.resources에 <code>spring.h2.console.enabled-true</code></li>
-<li><a target="_blank" rel="noopener" href="http://localhost:8080/h2-console">http://localhost:8080/h2-console</a> 로 접속 하고 JDBC URL: jdbc:h2:mem:testdb</li>
-</ol>
-<h4 id="등록된-글-확인"><a href="#등록된-글-확인" class="headerlink" title="등록된 글 확인"></a>등록된 글 확인</h4><ol>
-<li>SELECT * FROM POSTS ;</li>
-<li>insert into posts (author, content, title) values (‘author’, ‘content’, ‘title’);</li>
-<li><a target="_blank" rel="noopener" href="http://localhost:8080/api/v1/posts/1">http://localhost:8080/api/v1/posts/1</a></li>
-</ol>
-<p>406 에러가 발생, 디버깅 해보니 PostsResponseDto.java 에 @Getter 가 없었음</p>
-<blockquote>
-<p>Getter 가 없는데 406 Not Acceptable 가 나오다니, 디버깅하기 어려움</p>
-</blockquote>
-<h3 id="JPA-Audit-으로-생성-시간-x2F-수정-시간-자동화-하기"><a href="#JPA-Audit-으로-생성-시간-x2F-수정-시간-자동화-하기" class="headerlink" title="JPA Audit 으로 생성 시간&#x2F; 수정 시간 자동화 하기"></a>JPA Audit 으로 생성 시간&#x2F; 수정 시간 자동화 하기</h3><p>생성 및 수정 시간을 자동으로 넣어 주는 기능 으로 abstract class를 아래 처럼 구현</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@MappedSuperclass</span></span><br><span class="line"><span class="meta">@EntityListeners(AuditingEntityListener.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">BaseTimeEntity</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@CreatedDate</span></span><br><span class="line">  <span class="keyword">private</span> LocalDateTime createdDate;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@LastModifiedDate</span></span><br><span class="line">  <span class="keyword">private</span> LocalDateTime modifiedDate;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>그리고 최 상위 Application 에 @EnableJpaAuditing 추가<br><code>@EnableJpaAuditing</code><br>@SpringBootApplication<br>public class Application {</p>
-<p>그리고 적용 할 Entity에 상속<br>public class Posts extends <code>BaseTimeEntity</code></p>
-<p>테스트 코드</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> BaseTimeEntity_테스트() &#123;</span><br><span class="line">  <span class="comment">//given</span></span><br><span class="line">  <span class="type">LocalDateTime</span> <span class="variable">now</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2022</span>, <span class="number">5</span>, <span class="number">15</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  postsRepository.save(Posts.builder()</span><br><span class="line">      .title(<span class="string">&quot;title&quot;</span>)</span><br><span class="line">      .content(<span class="string">&quot;content&quot;</span>)</span><br><span class="line">      .author(<span class="string">&quot;author&quot;</span>)</span><br><span class="line">      .build());</span><br><span class="line">  <span class="comment">//when</span></span><br><span class="line">  List&lt;Posts&gt; postsList = postsRepository.findAll();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//then</span></span><br><span class="line">  <span class="type">Posts</span> <span class="variable">posts</span> <span class="operator">=</span> postsList.get(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  System.out.println(<span class="string">&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; createDate=&quot;</span> + posts.getCreatedDate() + <span class="string">&quot;, modifiedDate=&quot;</span> + posts.getModifiedDate());</span><br><span class="line"></span><br><span class="line">  assertThat(posts.getCreatedDate()).isAfter(now);</span><br><span class="line">  assertThat(posts.getModifiedDate()).isAfter(now);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/13/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/3.JPA_%EA%B8%B0%EB%B3%B8%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/" data-id="cl3ggugjf0000p8385r9ze9nf" data-title="학습노트3 - JPA" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -756,7 +867,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 18px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 14px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 16px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 15px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -778,6 +889,10 @@
       <ul>
         
           <li>
+            <a href="/2022/05/30/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/5%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2012%20-%20Generics%20Enum%20Annotation/">(오키) 자바의정석, 챕터 12 - Generics, Enum, Annotation</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/25/SQL/1%EC%A3%BC%EC%B0%A8/">갖고노는 MySQL 데이터베이스 by 얄코</a>
           </li>
         
@@ -791,10 +906,6 @@
         
           <li>
             <a href="/2022/05/20/%ED%8F%AC%ED%86%A0%ED%8F%B4%EB%A6%AC%EC%98%A4/">포토폴리오</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/20/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-5-20-%EA%B5%AD%EB%B9%84%EC%9E%90%EB%B0%94%EA%B5%90%EC%9C%A1%EC%99%84%EB%A3%8C/">국비 자바 과정 수료</a>
           </li>
         
       </ul>
