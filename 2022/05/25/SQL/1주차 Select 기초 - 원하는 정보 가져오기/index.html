@@ -6,15 +6,15 @@
   
   <title>Section 1. Select 기초 - 원하는 정보 가져오기 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="강좌 링크https:&#x2F;&#x2F;www.yalco.kr&#x2F;@sql&#x2F;1-1&#x2F; 실습 링크 (W3School)https:&#x2F;&#x2F;www.w3schools.com&#x2F;mysql&#x2F;trymysql.asp?filename&#x3D;trysql_select_all 1. SELECT - 원하는 정보 가져오기다 가져오기 SELECT * FROM Customers;원하는 조건만 WHERE정렬 ORDER">
+  <meta name="description" content="강좌 링크https:&#x2F;&#x2F;www.yalco.kr&#x2F;@sql&#x2F;1-1&#x2F; 실습 링크 (W3School)https:&#x2F;&#x2F;www.w3schools.com&#x2F;mysql&#x2F;trymysql.asp?filename&#x3D;trysql_select_all 1. SELECT 와 기본 구문다 가져오기 SELECT * FROM Customers;원하는 조건만 WHERE정렬 ORDER BY xx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Section 1. Select 기초 - 원하는 정보 가져오기">
 <meta property="og:url" content="https://miromike.github.io/2022/05/25/SQL/1%EC%A3%BC%EC%B0%A8%20Select%20%EA%B8%B0%EC%B4%88%20-%20%EC%9B%90%ED%95%98%EB%8A%94%20%EC%A0%95%EB%B3%B4%20%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="강좌 링크https:&#x2F;&#x2F;www.yalco.kr&#x2F;@sql&#x2F;1-1&#x2F; 실습 링크 (W3School)https:&#x2F;&#x2F;www.w3schools.com&#x2F;mysql&#x2F;trymysql.asp?filename&#x3D;trysql_select_all 1. SELECT - 원하는 정보 가져오기다 가져오기 SELECT * FROM Customers;원하는 조건만 WHERE정렬 ORDER">
+<meta property="og:description" content="강좌 링크https:&#x2F;&#x2F;www.yalco.kr&#x2F;@sql&#x2F;1-1&#x2F; 실습 링크 (W3School)https:&#x2F;&#x2F;www.w3schools.com&#x2F;mysql&#x2F;trymysql.asp?filename&#x3D;trysql_select_all 1. SELECT 와 기본 구문다 가져오기 SELECT * FROM Customers;원하는 조건만 WHERE정렬 ORDER BY xx">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-25T00:03:04.000Z">
-<meta property="article:modified_time" content="2022-05-31T00:14:46.293Z">
+<meta property="article:modified_time" content="2022-05-31T00:45:33.691Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="갖고노는 MySQL 데이터베이스 by 얄코">
 <meta name="twitter:card" content="summary">
@@ -98,7 +98,7 @@
       
         <p>강좌 링크<br><a target="_blank" rel="noopener" href="https://www.yalco.kr/@sql/1-1/">https://www.yalco.kr/@sql/1-1/</a></p>
 <p>실습 링크 (W3School)<br><a target="_blank" rel="noopener" href="https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_all">https://www.w3schools.com/mysql/trymysql.asp?filename=trysql_select_all</a></p>
-<h3 id="1-SELECT-원하는-정보-가져오기"><a href="#1-SELECT-원하는-정보-가져오기" class="headerlink" title="1. SELECT - 원하는 정보 가져오기"></a>1. SELECT - 원하는 정보 가져오기</h3><p>다 가져오기 SELECT <code>*</code> FROM Customers;<br>원하는 조건만 <code>WHERE</code><br>정렬 <code>ORDER BY xx ASC</code>, 내림차순은 <code>DESC</code><br>원하는 갯수 <code>LIMIT</code><br>별명&#x2F;alias <code>AS</code></p>
+<h3 id="1-SELECT-와-기본-구문"><a href="#1-SELECT-와-기본-구문" class="headerlink" title="1. SELECT 와 기본 구문"></a>1. SELECT 와 기본 구문</h3><p>다 가져오기 SELECT <code>*</code> FROM Customers;<br>원하는 조건만 <code>WHERE</code><br>정렬 <code>ORDER BY xx ASC</code>, 내림차순은 <code>DESC</code><br>원하는 갯수 <code>LIMIT</code><br>별명&#x2F;alias <code>AS</code></p>
 <p>모두 활용 예제</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  CustomerID <span class="keyword">AS</span> <span class="string">&#x27;아이디&#x27;</span>,</span><br><span class="line">  CustomerName <span class="keyword">AS</span> <span class="string">&#x27;고객명&#x27;</span>,</span><br><span class="line">  City <span class="keyword">AS</span> <span class="string">&#x27;도시&#x27;</span>,</span><br><span class="line">  Country <span class="keyword">AS</span> <span class="string">&#x27;국가&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">  City <span class="operator">=</span> <span class="string">&#x27;London&#x27;</span> <span class="keyword">OR</span> Country <span class="operator">=</span> <span class="string">&#x27;Mexico&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> CustomerName <span class="string">&#x27;ASC&#x27;</span></span><br><span class="line">LIMIT <span class="number">0</span>, <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 
@@ -106,8 +106,10 @@
 <li>주석 달때는 ‘– ‘ 하면 된다</li>
 <li><code>LIMIT</code>은 화면 페이지 구현 하는데 사용</li>
 </ol>
+<blockquote>
 <p>LIMIT {가져올 갯수} 또는 LIMIT {건너뛸 갯수}, {가져올 갯수} 를 사용하여, 원하는 위치에서 원하는 만큼만 데이터를 가져올 수 있습니다.</p>
-<h3 id="2-SELECT-더-깊이-파보기"><a href="#2-SELECT-더-깊이-파보기" class="headerlink" title="2. SELECT 더 깊이 파보기"></a>2. SELECT 더 깊이 파보기</h3><table>
+</blockquote>
+<h3 id="2-연산자"><a href="#2-연산자" class="headerlink" title="2. 연산자"></a>2. 연산자</h3><table>
 <thead>
 <tr>
 <th>연산자</th>
@@ -135,8 +137,8 @@
 <td>양쪽이 모두 TRUE일 때만 TRUE</td>
 </tr>
 <tr>
-<td>OR,</td>
-<td>|\</td>
+<td>OR, &#96;</td>
+<td></td>
 </tr>
 <tr>
 <td>&#x3D;</td>
@@ -175,11 +177,25 @@
 <td>0~N개 문자를 가진 패턴</td>
 </tr>
 <tr>
-<td>LIKE ‘… _ …’ _</td>
+<td>LIKE ‘… _ …’</td>
 <td>갯수만큼의 문자를 가진 패턴</td>
 </tr>
 </tbody></table>
-<h3 id="3-데이터-조작하기"><a href="#3-데이터-조작하기" class="headerlink" title="3. 데이터 조작하기"></a>3. 데이터 조작하기</h3><h3 id="4-MySQL-더-깊이-알아보기"><a href="#4-MySQL-더-깊이-알아보기" class="headerlink" title="4. MySQL 더 깊이 알아보기"></a>4. MySQL 더 깊이 알아보기</h3><h3 id="5-MySQL-활용-웹사이트-만들기"><a href="#5-MySQL-활용-웹사이트-만들기" class="headerlink" title="5. MySQL 활용 웹사이트 만들기"></a>5. MySQL 활용 웹사이트 만들기</h3>
+<h3 id="3-숫자와-문자열-함수들"><a href="#3-숫자와-문자열-함수들" class="headerlink" title="3. 숫자와 문자열 함수들"></a>3. 숫자와 문자열 함수들</h3><p>1.숫자 관련<br><code>ROUND</code>, <code>CEIL</code>, <code>FLOOR</code>, <code>ABS</code>, <code>GREATEST</code>, <code>LEAST</code><br><code>MAX</code>, <code>MIN</code>, <code>COUNT</code>, <code>SUM</code>, <code>AVG</code><br>제곱: <code>POW(A,B)</code>, <code>POWER(A,B)</code><br>제곱근: <code>SQRT(A)</code><br>소숫점 짜르기: <code>TRUNCATE(N,n)</code></p>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html">https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html</a></p>
+<p>2.문자열 관련</p>
+<p><code>UCASE, UPPER</code>, <code>LCASE, LOWER</code></p>
+<p><code>CONCAT(..)</code>, <code>CONCAT_WS(S, ..)</code></p>
+<p><code>SUBSTR, SUBSTRING</code>, <code>LEFT</code>, <code>RIGHT</code></p>
+<p><code>LENGTH</code>, <code>CHAR_LENGTH</code>, <code>CHARACTER_LENGTH</code></p>
+<p><code>TRIM</code>, <code>LTRIM</code>, <code>RTRIM</code></p>
+<p><code>LPAD(S,N,P)</code>, <code>RPAD(S,N,P)</code> padding</p>
+<p><code>REPLACE(S,A,B)</code></p>
+<p><code>INSTR(S,s)</code> &#x2F;&#x2F; 위치 반환, 없을시 0</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> INSTR(CustomerName, <span class="string">&#x27; &#x27;</span>) <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">AND</span> <span class="number">6</span>;</span><br><span class="line"><span class="comment">-- &lt; 6으로 하면?</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/string-functions.html">https://dev.mysql.com/doc/refman/8.0/en/string-functions.html</a></p>
+
       
     </div>
     <footer class="article-footer">
@@ -237,7 +253,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" style="font-size: 10px;">갖고노는 MySQL 데이터베이스 by 얄코</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 15px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" style="font-size: 12.5px;">갖고노는 MySQL 데이터베이스 by 얄코</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 15px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -259,6 +275,10 @@
       <ul>
         
           <li>
+            <a href="/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/">My New Post</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/30/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/5%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2012%20-%20Generics%20Enum%20Annotation/">(오키) 자바의정석, 챕터 12 - Generics, Enum, Annotation</a>
           </li>
         
@@ -272,10 +292,6 @@
         
           <li>
             <a href="/2022/05/23/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/4%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2011%20-%20Collections%20Framework/">(오키) 자바의정석, 챕터 11 - Collections Framework</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/20/%ED%8F%AC%ED%86%A0%ED%8F%B4%EB%A6%AC%EC%98%A4/">포토폴리오</a>
           </li>
         
       </ul>
