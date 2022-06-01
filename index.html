@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-SQL/2주차" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-SQL/3주차 xx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/" class="article-date">
-  <time class="dt-published" datetime="2022-05-31T00:16:57.000Z" itemprop="datePublished">2022-05-31</time>
+    <a href="/2022/06/02/SQL/3%EC%A3%BC%EC%B0%A8%20xx/" class="article-date">
+  <time class="dt-published" datetime="2022-06-02T05:51:38.000Z" itemprop="datePublished">2022-06-02</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/">My New Post</a>
+      <a class="p-name article-title" href="/2022/06/02/SQL/3%EC%A3%BC%EC%B0%A8%20xx/">Section 3. --</a>
     </h1>
   
 
@@ -97,7 +97,84 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/" data-id="cl3tfuw990000183815y53z3r" data-title="My New Post" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/06/02/SQL/3%EC%A3%BC%EC%B0%A8%20xx/" data-id="cl3vipbvm00024838cyowfiag" data-title="Section 3. --" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" rel="tag">갖고노는 MySQL 데이터베이스 by 얄코</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SQL/2주차 쿼리 와 조인" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/01/SQL/2%EC%A3%BC%EC%B0%A8%20%EC%BF%BC%EB%A6%AC%20%EC%99%80%20%EC%A1%B0%EC%9D%B8/" class="article-date">
+  <time class="dt-published" datetime="2022-06-01T00:16:57.000Z" itemprop="datePublished">2022-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/06/01/SQL/2%EC%A3%BC%EC%B0%A8%20%EC%BF%BC%EB%A6%AC%20%EC%99%80%20%EC%A1%B0%EC%9D%B8/">Section 2. 쿼리 와 조인</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="1-비상관-x2F-상관-서브-쿼리"><a href="#1-비상관-x2F-상관-서브-쿼리" class="headerlink" title="1. 비상관&#x2F; 상관 서브 쿼리"></a>1. 비상관&#x2F; 상관 서브 쿼리</h3><p>우선 서브 쿼리란 () 으로 쿼리 안에 쿼리를 부르는 기능이다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  CategoryID, CategoryName, Description</span><br><span class="line"><span class="keyword">FROM</span> Categories</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">  CategoryID <span class="operator">=</span> <span class="keyword">ANY</span></span><br><span class="line">  (<span class="keyword">SELECT</span> CategoryID <span class="keyword">FROM</span> Products</span><br><span class="line">  <span class="keyword">WHERE</span> Price <span class="operator">&gt;</span> <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
+
+<p>이 예제에 <code>IN</code>, <code>ALL</code>, <code>ANY</code> 연산자가 있는데 ‘&#x3D; ANY’ 은 <code>IN</code> 와 같은 효과 이고<br>서브 쿼리에 자주 쓰인는 연산자 이다.</p>
+<p>한개 테이블에 대해서 쿼리 할때 비상관 이라 하고 안과 밖에 쿼리가 서로 관계 해서 쿼리 하는 걸 상관 쿼리 라고 한다. 아래 예제 처럼 table 2개를 연관 하는 경우다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  ProductID, ProductName,</span><br><span class="line">  (</span><br><span class="line">    <span class="keyword">SELECT</span> CategoryName <span class="keyword">FROM</span> Categories C</span><br><span class="line">    <span class="keyword">WHERE</span> C.CategoryID <span class="operator">=</span> P.CategoryID</span><br><span class="line">  ) <span class="keyword">AS</span> CategoryName</span><br><span class="line"><span class="keyword">FROM</span> Products P;</span><br></pre></td></tr></table></figure>
+
+<p>다수의 예제다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  CategoryID, CategoryName,</span><br><span class="line">  (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="built_in">MAX</span>(Price) <span class="keyword">FROM</span> Products P</span><br><span class="line">    <span class="keyword">WHERE</span> P.CategoryID <span class="operator">=</span> C.CategoryID</span><br><span class="line">  ) <span class="keyword">AS</span> MaximumPrice,</span><br><span class="line">  (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="built_in">AVG</span>(Price) <span class="keyword">FROM</span> Products P</span><br><span class="line">    <span class="keyword">WHERE</span> P.CategoryID <span class="operator">=</span> C.CategoryID</span><br><span class="line">  ) <span class="keyword">AS</span> AveragePrice</span><br><span class="line"><span class="keyword">FROM</span> Categories C;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  ProductID, ProductName, CategoryID, Price</span><br><span class="line">  <span class="comment">-- ,(SELECT AVG(Price) FROM Products P2</span></span><br><span class="line">  <span class="comment">-- WHERE P2.CategoryID = P1.CategoryID)</span></span><br><span class="line"><span class="keyword">FROM</span> Products P1</span><br><span class="line"><span class="keyword">WHERE</span> Price <span class="operator">&lt;</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="built_in">AVG</span>(Price) <span class="keyword">FROM</span> Products P2</span><br><span class="line">  <span class="keyword">WHERE</span> P2.CategoryID <span class="operator">=</span> P1.CategoryID</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  CategoryID, CategoryName</span><br><span class="line">  <span class="comment">-- ,(SELECT MAX(P.Price) FROM Products P</span></span><br><span class="line">  <span class="comment">-- WHERE P.CategoryID = C.CategoryID</span></span><br><span class="line">  <span class="comment">-- ) AS MaxPrice</span></span><br><span class="line"><span class="keyword">FROM</span> Categories C</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Products P</span><br><span class="line">  <span class="keyword">WHERE</span> P.CategoryID <span class="operator">=</span> C.CategoryID</span><br><span class="line">  <span class="keyword">AND</span> P.Price <span class="operator">&gt;</span> <span class="number">80</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-JOIN-여러-테이블-조립하기"><a href="#2-JOIN-여러-테이블-조립하기" class="headerlink" title="2. JOIN - 여러 테이블 조립하기"></a>2. JOIN - 여러 테이블 조립하기</h3><p>2개 테이블을 연관 해서 가져온다. 구문이 <code>JOIN</code>, <code>ON</code> 들어간다.<br>제일 기본이 Inner Join이라고 하고 양쪽 모두에 값이 있는 행만 반환 한다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> C.CategoryID, C.CategoryName, P.ProductName</span><br><span class="line"><span class="keyword">FROM</span> Categories C</span><br><span class="line"><span class="keyword">JOIN</span> Products P </span><br><span class="line">  <span class="keyword">ON</span> C.CategoryID <span class="operator">=</span> P.CategoryID; </span><br><span class="line"><span class="comment">-- ambiguous 주의!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  CONCAT(</span><br><span class="line">    P.ProductName, <span class="string">&#x27; by &#x27;</span>, S.SupplierName</span><br><span class="line">  ) <span class="keyword">AS</span> Product,</span><br><span class="line">  S.Phone, P.Price</span><br><span class="line"><span class="keyword">FROM</span> Products P</span><br><span class="line"><span class="keyword">JOIN</span> Suppliers S</span><br><span class="line">  <span class="keyword">ON</span> P.SupplierID <span class="operator">=</span> S.SupplierID</span><br><span class="line"><span class="keyword">WHERE</span> Price <span class="operator">&gt;</span> <span class="number">50</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ProductName;</span><br></pre></td></tr></table></figure>
+
+<p>여러 테이블을 조인 할수 있고 GROUP BY 도 가능하다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  C.CategoryID, C.CategoryName, </span><br><span class="line">  P.ProductName, </span><br><span class="line">  O.OrderDate,</span><br><span class="line">  D.Quantity</span><br><span class="line"><span class="keyword">FROM</span> Categories C</span><br><span class="line"><span class="keyword">JOIN</span> Products P </span><br><span class="line">  <span class="keyword">ON</span> C.CategoryID <span class="operator">=</span> P.CategoryID</span><br><span class="line"><span class="keyword">JOIN</span> OrderDetails D</span><br><span class="line">  <span class="keyword">ON</span> P.ProductID <span class="operator">=</span> D.ProductID</span><br><span class="line"><span class="keyword">JOIN</span> Orders O</span><br><span class="line">  <span class="keyword">ON</span> O.OrderID <span class="operator">=</span> D.OrderID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">  C.CategoryName, P.ProductName,</span><br><span class="line">  <span class="built_in">MIN</span>(O.OrderDate) <span class="keyword">AS</span> FirstOrder,</span><br><span class="line">  <span class="built_in">MAX</span>(O.OrderDate) <span class="keyword">AS</span> LastOrder,</span><br><span class="line">  <span class="built_in">SUM</span>(D.Quantity) <span class="keyword">AS</span> TotalQuantity</span><br><span class="line"><span class="keyword">FROM</span> Categories C</span><br><span class="line"><span class="keyword">JOIN</span> Products P </span><br><span class="line">  <span class="keyword">ON</span> C.CategoryID <span class="operator">=</span> P.CategoryID</span><br><span class="line"><span class="keyword">JOIN</span> OrderDetails D</span><br><span class="line">  <span class="keyword">ON</span> P.ProductID <span class="operator">=</span> D.ProductID</span><br><span class="line"><span class="keyword">JOIN</span> Orders O</span><br><span class="line">  <span class="keyword">ON</span> O.OrderID <span class="operator">=</span> D.OrderID</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> C.CategoryID, P.ProductID;</span><br></pre></td></tr></table></figure>
+
+<p>SELF JOIN 이라고 한개의 테이블로도 가능 하다</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  E1.EmployeeID, CONCAT_WS(<span class="string">&#x27; &#x27;</span>, E1.FirstName, E1.LastName) <span class="keyword">AS</span> Employee,</span><br><span class="line">  E2.EmployeeID, CONCAT_WS(<span class="string">&#x27; &#x27;</span>, E2.FirstName, E2.LastName) <span class="keyword">AS</span> NextEmployee</span><br><span class="line"><span class="keyword">FROM</span> Employees E1 </span><br><span class="line"><span class="keyword">JOIN</span> Employees E2</span><br><span class="line"><span class="keyword">ON</span> E1.EmployeeID <span class="operator">+</span> <span class="number">1</span> <span class="operator">=</span> E2.EmployeeID;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1번의 전, 마지막 번호의 다음은?</span></span><br></pre></td></tr></table></figure>
+
+<p>값이 없는 행을 가져 오고 싶을 때는 쓰는 것이 외부 조인이고 <code>LEFT/RIGHT OUTER JOIN</code><br>왼쪽 NULL 값도 보여줄때 LEFT, 오른쪽 은 RIGHT 이다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  C.CustomerName, S.SupplierName,</span><br><span class="line">  C.City, C.Country</span><br><span class="line"><span class="keyword">FROM</span> Customers C</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Suppliers S</span><br><span class="line"><span class="keyword">ON</span> C.City <span class="operator">=</span> S.City <span class="keyword">AND</span> C.Country <span class="operator">=</span> S.Country;</span><br><span class="line"><span class="comment">-- LEFT를 RIGHT로 바꿔서도 실행해 볼 것</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  IFNULL(C.CustomerName, <span class="string">&#x27;-- NO CUSTOMER --&#x27;</span>),</span><br><span class="line">  IFNULL(S.SupplierName, <span class="string">&#x27;-- NO SUPPLIER --&#x27;</span>),</span><br><span class="line">  IFNULL(C.City, S.City),</span><br><span class="line">  IFNULL(C.Country, S.Country)</span><br><span class="line"><span class="keyword">FROM</span> Customers C</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> Suppliers S</span><br><span class="line"><span class="keyword">ON</span> C.City <span class="operator">=</span> S.City <span class="keyword">AND</span> C.Country <span class="operator">=</span> S.Country;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- LEFT를 RIGHT로 바꿔서도 실행해 볼 것</span></span><br></pre></td></tr></table></figure>
+
+<p><code>IFNULL</code> 활용해서 없는 값에 원하는 구문 넣을수 있다.</p>
+<p>조건 없이 모든 조합을 해 보는 것을 <code>CROSS JOIN</code> 이라고 한다.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  E1.LastName, E2.FirstName</span><br><span class="line"><span class="keyword">FROM</span> Employees E1</span><br><span class="line"><span class="keyword">CROSS</span> <span class="keyword">JOIN</span> Employees E2</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.EmployeeID;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-UNION-집합으로-다루기"><a href="#3-UNION-집합으로-다루기" class="headerlink" title="3. UNION - 집합으로 다루기"></a>3. UNION - 집합으로 다루기</h3><p>합집합: <code>UNION, UNION ALL</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CustomerName <span class="keyword">AS</span> Name, City, Country, <span class="string">&#x27;CUSTOMER&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> SupplierName <span class="keyword">AS</span> Name, City, Country, <span class="string">&#x27;SUPPLIER&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> CategoryID <span class="keyword">AS</span> ID <span class="keyword">FROM</span> Categories</span><br><span class="line"><span class="keyword">WHERE</span> CategoryID <span class="operator">&gt;</span> <span class="number">4</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> EmployeeID <span class="keyword">AS</span> ID <span class="keyword">FROM</span> Employees</span><br><span class="line"><span class="keyword">WHERE</span> EmployeeID <span class="operator">%</span> <span class="number">2</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- UNION ALL로 바꿔볼 것</span></span><br></pre></td></tr></table></figure>
+
+<p>교집합</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CategoryID <span class="keyword">AS</span> ID</span><br><span class="line"><span class="keyword">FROM</span> Categories C, Employees E</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">  C.CategoryID <span class="operator">&gt;</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">AND</span> E.EmployeeID <span class="operator">%</span> <span class="number">2</span> <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">AND</span> C.CategoryID <span class="operator">=</span> E.EmployeeID;</span><br></pre></td></tr></table></figure>
+
+<p>차집합</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> CategoryID <span class="keyword">AS</span> ID</span><br><span class="line"><span class="keyword">FROM</span> Categories</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">  CategoryID <span class="operator">&gt;</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">AND</span> CategoryID <span class="keyword">NOT</span> <span class="keyword">IN</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> EmployeeID</span><br><span class="line">    <span class="keyword">FROM</span> Employees</span><br><span class="line">    <span class="keyword">WHERE</span> EmployeeID <span class="operator">%</span> <span class="number">2</span> <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+
+<p>대칭차집합: 교집합만 제외</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ID <span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> CategoryID <span class="keyword">AS</span> ID <span class="keyword">FROM</span> Categories</span><br><span class="line">  <span class="keyword">WHERE</span> CategoryID <span class="operator">&gt;</span> <span class="number">4</span></span><br><span class="line">  <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line">  <span class="keyword">SELECT</span> EmployeeID <span class="keyword">AS</span> ID <span class="keyword">FROM</span> Employees</span><br><span class="line">  <span class="keyword">WHERE</span> EmployeeID <span class="operator">%</span> <span class="number">2</span> <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">) <span class="keyword">AS</span> Temp </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ID <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/06/01/SQL/2%EC%A3%BC%EC%B0%A8%20%EC%BF%BC%EB%A6%AC%20%EC%99%80%20%EC%A1%B0%EC%9D%B8/" data-id="cl3vipbvh00004838010r5401" data-title="Section 2. 쿼리 와 조인" class="article-share-link">Share</a>
       
       
       
@@ -233,7 +310,72 @@
 <p>values(), valueOf()는 컴파일러가 자동으로 추가</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> E[] values();</span><br><span class="line"><span class="keyword">static</span> E <span class="title function_">valueOf</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Direction</span> &#123; EAST, SOUTH, WEST, NORTH &#125;</span><br><span class="line"></span><br><span class="line">Direction[] dArr = Direction.values();</span><br><span class="line"><span class="keyword">for</span>(Direction d : dArr) </span><br><span class="line">    System.out.printf(<span class="string">&quot;%s %d&quot;</span>, d.name(), d.ordinal() );</span><br><span class="line"></span><br><span class="line"><span class="type">Direction</span> <span class="variable">d1</span> <span class="operator">=</span> Direction.EAST; <span class="comment">// 열거형타입.상수이름</span></span><br><span class="line"><span class="type">Direction</span> <span class="variable">d2</span> <span class="operator">=</span> Direction.valueOf(<span class="string">&quot;WEST&quot;</span>);</span><br><span class="line"><span class="type">Direction</span> <span class="variable">d3</span> <span class="operator">=</span> Enum.valueOf(Direction.class, <span class="string">&quot;EAST&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="ch12-21-22-열거형에-멤버-추가하기"><a href="#ch12-21-22-열거형에-멤버-추가하기" class="headerlink" title="ch12-21,22 열거형에 멤버 추가하기"></a>ch12-21,22 열거형에 멤버 추가하기</h3>
+<h3 id="ch12-21-22-열거형에-멤버-추가하기"><a href="#ch12-21-22-열거형에-멤버-추가하기" class="headerlink" title="ch12-21,22 열거형에 멤버 추가하기"></a>ch12-21,22 열거형에 멤버 추가하기</h3><ul>
+<li>불연속적인 열거형 상수, 괄호()안에 적을수 있다 이때 선언 이후 끝에 ; 필요 와 생성자가 필요 함</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Direction</span> &#123; </span><br><span class="line">    EAST(<span class="number">1</span>), SOUTH(<span class="number">5</span>), WEST(-<span class="number">1</span>), NORTH(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> value;</span><br><span class="line">    Direction(<span class="type">int</span> value)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-23-애너테이션이란"><a href="#ch12-23-애너테이션이란" class="headerlink" title="ch12-23 애너테이션이란?"></a>ch12-23 애너테이션이란?</h3><ul>
+<li>주석처럼 프로그래밍 언어에 영향을 미치지 않으며, 유용한 정보를 제공</li>
+</ul>
+<h3 id="ch12-25-Override"><a href="#ch12-25-Override" class="headerlink" title="ch12-25 @Override"></a>ch12-25 @Override</h3><ul>
+<li>Overide 하는 함수에 적어주면 javac 에서 확인 체크 해줌</li>
+</ul>
+<h3 id="ch12-26-Deprecated"><a href="#ch12-26-Deprecated" class="headerlink" title="ch12-26 @Deprecated"></a>ch12-26 @Deprecated</h3><ul>
+<li>앞으로 사용 하지 않을 것을 권장 하는 필드나 메서드에 붙인다</li>
+</ul>
+<h3 id="ch12-27-FunctionalInterface"><a href="#ch12-27-FunctionalInterface" class="headerlink" title="ch12-27 @FunctionalInterface"></a>ch12-27 @FunctionalInterface</h3><ul>
+<li>함수형 인터페이스에 붙이면, 컴파일로가 올바르게 작성 했는지 체크</li>
+<li>함수형 인터페이스에는 하나의 추상 메서드만 가져야 한다는 제약이 있음</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">check</span><span class="params">()</span>; <span class="comment">// 에러 발생 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-28-SupressWarnings"><a href="#ch12-28-SupressWarnings" class="headerlink" title="ch12-28 @SupressWarnings"></a>ch12-28 @SupressWarnings</h3><ul>
+<li>컴파일러의 경고 메시지가 나타나지 않게 억제 한다.</li>
+<li>괄호() 안에 억제 하고자 하는 경고의 종류를 문자열로 지정</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">list.add(obj);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>둘 이상의 경고를 동시에 억제 하려면 다음과 같이 한다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span> (&#123;<span class="string">&quot;deprecation&quot;</span>, <span class="string">&quot;unchecked&quot;</span>, <span class="string">&quot;varargs&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-29-메타-애너테이션"><a href="#ch12-29-메타-애너테이션" class="headerlink" title="ch12-29 메타 애너테이션"></a>ch12-29 메타 애너테이션</h3><ul>
+<li>애너테이션 만들때 사용, java.lang.annotation 에 있음</li>
+<li>@Target:  적용 대상 지정</li>
+<li>@Retention: 유지 되는 기간 지정, SOURCE, CLASS, RUNTIME</li>
+<li>@Documented: javadoc에 포함</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.SOURCE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SuppressWarnings &#123;</span><br><span class="line">    String[] value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@Inherited: 상속 하고자 할때 사용</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@interface</span> SuperAnno &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuperAnno</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">child</span> <span class="keyword">extends</span> <span class="title class_">Parent</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@Repeatable: 반복해서 붙일수 있음</li>
+</ul>
+<h3 id="ch12-34-애너테이션-타입-정의하기"><a href="#ch12-34-애너테이션-타입-정의하기" class="headerlink" title="ch12-34 애너테이션 타입 정의하기"></a>ch12-34 애너테이션 타입 정의하기</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> 애너테이션이름 &#123;</span><br><span class="line">    타입 요소이름();</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>사용 시, 요소마다 값을 넣어 선언</li>
+<li>default 값이 있는 경우도 생략 가능</li>
+<li>요소가 하나 이면 요소 이름 생략 가능</li>
+<li>요소의 타입이 배열 일 경우, 괄호 사용 {}</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> TestInfo &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">count</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@TestInfo</span> <span class="comment">// @TestInfo (count=1) 과 동일</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NewClass</span> &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@inteface</span> TestInfo &#123;</span><br><span class="line">    String[] testTools(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-36-모든-애너테이션의-조상-java-lang-annotation-Annotation"><a href="#ch12-36-모든-애너테이션의-조상-java-lang-annotation-Annotation" class="headerlink" title="ch12-36 모든 애너테이션의 조상 - java.lang.annotation.Annotation"></a>ch12-36 모든 애너테이션의 조상 - java.lang.annotation.Annotation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Annotation</span> &#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>;</span><br><span class="line">    String <span class="title function_">toString</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    Class&lt;? <span class="keyword">extends</span> <span class="title class_">Annotation</span>&gt; annotationType();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-37-마커-애너테이션-Marker-Annotation"><a href="#ch12-37-마커-애너테이션-Marker-Annotation" class="headerlink" title="ch12-37 마커 애너테이션 - Marker Annotation"></a>ch12-37 마커 애너테이션 - Marker Annotation</h3><p>요소가 하나도 정의 되지 않는 애너테이션 예: @Test, @Deprecated</p>
+<h3 id="ch12-38-애너테이션-요소의-규칙"><a href="#ch12-38-애너테이션-요소의-규칙" class="headerlink" title="ch12-38 애너테이션 요소의 규칙"></a>ch12-38 애너테이션 요소의 규칙</h3><p>타입으로 기본형, String, enum, 애너테이션, Class만 허용됨<br>예외 선언 X, 괄호()안에 매개변수 선언 X, 타입 매개변수 X</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> AnnoTest &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">    String <span class="title function_">major</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span>; <span class="comment">// 에러</span></span><br><span class="line">    String <span class="title function_">minor</span><span class="params">()</span> <span class="keyword">throws</span> Exception; <span class="comment">// 에러</span></span><br><span class="line">    ArrayList&lt;T&gt; <span class="title function_">list</span><span class="params">()</span>; <span class="comment">// 에러</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Annotation 선언 및 사용 예</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> TestInfo &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">count</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">1</span>;</span><br><span class="line">    String <span class="title function_">testedBy</span><span class="params">()</span>;</span><br><span class="line">    String[] testTools() <span class="keyword">default</span> <span class="string">&quot;JUnit&quot;</span>;</span><br><span class="line">    TestType <span class="title function_">testType</span><span class="params">()</span> <span class="keyword">default</span> TestType.FIRST;</span><br><span class="line">    DateTime <span class="title function_">testDate</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@TestInfo(testedBy=&quot;mike&quot;, testTools=&#123;&quot;JUnit&quot;, &quot;JUnit5&quot;&#125;, </span></span><br><span class="line"><span class="meta">          testData=@DateTime(yymmdd=&quot;160101&quot;, hhmmss=&quot;235959&quot;))</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">    Class&lt;Ex12_8&gt; cls = Ex12_8.class;</span><br><span class="line">    <span class="type">TestInfo</span> <span class="variable">anno</span> <span class="operator">=</span> cls.getAnnotation(TestInfo.class);</span><br><span class="line">    anno.testedBy();</span><br><span class="line">    anno.testDate().yymmdd(); </span><br><span class="line">    anno.testDate().hhmmss();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(String str : anno.testTools())</span><br><span class="line">        System.out.println(<span class="string">&quot;testTools=&quot;</span>+str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -719,6 +861,16 @@
       
         <h2 id="Markup-글을-쓸때-이-문법으로"><a href="#Markup-글을-쓸때-이-문법으로" class="headerlink" title="Markup - 글을 쓸때 이 문법으로"></a>Markup - 글을 쓸때 이 문법으로</h2><p><a target="_blank" rel="noopener" href="https://simhyejin.github.io/2016/06/30/Markdown-syntax/">https://simhyejin.github.io/2016/06/30/Markdown-syntax/</a></p>
 <p><a target="_blank" rel="noopener" href="https://velog.io/@yuuuye/velog-%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4MarkDown-%EC%9E%91%EC%84%B1%EB%B2%95">간단한 MD 사용법 링크</a></p>
+<table>
+<thead>
+<tr>
+<th>테이블 기호</th>
+<th>의미</th>
+<th>패턴</th>
+<th>결과</th>
+</tr>
+</thead>
+</table>
 
       
     </div>
@@ -777,46 +929,6 @@
 
 
   
-    <article id="post-java/책/1.이동욱_스프링부트와AWS로 혼자구현하는웹서비스/7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/" class="article-date">
-  <time class="dt-published" datetime="2022-05-14T16:51:35.000Z" itemprop="datePublished">2022-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/">학습노트7 -</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/05/15/java/%EC%B1%85/1.%EC%9D%B4%EB%8F%99%EC%9A%B1_%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80AWS%EB%A1%9C%20%ED%98%BC%EC%9E%90%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/7/" data-id="cl364epkr00020o38hhllb1np" data-title="학습노트7 -" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" rel="tag">스프링부트와 AWS로 혼자 구현하는 웹서비스</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -845,7 +957,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" style="font-size: 12.5px;">갖고노는 MySQL 데이터베이스 by 얄코</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 15px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 18px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 16px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" style="font-size: 14px;">갖고노는 MySQL 데이터베이스 by 얄코</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 16px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -854,7 +966,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -867,7 +979,11 @@
       <ul>
         
           <li>
-            <a href="/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/">My New Post</a>
+            <a href="/2022/06/02/SQL/3%EC%A3%BC%EC%B0%A8%20xx/">Section 3. --</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/01/SQL/2%EC%A3%BC%EC%B0%A8%20%EC%BF%BC%EB%A6%AC%20%EC%99%80%20%EC%A1%B0%EC%9D%B8/">Section 2. 쿼리 와 조인</a>
           </li>
         
           <li>
@@ -880,10 +996,6 @@
         
           <li>
             <a href="/2022/05/25/SQL/%EC%9D%B8%ED%94%84%EB%9F%B0%EA%B0%95%EC%A2%8C%EC%88%98%EA%B0%95/">인프런 강좌 수강 ~</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/23/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/4%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2011%20-%20Collections%20Framework/">(오키) 자바의정석, 챕터 11 - Collections Framework</a>
           </li>
         
       </ul>

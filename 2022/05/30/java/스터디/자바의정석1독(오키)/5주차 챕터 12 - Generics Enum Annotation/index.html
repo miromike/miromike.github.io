@@ -14,7 +14,7 @@
 <meta property="og:description" content="12-1 Generics 란? 컴파일시 타입을 체크해 주는 기능 (compile-time type check) - JDK1.5 객체의 타입 안정성을 높이고 형변환의 번거로움을 줄여줌  12-2 타입변수 클래스를 작성 할때, Object 타입 대신 타입 변수(E)를 선언해서 사용  12345678910111213public class ArrayList ext">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-30T10:45:33.000Z">
-<meta property="article:modified_time" content="2022-05-30T13:00:22.636Z">
+<meta property="article:modified_time" content="2022-06-01T11:40:53.637Z">
 <meta property="article:author" content="Miro Mike">
 <meta property="article:tag" content="javastudy1">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,72 @@
 <p>values(), valueOf()는 컴파일러가 자동으로 추가</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> E[] values();</span><br><span class="line"><span class="keyword">static</span> E <span class="title function_">valueOf</span><span class="params">(String name)</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Direction</span> &#123; EAST, SOUTH, WEST, NORTH &#125;</span><br><span class="line"></span><br><span class="line">Direction[] dArr = Direction.values();</span><br><span class="line"><span class="keyword">for</span>(Direction d : dArr) </span><br><span class="line">    System.out.printf(<span class="string">&quot;%s %d&quot;</span>, d.name(), d.ordinal() );</span><br><span class="line"></span><br><span class="line"><span class="type">Direction</span> <span class="variable">d1</span> <span class="operator">=</span> Direction.EAST; <span class="comment">// 열거형타입.상수이름</span></span><br><span class="line"><span class="type">Direction</span> <span class="variable">d2</span> <span class="operator">=</span> Direction.valueOf(<span class="string">&quot;WEST&quot;</span>);</span><br><span class="line"><span class="type">Direction</span> <span class="variable">d3</span> <span class="operator">=</span> Enum.valueOf(Direction.class, <span class="string">&quot;EAST&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="ch12-21-22-열거형에-멤버-추가하기"><a href="#ch12-21-22-열거형에-멤버-추가하기" class="headerlink" title="ch12-21,22 열거형에 멤버 추가하기"></a>ch12-21,22 열거형에 멤버 추가하기</h3>
+<h3 id="ch12-21-22-열거형에-멤버-추가하기"><a href="#ch12-21-22-열거형에-멤버-추가하기" class="headerlink" title="ch12-21,22 열거형에 멤버 추가하기"></a>ch12-21,22 열거형에 멤버 추가하기</h3><ul>
+<li>불연속적인 열거형 상수, 괄호()안에 적을수 있다 이때 선언 이후 끝에 ; 필요 와 생성자가 필요 함</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Direction</span> &#123; </span><br><span class="line">    EAST(<span class="number">1</span>), SOUTH(<span class="number">5</span>), WEST(-<span class="number">1</span>), NORTH(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> value;</span><br><span class="line">    Direction(<span class="type">int</span> value)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-23-애너테이션이란"><a href="#ch12-23-애너테이션이란" class="headerlink" title="ch12-23 애너테이션이란?"></a>ch12-23 애너테이션이란?</h3><ul>
+<li>주석처럼 프로그래밍 언어에 영향을 미치지 않으며, 유용한 정보를 제공</li>
+</ul>
+<h3 id="ch12-25-Override"><a href="#ch12-25-Override" class="headerlink" title="ch12-25 @Override"></a>ch12-25 @Override</h3><ul>
+<li>Overide 하는 함수에 적어주면 javac 에서 확인 체크 해줌</li>
+</ul>
+<h3 id="ch12-26-Deprecated"><a href="#ch12-26-Deprecated" class="headerlink" title="ch12-26 @Deprecated"></a>ch12-26 @Deprecated</h3><ul>
+<li>앞으로 사용 하지 않을 것을 권장 하는 필드나 메서드에 붙인다</li>
+</ul>
+<h3 id="ch12-27-FunctionalInterface"><a href="#ch12-27-FunctionalInterface" class="headerlink" title="ch12-27 @FunctionalInterface"></a>ch12-27 @FunctionalInterface</h3><ul>
+<li>함수형 인터페이스에 붙이면, 컴파일로가 올바르게 작성 했는지 체크</li>
+<li>함수형 인터페이스에는 하나의 추상 메서드만 가져야 한다는 제약이 있음</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Runnable</span> &#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">check</span><span class="params">()</span>; <span class="comment">// 에러 발생 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-28-SupressWarnings"><a href="#ch12-28-SupressWarnings" class="headerlink" title="ch12-28 @SupressWarnings"></a>ch12-28 @SupressWarnings</h3><ul>
+<li>컴파일러의 경고 메시지가 나타나지 않게 억제 한다.</li>
+<li>괄호() 안에 억제 하고자 하는 경고의 종류를 문자열로 지정</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line"><span class="type">ArrayList</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">list.add(obj);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>둘 이상의 경고를 동시에 억제 하려면 다음과 같이 한다.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span> (&#123;<span class="string">&quot;deprecation&quot;</span>, <span class="string">&quot;unchecked&quot;</span>, <span class="string">&quot;varargs&quot;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-29-메타-애너테이션"><a href="#ch12-29-메타-애너테이션" class="headerlink" title="ch12-29 메타 애너테이션"></a>ch12-29 메타 애너테이션</h3><ul>
+<li>애너테이션 만들때 사용, java.lang.annotation 에 있음</li>
+<li>@Target:  적용 대상 지정</li>
+<li>@Retention: 유지 되는 기간 지정, SOURCE, CLASS, RUNTIME</li>
+<li>@Documented: javadoc에 포함</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.SOURCE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SuppressWarnings &#123;</span><br><span class="line">    String[] value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@Inherited: 상속 하고자 할때 사용</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@interface</span> SuperAnno &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuperAnno</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Parent</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">child</span> <span class="keyword">extends</span> <span class="title class_">Parent</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>@Repeatable: 반복해서 붙일수 있음</li>
+</ul>
+<h3 id="ch12-34-애너테이션-타입-정의하기"><a href="#ch12-34-애너테이션-타입-정의하기" class="headerlink" title="ch12-34 애너테이션 타입 정의하기"></a>ch12-34 애너테이션 타입 정의하기</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> 애너테이션이름 &#123;</span><br><span class="line">    타입 요소이름();</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>사용 시, 요소마다 값을 넣어 선언</li>
+<li>default 값이 있는 경우도 생략 가능</li>
+<li>요소가 하나 이면 요소 이름 생략 가능</li>
+<li>요소의 타입이 배열 일 경우, 괄호 사용 {}</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> TestInfo &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">count</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@TestInfo</span> <span class="comment">// @TestInfo (count=1) 과 동일</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">NewClass</span> &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@inteface</span> TestInfo &#123;</span><br><span class="line">    String[] testTools(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-36-모든-애너테이션의-조상-java-lang-annotation-Annotation"><a href="#ch12-36-모든-애너테이션의-조상-java-lang-annotation-Annotation" class="headerlink" title="ch12-36 모든 애너테이션의 조상 - java.lang.annotation.Annotation"></a>ch12-36 모든 애너테이션의 조상 - java.lang.annotation.Annotation</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Annotation</span> &#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>;</span><br><span class="line">    String <span class="title function_">toString</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    Class&lt;? <span class="keyword">extends</span> <span class="title class_">Annotation</span>&gt; annotationType();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ch12-37-마커-애너테이션-Marker-Annotation"><a href="#ch12-37-마커-애너테이션-Marker-Annotation" class="headerlink" title="ch12-37 마커 애너테이션 - Marker Annotation"></a>ch12-37 마커 애너테이션 - Marker Annotation</h3><p>요소가 하나도 정의 되지 않는 애너테이션 예: @Test, @Deprecated</p>
+<h3 id="ch12-38-애너테이션-요소의-규칙"><a href="#ch12-38-애너테이션-요소의-규칙" class="headerlink" title="ch12-38 애너테이션 요소의 규칙"></a>ch12-38 애너테이션 요소의 규칙</h3><p>타입으로 기본형, String, enum, 애너테이션, Class만 허용됨<br>예외 선언 X, 괄호()안에 매개변수 선언 X, 타입 매개변수 X</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@interface</span> AnnoTest &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">    String <span class="title function_">major</span> <span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span>; <span class="comment">// 에러</span></span><br><span class="line">    String <span class="title function_">minor</span><span class="params">()</span> <span class="keyword">throws</span> Exception; <span class="comment">// 에러</span></span><br><span class="line">    ArrayList&lt;T&gt; <span class="title function_">list</span><span class="params">()</span>; <span class="comment">// 에러</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Annotation 선언 및 사용 예</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> TestInfo &#123;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">count</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">1</span>;</span><br><span class="line">    String <span class="title function_">testedBy</span><span class="params">()</span>;</span><br><span class="line">    String[] testTools() <span class="keyword">default</span> <span class="string">&quot;JUnit&quot;</span>;</span><br><span class="line">    TestType <span class="title function_">testType</span><span class="params">()</span> <span class="keyword">default</span> TestType.FIRST;</span><br><span class="line">    DateTime <span class="title function_">testDate</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@TestInfo(testedBy=&quot;mike&quot;, testTools=&#123;&quot;JUnit&quot;, &quot;JUnit5&quot;&#125;, </span></span><br><span class="line"><span class="meta">          testData=@DateTime(yymmdd=&quot;160101&quot;, hhmmss=&quot;235959&quot;))</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">main</span><span class="params">(String args[])</span> &#123;</span><br><span class="line">    Class&lt;Ex12_8&gt; cls = Ex12_8.class;</span><br><span class="line">    <span class="type">TestInfo</span> <span class="variable">anno</span> <span class="operator">=</span> cls.getAnnotation(TestInfo.class);</span><br><span class="line">    anno.testedBy();</span><br><span class="line">    anno.testDate().yymmdd(); </span><br><span class="line">    anno.testDate().hhmmss();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(String str : anno.testTools())</span><br><span class="line">        System.out.println(<span class="string">&quot;testTools=&quot;</span>+str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -212,11 +277,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/06/01/SQL/2%EC%A3%BC%EC%B0%A8%20%EC%BF%BC%EB%A6%AC%20%EC%99%80%20%EC%A1%B0%EC%9D%B8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          My New Post
+          Section 2. 쿼리 와 조인
         
       </div>
     </a>
@@ -254,7 +319,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 17.5px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 15px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12.5px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12.5px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" style="font-size: 12.5px;">갖고노는 MySQL 데이터베이스 by 얄코</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 15px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
+      <a href="/tags/GIT/" style="font-size: 10px;">GIT</a> <a href="/tags/Hexo-%EB%AA%85%EB%A0%B9%EC%96%B4/" style="font-size: 10px;">Hexo 명령어</a> <a href="/tags/Markup-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1/" style="font-size: 10px;">Markup 파일 작성</a> <a href="/tags/blog%EB%A7%8C%EB%93%A4%EA%B8%B0/" style="font-size: 18px;">blog만들기</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/javastudy1/" style="font-size: 16px;">javastudy1</a> <a href="/tags/javastudy2/" style="font-size: 12px;">javastudy2</a> <a href="/tags/python/" style="font-size: 12px;">python</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" style="font-size: 14px;">갖고노는 MySQL 데이터베이스 by 얄코</a> <a href="/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%EC%99%80-AWS%EB%A1%9C-%ED%98%BC%EC%9E%90-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/" style="font-size: 16px;">스프링부트와 AWS로 혼자 구현하는 웹서비스</a>
     </div>
   </div>
 
@@ -263,7 +328,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
     </div>
   </div>
 
@@ -276,7 +341,11 @@
       <ul>
         
           <li>
-            <a href="/2022/05/31/SQL/2%EC%A3%BC%EC%B0%A8/">My New Post</a>
+            <a href="/2022/06/02/SQL/3%EC%A3%BC%EC%B0%A8%20xx/">Section 3. --</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/01/SQL/2%EC%A3%BC%EC%B0%A8%20%EC%BF%BC%EB%A6%AC%20%EC%99%80%20%EC%A1%B0%EC%9D%B8/">Section 2. 쿼리 와 조인</a>
           </li>
         
           <li>
@@ -289,10 +358,6 @@
         
           <li>
             <a href="/2022/05/25/SQL/%EC%9D%B8%ED%94%84%EB%9F%B0%EA%B0%95%EC%A2%8C%EC%88%98%EA%B0%95/">인프런 강좌 수강 ~</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/23/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/4%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2011%20-%20Collections%20Framework/">(오키) 자바의정석, 챕터 11 - Collections Framework</a>
           </li>
         
       </ul>
