@@ -111,6 +111,98 @@
 
 
   
+    <article id="post-SQL/5주차 활용 사이트" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/12/SQL/5%EC%A3%BC%EC%B0%A8%20%ED%99%9C%EC%9A%A9%20%EC%82%AC%EC%9D%B4%ED%8A%B8/" class="article-date">
+  <time class="dt-published" datetime="2022-06-12T11:42:06.000Z" itemprop="datePublished">2022-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/06/12/SQL/5%EC%A3%BC%EC%B0%A8%20%ED%99%9C%EC%9A%A9%20%EC%82%AC%EC%9D%B4%ED%8A%B8/">Section 5. 활용, 웹에 올려보기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/06/12/SQL/5%EC%A3%BC%EC%B0%A8%20%ED%99%9C%EC%9A%A9%20%EC%82%AC%EC%9D%B4%ED%8A%B8/" data-id="cl4apvyl10000gw388ruw9ryd" data-title="Section 5. 활용, 웹에 올려보기" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" rel="tag">갖고노는 MySQL 데이터베이스 by 얄코</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SQL/4주차 더 깊이" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/" class="article-date">
+  <time class="dt-published" datetime="2022-06-11T11:41:43.000Z" itemprop="datePublished">2022-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/">Section 4. 더 깊이 알아보기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="기본키"><a href="#기본키" class="headerlink" title="기본키"></a>기본키</h3><p>중복되지 않는 고유값만 허용<br>NULL 값 허용하지 않음<br>테이블당 하나의 기본키만 지정 가능</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 기본키 넣는 방법 2</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> people (</span><br><span class="line">  first_name <span class="type">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">  last_name <span class="type">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">  nickname <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (first_name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>다중 기본키</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> people (</span><br><span class="line">  first_name <span class="type">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">  last_name <span class="type">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">  nickname <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (first_name, last_name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="고유키"><a href="#고유키" class="headerlink" title="고유키"></a>고유키</h3><p>중복 제한, NULL 값 가능</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 고유키 넣는 방법 2</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> people (</span><br><span class="line">  person_id <span class="type">INT</span> AUTO_INCREMENT <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">  first_name <span class="type">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">  last_name <span class="type">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">  <span class="keyword">UNIQUE</span> (first_name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="외래키"><a href="#외래키" class="headerlink" title="외래키"></a>외래키</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> _자식테이블명</span><br><span class="line">  <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> _제약명 </span><br><span class="line">  <span class="keyword">FOREIGN</span> KEY ( _자식테이블외래키 )</span><br><span class="line">  <span class="keyword">REFERENCES</span> 부모테이블명 ( _부모테이블기본키 )</span><br><span class="line">  <span class="comment">-- ON DELETE _삭제시제약 </span></span><br><span class="line">  <span class="comment">-- ON UPDATE _수정시제약 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="외래키-제약"><a href="#외래키-제약" class="headerlink" title="외래키 제약"></a>외래키 제약</h3><p>제약    |설명    |비고<br>——— | ———<br>NO ACTION, RESTRICT|    자식 테이블에 해당 외래키가 있을 때 수정&#x2F;삭제되지 않음    |<br>CASCADE    |자식 테이블의 해당 행도 수정&#x2F;삭제    |<br>SET NULL    |자식 테이블의 외래키를 NULL로    |자식 외래키가 NOT NULL일 시 설정 불가<br>SET DEFAULT    |자식 테이블의 외래키를 기본값으로    |InnoDB 엔진에서 사용 불가</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://miromike.github.io/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/" data-id="cl4apvyl70002gw38eyeq338e" data-title="Section 4. 더 깊이 알아보기" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" rel="tag">갖고노는 MySQL 데이터베이스 by 얄코</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-java/스터디/자바의정석1독(오키)/6주차 챕터 13 -  쓰레드" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/06/11/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/6%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2013%20-%20%20%EC%93%B0%EB%A0%88%EB%93%9C/" class="article-date">
@@ -184,86 +276,6 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javastudy1/" rel="tag">javastudy1</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-SQL/5주차" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/04/SQL/5%EC%A3%BC%EC%B0%A8/" class="article-date">
-  <time class="dt-published" datetime="2022-06-04T11:42:06.000Z" itemprop="datePublished">2022-06-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/04/SQL/5%EC%A3%BC%EC%B0%A8/">Section 5. 활용, 웹에 올려보기</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/06/04/SQL/5%EC%A3%BC%EC%B0%A8/" data-id="cl49pdk0800034k3850hgcmha" data-title="Section 5. 활용, 웹에 올려보기" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" rel="tag">갖고노는 MySQL 데이터베이스 by 얄코</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-SQL/4주차 " class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/03/SQL/4%EC%A3%BC%EC%B0%A8%20/" class="article-date">
-  <time class="dt-published" datetime="2022-06-03T11:41:43.000Z" itemprop="datePublished">2022-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/03/SQL/4%EC%A3%BC%EC%B0%A8%20/">Section 4. 더 깊이 알아보기</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="기본키-외래키"><a href="#기본키-외래키" class="headerlink" title="기본키, 외래키"></a>기본키, 외래키</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/06/03/SQL/4%EC%A3%BC%EC%B0%A8%20/" data-id="cl49pdk0000004k38f1oz8p1z" data-title="Section 4. 더 깊이 알아보기" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" rel="tag">갖고노는 MySQL 데이터베이스 by 얄코</a></li></ul>
 
     </footer>
   </div>
@@ -937,15 +949,15 @@
           </li>
         
           <li>
+            <a href="/2022/06/12/SQL/5%EC%A3%BC%EC%B0%A8%20%ED%99%9C%EC%9A%A9%20%EC%82%AC%EC%9D%B4%ED%8A%B8/">Section 5. 활용, 웹에 올려보기</a>
+          </li>
+        
+          <li>
+            <a href="/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/">Section 4. 더 깊이 알아보기</a>
+          </li>
+        
+          <li>
             <a href="/2022/06/11/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/6%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2013%20-%20%20%EC%93%B0%EB%A0%88%EB%93%9C/">(오키) 자바의정석, 챕터 13 - 쓰레드</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/04/SQL/5%EC%A3%BC%EC%B0%A8/">Section 5. 활용, 웹에 올려보기</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/03/SQL/4%EC%A3%BC%EC%B0%A8%20/">Section 4. 더 깊이 알아보기</a>
           </li>
         
           <li>

@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Jar 파일 include 해서 컴파일 하는 법 (console에서) | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
+  <title>Section 4. 더 깊이 알아보기 | 하소연 개발 노트 (Miro&#39;s IT Blog)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자.. User.java1234public class User &amp;#123;    private String name;    int idx;&amp;#125;  Main.java12345678public class Main &amp;#123;    public static void">
+  <meta name="description" content="기본키중복되지 않는 고유값만 허용NULL 값 허용하지 않음테이블당 하나의 기본키만 지정 가능 1234567-- 기본키 넣는 방법 2CREATE TABLE people (  first_name CHAR(2),  last_name CHAR(3),  nickname VARCHAR(10),  PRIMARY KEY (first_name));  다중 기본키 12345">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jar 파일 include 해서 컴파일 하는 법 (console에서)">
-<meta property="og:url" content="https://miromike.github.io/2022/04/13/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-13-compile-with-Jar/index.html">
+<meta property="og:title" content="Section 4. 더 깊이 알아보기">
+<meta property="og:url" content="https://miromike.github.io/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/index.html">
 <meta property="og:site_name" content="하소연 개발 노트 (Miro&#39;s IT Blog)">
-<meta property="og:description" content="결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자.. User.java1234public class User &amp;#123;    private String name;    int idx;&amp;#125;  Main.java12345678public class Main &amp;#123;    public static void">
+<meta property="og:description" content="기본키중복되지 않는 고유값만 허용NULL 값 허용하지 않음테이블당 하나의 기본키만 지정 가능 1234567-- 기본키 넣는 방법 2CREATE TABLE people (  first_name CHAR(2),  last_name CHAR(3),  nickname VARCHAR(10),  PRIMARY KEY (first_name));  다중 기본키 12345">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-12T15:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-14T11:46:28.181Z">
+<meta property="article:published_time" content="2022-06-11T11:41:43.000Z">
+<meta property="article:modified_time" content="2022-06-12T02:58:33.167Z">
 <meta property="article:author" content="Miro Mike">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="갖고노는 MySQL 데이터베이스 by 얄코">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="하소연 개발 노트 (Miro's IT Blog)" type="application/atom+xml">
@@ -74,10 +74,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="single-java/학습일지/2022-4-13-compile-with-Jar" class="h-entry article article-type-single" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-SQL/4주차 더 깊이" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/13/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-13-compile-with-Jar/" class="article-date">
-  <time class="dt-published" datetime="2022-04-12T15:00:00.000Z" itemprop="datePublished">2022-04-13</time>
+    <a href="/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/" class="article-date">
+  <time class="dt-published" datetime="2022-06-11T11:41:43.000Z" itemprop="datePublished">2022-06-11</time>
 </a>
     
   </div>
@@ -88,7 +88,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Jar 파일 include 해서 컴파일 하는 법 (console에서)
+      Section 4. 더 깊이 알아보기
     </h1>
   
 
@@ -96,34 +96,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>결론: 윈도우 개발 환경에서 -cp 가 제대로 안되는가 싶다. 나중에 리눅스 환경 생기면 해보자..</p>
-<h2 id="User-java"><a href="#User-java" class="headerlink" title="User.java"></a>User.java</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    int idx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="기본키"><a href="#기본키" class="headerlink" title="기본키"></a>기본키</h3><p>중복되지 않는 고유값만 허용<br>NULL 값 허용하지 않음<br>테이블당 하나의 기본키만 지정 가능</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 기본키 넣는 방법 2</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> people (</span><br><span class="line">  first_name <span class="type">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">  last_name <span class="type">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">  nickname <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (first_name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<h2 id="Main-java"><a href="#Main-java" class="headerlink" title="Main.java"></a>Main.java</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        User user = new User();</span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>다중 기본키</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> people (</span><br><span class="line">  first_name <span class="type">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">  last_name <span class="type">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">  nickname <span class="type">VARCHAR</span>(<span class="number">10</span>),</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (first_name, last_name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<p>~&#x2F;User&#x2F;User.java<br>~&#x2F;Main&#x2F;Main.java</p>
-<h2 id="User-컴파일-및-Jar-파일-생성"><a href="#User-컴파일-및-Jar-파일-생성" class="headerlink" title="User 컴파일 및 Jar 파일 생성"></a>User 컴파일 및 Jar 파일 생성</h2><p>javac User.java<br>jar cf User.jar User.class</p>
-<p>User.jar 파일이 만들어졌다 Main 폴더로 복사</p>
-<h2 id="Main-컴파일"><a href="#Main-컴파일" class="headerlink" title="Main 컴파일"></a>Main 컴파일</h2><p>javac Main.java</p>
-<p>User symbol을 못 찾겠다는 컴파일 에러 발생</p>
-<p>javac -cp User.jar Main.java<br>cp로 classpath를 넣어주니 컴파일 성공 한다.</p>
-<h2 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h2><p>java Main </p>
-<p>에러가 나온다<br>Exception in thread “main” java.lang.NoClassDefFoundError: User<br>at Main.main (Main.java:5) </p>
-<p>User class 못 찾는 다는 내용으로 보여서 컴파일 때 처럼<br>classpath 을 넣어 주면 될것으로 생각 해서</p>
-<p>java -cp User.jar Main<br>Error: Could not find or load main class Main </p>
-<p>여기서 막혔다..</p>
-<h2 id="Stackoverflow-에…"><a href="#Stackoverflow-에…" class="headerlink" title="Stackoverflow 에…"></a>Stackoverflow 에…</h2><p>(올린 질문 글)[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/71861212/import-jar-file-into-my-hello-world-console-application]">https://stackoverflow.com/questions/71861212/import-jar-file-into-my-hello-world-console-application]</a></p>
-<p>(Jar 파일 include 방법)[<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt#comment11870389_9395207]">https://stackoverflow.com/questions/9395207/how-to-include-jar-files-with-java-file-and-compile-in-command-prompt#comment11870389_9395207]</a></p>
-<p>나의 윈도우 개발 환경에서 -cp 에 멀 넣어도 안된다.</p>
+<h3 id="고유키"><a href="#고유키" class="headerlink" title="고유키"></a>고유키</h3><p>중복 제한, NULL 값 가능</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 고유키 넣는 방법 2</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> people (</span><br><span class="line">  person_id <span class="type">INT</span> AUTO_INCREMENT <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">  first_name <span class="type">CHAR</span>(<span class="number">2</span>),</span><br><span class="line">  last_name <span class="type">CHAR</span>(<span class="number">3</span>),</span><br><span class="line">  <span class="keyword">UNIQUE</span> (first_name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="외래키"><a href="#외래키" class="headerlink" title="외래키"></a>외래키</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> _자식테이블명</span><br><span class="line">  <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> _제약명 </span><br><span class="line">  <span class="keyword">FOREIGN</span> KEY ( _자식테이블외래키 )</span><br><span class="line">  <span class="keyword">REFERENCES</span> 부모테이블명 ( _부모테이블기본키 )</span><br><span class="line">  <span class="comment">-- ON DELETE _삭제시제약 </span></span><br><span class="line">  <span class="comment">-- ON UPDATE _수정시제약 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="외래키-제약"><a href="#외래키-제약" class="headerlink" title="외래키 제약"></a>외래키 제약</h3><p>제약    |설명    |비고<br>——— | ———<br>NO ACTION, RESTRICT|    자식 테이블에 해당 외래키가 있을 때 수정&#x2F;삭제되지 않음    |<br>CASCADE    |자식 테이블의 해당 행도 수정&#x2F;삭제    |<br>SET NULL    |자식 테이블의 외래키를 NULL로    |자식 외래키가 NOT NULL일 시 설정 불가<br>SET DEFAULT    |자식 테이블의 외래키를 기본값으로    |InnoDB 엔진에서 사용 불가</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://miromike.github.io/2022/04/13/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-13-compile-with-Jar/" data-id="cl33ddwf300074o383udk0fsu" data-title="Jar 파일 include 해서 컴파일 하는 법 (console에서)" class="article-share-link">Share</a>
+      <a data-url="https://miromike.github.io/2022/06/11/SQL/4%EC%A3%BC%EC%B0%A8%20%EB%8D%94%20%EA%B9%8A%EC%9D%B4/" data-id="cl4apvyl70002gw38eyeq338e" data-title="Section 4. 더 깊이 알아보기" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EA%B0%96%EA%B3%A0%EB%85%B8%EB%8A%94-MySQL-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-by-%EC%96%84%EC%BD%94/" rel="tag">갖고노는 MySQL 데이터베이스 by 얄코</a></li></ul>
 
     </footer>
   </div>
@@ -131,19 +124,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/13/Hexo%EB%AA%85%EB%A0%B9%EC%96%B4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/06/12/SQL/5%EC%A3%BC%EC%B0%A8%20%ED%99%9C%EC%9A%A9%20%EC%82%AC%EC%9D%B4%ED%8A%B8/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hexo 자주 쓰는 명령어 노트
+          Section 5. 활용, 웹에 올려보기
         
       </div>
     </a>
   
   
-    <a href="/2022/04/06/java/%ED%95%99%EC%8A%B5%EC%9D%BC%EC%A7%80/2022-4-6-spring-vs-spring-boot/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/06/11/java/%EC%8A%A4%ED%84%B0%EB%94%94/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D1%EB%8F%85(%EC%98%A4%ED%82%A4)/6%EC%A3%BC%EC%B0%A8%20%EC%B1%95%ED%84%B0%2013%20-%20%20%EC%93%B0%EB%A0%88%EB%93%9C/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">대세 프레임워크, Spring 와 Spring boot ?</div>
+      <div class="article-nav-title">(오키) 자바의정석, 챕터 13 - 쓰레드</div>
     </a>
   
 </nav>
